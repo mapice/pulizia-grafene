@@ -1,0 +1,69 @@
+reading input data file: liquid.inp
+tabulating potentials and intramolecular functions ...
+relaxing RISM:
+step= 100     Res=  6.6219390627451691E-01     MDIIS=  1
+step= 200     Res=  6.6219390627451691E-01     MDIIS=  1
+step= 300     Res=  6.6219390627451691E-01     MDIIS=  1
+step= 400     Res=  6.6219390627451691E-01     MDIIS=  1
+step= 500     Res=  6.6219390627451691E-01     MDIIS=  1
+step= 600     Res=  6.6219390627451691E-01     MDIIS=  1
+step= 700     Res=  6.6219390627451691E-01     MDIIS=  1
+step= 800     Res=  6.6219390627451691E-01     MDIIS=  1
+step= 900     Res=  6.6219390627451691E-01     MDIIS=  1
+step=1000     Res=  6.6219390627451691E-01     MDIIS=  1
+step=1100     Res=  6.6219390627451691E-01     MDIIS=  1
+step=1200     Res=  6.6219390627451691E-01     MDIIS=  1
+step=1300     Res=  6.6219390627451691E-01     MDIIS=  1
+step=1400     Res=  6.6219390627451691E-01     MDIIS=  1
+step=1500     Res=  6.6219390627451691E-01     MDIIS=  1
+step=1600     Res=  6.6219390627451691E-01     MDIIS=  1
+step=1700     Res=  6.6219390627451691E-01     MDIIS=  1
+step=1800     Res=  6.6219390627451691E-01     MDIIS=  1
+step=1900     Res=  6.6219390627451691E-01     MDIIS=  1
+step=2000     Res=  6.6219390627451691E-01     MDIIS=  1
+step=2100     Res=  6.6219390627451691E-01     MDIIS=  1
+step=2200     Res=  6.6219390627451691E-01     MDIIS=  1
+step=2300     Res=  6.6219390627451691E-01     MDIIS=  1
+step=2400     Res=  6.6219390627451691E-01     MDIIS=  1
+step=2500     Res=  6.6219390627451691E-01     MDIIS=  1
+step=2600     Res=  6.6219390627451691E-01     MDIIS=  1
+step=2700     Res=  6.6219390627451691E-01     MDIIS=  1
+step=2800     Res=  6.6219390627451691E-01     MDIIS=  1
+step=2900     Res=  6.6219390627451691E-01     MDIIS=  1
+step=3000     Res=  6.6219390627451691E-01     MDIIS=  1
+step=3100     Res=  6.6219390627451691E-01     MDIIS=  1
+step=3200     Res=  6.6219390627451691E-01     MDIIS=  1
+step=3300     Res=  6.6219390627451691E-01     MDIIS=  1
+step=3400     Res=  6.6219390627451691E-01     MDIIS=  1
+step=3500     Res=  6.6219390627451691E-01     MDIIS=  1
+step=3600     Res=  6.6219390627451691E-01     MDIIS=  1
+step=3700     Res=  6.6219390627451691E-01     MDIIS=  1
+step=3800     Res=  6.6219390627451691E-01     MDIIS=  1
+step=3900     Res=  6.6219390627451691E-01     MDIIS=  1
+step=4000     Res=  6.6219390627451691E-01     MDIIS=  1
+step=4100     Res=  6.6219390627451691E-01     MDIIS=  1
+step=4200     Res=  6.6219390627451691E-01     MDIIS=  1
+step=4300     Res=  6.6219390627451691E-01     MDIIS=  1
+step=4400     Res=  6.6219390627451691E-01     MDIIS=  1
+step=4500     Res=  6.6219390627451691E-01     MDIIS=  1
+step=4600     Res=  6.6219390627451691E-01     MDIIS=  1
+step=4700     Res=  6.6219390627451691E-01     MDIIS=  1
+step=4800     Res=  6.6219390627451691E-01     MDIIS=  1
+step=4900     Res=  6.6219390627451691E-01     MDIIS=  1
+step=5000     Res=  6.6219390627451691E-01     MDIIS=  1
+step=5100     Res=  6.6219390627451691E-01     MDIIS=  1
+step=5200     Res=  6.6219390627451691E-01     MDIIS=  1
+step=5300     Res=  6.6219390627451691E-01     MDIIS=  1
+step=5400     Res=  6.6219390627451691E-01     MDIIS=  1
+step=5500     Res=  6.6219390627451691E-01     MDIIS=  1
+step=5600     Res=  6.6219390627451691E-01     MDIIS=  1
+step=5700     Res=  6.6219390627451691E-01     MDIIS=  1
+step=5800     Res=  6.6219390627451691E-01     MDIIS=  1
+step=5900     Res=  6.6219390627451691E-01     MDIIS=  1
+step=6000     Res=  6.6219390627451691E-01     MDIIS=  1
+step=6100     Res=  6.6219390627451691E-01     MDIIS=  1
+step=6200     Res=  6.6219390627451691E-01     MDIIS=  1
+step=6300     Res=  6.6219390627451691E-01     MDIIS=  1
+step=6400     Res=  6.6219390627451691E-01     MDIIS=  1
+step=6500     Res=  6.6219390627451691E-01     MDIIS=  1
+{"guard": {"command": ["/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/rism1d", "liquid"], "pid": 12851, "exitcode": -15, "peak_RSS_MB": 73.59375, "elapsed_seconds": 361.8020156251732, "termination_reason": "Wall-time cap"}}

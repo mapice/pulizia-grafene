@@ -1,0 +1,10 @@
+Verifiche superate: formula esatta, conservazione, positivita, limite di distacco, accesso lento, bagni a tempo e volume fissati.
+Massimo errore assoluto RK4/formula: 1.76e-13
+Massimo errore di conservazione: 3.77e-15
+Geometria illustrativa delta=1e-05 m: D/delta=2.93e-06 m/s; delta^2/D=3.41297 s
+Geometria illustrativa delta=0.0001 m: D/delta=2.93e-07 m/s; delta^2/D=341.297 s
+Geometria illustrativa delta=0.001 m: D/delta=2.93e-08 m/s; delta^2/D=34129.7 s
+Modello a tre stati: formula di ordine esatta, conservazione e controesempio cicli peggiori verificati.
+Cicli illustrativi n=1: regime senza ritorno R=0.399576401; regime con ritorno R=0.099995460
+Cicli illustrativi n=10: regime senza ritorno R=0.282036984; regime con ritorno R=0.479499043
+Esempio limite film uscita: 0.00847458 nm

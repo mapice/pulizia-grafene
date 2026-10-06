@@ -1,0 +1,11 @@
+{
+  "stage": 0,
+  "charge_scale": 0.1,
+  "density_fraction": 0.1,
+  "dielectric_input": 1.0157,
+  "exitcode": 1,
+  "residual": 6.3396282743243475,
+  "xvv_written": false,
+  "exact_target_state": false,
+  "earlier_converged_restart": false
+}

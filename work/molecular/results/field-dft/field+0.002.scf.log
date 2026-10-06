@@ -1,0 +1,135 @@
+#INFO: **** input file is /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/field_dft.py ****
+"""Independent fixed-nuclei electric response of the actual HFIP proxy.
+
+PBE0/def2-TZVP at the same geometry used in learned-model checks. Uniform
+field enters the electronic one-body Hamiltonian; nuclear field energy is
+added explicitly. D3 is field-independent at fixed nuclei and cancels in
+the curvature. This is gas-phase response, not bulk permittivity.
+"""
+import os
+for v in ['OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','VECLIB_MAXIMUM_THREADS']:os.environ[v]='2'
+os.nice(8)
+from pathlib import Path
+import time,json,resource,sys
+import numpy as np
+from ase.io import read
+from pyscf import gto,dft,lib
+lib.num_threads(2)
+HERE=Path(__file__).resolve().parent;OUT=HERE/'results/field-dft';OUT.mkdir(parents=True,exist_ok=True)
+HARTREE_EV=27.211386245988
+FIELD_AU_V_A=51.4220674763
+a=read(HERE/'results/clusters/HFIP.refined.xyz')
+
+def main():
+    rows=[];dm=None;start=time.monotonic()
+    for field in [0.,-.002,.002,-.01,.01]:
+        mol=gto.M(atom=list(zip(a.get_chemical_symbols(),a.positions)),basis='def2-tzvp',unit='Angstrom',spin=0,charge=0,max_memory=1500,verbose=4,output=str(OUT/f'field{field:+.3f}.scf.log'))
+        mf=dft.RKS(mol).density_fit();mf.xc='pbe0';mf.grids.level=3;mf.conv_tol=1e-11;mf.max_cycle=100;mf.chkfile=None
+        base_h=mf.get_hcore();rz=mol.intor('int1e_r',comp=3)[2];au_field=field/FIELD_AU_V_A
+        mf.get_hcore=lambda *args,**kwargs:base_h+au_field*rz
+        e=float(mf.kernel(dm0=dm));dm=mf.make_rdm1()
+        if not mf.converged:raise RuntimeError('Field SCF unconverged')
+        enuclear_field=-au_field*float(np.dot(mol.atom_charges(),mol.atom_coords()[:,2]))
+        mu=np.array(mf.dip_moment(unit='Debye',verbose=0))
+        row=dict(field_V_A=field,total_energy_eV=(e+enuclear_field)*HARTREE_EV,dipole_Debye=mu.tolist(),SCF_converged=bool(mf.converged),SCF_energy_Ha=e,nuclear_field_Ha=enuclear_field)
+        rows.append(row);print(row,flush=True)
+    result=[]
+    for j,delta in [(1,.002),(3,.01)]:
+        curvature=-(rows[j]['total_energy_eV']+rows[j+1]['total_energy_eV']-2*rows[0]['total_energy_eV'])/delta**2
+        linear=(rows[j+1]['total_energy_eV']-rows[j]['total_energy_eV'])/(2*delta)
+        result.append(dict(field_magnitude_V_A=delta,polarizability_from_energy_eA2_V=curvature,energy_linear_derivative_eA=linear,dipole_zero_eA=rows[0]['dipole_Debye'][2]/4.8032045098))
+        assert curvature>0,'Stable electronic response must be positive'
+    data=dict(method='PBE0/def2-TZVP',scope='Fixed-nuclei gas HFIP field response; not liquid dielectric',geometry='HFIP.refined.xyz',rows=rows,response=result,elapsed_seconds=time.monotonic()-start,peak_RSS_MB=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss/(1024**2 if sys.platform=='darwin' else 1024))
+    (OUT/'response.json').write_text(json.dumps(data,indent=2)+'\n');print(result,flush=True)
+
+if __name__=='__main__':main()
+#INFO: ******************** input file end ********************
+
+
+System: uname_result(system='Darwin', node='Mattias-MacBook-Pro.local', release='24.6.0', version='Darwin Kernel Version 24.6.0: Sun Aug 23 20:37:03 PDT 2026; root:xnu-11417.140.69.712.69~1/RELEASE_ARM64_T6000', machine='arm64')  Threads 1
+Python 3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]
+numpy 2.5.3  scipy 1.18.1  h5py 3.16.0
+Date: Tue Oct  6 03:49:53 2026
+PySCF version 2.14.0
+PySCF path  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/pyscf
+
+[CONFIG] conf_file None
+[INPUT] verbose = 4
+[INPUT] num. atoms = 12
+[INPUT] num. electrons = 82
+[INPUT] charge = 0
+[INPUT] spin (= nelec alpha-beta = 2S) = 0
+[INPUT] symmetry False subgroup None
+[INPUT] Mole.unit = Angstrom
+[INPUT] Symbol           X                Y                Z      unit          X                Y                Z       unit  Magmom
+[INPUT]  1 O     -0.656570900000   1.362866670000  -0.749959210000 AA   -1.240739182359   2.575444750598  -1.417217511495 Bohr   0.0
+[INPUT]  2 C     -0.078221690000   0.118100930000  -0.573224400000 AA   -0.147817571101   0.223178412756  -1.083237123918 Bohr   0.0
+[INPUT]  3 C     -1.018234540000  -0.816614520000   0.222603240000 AA   -1.924184411172  -1.543177792143   0.420659158041 Bohr   0.0
+[INPUT]  4 F     -2.165871460000  -0.987172700000  -0.433837440000 AA   -4.092903880412  -1.865486040647  -0.819833944182 Bohr   0.0
+[INPUT]  5 F     -1.322738880000  -0.287659270000   1.413320410000 AA   -2.499614217514  -0.543597237492   2.670788501158 Bohr   0.0
+[INPUT]  6 F     -0.498363640000  -2.023807280000   0.434073350000 AA   -0.941770790041  -3.824441488101   0.820279749472 Bohr   0.0
+[INPUT]  7 C      1.295250450000   0.244505130000   0.125528170000 AA    2.447668613220   0.462047731751   0.237213862218 Bohr   0.0
+[INPUT]  8 F      1.175301490000   0.858111270000   1.308500570000 AA    2.220997929893   1.621595284703   2.472707711137 Bohr   0.0
+[INPUT]  9 F      2.124820730000   0.980824970000  -0.613877790000 AA    4.015329243498   1.853490569435  -1.160060897053 Bohr   0.0
+[INPUT] 10 F      1.885578100000  -0.930371220000   0.334043390000 AA    3.563226195478  -1.758146799977   0.631250520821 Bohr   0.0
+[INPUT] 11 H     -0.820416310000   1.797942080000   0.101092520000 AA   -1.550362134026   3.397618119031   0.191037176042 Bohr   0.0
+[INPUT] 12 H      0.079466650000  -0.316726070000  -1.568262840000 AA    0.150170204537  -0.598525528810  -2.963587258933 Bohr   0.0
+
+nuclear repulsion = 664.419427498052
+number of shells = 118
+number of NR pGTOs = 476
+number of NR cGTOs = 322
+basis = def2-tzvp
+ecp = {}
+CPU time:        25.64
+
+
+******** <class 'pyscf.df.df_jk.DFRKS'> ********
+method = DFRKS
+initial guess = minao
+damping factor = 0
+level_shift factor = 0
+DIIS = <class 'pyscf.scf.diis.CDIIS'>
+diis_start_cycle = 1
+diis_space = 8
+diis_damp = 0
+SCF conv_tol = 1e-11
+SCF conv_tol_grad = None
+SCF max_cycles = 100
+direct_scf = False
+max_memory 1500 MB (current use 0 MB)
+XC library pyscf.dft.libxc version 7.0.0
+    S. Lehtola, C. Steigemann, M. J.T. Oliveira, and M. A.L. Marques.,  SoftwareX 7, 1–5 (2018)
+XC functionals = pbe0
+    C. Adamo and V. Barone.,  J. Chem. Phys. 110, 6158 (1999)
+    M. Ernzerhof and G. E. Scuseria.,  J. Chem. Phys. 110, 5029 (1999)
+radial grids: 
+    Treutler-Ahlrichs [JCP 102, 346 (1995); DOI:10.1063/1.469408] (M4) radial grids
+    
+becke partition: Becke, JCP 88, 2547 (1988); DOI:10.1063/1.454033
+pruning grids: <function nwchem_prune at 0x109ce67a0>
+grids dens level: 3
+symmetrized grids: False
+atomic radii adjust function: <function treutler_atomic_radii_adjust at 0x109ce6ca0>
+small_rho_cutoff = 0
+Set gradient conv threshold to 3.16228e-06
+tot grids = 161624
+******** <class 'pyscf.df.df.DF'> ********
+auxbasis = None
+max_memory = 1500
+init E= -789.391203555633
+  HOMO = -0.348390170907241  LUMO = 0.0261022793789465  gap/eV = 10.19046
+cycle= 1 E= -789.391203634934  delta_E= -7.93e-08  |g|= 0.00048  |ddm|= 0.00309
+  HOMO = -0.348330361745294  LUMO = 0.0260948139420591  gap/eV = 10.18863
+cycle= 2 E= -789.391203604465  delta_E= 3.05e-08  |g|= 0.000693  |ddm|= 0.00119
+  HOMO = -0.34836221792704  LUMO = 0.0260958326280836  gap/eV = 10.18952
+cycle= 3 E= -789.391203679744  delta_E= -7.53e-08  |g|= 6.32e-05  |ddm|= 0.000486
+  HOMO = -0.348361033945974  LUMO = 0.0260981455525027  gap/eV = 10.18955
+cycle= 4 E= -789.391203680409  delta_E= -6.66e-10  |g|= 1.15e-05  |ddm|= 8.54e-05
+  HOMO = -0.348361424303327  LUMO = 0.0260979788337892  gap/eV = 10.18956
+cycle= 5 E= -789.391203680427  delta_E= -1.82e-11  |g|= 4.15e-06  |ddm|= 8.2e-06
+  HOMO = -0.348361626634457  LUMO = 0.0260978587813092  gap/eV = 10.18956
+cycle= 6 E= -789.39120368043  delta_E= -2.73e-12  |g|= 1.04e-06  |ddm|= 3.01e-06
+  HOMO = -0.348361580212682  LUMO = 0.0260979196753688  gap/eV = 10.18956
+Extra cycle  E= -789.391203680433  delta_E= -2.73e-12  |g|= 1.46e-06  |ddm|= 1.69e-06
+converged SCF energy = -789.391203680433

@@ -1,0 +1,17 @@
+{
+  "functional": "omegaB97M-V with VV10 nonlocal correlation",
+  "basis": "def2-tzvpd",
+  "energy_Ha": -789.9843850339116,
+  "SCF_converged": true,
+  "no_additional_D3": true,
+  "geometry_sha256": "4cc8d94bc40b4c2f9350834bc4f1ba288f57794f3a5a25795f233c9a22bdf62b",
+  "basis_functions": 818,
+  "real_atoms": 12,
+  "ghost_atoms": 12,
+  "grid_level": 3,
+  "nlc_grid_level": 0,
+  "starting_density_grid": null,
+  "initial_density_kind": "converged isolated-fragment block density",
+  "SCF_wall_cap_minutes": 20.0,
+  "elapsed_seconds": 539.8276392079424
+}

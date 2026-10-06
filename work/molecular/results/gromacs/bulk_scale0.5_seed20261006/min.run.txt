@@ -1,0 +1,29 @@
+                :-) GROMACS - gmx mdrun, 2026.3-conda_forge (-:
+
+Executable:   /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin.ARM_NEON_ASIMD/gmx
+Data prefix:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env
+Working dir:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/gromacs/bulk_scale0.5_seed20261006
+Command line:
+  gmx mdrun -deffnm min -ntmpi 1 -ntomp 2 -pin off -nice 8
+
+Reading file min.tpr, VERSION 2026.3-conda_forge (single precision)
+Update groups can not be used for this system because atoms that are (in)directly constrained together are interdispersed with other atoms
+
+Using 1 MPI thread
+Using 2 OpenMP threads 
+
+
+Steepest Descents:
+   Tolerance (Fmax)   =  5.00000e+02
+   Number of steps    =         5000
+
+writing lowest energy coordinates.
+
+Steepest Descents converged to Fmax < 500 in 10 steps
+Potential Energy  =  1.4115332e+03
+Maximum force     =  4.5662515e+02 on atom 1425
+Norm of force     =  1.3670978e+02
+
+GROMACS reminds you: "Act like Prometheus would" (Gogol Bordello)
+
+{"guard": {"command": ["/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin/gmx", "mdrun", "-deffnm", "min", "-ntmpi", "1", "-ntomp", "2", "-pin", "off", "-nice", "8"], "pid": 7182, "exitcode": 0, "peak_RSS_MB": 1.59375, "elapsed_seconds": 2.0105281251017004, "termination_reason": null}}

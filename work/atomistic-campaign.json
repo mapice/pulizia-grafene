@@ -1,0 +1,2088 @@
+{
+  "status": "active_liquid_internal_relaxation_and_longrange_quantum_audits",
+  "date": "2026-10-06",
+  "target": "Rimozione del residuo sulla faccia esposta di grafene CVD monostrato già trasferito su SiO2/Si, preservando i cristalli per successivo dry pick-up e stack",
+  "known_sample": {
+    "support_polymers": [
+      "PMMA AR-P 672.045 nominale 950K",
+      "PPC"
+    ],
+    "thermal_step_reported": "90 C, 2 min; ulteriori passaggi non specificati",
+    "residue_timing": "visibile subito dopo trasferimento, prima della litografia",
+    "residue_identity": "PMMA probabile secondo l'esperto; composizione non misurata",
+    "later_stamp": "PC/PDMS, non presente durante la contaminazione iniziale",
+    "reference_treatment": "DMF30 min; IPA5+3; THF30; IPA5+3; N2; agitazione500rpm; beneficio scarso non quantificato"
+  },
+  "initial_solvent_comparison": [
+    "DMF",
+    "THF",
+    "HFIP"
+  ],
+  "initial_residue_models": [
+    "PMMA fisicamente adsorbito sulla faccia superiore",
+    "PPC e miscela PMMA/PPC sulla faccia superiore"
+  ],
+  "distinct_falsification_models": [
+    "residuo sepolto o schermato dal grafene",
+    "frazione covalentemente ancorata o contaminante non polimerico"
+  ],
+  "observables_to_compute": [
+    "energia libera del distacco polimero-grafene in solvente esplicito",
+    "barriera del percorso di distacco e riaggancio",
+    "penetrazione del solvente nell'interfaccia e rilascio progressivo dei contatti",
+    "stabilità dell'interfaccia grafene-SiO2 nel liquido",
+    "persistenza del solvente adsorbito dopo estrazione"
+  ],
+  "sampling_coordinates_candidates": [
+    "numero continuo dei contatti polimero-grafene",
+    "numero di molecole di solvente nello spazio interfaciale",
+    "distanza e conformazione della catena rispetto al grafene"
+  ],
+  "method": {
+    "classical_engine_candidate": "GROMACS2026.3 ARM NEON, PLUMED-enabled; OpenMM independent checks",
+    "free_energy": "umbrella sampling o metadinamica con controllo di convergenza e variabili nascoste",
+    "kinetics": "campionamento di eventi rari, non tempi letti direttamente da traiettorie accelerate",
+    "quantum_role": "validare interazioni locali decisive e canali chimici rilevanti",
+    "learned_potential_candidate": "UMA solo dopo verifica del dominio e confronto con riferimenti quantistici dell'interfaccia",
+    "long_chain_limit": "serie di lunghezze e conformazioni; nessuna identificazione automatica dell'oligomero con PMMA950K"
+  },
+  "required_checks_before_solvent_ranking": [
+    "provenienza e compatibilità dei parametri PMMA, PPC, solventi, grafene e superficie SiO2 idrossilata",
+    "confronto densità e struttura dei solventi con dati disponibili",
+    "riferimenti quantistici per interazioni fra componenti differenti, non solo componenti puri",
+    "equilibrazione, sovrapposizione finestre, repliche e isteresi adsorbimento/distacco",
+    "sensibilità a lunghezza, tatticità, copertura e stato superficiale",
+    "coerenza con i fallimenti noti senza adattare arbitrariamente i parametri",
+    "nessuna dichiarazione di assenza di reazioni da un modello a legami fissi"
+  ],
+  "local_environment_observed": {
+    "cpu": "Apple M1 Pro",
+    "memory_bytes": 17179869184,
+    "logical_cpus": 8,
+    "molecular_engines_found": [],
+    "libraries_found_in_bundled_python": [],
+    "libraries_checked": [
+      "openmm",
+      "openff",
+      "ase",
+      "rdkit",
+      "torch",
+      "mace",
+      "fairchem",
+      "jax"
+    ],
+    "runtime_or_cost_estimate": null,
+    "isolated_environment": "work/molecular/.venv",
+    "environment_size_bytes_approx": 1500000000,
+    "engines_verified": [
+      "TBLite GFN2-xTB",
+      "PySCF PBE0-D3(BJ)",
+      "OpenMM CPU",
+      "MACE-OFF23 CPU64 and Metal32",
+      "GROMACS2026.3 ARM NEON"
+    ],
+    "gpu_status": "MACE-OFF23 Metal32 actually evaluated; diagnostic-node dtype compatibility patch recorded; CPU64 reference preserved",
+    "thread_cap_requested": 2,
+    "rss_cap_MB": 3000
+  },
+  "sources": [
+    {
+      "doi": "10.1021/acs.macromol.8b01160",
+      "role": "PMMA-grafene atomistico",
+      "limit": "basse masse e490-580K; non solventi di pulizia aRT"
+    },
+    {
+      "doi": "10.3390/polym12102275",
+      "role": "cinètica desorbimento eventi rari",
+      "limit": "modelli generici, non PMMA950K del campione"
+    },
+    {
+      "doi": "10.1002/cphc.202100620",
+      "role": "parametrizzazione e struttura HFIP in miscele",
+      "limit": "deviazioni densità delle miscele fino a circa11%; non validazione PMMA-grafene"
+    },
+    {
+      "url": "https://arxiv.org/abs/2506.23971",
+      "role": "potenziale atomistico appreso UMA",
+      "limit": "nessuna qualificazione specifica già dimostrata per questo problema"
+    },
+    {
+      "url": "https://www.plumed.org/doc-v2.9/user-doc/html/belfast-4.html",
+      "role": "calcolo energie libere con umbrella sampling"
+    }
+  ],
+  "computed_solvent_ranking": null,
+  "experimentally_validated_solution": false,
+  "completed_computation": {
+    "gfn2": {
+      "monomers": 12,
+      "dimers": 13,
+      "starts_each": 3,
+      "all_refined_starts_converged": true,
+      "peak_rss_MB": 122.890625,
+      "elapsed_seconds_refinement": 51.432,
+      "scope": "vacuum electronic molecular-proxy energies"
+    },
+    "dft_pilot": {
+      "pair": "HFIP/methyl acetate",
+      "interaction_counterpoise_kJ_mol": -45.2849,
+      "interaction_raw_kJ_mol": -65.4554,
+      "peak_rss_MB": 1329.15625,
+      "all_SCF_converged": true,
+      "scope": "PBE0-D3BJ/def2SVP at GFN2 geometry; not liquid free energy"
+    },
+    "dft": {
+      "pairs_SVP": 7,
+      "pairs_TZVP": 3,
+      "all_SCF_converged": true,
+      "HFIP_ester_TZVP_CP_kJ_mol": -44.3397864,
+      "AceticAcid_ester_TZVP_CP_kJ_mol": -47.5306668,
+      "IPA_ester_TZVP_CP_kJ_mol": -28.0064749,
+      "scope": "Vacuum frozen-fragment electronic energies, not solvent ranking"
+    },
+    "bulk_HFIP": {
+      "scope": "Bulk HFIP pilot, not interface cleaning. One seed, 125 molecules, 1-4 scaling0.5 assumed. Dielectric estimate not a converged experimental prediction.",
+      "last_ps": 1000.0,
+      "analysis_start_ps": 200,
+      "density_g_cm3": 1.5723039899575528,
+      "density_sd_g_cm3": 0.022298602684993774,
+      "temperature_K": 298.288100835206,
+      "volume_nm3": 22.188077128589264,
+      "dielectric_GROMACS": 1.63475,
+      "dielectric_independent_SI": 1.6347446622831363,
+      "dipole_variance_Debye2": 138.40408442960015,
+      "dipole_frames": 801,
+      "density_reference_experimental_g_cm3": 1.607,
+      "dielectric_reference_experimental": 16.7,
+      "reference_doi": "10.1002/psc.3543",
+      "blocks": [
+        {
+          "time_start_ps": 200.0,
+          "time_end_ps": 400.0,
+          "density_g_cm3": 1.56752449840796,
+          "temperature_K": 298.05777935820896
+        },
+        {
+          "time_start_ps": 401.0,
+          "time_end_ps": 600.0,
+          "density_g_cm3": 1.578073008415,
+          "temperature_K": 298.633713685
+        },
+        {
+          "time_start_ps": 601.0,
+          "time_end_ps": 800.0,
+          "density_g_cm3": 1.573245515755,
+          "temperature_K": 297.91757278
+        },
+        {
+          "time_start_ps": 801.0,
+          "time_end_ps": 1000.0,
+          "density_g_cm3": 1.57039683471,
+          "temperature_K": 298.544489125
+        }
+      ],
+      "forcefield_qualified_for_desorption": false,
+      "qualification_reason": "Density alone insufficient; preliminary dielectric response much too small, requiring further convergence/control/parameter audit before quantitative solvent ranking."
+    },
+    "MACE_Polar": {
+      "model": "MACE-POLAR-1-S official release",
+      "pairs": 13,
+      "peak_RSS_MB": 1258.328125,
+      "elapsed_seconds": 10.9365,
+      "graph_longrange_version": "0.4.0 matches original checkpoint and caller; 0.4.3/4.4 incompatible data layout",
+      "scope": "Gas frozen electronic interactions, no interface qualification"
+    },
+    "field_response": {
+      "DFT_method": "PBE0/def2-TZVP",
+      "DFT_alpha_z_eA2_V": 0.42420354,
+      "learned_alpha_z_eA2_V": -0.03352085,
+      "geometry": "Same GFN2 refined HFIP",
+      "field_magnitude_V_A": 0.01,
+      "status": "Discrepancy requires convention/implementation/domain audit; learned response not used for bulk physics"
+    },
+    "bulk_HFIP_scale14_1": {
+      "scope": "Bulk HFIP pilot, not interface cleaning. One seed, 125 molecules; dielectric not a converged experimental prediction.",
+      "scale14": 1.0,
+      "seed": 20261006,
+      "last_ps": 500.0,
+      "analysis_start_ps": 200.0,
+      "density_g_cm3": 1.5939607209435216,
+      "density_sd_g_cm3": 0.02456999346829902,
+      "temperature_K": 298.00702298006644,
+      "volume_nm3": 21.887431013289035,
+      "dielectric_GROMACS": 3.40073,
+      "dielectric_independent_SI": 3.4007288405327296,
+      "dipole_variance_Debye2": 516.3771537371545,
+      "dipole_frames": 301,
+      "density_reference_experimental_g_cm3": 1.607,
+      "dielectric_reference_experimental": 16.7,
+      "reference_doi": "10.1002/psc.3543",
+      "blocks": [
+        {
+          "time_start_ps": 200.0,
+          "time_end_ps": 275.0,
+          "density_g_cm3": 1.5734500588157894,
+          "temperature_K": 297.9150932631578
+        },
+        {
+          "time_start_ps": 276.0,
+          "time_end_ps": 350.0,
+          "density_g_cm3": 1.60852152668,
+          "temperature_K": 297.8720292
+        },
+        {
+          "time_start_ps": 351.0,
+          "time_end_ps": 425.0,
+          "density_g_cm3": 1.6084238460800002,
+          "temperature_K": 297.69713170666665
+        },
+        {
+          "time_start_ps": 426.0,
+          "time_end_ps": 500.0,
+          "density_g_cm3": 1.5857209276933333,
+          "temperature_K": 298.54506348
+        }
+      ],
+      "forcefield_qualified_for_desorption": false,
+      "qualification_reason": "Density alone insufficient; response, convergence, conventions and interfacial interactions require validation before quantitative solvent ranking."
+    },
+    "HFIP_rotor_scan": {
+      "method": "PBE0-D3(BJ)/def2TZVP",
+      "angles": 12,
+      "maximum_frozen_energy_difference_kJ_mol": 15.074721729848534,
+      "wall_seconds": 132.45999670797028,
+      "peak_RSS_MB": 1497.109375,
+      "direct_classical_OpenMM_check": {
+        "0.5": 8.526512829121202e-14,
+        "1.0": 1.7053025658242404e-13
+      },
+      "scope": "Frozen gas OH rotation, not liquid PMF"
+    },
+    "HFIP_liquid_rotors": [
+      {
+        "scale14": 0.5,
+        "first_ps": 200.0,
+        "last_ps": 1000.0,
+        "frames": 161,
+        "molecules": 125,
+        "observations": 20125,
+        "observations_independent": false,
+        "ap_fraction_within30deg": 0.7544844720496895,
+        "syn_fraction_within30deg": 0.006757763975155279,
+        "histogram_centers_degree": [
+          -177.5,
+          -172.5,
+          -167.5,
+          -162.5,
+          -157.5,
+          -152.5,
+          -147.5,
+          -142.5,
+          -137.5,
+          -132.5,
+          -127.5,
+          -122.5,
+          -117.5,
+          -112.5,
+          -107.5,
+          -102.5,
+          -97.5,
+          -92.5,
+          -87.5,
+          -82.5,
+          -77.5,
+          -72.5,
+          -67.5,
+          -62.5,
+          -57.5,
+          -52.5,
+          -47.5,
+          -42.5,
+          -37.5,
+          -32.5,
+          -27.5,
+          -22.5,
+          -17.5,
+          -12.5,
+          -7.5,
+          -2.5,
+          2.5,
+          7.5,
+          12.5,
+          17.5,
+          22.5,
+          27.5,
+          32.5,
+          37.5,
+          42.5,
+          47.5,
+          52.5,
+          57.5,
+          62.5,
+          67.5,
+          72.5,
+          77.5,
+          82.5,
+          87.5,
+          92.5,
+          97.5,
+          102.5,
+          107.5,
+          112.5,
+          117.5,
+          122.5,
+          127.5,
+          132.5,
+          137.5,
+          142.5,
+          147.5,
+          152.5,
+          157.5,
+          162.5,
+          167.5,
+          172.5,
+          177.5
+        ],
+        "histogram_density_per_degree": [
+          0.016775155279503108,
+          0.015264596273291926,
+          0.014072049689440994,
+          0.011577639751552795,
+          0.009500621118012422,
+          0.0070857142857142855,
+          0.006101863354037267,
+          0.0042335403726708075,
+          0.0034086956521739127,
+          0.002424844720496894,
+          0.002067080745341615,
+          0.0013813664596273292,
+          0.0011527950310559006,
+          0.0009043478260869564,
+          0.0006161490683229814,
+          0.00039751552795031056,
+          0.00028819875776397514,
+          0.00019875776397515528,
+          0.00021863354037267082,
+          0.00012919254658385094,
+          6.956521739130434e-05,
+          5.9627329192546584e-05,
+          4.968944099378882e-05,
+          3.9751552795031056e-05,
+          1.9875776397515528e-05,
+          1.9875776397515528e-05,
+          2.9813664596273292e-05,
+          0.0,
+          2.9813664596273292e-05,
+          9.937888198757764e-06,
+          9.937888198757764e-06,
+          9.937888198757764e-06,
+          9.937888198757764e-06,
+          0.0,
+          9.937888198757764e-06,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.9875776397515528e-05,
+          3.9751552795031056e-05,
+          3.9751552795031056e-05,
+          2.9813664596273292e-05,
+          3.9751552795031056e-05,
+          9.937888198757764e-05,
+          4.968944099378882e-05,
+          3.9751552795031056e-05,
+          8.944099378881988e-05,
+          6.956521739130434e-05,
+          0.00015900621118012423,
+          0.0002583850931677019,
+          0.00035776397515527953,
+          0.000377639751552795,
+          0.0005763975155279503,
+          0.0006956521739130435,
+          0.0011925465838509316,
+          0.0015304347826086957,
+          0.001977639751552795,
+          0.0028024844720496893,
+          0.003915527950310559,
+          0.004452173913043478,
+          0.006409937888198758,
+          0.007870807453416149,
+          0.010007453416149068,
+          0.011786335403726707,
+          0.014429813664596272,
+          0.015960248447204967,
+          0.016556521739130435
+        ],
+        "scope": "Internal rotor in simulated liquid; no experimentally assigned population, no cleaning prediction",
+        "conventional_quartet_one_based": [
+          11,
+          1,
+          2,
+          12
+        ]
+      },
+      {
+        "scale14": 1.0,
+        "first_ps": 200.0,
+        "last_ps": 500.0,
+        "frames": 61,
+        "molecules": 125,
+        "observations": 7625,
+        "observations_independent": false,
+        "ap_fraction_within30deg": 0.27357377049180326,
+        "syn_fraction_within30deg": 0.26819672131147543,
+        "histogram_centers_degree": [
+          -177.5,
+          -172.5,
+          -167.5,
+          -162.5,
+          -157.5,
+          -152.5,
+          -147.5,
+          -142.5,
+          -137.5,
+          -132.5,
+          -127.5,
+          -122.5,
+          -117.5,
+          -112.5,
+          -107.5,
+          -102.5,
+          -97.5,
+          -92.5,
+          -87.5,
+          -82.5,
+          -77.5,
+          -72.5,
+          -67.5,
+          -62.5,
+          -57.5,
+          -52.5,
+          -47.5,
+          -42.5,
+          -37.5,
+          -32.5,
+          -27.5,
+          -22.5,
+          -17.5,
+          -12.5,
+          -7.5,
+          -2.5,
+          2.5,
+          7.5,
+          12.5,
+          17.5,
+          22.5,
+          27.5,
+          32.5,
+          37.5,
+          42.5,
+          47.5,
+          52.5,
+          57.5,
+          62.5,
+          67.5,
+          72.5,
+          77.5,
+          82.5,
+          87.5,
+          92.5,
+          97.5,
+          102.5,
+          107.5,
+          112.5,
+          117.5,
+          122.5,
+          127.5,
+          132.5,
+          137.5,
+          142.5,
+          147.5,
+          152.5,
+          157.5,
+          162.5,
+          167.5,
+          172.5,
+          177.5
+        ],
+        "histogram_density_per_degree": [
+          0.005350819672131147,
+          0.0046950819672131145,
+          0.004222950819672132,
+          0.004773770491803279,
+          0.00419672131147541,
+          0.003908196721311476,
+          0.0035672131147540982,
+          0.003304918032786885,
+          0.0024131147540983606,
+          0.00220327868852459,
+          0.002019672131147541,
+          0.0017573770491803278,
+          0.0014688524590163933,
+          0.0016262295081967213,
+          0.001442622950819672,
+          0.0012327868852459016,
+          0.0012327868852459016,
+          0.0011278688524590163,
+          0.0012852459016393443,
+          0.0011540983606557378,
+          0.0015999999999999999,
+          0.001442622950819672,
+          0.0018360655737704918,
+          0.0015737704918032786,
+          0.00259672131147541,
+          0.00280655737704918,
+          0.0029901639344262296,
+          0.003042622950819672,
+          0.003147540983606557,
+          0.0031999999999999997,
+          0.0035934426229508195,
+          0.003540983606557377,
+          0.0036721311475409837,
+          0.0038295081967213112,
+          0.0035672131147540982,
+          0.0033311475409836065,
+          0.0034885245901639344,
+          0.003986885245901639,
+          0.0038557377049180325,
+          0.003777049180327869,
+          0.003724590163934426,
+          0.0036459016393442624,
+          0.003436065573770492,
+          0.0032262295081967214,
+          0.002754098360655738,
+          0.002859016393442623,
+          0.002754098360655738,
+          0.002465573770491803,
+          0.002072131147540984,
+          0.0016524590163934426,
+          0.001862295081967213,
+          0.0013377049180327868,
+          0.0012590163934426228,
+          0.0012852459016393443,
+          0.0010754098360655736,
+          0.0011278688524590163,
+          0.0012327868852459016,
+          0.0013114754098360656,
+          0.0013901639344262296,
+          0.0017836065573770491,
+          0.0019672131147540984,
+          0.0022295081967213114,
+          0.0022295081967213114,
+          0.002622950819672131,
+          0.0039606557377049175,
+          0.003304918032786885,
+          0.0036459016393442624,
+          0.004118032786885246,
+          0.004721311475409836,
+          0.004852459016393443,
+          0.0048000000000000004,
+          0.0054295081967213115
+        ],
+        "scope": "Internal rotor in simulated liquid; no experimentally assigned population, no cleaning prediction",
+        "conventional_quartet_one_based": [
+          11,
+          1,
+          2,
+          12
+        ]
+      }
+    ],
+    "GAFF2_comparators": [
+      {
+        "name": "HFIP",
+        "smiles": "OC(C(F)(F)F)C(F)(F)F",
+        "residue": "HFI",
+        "atoms": 12,
+        "method": "GAFF2/AM1-BCC via AmberTools26",
+        "charges_e": [
+          -0.5398835,
+          0.0690165,
+          0.6028165,
+          -0.2197165,
+          -0.2197165,
+          -0.2197165,
+          0.6028165,
+          -0.2197165,
+          -0.2197165,
+          -0.2197165,
+          0.4359165,
+          0.1476165
+        ],
+        "charge_total_e": -6.938893903907228e-17,
+        "generated_unadjusted_charge_total_e": 0.0010020000000000584,
+        "neutrality_correction_per_atom_e": -8.350000000000486e-05,
+        "neutrality_method": "Minimum L2 charge correction under sum(q)=0; bounded .005e total; original charges kept",
+        "logs": [
+          {
+            "stage": "antechamber",
+            "command": [
+              "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/antechamber",
+              "-i",
+              "input.sdf",
+              "-fi",
+              "sdf",
+              "-o",
+              "molecule.mol2",
+              "-fo",
+              "mol2",
+              "-c",
+              "bcc",
+              "-nc",
+              "0",
+              "-at",
+              "gaff2",
+              "-rn",
+              "HFI",
+              "-s",
+              "2",
+              "-pf",
+              "y"
+            ],
+            "seconds": 2.0646483751479536
+          },
+          {
+            "stage": "parmchk",
+            "command": [
+              "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/parmchk2",
+              "-i",
+              "molecule.mol2",
+              "-f",
+              "mol2",
+              "-s",
+              "gaff2",
+              "-o",
+              "molecule.frcmod"
+            ],
+            "seconds": 2.0938788750208914
+          },
+          {
+            "stage": "tleap",
+            "command": [
+              "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/tleap",
+              "-f",
+              "leap.in"
+            ],
+            "seconds": 2.1268218338955194
+          },
+          {
+            "stage": "convert",
+            "command": [
+              "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/python",
+              "-c",
+              "import parmed as p; s=p.load_file(\"molecule.prmtop\",xyz=\"molecule.inpcrd\"); s.save(\"molecule.top\",overwrite=False); s.save(\"molecule.gro\",overwrite=False); print(\"atoms\",len(s.atoms),\"charge\",sum(a.charge for a in s.atoms)); print(\"charges\",[(a.name,a.type,a.charge) for a in s.atoms])"
+            ],
+            "seconds": 2.1249207919463515
+          }
+        ],
+        "file_sha256": {
+          "molecule.inpcrd": "7f39825cfc54a25efa180ce7e03150c07c4b5036a3531e43b98943796ffa635a",
+          "antechamber.log": "cd4901c01b78e85ba313ac151669497484676bae5813bca8472a55a8876e4261",
+          "sqm.out": "7464e5d575404ef440b95a102b08e1220d0b50f1261a41381da1b0639a7bccc0",
+          "leap.log": "132cddbda929e44f4cbc30837b68d292e8b11a5b4943c0764f2f564e924ce1b7",
+          "convert.log": "d34cc03ce81e1e3f88092af092156b91026c928d17b6aa1419f7af3c534b47f7",
+          "molecule.gro": "7547328c62f4721f45fc875760ae4cc0cc9046060face83c668332289fc4dcef",
+          "leap.in": "a97015f455418202a6dd870b8285adca2ce5b68136221486ce22ea9d29f6414e",
+          "parmchk.log": "563757cf6f4a4265c18c777b444d65ec5bae7723c4c0e6f1dec9c0d9323dd596",
+          "input.sdf": "54b7cd3c6ed308f075ecea435210dc7dd976978b448ffc788c64ff9687c7ac40",
+          "molecule.top": "03bbb3365cd4b4d650ffcc15040e514d19f856b29976c8c058b891164467c02b",
+          "sqm.in": "a8a56f19eaa4c86e42bb5d40fc702c3ab367a5ef1a8be7410d352dfb435fa2d7",
+          "molecule.prmtop": "0a3e276b76ee8c9b9a46830412138662153e1d196638aa2badc8dc7096fe1749",
+          "molecule.mol2": "538e016fcd0e39650e07e4127e1b960bf31e3dc97fef2364a6e017dbf6fda432",
+          "molecule-unadjusted.mol2": "d1666ff1439a71adf6116ab9a27b5ad4cb4c3db0bcf8a1b9b2edfc8b12c93651",
+          "sqm.pdb": "2c85d8e5f2d4543e1ec2f54e8abdc13eaed81df487edd0333f5adb1923bd0643",
+          "tleap.log": "a08582b026bc2b20b81274e9924d462ab4e5274e6f82c8b88285da5b37ac6601",
+          "molecule.frcmod": "bf922808a85c35c2c11e49229322f906ba4bfc17fa247ee240d7221744a82dd5"
+        },
+        "scope": "Comparator force field generated, not qualified for bulk/interfacial desorption.",
+        "source": "https://ambermd.org/AmberTools.php"
+      },
+      {
+        "name": "DMF",
+        "smiles": "CN(C)C=O",
+        "residue": "DMF",
+        "atoms": 12,
+        "method": "GAFF2/AM1-BCC via AmberTools26",
+        "charges_e": [
+          0.079383333333,
+          -0.494716666667,
+          0.079383333333,
+          0.660983333333,
+          -0.604016666667,
+          0.041783333333,
+          0.041783333333,
+          0.041783333333,
+          0.041783333333,
+          0.041783333333,
+          0.041783333333,
+          0.028283333333
+        ],
+        "charge_total_e": -4.00004682155064e-12,
+        "generated_unadjusted_charge_total_e": -0.0009999999999999488,
+        "neutrality_correction_per_atom_e": 8.333333333332908e-05,
+        "neutrality_method": "Minimum L2 charge correction under sum(q)=0; bounded .005e total; original charges kept",
+        "logs": [
+          {
+            "stage": "antechamber",
+            "command": [
+              "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/antechamber",
+              "-i",
+              "input.sdf",
+              "-fi",
+              "sdf",
+              "-o",
+              "molecule.mol2",
+              "-fo",
+              "mol2",
+              "-c",
+              "bcc",
+              "-nc",
+              "0",
+              "-at",
+              "gaff2",
+              "-rn",
+              "DMF",
+              "-s",
+              "2",
+              "-pf",
+              "y"
+            ],
+            "seconds": 2.069681332912296
+          },
+          {
+            "stage": "parmchk",
+            "command": [
+              "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/parmchk2",
+              "-i",
+              "molecule.mol2",
+              "-f",
+              "mol2",
+              "-s",
+              "gaff2",
+              "-o",
+              "molecule.frcmod"
+            ],
+            "seconds": 2.102496583946049
+          },
+          {
+            "stage": "tleap",
+            "command": [
+              "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/tleap",
+              "-f",
+              "leap.in"
+            ],
+            "seconds": 2.084998708916828
+          },
+          {
+            "stage": "convert",
+            "command": [
+              "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/python",
+              "-c",
+              "import parmed as p; s=p.load_file(\"molecule.prmtop\",xyz=\"molecule.inpcrd\"); s.save(\"molecule.top\",overwrite=False); s.save(\"molecule.gro\",overwrite=False); print(\"atoms\",len(s.atoms),\"charge\",sum(a.charge for a in s.atoms)); print(\"charges\",[(a.name,a.type,a.charge) for a in s.atoms])"
+            ],
+            "seconds": 2.0684259578119963
+          }
+        ],
+        "file_sha256": {
+          "molecule.inpcrd": "08d128239b06b12eb0bc80923f63d7c2758dac655cb2e49fe15b89f6df71e1f9",
+          "antechamber.log": "bd8d5f823b557fc1b2494dfaa78846093e32ee6f06229bfee3e80c51ac1ed110",
+          "sqm.out": "bb976eb00156fd27ed52b68e67e9c502e7696fd689039bfd774d83b3aa032b2e",
+          "leap.log": "57e892b5f61152db20a0de8b5771dc42097298f3798d8c66506ef9993dbd27fe",
+          "convert.log": "cebf1a1ecd7646c8f6458f63df7c1145575d987368279d5ce26dae8f8e3df31f",
+          "molecule.gro": "e286305c1385aa98ae02b94836b49e0e3ce30bb79cb3daa89928eba8e9f74ad7",
+          "leap.in": "a97015f455418202a6dd870b8285adca2ce5b68136221486ce22ea9d29f6414e",
+          "parmchk.log": "0d7cc29ae0e4d0c5e4420934eb673b21032b9e47a8be24cc53a3c44cc4da2593",
+          "input.sdf": "4d1933e387038c2709841568463ee564595c0cd872b74544ef5a29e6dbb0131d",
+          "molecule.top": "42922bd5231e92d5c666c41d78d52c2bd57174aec52adf64512084a2c26b4ff9",
+          "sqm.in": "d738a4a6eff5d434a3dac9d53e6ea98ab4ec8dba1fd885aec653953bbab7dc3b",
+          "molecule.prmtop": "283a3df3cbcb2ae82a8e71610eae2c961b56f52a0840a017a25ec69a6b0c190e",
+          "molecule.mol2": "6f2856eb22c74d705f331642a5ea45b3258c233c94eb9ffb0009749cdd8d3711",
+          "molecule-unadjusted.mol2": "c534e9179b46ee7ef9d70cea5751ede0c011863f5d6f88e3bbddb39827a09e88",
+          "sqm.pdb": "d057e21dc6b222b5c83fe101cff93fef8d0b1e1a7a3042acc50afcb7f9fa7a7b",
+          "tleap.log": "19b8d2cfb5b1dcf72a762d7cbecbc324b878f2e63691c58bf880c3437a555095",
+          "molecule.frcmod": "9fb79fb6028ab7ab0c97c6dbd167cf729d43a10d594c93ff82d84b2db2de1aff"
+        },
+        "scope": "Comparator force field generated, not qualified for bulk/interfacial desorption.",
+        "source": "https://ambermd.org/AmberTools.php"
+      },
+      {
+        "name": "THF",
+        "smiles": "C1CCOC1",
+        "residue": "THF",
+        "atoms": 13,
+        "method": "GAFF2/AM1-BCC via AmberTools26",
+        "charges_e": [
+          -0.1064,
+          -0.1064,
+          0.1274,
+          -0.4276,
+          0.1274,
+          0.0517,
+          0.0517,
+          0.0517,
+          0.0517,
+          0.0447,
+          0.0447,
+          0.0447,
+          0.0447
+        ],
+        "charge_total_e": 5.551115123125783e-17,
+        "generated_unadjusted_charge_total_e": 5.551115123125783e-17,
+        "neutrality_correction_per_atom_e": -4.270088556250602e-18,
+        "neutrality_method": "Minimum L2 charge correction under sum(q)=0; bounded .005e total; original charges kept",
+        "logs": [
+          {
+            "stage": "antechamber",
+            "command": [
+              "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/antechamber",
+              "-i",
+              "input.sdf",
+              "-fi",
+              "sdf",
+              "-o",
+              "molecule.mol2",
+              "-fo",
+              "mol2",
+              "-c",
+              "bcc",
+              "-nc",
+              "0",
+              "-at",
+              "gaff2",
+              "-rn",
+              "THF",
+              "-s",
+              "2",
+              "-pf",
+              "y"
+            ],
+            "seconds": 2.0881592920050025
+          },
+          {
+            "stage": "parmchk",
+            "command": [
+              "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/parmchk2",
+              "-i",
+              "molecule.mol2",
+              "-f",
+              "mol2",
+              "-s",
+              "gaff2",
+              "-o",
+              "molecule.frcmod"
+            ],
+            "seconds": 2.0917569999583066
+          },
+          {
+            "stage": "tleap",
+            "command": [
+              "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/tleap",
+              "-f",
+              "leap.in"
+            ],
+            "seconds": 2.1208543330430984
+          },
+          {
+            "stage": "convert",
+            "command": [
+              "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/python",
+              "-c",
+              "import parmed as p; s=p.load_file(\"molecule.prmtop\",xyz=\"molecule.inpcrd\"); s.save(\"molecule.top\",overwrite=False); s.save(\"molecule.gro\",overwrite=False); print(\"atoms\",len(s.atoms),\"charge\",sum(a.charge for a in s.atoms)); print(\"charges\",[(a.name,a.type,a.charge) for a in s.atoms])"
+            ],
+            "seconds": 2.055234291125089
+          }
+        ],
+        "file_sha256": {
+          "molecule.inpcrd": "0b0ff4e25d1b00197634ad9d561d36f53ea56d83962760ec768f62963bb34205",
+          "antechamber.log": "99cadcfe6f0c03fc7480c3f2a431778b40fbb6b67e020c44b7675c01ad57fa0e",
+          "sqm.out": "a7f1ef02542b5baad09c1b84f37fd3c8f6eb37d40af59f836ad46d7137dad74b",
+          "leap.log": "5ab09d0a99bcd74429caeba5402a2c3a8554dec057bd621a6d77773fce1ebddd",
+          "convert.log": "f00efb414013e37ebb51997effdb966846a483d8599eeab7dc88f889c827f82c",
+          "molecule.gro": "f89a16c5904cc3348fc7a0be4855a875c3773dd41285f52a82da4e2abdcc51a7",
+          "leap.in": "a97015f455418202a6dd870b8285adca2ce5b68136221486ce22ea9d29f6414e",
+          "parmchk.log": "5b4fadca157c659ad051f45619eae386a268b623ba29b64c02758159d578c50e",
+          "input.sdf": "8f9fc5f80064a091341141fd9ab531283df70caab9259c6c61be09f6f93a0b09",
+          "molecule.top": "ed2b862722269178e5c71c760deb9c0ccc56faee63a1eb4f940c76d022ab98c8",
+          "sqm.in": "15216ef8d60ed98c4108105c8b4a97032a33b908833eba9272841d73ff196de6",
+          "molecule.prmtop": "284c97ead60aaac104b55195369821ab204287c5152e49a99e2908efd96e992d",
+          "molecule.mol2": "ae379221f4466f2dfb060828bb7f543c9b216ef40635083e2abb5c1294227850",
+          "molecule-unadjusted.mol2": "7d500960f20cf6cc0a37c9d6990ee489916a6148e15fca71a553f1a5ebffc0e8",
+          "sqm.pdb": "2e3b9e5e2b289af0522538a9453e6838e8c5141811d9424f46e5e7521e0d37dd",
+          "tleap.log": "eb50d6911b4ee91445c29d614274326b84b069b5d7282c0f35988ff2f2a5d4ef",
+          "molecule.frcmod": "ff6ba150b96cca398baa7936880efce266a02a0f4086fd860ba98379befff137"
+        },
+        "scope": "Comparator force field generated, not qualified for bulk/interfacial desorption.",
+        "source": "https://ambermd.org/AmberTools.php"
+      }
+    ],
+    "new_stage": {
+      "date": "2026-10-06",
+      "HFIP_rotor_DFT": "12frozenOHanglesPBE0-D3BJ/def2TZVP, allSCFconverged",
+      "five_unbiased_interfaces": "HFIP,DMF,THF,AceticAcid,Anisole;PMMA4;50psNVT+100ps each; no spontaneous complete detachment",
+      "nine_biased_separation_pilots": "HFIP,DMF,Anisole:3x125ps; no acceptedPMF, zero adjacentdistancehistogramoverlap",
+      "MACE_Polar_medium": "positive diagonalfieldresponse on3molecules;HFIPOHrotor14.145kJ/mol vsDFT15.075",
+      "ByteFF_Pol": "7parameter predictions and13gasinteraction/decompositionchecks completed; finitefragmentforce anddissociationlimit verified; not liquid/interfacequalified",
+      "DRISM": "No organicconvergence; waterpositivecontrolconverges;stoppedpersistentfailure including documentedMDIIS/densitychargeattempts",
+      "global_solvent_ranking": null
+    },
+    "matched_reference": {
+      "functional": "omegaB97M-V",
+      "basis": "def2-tzvpd",
+      "same_frozen_geometry": true,
+      "CP_grid0_kJ_mol": -46.09432866732002,
+      "CP_grid1_kJ_mol": -46.16493161760094,
+      "grid_difference_kJ_mol": -0.07060295028092156,
+      "all_10_SCF_converged": true,
+      "MACE_M_difference_kJ_mol": -0.37446949644378,
+      "ByteFF_difference_kJ_mol": 11.595537766169423,
+      "not_solvent_efficacy": true
+    },
+    "HFIP_forward_dense_sampling": {
+      "windows_completed": 11,
+      "ps_each": 500,
+      "K_kJ_mol_nm2": 750,
+      "accepted_PMF": false,
+      "zero_overlap_gap_nm": [
+        0.75,
+        0.85
+      ],
+      "reason": "Observed orientation/contact mode not equilibrated; reference force field also unqualified for true liquid response"
+    },
+    "orientation_hidden_mode": {
+      "bias_z_nm": 1.05,
+      "bias_stiffness_kJ_mol_nm2": 750,
+      "duration_ps_each": 500,
+      "discarded_ps": 250,
+      "histories": [
+        {
+          "direction": "forward",
+          "frames": 251,
+          "sampling_interval_ps": 1,
+          "means": {
+            "CM_z_from_sheet_nm": 0.9709647751121099,
+            "Rg_normal_to_sheet_nm": 0.2804387834742553,
+            "longest_gyration_axis_normal_squared": 0.8758104640454877,
+            "nearest_heavy_min_nm": 0.45949533054340613,
+            "smooth_heavy_contacts": 1.5903350213964946,
+            "polymer_graphene_LJ_energy_kJ_mol": -11.673579711475261,
+            "HFIP_carbonyl_hbonds": 3.454183266932271
+          },
+          "matched_z_range_nm": [
+            1.0,
+            1.04
+          ],
+          "matched_frames": 52,
+          "matched_z_means": {
+            "CM_z_from_sheet_nm": 1.0207475103591235,
+            "Rg_normal_to_sheet_nm": 0.2769408676227015,
+            "longest_gyration_axis_normal_squared": 0.8528813072634064,
+            "nearest_heavy_min_nm": 0.5138484806760958,
+            "smooth_heavy_contacts": 0.9324406490515857,
+            "polymer_graphene_LJ_energy_kJ_mol": -5.973379218656394,
+            "HFIP_carbonyl_hbonds": 3.25
+          },
+          "frames_are_not_independent_samples": true
+        },
+        {
+          "direction": "reverse",
+          "frames": 251,
+          "sampling_interval_ps": 1,
+          "means": {
+            "CM_z_from_sheet_nm": 1.0657479970392667,
+            "Rg_normal_to_sheet_nm": 0.1506538555437913,
+            "longest_gyration_axis_normal_squared": 0.06563497615253781,
+            "nearest_heavy_min_nm": 0.7806422885152903,
+            "smooth_heavy_contacts": 0.2535194022921005,
+            "polymer_graphene_LJ_energy_kJ_mol": -0.6072563277475036,
+            "HFIP_carbonyl_hbonds": 3.4820717131474104
+          },
+          "matched_z_range_nm": [
+            1.0,
+            1.04
+          ],
+          "matched_frames": 63,
+          "matched_z_means": {
+            "CM_z_from_sheet_nm": 1.0206714213225265,
+            "Rg_normal_to_sheet_nm": 0.15383850755648726,
+            "longest_gyration_axis_normal_squared": 0.01891728037144929,
+            "nearest_heavy_min_nm": 0.738652528148101,
+            "smooth_heavy_contacts": 0.3220177306630962,
+            "polymer_graphene_LJ_energy_kJ_mol": -0.8536339620490679,
+            "HFIP_carbonyl_hbonds": 3.5396825396825395
+          },
+          "frames_are_not_independent_samples": true
+        }
+      ],
+      "empirical_z_overlap_mass": 0.3545816733067729,
+      "empirical_z_rgz_overlap_mass": 0.0,
+      "conclusion": "Distance alone does not equilibrate the observed normal-orientation/contact mode in these samples",
+      "inference_scope": "Single n4 rigid graphene/GAFF2 HFIP model; no true barrier, material cleaning or novelty established"
+    },
+    "orientation_coordinate_validation": {
+      "coordinate_value_checks": [
+        {
+          "direction": "forward",
+          "max_errors_time_z_rgz": [
+            0.0,
+            3.3094571527669814e-10,
+            1.8640822219140318e-10
+          ],
+          "frames": 501
+        },
+        {
+          "direction": "reverse",
+          "max_errors_time_z_rgz": [
+            0.0,
+            3.746414289906852e-10,
+            1.3904366547023983e-10
+          ],
+          "frames": 501
+        }
+      ],
+      "derivative_file": "bias-force-derivatives.dat",
+      "finite_difference_max_error_kJ_mol_nm": 0.00036699999999978417,
+      "independent_analytical_force_error_kJ_mol_nm": 4.938544410984513e-07,
+      "analytical_forces_net_sum_zero": true,
+      "coordinate_and_first_derivative_validation_passed": true,
+      "scope": "Coordinate and force implementation checks, not desorption equilibrium or cleaning",
+      "qualified_for_cleaning": false
+    },
+    "periodic_neural_port": {
+      "model": "MACE-POLAR-1-M",
+      "model_weights_unchanged": true,
+      "atoms": 768,
+      "MPS_memory_fraction": 0.25,
+      "CPU_threads": 1,
+      "exact_operations": [
+        "fused radial network/tensor product/target summation in chunks",
+        "per-atom product recomputation",
+        "sparse contraction reordering",
+        "additive atomic-energy reference gauge"
+      ],
+      "Metal_CPU32_comparison": {
+        "reference": "Same model/geometry, CPU32 vs Metal32, not quantum or liquid-property qualification",
+        "energy_error_eV": -0.00012969970703125,
+        "force_rms_eV_A": 9.792613144969222e-07,
+        "force_relative_rms": 1.0678958419228496e-06,
+        "force_max_error_eV_A": 4.470348358154297e-06,
+        "molecule_net_force_max_error_eV_A": 2.0191073417663574e-06,
+        "stress_max_error_eV_A3": 3.3527612686157227e-08
+      },
+      "dilute96_CPU64_Metal32_comparison": {
+        "scope": "Periodic dilute 96-atom numerical control against original CPU64; not liquid equilibrium",
+        "energy_difference_eV": 1.2870892098781894e-05,
+        "force_RMS_eV_A": 1.3637184109427509e-05,
+        "force_relative_RMS": 1.5020069547500863e-05,
+        "force_max_eV_A": 7.035969232253164e-05,
+        "stress_max_eV_A3": 7.594002719084163e-09
+      },
+      "measured_Metal_force_seconds": 9.916194583056495,
+      "CPU64_full_cell_reference_completed": false,
+      "CPU64_full_cell_rejection": "Own 2800MB RSS guard stopped child at2825.7MB; no full-cell double reference accepted",
+      "equilibrium_liquid_properties_qualified": false,
+      "interface_qualified": false,
+      "failed_memory_strategies_preserved": true
+    },
+    "orientation_pilot_2D": {
+      "z_center_nm": 1.05,
+      "normal_rg_center_nm": 0.22,
+      "stiffnesses": [
+        750,
+        2000
+      ],
+      "duration_ps_each": 100,
+      "results": [
+        {
+          "direction": "forward",
+          "run_ps": 100,
+          "pilot_discard_ps": 50.0,
+          "mean_z_nm": 0.9191036212684631,
+          "mean_rgz_nm": 0.27023340758063874,
+          "elapsed_seconds": 285.79882879112847,
+          "conditional_single_start_sampling_only": true
+        },
+        {
+          "direction": "reverse",
+          "run_ps": 100,
+          "pilot_discard_ps": 50.0,
+          "mean_z_nm": 1.0075922083407185,
+          "mean_rgz_nm": 0.14426176715309383,
+          "elapsed_seconds": 283.71932733408175,
+          "conditional_single_start_sampling_only": true
+        }
+      ],
+      "branches_equilibrated": false,
+      "accepted_PMF": false
+    },
+    "M_full_periodic_numerics": {
+      "model_sha256": "fab8b8713c832f31a2a853aaa22fd638be8a369cbf5095e6b3e982a18d10e93a",
+      "atoms": 768,
+      "periodic_fixed_cell": true,
+      "initial_state": "GAFF2-generated configuration, not M-model equilibrium",
+      "numerical_derivative_checks": [
+        {
+          "type": "atomic_force",
+          "atom": 580,
+          "axis": 1,
+          "step_A": 0.002,
+          "analytical_eV_A": 4.471076965332031,
+          "numerical_eV_A": 4.486083984375,
+          "relative_error": 0.0033564663026481867
+        },
+        {
+          "type": "whole_molecule_force",
+          "molecule": 27,
+          "axis": 2,
+          "step_A": 0.01,
+          "analytical_eV_A": 0.6121635437011719,
+          "numerical_eV_A": 0.6046295166015625,
+          "relative_error": 0.012307212688028812
+        },
+        {
+          "type": "xx_strain_derivative",
+          "strain_step": 0.0001,
+          "analytical_eV_A3": 0.02027297578752041,
+          "numerical_eV_A3": 0.020441215908242102,
+          "relative_error": 0.008298738304874709
+        }
+      ],
+      "nve_branches": [
+        {
+          "timestep_fs": 0.5,
+          "duration_fs": 8,
+          "steps": 16,
+          "max_absolute_total_energy_change_eV": 0.039287244169784685,
+          "final_total_energy_change_eV": 0.014418828529677796,
+          "elapsed_seconds": 141.31520570791326
+        },
+        {
+          "timestep_fs": 0.25,
+          "duration_fs": 8,
+          "steps": 32,
+          "max_absolute_total_energy_change_eV": 0.009788614721898625,
+          "final_total_energy_change_eV": 0.0035824736616163477,
+          "elapsed_seconds": 276.7433409160003
+        }
+      ],
+      "MPS_memory_fraction_limit": 0.25,
+      "CPU_threads": 1,
+      "scope": "Numerical stability control only over 8fs",
+      "liquid_properties_or_interface_qualification": false,
+      "cleaning_solution_established": false
+    },
+    "neural_bulk16_preparation": {
+      "model_sha256": "fab8b8713c832f31a2a853aaa22fd638be8a369cbf5095e6b3e982a18d10e93a",
+      "molecules": 16,
+      "atoms": 192,
+      "cell_A": 14.05790476106759,
+      "model_local_cutoff_A": 6.0,
+      "seed": 20261016,
+      "molar_mass_g_mol": 168.03841897800004,
+      "density_used_only_for_initialization_g_cm3": 1.607,
+      "gas_monomer_fmax_eV_A": 0.013912712669942769,
+      "periodic_intermolecular_min_distance_A": 2.1708319655156862,
+      "input_sha256": "06ac54d81f31a3e38bbca0540ef6a7bec6ad5bd56b95294d0c0fc1bae716d9c7",
+      "scope": "Prepared initial state, no liquid property measured or inferred",
+      "equilibrium_liquid_qualified": false,
+      "cleaning_solution_established": false
+    },
+    "polar_pressure_correction": {
+      "energy_difference_eV": 0.0,
+      "maximum_force_difference_eV_A": 1.429412144204889e-15,
+      "pressure_error_before_bar": 183.563452140268,
+      "residual_after_small_step_bar": 0.010581296563116195,
+      "scope": "Exact zero-strain Hamiltonian invariance and independent cell derivative audit, not liquid equilibrium validation"
+    },
+    "corrected_NPT16_transient": {
+      "duration_fs": 100,
+      "steps": 400,
+      "elapsed_seconds": 863.6654069172218,
+      "maximum_extended_energy_change_eV": 0.0017854313204139771,
+      "initial_density_is_input_not_prediction": true,
+      "liquid_equilibrium_not_established": true,
+      "cleaning_solution_established": false
+    },
+    "pressure_corrected_trajectory_comparison": {
+      "common_duration_fs": 50.0,
+      "previous_rejected_max_extended_energy_change_eV": 0.043926362395456664,
+      "corrected_max_extended_energy_change_eV": 0.0010559142506831876,
+      "reduction_factor": 41.600312115340664,
+      "old_NPT_rejected_for_pressure_inconsistency": true,
+      "new_100fs_only_transient_liquid_qualification": false,
+      "scope": "Same-start derivative/integration control, not equilibrium density or cleaning"
+    },
+    "HFIP_self_matched_quantum_NLC0": {
+      "pair": "HFIP__HFIP",
+      "geometry": "HFIP__HFIP_1.refined.xyz",
+      "functional": "omegaB97M-V",
+      "basis": "def2-tzvpd",
+      "interaction_counterpoise_kJ_mol": -29.744284928611087,
+      "interaction_uncorrected_kJ_mol": -30.636979130978478,
+      "all_five_SCF_converged": true,
+      "energies": {
+        "A": {
+          "functional": "omegaB97M-V with VV10 nonlocal correlation",
+          "basis": "def2-tzvpd",
+          "energy_Ha": -789.9852914505515,
+          "SCF_converged": true,
+          "no_additional_D3": true,
+          "geometry_sha256": "eb8a37e9ee3c3bd92aba9c231c90e913acc034bab2da0e8017aa43bb2885d4b2",
+          "basis_functions": 409,
+          "real_atoms": 12,
+          "ghost_atoms": 0,
+          "grid_level": 3,
+          "nlc_grid_level": 0,
+          "starting_density_grid": null,
+          "initial_density_kind": "atomic default",
+          "SCF_wall_cap_minutes": 20.0,
+          "elapsed_seconds": 41.481549290940166
+        },
+        "B": {
+          "functional": "omegaB97M-V with VV10 nonlocal correlation",
+          "basis": "def2-tzvpd",
+          "energy_Ha": -789.984218551389,
+          "SCF_converged": true,
+          "no_additional_D3": true,
+          "geometry_sha256": "ba6a6f36d5258c0a2e718ca4b1fd7e446be5435748713a85c4f2709cf5101fb8",
+          "basis_functions": 409,
+          "real_atoms": 12,
+          "ghost_atoms": 0,
+          "grid_level": 3,
+          "nlc_grid_level": 0,
+          "starting_density_grid": null,
+          "initial_density_kind": "atomic default",
+          "SCF_wall_cap_minutes": 20.0,
+          "elapsed_seconds": 40.62288270890713
+        },
+        "AB": {
+          "functional": "omegaB97M-V with VV10 nonlocal correlation",
+          "basis": "def2-tzvpd",
+          "energy_Ha": -1579.9811790110264,
+          "SCF_converged": true,
+          "no_additional_D3": true,
+          "geometry_sha256": "4cc8d94bc40b4c2f9350834bc4f1ba288f57794f3a5a25795f233c9a22bdf62b",
+          "basis_functions": 818,
+          "real_atoms": 24,
+          "ghost_atoms": 0,
+          "grid_level": 3,
+          "nlc_grid_level": 0,
+          "starting_density_grid": null,
+          "initial_density_kind": "converged isolated-fragment block density",
+          "SCF_wall_cap_minutes": 20.0,
+          "elapsed_seconds": 818.6535853750538
+        },
+        "Acp": {
+          "functional": "omegaB97M-V with VV10 nonlocal correlation",
+          "basis": "def2-tzvpd",
+          "energy_Ha": -789.9854649772939,
+          "SCF_converged": true,
+          "no_additional_D3": true,
+          "geometry_sha256": "4cc8d94bc40b4c2f9350834bc4f1ba288f57794f3a5a25795f233c9a22bdf62b",
+          "basis_functions": 818,
+          "real_atoms": 12,
+          "ghost_atoms": 12,
+          "grid_level": 3,
+          "nlc_grid_level": 0,
+          "starting_density_grid": null,
+          "initial_density_kind": "converged isolated-fragment block density",
+          "SCF_wall_cap_minutes": 20.0,
+          "elapsed_seconds": 553.8462044170592
+        },
+        "Bcp": {
+          "functional": "omegaB97M-V with VV10 nonlocal correlation",
+          "basis": "def2-tzvpd",
+          "energy_Ha": -789.9843850339116,
+          "SCF_converged": true,
+          "no_additional_D3": true,
+          "geometry_sha256": "4cc8d94bc40b4c2f9350834bc4f1ba288f57794f3a5a25795f233c9a22bdf62b",
+          "basis_functions": 818,
+          "real_atoms": 12,
+          "ghost_atoms": 12,
+          "grid_level": 3,
+          "nlc_grid_level": 0,
+          "starting_density_grid": null,
+          "initial_density_kind": "converged isolated-fragment block density",
+          "SCF_wall_cap_minutes": 20.0,
+          "elapsed_seconds": 539.8276392079424
+        }
+      },
+      "nlc_grid_level": 0,
+      "nonlocal_grid_convergence_not_yet_established": true,
+      "scope": "Matched frozen gas reference, not liquid free energy or polymer removal"
+    },
+    "molecular_MC_algorithm_control": {
+      "molecular_center_Jacobian_checks": [
+        {
+          "atoms_in_group": 3,
+          "volume_ratio": 0.8,
+          "logdet_error": -2.7755575615628914e-17
+        },
+        {
+          "atoms_in_group": 3,
+          "volume_ratio": 1.0,
+          "logdet_error": 0.0
+        },
+        {
+          "atoms_in_group": 3,
+          "volume_ratio": 1.2,
+          "logdet_error": 5.828670879282072e-16
+        },
+        {
+          "atoms_in_group": 7,
+          "volume_ratio": 0.8,
+          "logdet_error": 1.6653345369377348e-16
+        },
+        {
+          "atoms_in_group": 7,
+          "volume_ratio": 1.0,
+          "logdet_error": 0.0
+        },
+        {
+          "atoms_in_group": 7,
+          "volume_ratio": 1.2,
+          "logdet_error": 2.7200464103316335e-15
+        },
+        {
+          "atoms_in_group": 12,
+          "volume_ratio": 0.8,
+          "logdet_error": -5.551115123125783e-17
+        },
+        {
+          "atoms_in_group": 12,
+          "volume_ratio": 1.0,
+          "logdet_error": 0.0
+        },
+        {
+          "atoms_in_group": 12,
+          "volume_ratio": 1.2,
+          "logdet_error": -6.38378239159465e-16
+        }
+      ],
+      "ideal_gas_NPT": {
+        "N_molecules": 16,
+        "expected_mean_V": 17.0,
+        "expected_variance_V": 17.0,
+        "measured_mean_V": 16.992621099705925,
+        "measured_variance_V": 17.007916962771525,
+        "saved_samples": 10000,
+        "accept_fraction": 0.6214181818181819
+      },
+      "accepted_numerical_and_analytic_sampler_control": true,
+      "scope": "Jacobian/ensemble control only, no molecular or cleaning result"
+    },
+    "neural_MC1000_N16": {
+      "moves": 1000,
+      "attempts": {
+        "translation": 380,
+        "rotation": 285,
+        "OH_torsion": 248,
+        "volume": 68,
+        "HMC": 19
+      },
+      "accepted": {
+        "translation": 217,
+        "rotation": 127,
+        "OH_torsion": 61,
+        "volume": 35,
+        "HMC": 19
+      },
+      "volume_bound_rejections": 0,
+      "elapsed_seconds": 955.1129478751682,
+      "scope": "Single preliminary model chain; convergence/replicas/size checks still required",
+      "no_physical_time_from_MC_moves": true,
+      "liquid_equilibrium_qualified": false,
+      "cleaning_solution_established": false
+    },
+    "acid_self_matched_NLC0": {
+      "pair": "AceticAcid__AceticAcid",
+      "geometry": "AceticAcid__AceticAcid_0.refined.xyz",
+      "functional": "omegaB97M-V",
+      "basis": "def2-tzvpd",
+      "interaction_counterpoise_kJ_mol": -88.06001596050653,
+      "interaction_uncorrected_kJ_mol": -88.4721307660925,
+      "all_five_SCF_converged": true,
+      "energies": {
+        "A": {
+          "functional": "omegaB97M-V with VV10 nonlocal correlation",
+          "basis": "def2-tzvpd",
+          "energy_Ha": -229.10261213713807,
+          "SCF_converged": true,
+          "no_additional_D3": true,
+          "geometry_sha256": "7c4605a58d3f67eba2fa47a9e1f1862f75c223ac48156651e94bf9856cd3fbe0",
+          "basis_functions": 190,
+          "real_atoms": 8,
+          "ghost_atoms": 0,
+          "grid_level": 3,
+          "nlc_grid_level": 0,
+          "starting_density_grid": null,
+          "initial_density_kind": "atomic default",
+          "SCF_wall_cap_minutes": 10.0,
+          "elapsed_seconds": 11.02748587494716
+        },
+        "B": {
+          "functional": "omegaB97M-V with VV10 nonlocal correlation",
+          "basis": "def2-tzvpd",
+          "energy_Ha": -229.1027749149334,
+          "SCF_converged": true,
+          "no_additional_D3": true,
+          "geometry_sha256": "4bf06831a65bfd6931c3e0f360897590e1d914e999c73048bd1c5df1c5141dd0",
+          "basis_functions": 190,
+          "real_atoms": 8,
+          "ghost_atoms": 0,
+          "grid_level": 3,
+          "nlc_grid_level": 0,
+          "starting_density_grid": null,
+          "initial_density_kind": "atomic default",
+          "SCF_wall_cap_minutes": 10.0,
+          "elapsed_seconds": 10.409201292088255
+        },
+        "AB": {
+          "functional": "omegaB97M-V with VV10 nonlocal correlation",
+          "basis": "def2-tzvpd",
+          "energy_Ha": -458.239084307057,
+          "SCF_converged": true,
+          "no_additional_D3": true,
+          "geometry_sha256": "21fa1cc845b54aa4d657140b9b99869ee04090f25bc3492364c3bf28c336f8ff",
+          "basis_functions": 380,
+          "real_atoms": 16,
+          "ghost_atoms": 0,
+          "grid_level": 3,
+          "nlc_grid_level": 0,
+          "starting_density_grid": null,
+          "initial_density_kind": "converged isolated-fragment block density",
+          "SCF_wall_cap_minutes": 10.0,
+          "elapsed_seconds": 53.99880304094404
+        },
+        "Acp": {
+          "functional": "omegaB97M-V with VV10 nonlocal correlation",
+          "basis": "def2-tzvpd",
+          "energy_Ha": -229.10268952168246,
+          "SCF_converged": true,
+          "no_additional_D3": true,
+          "geometry_sha256": "21fa1cc845b54aa4d657140b9b99869ee04090f25bc3492364c3bf28c336f8ff",
+          "basis_functions": 380,
+          "real_atoms": 8,
+          "ghost_atoms": 8,
+          "grid_level": 3,
+          "nlc_grid_level": 0,
+          "starting_density_grid": null,
+          "initial_density_kind": "converged isolated-fragment block density",
+          "SCF_wall_cap_minutes": 10.0,
+          "elapsed_seconds": 32.54307966702618
+        },
+        "Bcp": {
+          "functional": "omegaB97M-V with VV10 nonlocal correlation",
+          "basis": "def2-tzvpd",
+          "energy_Ha": -229.10285449662874,
+          "SCF_converged": true,
+          "no_additional_D3": true,
+          "geometry_sha256": "21fa1cc845b54aa4d657140b9b99869ee04090f25bc3492364c3bf28c336f8ff",
+          "basis_functions": 380,
+          "real_atoms": 8,
+          "ghost_atoms": 8,
+          "grid_level": 3,
+          "nlc_grid_level": 0,
+          "starting_density_grid": null,
+          "initial_density_kind": "converged isolated-fragment block density",
+          "SCF_wall_cap_minutes": 10.0,
+          "elapsed_seconds": 34.74075779202394
+        }
+      },
+      "nlc_grid_level": 0,
+      "nonlocal_grid_convergence_not_yet_established": true,
+      "scope": "Matched frozen gas reference, not liquid free energy or polymer removal"
+    },
+    "energy_only_inference": {
+      "model_sha256": "fab8b8713c832f31a2a853aaa22fd638be8a369cbf5095e6b3e982a18d10e93a",
+      "atoms": 192,
+      "source_sha256": "0f328560e2d10b6799faa3b13b14b8ca3e67242dc0acba5819b33557e28c7527",
+      "rows": [
+        {
+          "translation_molecule0_x_A": 0.0,
+          "official_energy_eV": -17.316850662231445,
+          "scalar_energy_eV": -17.316848754882812,
+          "difference_eV": 1.9073486328125e-06,
+          "official_seconds": 3.8258331660181284,
+          "scalar_seconds": 0.8808462501037866
+        },
+        {
+          "translation_molecule0_x_A": 0.01,
+          "official_energy_eV": -17.32012176513672,
+          "scalar_energy_eV": -17.32012939453125,
+          "difference_eV": -7.62939453125e-06,
+          "official_seconds": 2.202919750008732,
+          "scalar_seconds": 0.7671089579816908
+        },
+        {
+          "translation_molecule0_x_A": -0.01,
+          "official_energy_eV": -17.313369750976562,
+          "scalar_energy_eV": -17.313369750976562,
+          "difference_eV": 0.0,
+          "official_seconds": 2.237714875023812,
+          "scalar_seconds": 0.7512588328681886
+        }
+      ],
+      "maximum_energy_difference_eV": 7.62939453125e-06,
+      "median_scalar_seconds": 0.7671089579816908,
+      "median_official_seconds": 2.237714875023812,
+      "scope": "Same Hamiltonian energy-path numerical control only; no equilibrium/ranking established"
+    },
+    "HFIP_self_two_grids": {
+      "reference_level": "omegaB97M-V/def2TZVPD with counterpoise and VV10",
+      "grid0_kJ_mol": -29.744284928611087,
+      "grid1_kJ_mol": -29.931655295072826,
+      "grid_shift_kJ_mol": -0.18737036646173877,
+      "model_M_kJ_mol": -29.983524015638444,
+      "model_absolute_error_kJ_mol": 0.05186872056561853,
+      "scope": "Local frozen HFIP self-dimer, no condensed-phase or cleaning qualification"
+    },
+    "Acid_self_two_grids": {
+      "grid0_kJ_mol": -88.06001596050653,
+      "grid1_kJ_mol": -88.07431869043522,
+      "grid_shift_kJ_mol": -0.014302729928687086,
+      "modelM_kJ_mol": -88.92433266035819,
+      "scope": "Frozen molecular gas interaction, not bulk"
+    },
+    "electronic_self_vs_ester_competition": {
+      "rows": [
+        {
+          "solvent": "HFIP",
+          "self_binding_kJ_mol": -28.205142781246327,
+          "ester_binding_kJ_mol": -36.772107640194065,
+          "gas_electronic_exchange_kJ_mol": -8.566964858947738,
+          "reaction": "S2 + methyl acetate -> S/methyl acetate + S",
+          "same_model_and_common_refined_monomer_geometries": true
+        },
+        {
+          "solvent": "AceticAcid",
+          "self_binding_kJ_mol": -71.21337133107254,
+          "ester_binding_kJ_mol": -38.46187192967004,
+          "gas_electronic_exchange_kJ_mol": 32.7514994014025,
+          "reaction": "S2 + methyl acetate -> S/methyl acetate + S",
+          "same_model_and_common_refined_monomer_geometries": true
+        }
+      ],
+      "method": "MACE-POLAR-M, fixed GFN2-refined molecular geometries; electronic gas reactions",
+      "scope": "Exploratory self-association competition. Not liquid chemical potentials or polymer/surface free energy.",
+      "caveats": [
+        "Carbonyl solvation can cancel between adhered/free chains",
+        "Entropy, multiple solvent partners, many-body liquid structure and oxide selectivity are absent"
+      ],
+      "cleaning_solution_established": false
+    },
+    "HFIP_internal_energy_audit": {
+      "model_sha256": "fab8b8713c832f31a2a853aaa22fd638be8a369cbf5095e6b3e982a18d10e93a",
+      "device": "CPU64",
+      "same_hamiltonian": true,
+      "atomic_reference_gauge_zero": true,
+      "rows": [
+        {
+          "name": "dense_start",
+          "provenance": {
+            "source": "results/neural-molecular-mc/HFIP_N16_seed20261026_1000moves/frames.xyz",
+            "frame_index": 0,
+            "complete_frames_at_read": 51,
+            "source_snapshot_sha256": "2ef7e127424a92379ac831f694120085ed5ffe390f32d54dfb62a7607302c328",
+            "saved_frame_sha256": "fe22059d6ce974171695293acd3267f001cafc8af5ea046e54e7d346a29dbc3d"
+          },
+          "density_g_cm3": 1.6069999999999989,
+          "total_eV": -17.316864375895115,
+          "isolated_fragment_eV": [
+            -0.9976328607902225,
+            -0.9852416215361989,
+            -1.0675726592946682,
+            -0.8151711441072819,
+            -0.9609554954060958,
+            -1.070432299728397,
+            -0.8441306001710488,
+            -0.945395932087002,
+            -0.9811222332991595,
+            -0.9586787161097623,
+            -0.8729140912577986,
+            -1.081154725922422,
+            -1.1288361497564399,
+            -0.9424236829022783,
+            -0.9525461686220158,
+            -0.9710049513616706
+          ],
+          "gas_reference_eV": -1.2758575732117015,
+          "internal_distortion_kJ_mol_per_molecule": 29.177814739403722,
+          "intermolecular_energy_kJ_mol_per_molecule": -10.502736211194057,
+          "total_above_gas_kJ_mol_per_molecule": 18.675078528209664,
+          "OH_A_mean": 0.9677561252748594,
+          "OH_A_range": [
+            0.9470672120108913,
+            0.9866159023698339
+          ],
+          "CO_A_mean": 1.3904928814554167,
+          "CO_A_range": [
+            1.3576824803996013,
+            1.4258951534805253
+          ],
+          "force_max_eV_A": 3.1125838422758947,
+          "configurational_pressure_bar": 7618.8016923695,
+          "elapsed_seconds": 20.783494665985927
+        },
+        {
+          "name": "dense_1000",
+          "provenance": {
+            "source": "results/neural-molecular-mc/HFIP_N16_seed20261026_1000moves/frames.xyz",
+            "frame_index": 50,
+            "complete_frames_at_read": 51,
+            "source_snapshot_sha256": "2ef7e127424a92379ac831f694120085ed5ffe390f32d54dfb62a7607302c328",
+            "saved_frame_sha256": "14531e5b13e8edcc6bd2f2f803b3d8ece45db0034a2a3670c6a09d29951e294a"
+          },
+          "density_g_cm3": 1.2677318508001334,
+          "total_eV": -18.31703581847054,
+          "isolated_fragment_eV": [
+            -0.9115490581476929,
+            -0.8412161713087271,
+            -0.9483364530098118,
+            -0.7810653530919357,
+            -0.9563313376455156,
+            -1.0664821225938945,
+            -0.8475289786665603,
+            -0.8903862291221345,
+            -1.0065075087800184,
+            -0.8343507562960288,
+            -0.8336360929210733,
+            -1.0172807293715411,
+            -1.0586777631052804,
+            -0.755983601109195,
+            -0.8558226138580799,
+            -0.9845574807048463
+          ],
+          "gas_reference_eV": -1.2758575732117015,
+          "internal_distortion_kJ_mol_per_molecule": 35.12071469343338,
+          "intermolecular_energy_kJ_mol_per_molecule": -22.477003278794335,
+          "total_above_gas_kJ_mol_per_molecule": 12.643711414639041,
+          "OH_A_mean": 0.9681608500571726,
+          "OH_A_range": [
+            0.9272158959489635,
+            1.001053832326286
+          ],
+          "CO_A_mean": 1.3909089133439008,
+          "CO_A_range": [
+            1.3619666025566395,
+            1.4300964471309152
+          ],
+          "force_max_eV_A": 3.8573277191134805,
+          "configurational_pressure_bar": -2100.272163239994,
+          "elapsed_seconds": 40.25553270801902
+        },
+        {
+          "name": "dense_latest",
+          "provenance": {
+            "source": "results/neural-molecular-mc/HFIP_N16_seed20261026_1000moves_continue2000/frames.xyz",
+            "frame_index": 68,
+            "complete_frames_at_read": 69,
+            "source_snapshot_sha256": "e7999e3993b7d33a63e045000d9d1beefbacd0fd9d2627b9c593117d43df8157",
+            "saved_frame_sha256": "da58597c7c8023358b226cb0732276d467859526dc164050cb74f460c7ed87b3"
+          },
+          "density_g_cm3": 1.2200965547859703,
+          "total_eV": -18.198476764908257,
+          "isolated_fragment_eV": [
+            -0.8958975373500384,
+            -0.9109055322629339,
+            -0.9845716520315619,
+            -0.8820660386486641,
+            -0.9711168731273825,
+            -0.7944531421302035,
+            -0.9115444887154169,
+            -0.793952005687951,
+            -0.8865400348424226,
+            -0.8450458910713873,
+            -0.7246892509682163,
+            -1.0221335430923013,
+            -0.92348943507311,
+            -1.0111800369601769,
+            -0.9718953379214206,
+            -0.9443449731828294
+          ],
+          "gas_reference_eV": -1.2758575732117015,
+          "internal_distortion_kJ_mol_per_molecule": 35.81954876779269,
+          "intermolecular_energy_kJ_mol_per_molecule": -22.460886749454836,
+          "total_above_gas_kJ_mol_per_molecule": 13.358662018337853,
+          "OH_A_mean": 0.9655258219783512,
+          "OH_A_range": [
+            0.9393504278813771,
+            0.9943074651450784
+          ],
+          "CO_A_mean": 1.398887950623446,
+          "CO_A_range": [
+            1.3636833347536654,
+            1.4440755512949741
+          ],
+          "force_max_eV_A": 4.272328692108827,
+          "configurational_pressure_bar": -2216.900724308553,
+          "elapsed_seconds": 59.10271245799959
+        },
+        {
+          "name": "dilute_start",
+          "provenance": {
+            "source": "results/neural-molecular-mc/HFIP_N16_seed20261027_1000moves/frames.xyz",
+            "frame_index": 0,
+            "complete_frames_at_read": 40,
+            "source_snapshot_sha256": "7d834d9b4b269c01d186fe3ba6a5174913022572ae82493a5af18f57b1abf735",
+            "saved_frame_sha256": "a2cf44d5ede77e9226fca092961b62dfa3d0e382cba0f9221d2fd234b101ffef"
+          },
+          "density_g_cm3": 0.9999999999999993,
+          "total_eV": -15.423285532896928,
+          "isolated_fragment_eV": [
+            -1.2763268409700785,
+            -1.2763665735821215,
+            -1.276323569757258,
+            -1.2757189544604564,
+            -1.2760880497398144,
+            -1.2765969532136894,
+            -1.2758860874937483,
+            -1.2763645638809487,
+            -1.2758036858003146,
+            -1.2755933193863975,
+            -1.275464914170686,
+            -1.276467575926271,
+            -1.2759612258031776,
+            -1.2757558972848837,
+            -1.2761008322140608,
+            -1.2763775921355869
+          ],
+          "gas_reference_eV": -1.2758575732117015,
+          "internal_distortion_kJ_mol_per_molecule": -0.020958208751894847,
+          "intermolecular_energy_kJ_mol_per_molecule": 30.114948209982444,
+          "total_above_gas_kJ_mol_per_molecule": 30.09399000123055,
+          "OH_A_mean": 0.9658547792558738,
+          "OH_A_range": [
+            0.9658540464977101,
+            0.9658555599927975
+          ],
+          "CO_A_mean": 1.3937476844615269,
+          "CO_A_range": [
+            1.393747020005065,
+            1.393748621943354
+          ],
+          "force_max_eV_A": 2.076297538881824,
+          "configurational_pressure_bar": 10345.655497284148,
+          "elapsed_seconds": 77.19287341600284
+        },
+        {
+          "name": "dilute_latest",
+          "provenance": {
+            "source": "results/neural-molecular-mc/HFIP_N16_seed20261027_1000moves/frames.xyz",
+            "frame_index": 39,
+            "complete_frames_at_read": 40,
+            "source_snapshot_sha256": "7d834d9b4b269c01d186fe3ba6a5174913022572ae82493a5af18f57b1abf735",
+            "saved_frame_sha256": "152d2151d3fb001c043caa48680ce5bb860ce689496ea40f893c4d5111d08896"
+          },
+          "density_g_cm3": 0.7583847543973807,
+          "total_eV": -19.787780107407833,
+          "isolated_fragment_eV": [
+            -1.0546433378457691,
+            -1.0703786013755843,
+            -1.1494418213772764,
+            -1.2093581928038688,
+            -1.0641836587652522,
+            -1.1602046972856035,
+            -1.14803425988911,
+            -1.0989207504193703,
+            -1.1547372511243132,
+            -1.0183287413236994,
+            -1.2122374023078288,
+            -1.100236699212767,
+            -1.1310378617666017,
+            -1.1715261009566946,
+            -1.0104201827210302,
+            -1.0789630890067645
+          ],
+          "gas_reference_eV": -1.2758575732117015,
+          "internal_distortion_kJ_mol_per_molecule": 15.564703355906031,
+          "intermolecular_energy_kJ_mol_per_molecule": -11.79007014042708,
+          "total_above_gas_kJ_mol_per_molecule": 3.7746332154789504,
+          "OH_A_mean": 0.975879087178273,
+          "OH_A_range": [
+            0.9271561592566238,
+            1.0234350462794914
+          ],
+          "CO_A_mean": 1.3966442501559468,
+          "CO_A_range": [
+            1.3579618783771312,
+            1.4357014260588898
+          ],
+          "force_max_eV_A": 3.5760545181433763,
+          "configurational_pressure_bar": 1104.4546149415467,
+          "elapsed_seconds": 97.61525475000963
+        }
+      ],
+      "scope": "Frozen snapshot mechanical decomposition; no equilibrium chemical potential, entropy, EOS, solvent ranking or cleaning claim",
+      "liquid_equilibrium_qualified": false,
+      "cleaning_solution_established": false
+    },
+    "CF4_longrange_audit": {
+      "rows": [
+        {
+          "distance_A": 8.5,
+          "DFT_kJ_mol": -0.06026081899428212,
+          "M_kJ_mol": -0.026567310564251972,
+          "error_kJ_mol": 0.03369350843003015,
+          "grid_shift_kJ_mol": 0.00016911937068395805,
+          "complete_file_sha256": "41ec83381b2ab721f721d71fc5bb32498142d9d3cb63ccd487ce177cbff694ce"
+        },
+        {
+          "distance_A": 12.0,
+          "DFT_kJ_mol": -0.006937106192450666,
+          "M_kJ_mol": 0.001118767726768,
+          "error_kJ_mol": 0.008055873919218666,
+          "grid_shift_kJ_mol": 2.3330762099320508e-05,
+          "complete_file_sha256": "8f6dd92ff42d9c9dbee3833f28e7d15ced807c25a97a2503f74d0ac08f1dc954"
+        }
+      ],
+      "all_20_SCF_converged": true,
+      "no_added_D3": true,
+      "qualified_for_HFIP_liquid": false,
+      "cleaning_solution_established": false
+    },
+    "random_length_HMC_control": {
+      "reversibility": [
+        {
+          "steps": 4,
+          "phase_reversal_max_error": 2.220446049250313e-16
+        },
+        {
+          "steps": 12,
+          "phase_reversal_max_error": 8.881784197001252e-16
+        },
+        {
+          "steps": 19,
+          "phase_reversal_max_error": 7.771561172376096e-16
+        },
+        {
+          "steps": 32,
+          "phase_reversal_max_error": 2.6645352591003757e-15
+        }
+      ],
+      "harmonic_modes": [
+        {
+          "step_range_inclusive": [
+            4,
+            4
+          ],
+          "dt": 0.25,
+          "samples": 10000,
+          "expected_mode_variance": 1.0,
+          "mean_mode_variance": 1.0179247589723213,
+          "maximum_mode_variance_error": 0.1861829211415793,
+          "expected_total_potential_kBT": 15.0,
+          "measured_total_potential_kBT": 15.268871384584818,
+          "first_50_total_potential_kBT": [
+            1.9257032040056483,
+            6.486976243243445,
+            8.139393526147177,
+            6.869841995343947,
+            5.044141834187828,
+            6.735083446438407,
+            9.16672245027648,
+            12.727685110909873,
+            11.868770143439482,
+            11.094082763433574,
+            11.932450416116971,
+            9.415921892720535,
+            5.93510667717773,
+            7.98337085782248,
+            10.978726695516514,
+            15.54128160259965,
+            12.084158476307595,
+            11.96034443012059,
+            14.241967960282967,
+            14.723171337959618,
+            14.880081579047598,
+            15.838416754748172,
+            13.221430679486991,
+            14.975045444298363,
+            19.407128744632836,
+            19.332180502730107,
+            17.543842903961213,
+            15.30519243597924,
+            15.30519243597924,
+            11.766545334433182,
+            10.335034745493708,
+            11.55592283948068,
+            11.62512736974428,
+            8.233374292538933,
+            10.818786148920164,
+            7.630748095548821,
+            7.371825952151902,
+            9.711621452228933,
+            9.756597257135986,
+            11.091017067153759,
+            11.354750536796018,
+            9.904260857988907,
+            12.699085567390902,
+            12.732695394057675,
+            11.506171378053404,
+            13.197188355330889,
+            13.796533844464353,
+            14.099858867105203,
+            12.708811365768877,
+            12.772125299147525
+          ],
+          "accepted_fraction": 0.9958333333333333,
+          "all_mode_precision_criterion_met": false
+        },
+        {
+          "step_range_inclusive": [
+            12,
+            32
+          ],
+          "dt": 0.25,
+          "samples": 10000,
+          "expected_mode_variance": 1.0,
+          "mean_mode_variance": 0.9974229635134076,
+          "maximum_mode_variance_error": 0.04537357255572383,
+          "expected_total_potential_kBT": 15.0,
+          "measured_total_potential_kBT": 14.961344452701114,
+          "first_50_total_potential_kBT": [
+            9.62704636259421,
+            11.580321549620402,
+            9.010159500839633,
+            12.357173912648165,
+            16.142884995313935,
+            12.36502970054346,
+            7.105294991013473,
+            7.105294991013473,
+            11.405642880101668,
+            13.182570610136327,
+            22.99272360102064,
+            21.06647558119848,
+            16.362848119980136,
+            10.533097976709941,
+            12.708017595867414,
+            14.489706392675778,
+            19.86839717901259,
+            11.967422169944912,
+            16.41441011298729,
+            15.418793826208269,
+            11.906193600612113,
+            11.38245400388666,
+            17.247552498264998,
+            23.08190952996691,
+            14.288323899184682,
+            13.431667651032814,
+            14.14668123476932,
+            12.21730534420021,
+            9.611072971689135,
+            13.633025429077565,
+            18.202554689495123,
+            16.023636782237034,
+            17.628166125056712,
+            13.561678135009906,
+            19.108867352312615,
+            18.166779783643573,
+            12.697533408815286,
+            14.132584759948571,
+            15.607495600799986,
+            10.115994520957008,
+            11.604758291582357,
+            9.546412185345513,
+            10.508691976212031,
+            11.065891180082618,
+            13.048252224446369,
+            10.840793822605585,
+            9.806226059287638,
+            8.120378268703947,
+            14.40410059245593,
+            21.962944291908755
+          ],
+          "accepted_fraction": 0.9939166666666667,
+          "all_mode_precision_criterion_met": true
+        }
+      ],
+      "accepted_random_length_sampler_control": true,
+      "scope": "Analytic harmonic canonical distribution, not liquid/model physical qualification"
+    }
+  },
+  "current_findings": [
+    "Acetic acid, known to fail on actual specimen, also forms a strong carbonyl interaction. Gas-phase hydrogen bonding is insufficient as cleaning criterion.",
+    "Small basis set has ~20 kJ/mol BSSE correction for HFIP/ester; basis convergence must be checked.",
+    "Retrieved exact published HFIP and PMMA/graphene parameters; cross-interface validity not yet established.",
+    "A 125 molecule HFIP 1 ns NPT trajectory completed on two CPU threads,873 s wall time,17.7 MB peak engine RSS; independent SI dielectric formula and final molecular dipole checks agree.",
+    "Computed density1.572g/cm3 but preliminary dielectric1.635 vs cited16.7; no quantitative interfacial solvent ranking accepted from this model.",
+    "PMMA4 and8 unit oligomer topologies built from exact published bond/angle/torsion entries; all atoms and end charge choices recorded. Not equilibrated or tested as desorption models.",
+    "Unscaled1-4 control completed500ps. Its response remains preliminary; see completed_computation.bulk_HFIP_scale14_1. Neither model is qualified from bulk density alone."
+  ],
+  "unit_corrections": {
+    "bulk_initial_volume": "First incorrect pilots invalidated and archived. Rebuilt box checked independently in SI; 125HFIP at0.8g/cm3 now43.5996nm3, side3.51961nm."
+  },
+  "remaining_required_work": [
+    "Complete and cross-check polarizable learned potential API compatibility and molecular diagnostics.",
+    "Check HFIP bulk electrostatic response with alternative/converged models and real partial-charge/torsion provenance; never qualify from density alone.",
+    "Build and sample polymer/graphene interface with matched comparator DMF/THF and controls for solvent rebinding, chain length and buried residue.",
+    "Assess graphene/SiO2 selectivity separately; no claim of intact graphene from rigid-surface fixed-bond model.",
+    "Choose a bounded treatment supported by surviving models, with explicit physical/sample conditions and falsification criteria.",
+    "Physical validation cannot be computed away: cleaning and later pickup success on actual material must be measured before claiming solution."
+  ],
+  "deliverable": {
+    "paper": "outputs/pulizia-grafene-pmma-ppc.pdf",
+    "revision": 3,
+    "pages": 14,
+    "native_compiler_success": true,
+    "visual_review": true,
+    "chemical_solution_verified": false
+  },
+  "completed_control": {
+    "scale14": 1.0,
+    "molecules": 125,
+    "NVT_ps": 50,
+    "NPT_requested_ps": 500,
+    "threads": 2,
+    "resource_guard": "1.5GB,30min per stage",
+    "session_id": 70450,
+    "log": "work/molecular/logs/bulk-scale1-control.txt",
+    "status": "completed",
+    "NPT_completed_ps": 500
+  },
+  "next_concrete_actions": [
+    "Compare HFIP torsional distribution and gas quantum torsional energies against each 1-4 convention; check short-trajectory dielectric convergence.",
+    "Audit fixed-nuclei learned-model field response with matched reference/functionals/conventions, before selecting it for induction.",
+    "Use a validated solvent/PMMA model for explicit-liquid polymer/graphene detachment, then compare DMF/THF and oxide selectivity separately."
+  ],
+  "previous_goal_turn_classification": "progress: new quantum/learned/bulk data, independently verified; objective not complete",
+  "nonoxidative_conversion_screen": "Primary2018 evidence does not support BBr3 methyl-ester cleavage under that method; TMSI literature not directly transferable. No cleaning recipe inferred.",
+  "running_computation": {
+    "umbrella_ladders": "HFIP/DMF;11forwardcenters.45-1.45nm,K750,500ps each,twoCPUperjob,individualguards;reverse/independentconformers notyetstarted",
+    "quantum_matched_reference": "CompletedtwoNLgrids;10SCFconverged;onlyonefrozengasinteractionqualified",
+    "Pro_consultation": "Scientificpromptprepared inoutputs;not sent,becauseavailableaccountnotauthenticated;optionaluseraccessrequested"
+  },
+  "last_status_updated_epoch": 1791265929.816698,
+  "outputs_revision": 4,
+  "outputs_PDF_pages": 17,
+  "current_activity": {
+    "updated_UTC": "2026-10-06T09:39:07.564199+00:00",
+    "active": [
+      "MolecularMC exact-checkpoint continuation,+2000moves,exec68507",
+      "Independent N16MC1000 with different orientations and initialrho1.0,exec5056"
+    ],
+    "reversed_HFIP_ladder_completed_5x500ps": true,
+    "previous_neural_NPT_rejected": true,
+    "physical_liquid_qualification": false,
+    "solution_on_sample": false,
+    "optional_Pro": "Not sent, manual login still pending",
+    "all_classical_ladders_terminal_complete": {
+      "DMF_forward": 11,
+      "HFIP_forward": 11,
+      "HFIP_reverse": 5,
+      "ps_each": 500,
+      "accepted_PMF": false
+    },
+    "quantum_jobs_live": false,
+    "new_density_warning": "First chain and independent low-density start trend below experiment; no EOS or solvent ranking accepted. Further stationarity, size and potential-domain audits needed."
+  },
+  "publication": {
+    "requested_remote": "git@github.com:mapice/pulizia-grafene.git",
+    "status": "preparing_verified_snapshot",
+    "paper_revision": 7
+  },
+  "current_scientific_limit": "No liquid equilibrium, desorption free energy, SiO2 selectivity or experimental cleanup established."
+}

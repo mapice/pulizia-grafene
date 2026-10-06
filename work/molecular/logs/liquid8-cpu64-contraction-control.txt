@@ -1,0 +1,17 @@
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/e3nn/o3/_wigner.py:10: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  _Jd, _W3j_flat, _W3j_indices = torch.load(os.path.join(os.path.dirname(__file__), 'constants.pt'))
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+cuequivariance or cuequivariance_torch is not available. Cuequivariance acceleration will be disabled.
+{'model': 'MACE-POLAR-1-M', 'model_sha256': 'fab8b8713c832f31a2a853aaa22fd638be8a369cbf5095e6b3e982a18d10e93a', 'device': 'cpu', 'dtype': 'float64', 'atoms': 96, 'periodic': True, 'cell_A': [[21.8892, 0.0, 0.0], [0.0, 21.8892, 0.0], [0.0, 0.0, 21.8892]], 'input_sha256': 'd5397c87070eebdd3ffcccb2b31e4a34f84f4161fe810051e1a013f6d601239d', 'torch_version': '2.14.1', 'scope': 'Feasibility/numerical benchmark, not liquid or cleaning qualification', 'checkpointed_modules': [], 'edge_chunk_size': 0, 'fused_chunk_size': 0, 'node_chunk_size': 0, 'recompute_interactions': False, 'structure_note': 'Dilute periodic numerical control, not a liquid', 'accepted_finite_evaluation': True, 'shifted_energy_eV': -5.275088306530525, 'atomic_reference_offset_eV': -171962.67892456055, 'stress_eV_A3': [0.0019234395855445936, 0.004619837159586071, 0.003443287724787085, -0.0002942286523115892, 0.0008976045958713317, 3.306390787846064e-05], 'first_evaluation_seconds': 3.400702750077471, 'median_force_seconds': 2.9689772080164403, 'net_charge_e': -6.938893903907228e-16, 'step1fs_projected_ps_per_hour': 1.2125387794422118, 'projection_is_not_an_executed_trajectory': True}
+{"guard": {"command": ["work/molecular/.venv/bin/python", "work/molecular/mace_liquid_bench.py", "--structure", "liquid8", "--device", "cpu", "--dtype", "float64", "--tag", "contraction-control"], "pid": 40269, "exitcode": 0, "peak_RSS_MB": 2658.734375, "elapsed_seconds": 18.118292208993807, "termination_reason": null}}

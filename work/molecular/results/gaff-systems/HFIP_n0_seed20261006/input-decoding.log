@@ -1,0 +1,15 @@
+Note that major changes are planned in future for editconf, to improve usability and utility.
+Read 1500 atoms
+Volume: 43.6011 nm^3, corresponds to roughly 19600 electrons
+No velocities found
+               :-) GROMACS - gmx editconf, 2026.3-conda_forge (-:
+
+Executable:   /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin.ARM_NEON_ASIMD/gmx
+Data prefix:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env
+Working dir:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/gaff-systems/HFIP_n0_seed20261006
+Command line:
+  gmx editconf -f initial.gro -o input-parsed.g96
+
+
+GROMACS reminds you: "When the universe has expanded, time will contract" (Franz Ferdinand)
+

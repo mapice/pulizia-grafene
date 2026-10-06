@@ -1,0 +1,8 @@
+{
+  "path": "work/molecular/.venv/lib/python3.12/site-packages/mace/modules/models.py",
+  "old": "        node_energy = node_e0.clone().double() + node_inter_es.clone().double()\n",
+  "new": "        # Local Metal compatibility: diagnostic node energies only.\n        if node_e0.device.type == \"mps\":\n            node_energy = node_e0.clone() + node_inter_es.clone()\n        else:\n            node_energy = node_e0.clone().double() + node_inter_es.clone().double()\n",
+  "original_sha256": "a1e0958611bb4475b1739e6a9225677617c05d3df2b2724f27ba3c048240f1d7",
+  "patched_sha256": "72f57056c1297548d3afa45dc0ababf73f5be5b84ccb76d01f3e8ed19299eb4a",
+  "scope": "Changes only returned per-node energy dtype on Metal; main total energy and forces computation unchanged; CPU paths unchanged"
+}

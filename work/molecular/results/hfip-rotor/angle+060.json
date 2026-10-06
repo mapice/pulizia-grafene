@@ -1,0 +1,16 @@
+{
+  "angle_degree": 60.0,
+  "method": "PBE0-D3(BJ)/def2-TZVP",
+  "electronic_Ha": -789.387172536157,
+  "dispersion_Ha": -0.007508081387366435,
+  "total_kJ_mol": -2072555.4482004882,
+  "dipole_Debye": [
+    -1.3458595936196138,
+    -0.1765196974983876,
+    -2.3562828218740783
+  ],
+  "dipole_norm_Debye": 2.719295126682969,
+  "converged": true,
+  "geometry_sha256": "8ba897672f93c32d8197bd2e05c23d153f3e882ed77e758c1d16b65f201db87b",
+  "elapsed_seconds": 10.948004875099286
+}

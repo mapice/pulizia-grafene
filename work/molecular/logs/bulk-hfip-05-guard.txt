@@ -1,0 +1,3 @@
+Context initialized, minimizing
+Minimization finished
+{"guard": {"command": ["work/molecular/.venv/bin/python", "work/molecular/bulk_hfip.py", "--ps", "50"], "pid": 98538, "exitcode": -15, "peak_RSS_MB": 1196.953125, "elapsed_seconds": 605.5803704999853, "termination_reason": null}}

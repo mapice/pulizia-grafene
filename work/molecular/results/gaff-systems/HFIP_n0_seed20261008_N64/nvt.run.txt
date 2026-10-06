@@ -1,0 +1,29 @@
+                :-) GROMACS - gmx mdrun, 2026.3-conda_forge (-:
+
+Executable:   /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin.ARM_NEON_ASIMD/gmx
+Data prefix:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env
+Working dir:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/gaff-systems/HFIP_n0_seed20261008_N64
+Command line:
+  gmx mdrun -deffnm nvt -ntmpi 1 -ntomp 1 -pin off -nice 8
+
+Reading file nvt.tpr, VERSION 2026.3-conda_forge (single precision)
+Changing nstlist from 20 to 100, rlist from 1 to 1.059
+
+Update groups can not be used for this system because atoms that are (in)directly constrained together are interdispersed with other atoms
+
+Using 1 MPI thread
+Using 1 OpenMP thread 
+
+starting mdrun 'HFIP comparator n0'
+50000 steps,     50.0 ps.
+
+Writing final coordinates.
+
+               Core t (s)   Wall t (s)        (%)
+       Time:       26.394       26.394      100.0
+                 (ns/day)    (hour/ns)    (ms/step)  (Matom*steps/s) 
+Performance:      163.679        0.147        0.528            1.455 
+
+GROMACS reminds you: "Aristotle maintained that women have fewer teeth than men; although he was twice married, it never occurred to him to verify this statement by examining his wives' mouths." (Bertrand Russell)
+
+{"guard": {"command": ["/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin/gmx", "mdrun", "-deffnm", "nvt", "-ntmpi", "1", "-ntomp", "1", "-pin", "off", "-nice", "8"], "pid": 8378, "exitcode": 0, "peak_RSS_MB": 14.421875, "elapsed_seconds": 28.16824216605164, "termination_reason": null}}

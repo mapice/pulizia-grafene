@@ -1,0 +1,29 @@
+                :-) GROMACS - gmx mdrun, 2026.3-conda_forge (-:
+
+Executable:   /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin.ARM_NEON_ASIMD/gmx
+Data prefix:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env
+Working dir:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/gaff-systems/THF_n4_seed20261006
+Command line:
+  gmx mdrun -deffnm production -ntmpi 1 -ntomp 2 -pin off -nice 8
+
+Reading file production.tpr, VERSION 2026.3-conda_forge (single precision)
+Changing nstlist from 20 to 80, rlist from 1.01 to 1.134
+
+Update groups can not be used for this system because atoms that are (in)directly constrained together are interdispersed with other atoms
+
+Using 1 MPI thread
+Using 2 OpenMP threads 
+
+starting mdrun 'THF comparator n4'
+100000 steps,    100.0 ps.
+
+Writing final coordinates.
+
+               Core t (s)   Wall t (s)        (%)
+       Time:      534.193      267.097      200.0
+                 (ns/day)    (hour/ns)    (ms/step)  (Matom*steps/s) 
+Performance:       32.348        0.742        2.671            1.599 
+
+GROMACS reminds you: "Rockets are cool. There's no getting around that." (Elon Musk)
+
+{"guard": {"command": ["/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin/gmx", "mdrun", "-deffnm", "production", "-ntmpi", "1", "-ntomp", "2", "-pin", "off", "-nice", "8"], "pid": 72085, "exitcode": 0, "peak_RSS_MB": 24.390625, "elapsed_seconds": 267.53268687496893, "termination_reason": null}}

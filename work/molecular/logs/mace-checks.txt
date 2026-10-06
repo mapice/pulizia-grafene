@@ -1,0 +1,39 @@
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/e3nn/o3/_wigner.py:10: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  _Jd, _W3j_flat, _W3j_indices = torch.load(os.path.join(os.path.dirname(__file__), 'constants.pt'))
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+cuequivariance or cuequivariance_torch is not available. Cuequivariance acceleration will be disabled.
+{"pair": "HFIP__HFIP", "interaction_frozen_kJ_mol": -25.792499702205653, "max_force_at_GFN_geometry_eV_A": 0.7040111663508267, "elapsed_complex_seconds": 0.43571958295069635}
+{"pair": "HFIP__MeOH", "interaction_frozen_kJ_mol": -29.92039001126439, "max_force_at_GFN_geometry_eV_A": 0.5791771379850584, "elapsed_complex_seconds": 0.07993833301588893}
+{"pair": "HFIP__Acetone", "interaction_frozen_kJ_mol": -34.361559512913416, "max_force_at_GFN_geometry_eV_A": 0.6598114902463492, "elapsed_complex_seconds": 0.09116924996487796}
+{"pair": "HFIP__DMF", "interaction_frozen_kJ_mol": -42.85389495503933, "max_force_at_GFN_geometry_eV_A": 0.7354702765723486, "elapsed_complex_seconds": 0.11812499980442226}
+{"pair": "HFIP__THF", "interaction_frozen_kJ_mol": -44.86901696930691, "max_force_at_GFN_geometry_eV_A": 0.5448455013022888, "elapsed_complex_seconds": 0.10388208297081292}
+{"pair": "HFIP__MethylAcetate", "interaction_frozen_kJ_mol": -35.409135417153095, "max_force_at_GFN_geometry_eV_A": 0.7283876811068182, "elapsed_complex_seconds": 0.11087504192255437}
+{"pair": "HFIP__MethylPivalate", "interaction_frozen_kJ_mol": -37.149620322749534, "max_force_at_GFN_geometry_eV_A": 0.6988851718843984, "elapsed_complex_seconds": 0.14746991591528058}
+{"pair": "HFIP__DimethylCarbonate", "interaction_frozen_kJ_mol": -32.831628457444815, "max_force_at_GFN_geometry_eV_A": 0.624777607071769, "elapsed_complex_seconds": 0.16092516691423953}
+{"pair": "IPA__MethylAcetate", "interaction_frozen_kJ_mol": -27.0226499274827, "max_force_at_GFN_geometry_eV_A": 0.5442484558141396, "elapsed_complex_seconds": 0.17288779094815254}
+{"pair": "AceticAcid__MethylAcetate", "interaction_frozen_kJ_mol": -43.46094122641572, "max_force_at_GFN_geometry_eV_A": 0.8565247919633376, "elapsed_complex_seconds": 0.06496300012804568}
+{"pair": "TFE__MethylAcetate", "interaction_frozen_kJ_mol": -34.114980044381404, "max_force_at_GFN_geometry_eV_A": 0.5852424254659206, "elapsed_complex_seconds": 0.07674587517976761}
+{"pair": "MeOH__MethylAcetate", "interaction_frozen_kJ_mol": -26.964396523045583, "max_force_at_GFN_geometry_eV_A": 0.6438206872389766, "elapsed_complex_seconds": 0.06027766689658165}
+{"pair": "Water__MethylAcetate", "interaction_frozen_kJ_mol": -26.705837875161624, "max_force_at_GFN_geometry_eV_A": 0.47781177358563615, "elapsed_complex_seconds": 0.10551979206502438}
+{"device": "cpu", "dtype": "float64", "median_seconds": 0.1341047917958349, "energy_difference_from_CPU64_eV": 0.0, "forces_RMS_difference_eV_A": 0.0}
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+{"device": "cpu", "dtype": "float32", "median_seconds": 0.15475779119879007, "energy_difference_from_CPU64_eV": 0.0022848597291158512, "forces_RMS_difference_eV_A": 1.948758125995584e-06}
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+{"device": "mps", "dtype": "float32", "median_seconds": 0.08737212512642145, "energy_difference_from_CPU64_eV": 0.0022848597291158512, "forces_RMS_difference_eV_A": 1.8877052998658616e-06}
+Finished 10.891349999932572 729.484375
+{"guard": {"command": ["work/molecular/.venv/bin/python", "work/molecular/mace_checks.py"], "pid": 3169, "exitcode": 0, "peak_RSS_MB": 658.46875, "elapsed_seconds": 18.171856875065714, "termination_reason": null}}

@@ -1,0 +1,44 @@
+[
+  {
+    "solvent": "HFIP",
+    "polymer_n": 4,
+    "center_nm": 0.6,
+    "k_kJ_mol_nm2": 2000,
+    "run_ps": 125,
+    "discard_ps": 25,
+    "coordinate_mean_nm": 0.5889429700299701,
+    "coordinate_sd_nm": 0.01248514552163508,
+    "reported_pull_force_mean_kJ_mol_nm": 22.114118487096906,
+    "independently_reconstructed_spring_force_kJ_mol_nm": 22.11405994005977,
+    "elapsed_seconds": 221.50847095809877,
+    "scope": "Single short biased window; not a converged free-energy profile or actual cleaning."
+  },
+  {
+    "solvent": "HFIP",
+    "polymer_n": 4,
+    "center_nm": 0.9,
+    "k_kJ_mol_nm2": 2000,
+    "run_ps": 125,
+    "discard_ps": 25,
+    "coordinate_mean_nm": 0.8416835944055945,
+    "coordinate_sd_nm": 0.027255807566997522,
+    "reported_pull_force_mean_kJ_mol_nm": 116.6327371058941,
+    "independently_reconstructed_spring_force_kJ_mol_nm": 116.63281118881108,
+    "elapsed_seconds": 223.40454045892693,
+    "scope": "Single short biased window; not a converged free-energy profile or actual cleaning."
+  },
+  {
+    "solvent": "HFIP",
+    "polymer_n": 4,
+    "center_nm": 1.35,
+    "k_kJ_mol_nm2": 2000,
+    "run_ps": 125,
+    "discard_ps": 25,
+    "coordinate_mean_nm": 1.3166865434565436,
+    "coordinate_sd_nm": 0.05261927186182921,
+    "reported_pull_force_mean_kJ_mol_nm": 66.62678341558441,
+    "independently_reconstructed_spring_force_kJ_mol_nm": 66.62691308691305,
+    "elapsed_seconds": 223.53173408308066,
+    "scope": "Single short biased window; not a converged free-energy profile or actual cleaning."
+  }
+]

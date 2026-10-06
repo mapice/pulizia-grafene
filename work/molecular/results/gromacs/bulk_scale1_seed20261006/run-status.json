@@ -1,0 +1,32 @@
+[
+  {
+    "stage": "min-prep",
+    "exitcode": 0,
+    "elapsed_seconds": 2.0729299169033766
+  },
+  {
+    "stage": "min",
+    "exitcode": 0,
+    "elapsed_seconds": 2.073179957922548
+  },
+  {
+    "stage": "nvt-prep",
+    "exitcode": 0,
+    "elapsed_seconds": 2.0635277919936925
+  },
+  {
+    "stage": "nvt",
+    "exitcode": 0,
+    "elapsed_seconds": 36.26969700003974
+  },
+  {
+    "stage": "npt-prep",
+    "exitcode": 0,
+    "elapsed_seconds": 2.1013695418369025
+  },
+  {
+    "stage": "npt",
+    "exitcode": 0,
+    "elapsed_seconds": 430.5886387079954
+  }
+]

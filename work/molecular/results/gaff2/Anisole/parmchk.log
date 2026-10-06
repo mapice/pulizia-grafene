@@ -1,0 +1,1 @@
+{"guard": {"command": ["/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/parmchk2", "-i", "molecule.mol2", "-f", "mol2", "-s", "gaff2", "-o", "molecule.frcmod"], "pid": 15010, "exitcode": 0, "peak_RSS_MB": 1.609375, "elapsed_seconds": 2.0157036669552326, "termination_reason": null}}

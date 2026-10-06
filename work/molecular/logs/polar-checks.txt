@@ -1,0 +1,29 @@
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/e3nn/o3/_wigner.py:10: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  _Jd, _W3j_flat, _W3j_indices = torch.load(os.path.join(os.path.dirname(__file__), 'constants.pt'))
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+WARNING:root:Default dtype float64 does not match model dtype float32, converting models to float64.
+cuequivariance or cuequivariance_torch is not available. Cuequivariance acceleration will be disabled.
+HFIP__HFIP -25.93229510772142 0.6264491670299321
+HFIP__MeOH -36.133810030165996 0.38463020813651383
+HFIP__Acetone -41.01326004850366 0.33723412500694394
+HFIP__DMF -54.107382280909285 0.3891501249745488
+HFIP__THF -45.971289869016736 0.3822420409414917
+HFIP__MethylAcetate -46.19041584487483 0.3529210831038654
+HFIP__MethylPivalate -48.97333859088233 0.5573033750988543
+HFIP__DimethylCarbonate -42.23417342028411 0.35984645900316536
+IPA__MethylAcetate -28.265631665702557 0.3531337499152869
+AceticAcid__MethylAcetate -44.832063971866866 0.2994827087968588
+TFE__MethylAcetate -40.457068297737685 0.30991341592743993
+MeOH__MethylAcetate -27.078747050369998 0.26951545802876353
+Water__MethylAcetate -26.806941880331387 0.22332687489688396
+Finished 10.93648741603829 1258.328125
+{"guard": {"command": ["work/molecular/.venv/bin/python", "work/molecular/polar_checks.py"], "pid": 22380, "exitcode": 0, "peak_RSS_MB": 1118.96875, "elapsed_seconds": 16.101413249969482, "termination_reason": null}}

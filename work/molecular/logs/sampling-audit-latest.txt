@@ -1,0 +1,5 @@
+results/umbrella/Anisole_n4 windows 3 overlaps [0.0, 0.0] acceptedPMF False
+results/umbrella/DMF_n4 windows 3 overlaps [0.0, 0.0] acceptedPMF False
+results/umbrella/HFIP_n4 windows 3 overlaps [0.0, 0.0] acceptedPMF False
+results/umbrella-ladders/DMF_n4_k750_500ps/forward windows 4 overlaps [0.709, 0.108, 0.489] acceptedPMF False
+results/umbrella-ladders/HFIP_n4_k750_500ps/forward windows 6 overlaps [0.677, 0.944, 0.728, 0.0, 0.112] acceptedPMF False

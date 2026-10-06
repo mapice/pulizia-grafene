@@ -1,0 +1,31 @@
+{
+  "model": "MACE-POLAR-1-M",
+  "model_sha256": "fab8b8713c832f31a2a853aaa22fd638be8a369cbf5095e6b3e982a18d10e93a",
+  "device": "mps",
+  "dtype": "float32",
+  "atoms": 12,
+  "periodic": false,
+  "cell_A": [
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "input_sha256": "1570e8c943c91effbf1ba5980df70dcf1f97b8e18ec054a2f9853ed42822866a",
+  "torch_version": "2.14.1",
+  "scope": "Feasibility/numerical benchmark, not liquid or cleaning qualification",
+  "accepted_finite_evaluation": false,
+  "error": "Cannot convert a MPS Tensor to float64 dtype as the MPS framework doesn't support float64. Please use float32 instead.",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/mace_liquid_bench.py\", line 79, in main\n    started=time.monotonic();energy=float(a.get_potential_energy());force=a.get_forces()\n                                          ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/ase/atoms.py\", line 1971, in get_potential_energy\n    energy = self._calc.get_potential_energy(self)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/ase/calculators/abc.py\", line 25, in get_potential_energy\n    return self.get_property(name, atoms)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/ase/calculators/calculator.py\", line 517, in get_property\n    self.calculate(atoms, [name], system_changes)\n  File \"/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/mace/calculators/mace.py\", line 635, in calculate\n    out = model(\n          ^^^^^^\n  File \"/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/mace/modules/extensions.py\", line 743, in forward\n    src=fukui_sources.double(),\n        ^^^^^^^^^^^^^^^^^^^^^^\nTypeError: Cannot convert a MPS Tensor to float64 dtype as the MPS framework doesn't support float64. Please use float32 instead.\n"
+}

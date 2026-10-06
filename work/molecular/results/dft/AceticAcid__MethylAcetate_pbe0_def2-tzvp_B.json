@@ -1,0 +1,17 @@
+{
+  "label": "AceticAcid__MethylAcetate_pbe0_def2-tzvp_B",
+  "basis": "def2-tzvp",
+  "xc": "pbe0",
+  "converged": true,
+  "electronic_Ha": -228.92888058179338,
+  "dispersion_Ha": -0.0034412479869668977,
+  "total_Ha": -228.93232182978034,
+  "basis_functions": 148,
+  "real_atoms": 8,
+  "ghost_atoms": 0,
+  "geometry_hash": "822d3de9e5cb488146c393bfbb3b8adabc7843113e1304efeda5302ead51a471",
+  "elapsed_seconds": 4.3673264579847455,
+  "peak_rss_MB": 1618.875,
+  "grid_level": 3,
+  "conv_tol_Ha": 1e-09
+}

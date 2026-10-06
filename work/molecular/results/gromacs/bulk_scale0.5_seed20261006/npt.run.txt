@@ -1,0 +1,29 @@
+                :-) GROMACS - gmx mdrun, 2026.3-conda_forge (-:
+
+Executable:   /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin.ARM_NEON_ASIMD/gmx
+Data prefix:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env
+Working dir:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/gromacs/bulk_scale0.5_seed20261006
+Command line:
+  gmx mdrun -deffnm npt -ntmpi 1 -ntomp 2 -pin off -nice 8
+
+Reading file npt.tpr, VERSION 2026.3-conda_forge (single precision)
+Changing nstlist from 20 to 100, rlist from 1.001 to 1.078
+
+Update groups can not be used for this system because atoms that are (in)directly constrained together are interdispersed with other atoms
+
+Using 1 MPI thread
+Using 2 OpenMP threads 
+
+starting mdrun 'HFIP published-force-field qualification'
+1000000 steps,   1000.0 ps.
+
+Writing final coordinates.
+
+               Core t (s)   Wall t (s)        (%)
+       Time:     1744.058      872.029      200.0
+                 (ns/day)    (hour/ns)    (ms/step)  (Matom*steps/s) 
+Performance:       99.079        0.242        0.872            1.720 
+
+GROMACS reminds you: "Every Sperm is Sacred" (Monty Python)
+
+{"guard": {"command": ["/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin/gmx", "mdrun", "-deffnm", "npt", "-ntmpi", "1", "-ntomp", "2", "-pin", "off", "-nice", "8"], "pid": 7689, "exitcode": 0, "peak_RSS_MB": 17.6875, "elapsed_seconds": 873.1758057919797, "termination_reason": null}}

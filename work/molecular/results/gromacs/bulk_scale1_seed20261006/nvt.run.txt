@@ -1,0 +1,29 @@
+                :-) GROMACS - gmx mdrun, 2026.3-conda_forge (-:
+
+Executable:   /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin.ARM_NEON_ASIMD/gmx
+Data prefix:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env
+Working dir:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/gromacs/bulk_scale1_seed20261006
+Command line:
+  gmx mdrun -deffnm nvt -ntmpi 1 -ntomp 2 -pin off -nice 8
+
+Reading file nvt.tpr, VERSION 2026.3-conda_forge (single precision)
+Changing nstlist from 20 to 100, rlist from 1 to 1.061
+
+Update groups can not be used for this system because atoms that are (in)directly constrained together are interdispersed with other atoms
+
+Using 1 MPI thread
+Using 2 OpenMP threads 
+
+starting mdrun 'HFIP published-force-field qualification'
+50000 steps,     50.0 ps.
+
+Writing final coordinates.
+
+               Core t (s)   Wall t (s)        (%)
+       Time:       70.793       35.396      200.0
+                 (ns/day)    (hour/ns)    (ms/step)  (Matom*steps/s) 
+Performance:      122.049        0.197        0.708            2.119 
+
+GROMACS reminds you: "My Ass May Be Dumb, But I Ain't No Dumbass." (Jackie Brown)
+
+{"guard": {"command": ["/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin/gmx", "mdrun", "-deffnm", "nvt", "-ntmpi", "1", "-ntomp", "2", "-pin", "off", "-nice", "8"], "pid": 27658, "exitcode": 0, "peak_RSS_MB": 16.671875, "elapsed_seconds": 36.22238166606985, "termination_reason": null}}

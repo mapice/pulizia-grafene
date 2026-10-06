@@ -1,0 +1,66 @@
+Using Cached Shard Index for conda-forge/noarch                                                     ✔ Done
+Using Cached Shard Index for conda-forge/osx-arm64                                                  ✔ Done
+Fetching and Parsing Packages' Shards                                                           ⧖ Starting
+Fetching and Parsing Packages' Shards                                                     ✔ Done (0.2 sec)
+
+Resolving Environment                                                                           ⧖ Starting
+Resolving Environment                                                                     ✔ Done (0.2 sec)
+
+Transaction
+
+  Prefix: /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env
+
+  Updating specs:
+
+   - plumed=2.10.1
+
+
+  Package         Version  Build                   Channel          Size
+──────────────────────────────────────────────────────────────────────────
+  Install:
+──────────────────────────────────────────────────────────────────────────
+
+  + gawk            5.4.1  hcc05c04_0              conda-forge       1MB
+  + gmp             6.3.0  hf5e55b1_3              conda-forge     399kB
+  + gsl               2.8  hc72306e_2              conda-forge       2MB
+  + libasprintf    0.25.1  hae62183_2              conda-forge      52kB
+  + libblas        3.11.0  11_h51639a9_openblas    conda-forge      18kB
+  + libcblas       3.11.0  11_hb0561ab_openblas    conda-forge      18kB
+  + libgettextpo   0.25.1  hae62183_2              conda-forge     182kB
+  + libintl        0.25.1  hae62183_2              conda-forge      90kB
+  + liblapack      3.11.0  11_hd9741b5_openblas    conda-forge      18kB
+  + libopenblas    0.3.34  openmp_h5e6e99c_1       conda-forge       4MB
+  + mpfr            4.2.2  h72846b0_1              conda-forge     351kB
+  + ncurses           6.6  he64c551_1              conda-forge     804kB
+  + plumed         2.10.1  mpi_nompi_h5a5ec84_103  conda-forge       3MB
+  + readline          8.3  h8b90a29_1              conda-forge     314kB
+
+  Summary:
+
+  Install: 14 packages
+
+  Total download: 13MB
+
+──────────────────────────────────────────────────────────────────────────
+
+
+warning  libmamba Security Warning: This transaction includes executing package scripts (pre/post-link/unlink) if present. These scripts can contain arbitrary code. Please ensure you trust the package sources.
+
+Transaction starting
+Linking gmp-6.3.0-hf5e55b1_3
+Linking libintl-0.25.1-hae62183_2
+Linking libasprintf-0.25.1-hae62183_2
+Linking ncurses-6.6-he64c551_1
+Linking libopenblas-0.3.34-openmp_h5e6e99c_1
+Linking mpfr-4.2.2-h72846b0_1
+Linking libgettextpo-0.25.1-hae62183_2
+Linking readline-8.3-h8b90a29_1
+Linking libblas-3.11.0-11_h51639a9_openblas
+Linking gawk-5.4.1-hcc05c04_0
+Linking libcblas-3.11.0-11_hb0561ab_openblas
+Linking liblapack-3.11.0-11_hd9741b5_openblas
+Linking gsl-2.8-hc72306e_2
+Linking plumed-2.10.1-mpi_nompi_h5a5ec84_103
+
+Transaction finished
+

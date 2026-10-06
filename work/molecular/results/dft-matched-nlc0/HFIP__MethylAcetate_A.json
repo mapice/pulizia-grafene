@@ -1,0 +1,14 @@
+{
+  "functional": "omegaB97M-V with VV10 nonlocal correlation",
+  "basis": "def2-tzvpd",
+  "energy_Ha": -268.3943274081072,
+  "SCF_converged": true,
+  "no_additional_D3": true,
+  "geometry_sha256": "80b56cfd027b62f794dd9b8ed47907ddaca86ffd1ae43ed6b270f97781a8ded1",
+  "basis_functions": 245,
+  "real_atoms": 11,
+  "ghost_atoms": 0,
+  "grid_level": 3,
+  "nlc_grid_level": 0,
+  "elapsed_seconds": 17.378344167023897
+}

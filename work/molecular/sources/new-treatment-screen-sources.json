@@ -1,0 +1,19 @@
+[
+  {
+    "name": "nitrite-cleaning-2025.xml",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11902524/fullTextXML",
+    "bytes": 158306,
+    "sha256": "a1c14c4330b156209732ffdb1b84d09103ac0ce7afaf7c6d42f8728d3463d0da"
+  },
+  {
+    "name": "physical-transfer-2021.xml",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8625831/fullTextXML",
+    "bytes": 242972,
+    "sha256": "f582be5c13fd592e813439864dc2d1514fcde093915f81c158eb4a9b57ba8901"
+  },
+  {
+    "name": "bubble-free-2018-si.pdf",
+    "url": "https://www.rsc.org/suppdata/c7/tc/c7tc05695h/c7tc05695h1.pdf",
+    "error": "HTTP Error 404: Not Found"
+  }
+]

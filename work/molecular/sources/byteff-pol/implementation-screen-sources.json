@@ -1,0 +1,26 @@
+[
+  {
+    "name": "write_params.py",
+    "url": "https://raw.githubusercontent.com/ByteDance-Seed/byteff2/8f2813407ba5fbecfb5ec5c69e10b124c5b5bdc2/example/3_write_params/write_params.py",
+    "bytes": 2320,
+    "sha256": "8d462d5c4286c46f79d6dbf88a0df41c8ffc6fcb87e80d912ca9b5ae1f955bb9"
+  },
+  {
+    "name": "MD-README.md",
+    "url": "https://raw.githubusercontent.com/ByteDance-Seed/byteff2/8f2813407ba5fbecfb5ec5c69e10b124c5b5bdc2/example/4_MD_simulations/README.md",
+    "bytes": 4804,
+    "sha256": "5260b9ba73acca4a3d0bd485e0ec15511066f2c6734583b394ead4f0cbfce4de"
+  },
+  {
+    "name": "example-AFGBL.itp",
+    "url": "https://raw.githubusercontent.com/ByteDance-Seed/byteff2/8f2813407ba5fbecfb5ec5c69e10b124c5b5bdc2/example/3_write_params/AFGBL/AFGBL.itp",
+    "bytes": 15418,
+    "sha256": "4a9c230d331c3b520a37f8f0baa3f21fd9767db0b69ebb48532606df98f37ebc"
+  },
+  {
+    "name": "model-tree.json",
+    "url": "https://huggingface.co/api/models/ByteDance-Seed/byteff2/tree/b92ac49058c113625012c1f50d98a7bf9cf4e46e/trained_models?expand=true",
+    "bytes": 2527,
+    "sha256": "8b8b967949ee97dfcdb153e08317757469e5792cebbb4e239b6620755635a365"
+  }
+]

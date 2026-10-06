@@ -1,0 +1,5 @@
+{
+  "original_sha256": "4b383771be89e6dea6ef893af63c87f6d03dc9ea4d2deddc40721cc6ea24c743",
+  "patched_sha256": "db20bae52a79d82f905d5ae447262b5013865ec75d7692eb995f45c07063a137",
+  "scope": "Exact contraction-order change in isolated environment; model weights unchanged; parity required"
+}

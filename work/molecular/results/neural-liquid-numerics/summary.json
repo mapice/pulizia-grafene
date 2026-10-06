@@ -1,0 +1,56 @@
+{
+  "model_sha256": "fab8b8713c832f31a2a853aaa22fd638be8a369cbf5095e6b3e982a18d10e93a",
+  "atoms": 768,
+  "periodic_fixed_cell": true,
+  "initial_state": "GAFF2-generated configuration, not M-model equilibrium",
+  "numerical_derivative_checks": [
+    {
+      "type": "atomic_force",
+      "atom": 580,
+      "axis": 1,
+      "step_A": 0.002,
+      "analytical_eV_A": 4.471076965332031,
+      "numerical_eV_A": 4.486083984375,
+      "relative_error": 0.0033564663026481867
+    },
+    {
+      "type": "whole_molecule_force",
+      "molecule": 27,
+      "axis": 2,
+      "step_A": 0.01,
+      "analytical_eV_A": 0.6121635437011719,
+      "numerical_eV_A": 0.6046295166015625,
+      "relative_error": 0.012307212688028812
+    },
+    {
+      "type": "xx_strain_derivative",
+      "strain_step": 0.0001,
+      "analytical_eV_A3": 0.02027297578752041,
+      "numerical_eV_A3": 0.020441215908242102,
+      "relative_error": 0.008298738304874709
+    }
+  ],
+  "nve_branches": [
+    {
+      "timestep_fs": 0.5,
+      "duration_fs": 8,
+      "steps": 16,
+      "max_absolute_total_energy_change_eV": 0.039287244169784685,
+      "final_total_energy_change_eV": 0.014418828529677796,
+      "elapsed_seconds": 141.31520570791326
+    },
+    {
+      "timestep_fs": 0.25,
+      "duration_fs": 8,
+      "steps": 32,
+      "max_absolute_total_energy_change_eV": 0.009788614721898625,
+      "final_total_energy_change_eV": 0.0035824736616163477,
+      "elapsed_seconds": 276.7433409160003
+    }
+  ],
+  "MPS_memory_fraction_limit": 0.25,
+  "CPU_threads": 1,
+  "scope": "Numerical stability control only over 8fs",
+  "liquid_properties_or_interface_qualification": false,
+  "cleaning_solution_established": false
+}

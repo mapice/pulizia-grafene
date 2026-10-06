@@ -1,0 +1,23 @@
+{
+  "solvent": "HFIP",
+  "solvent_model": "GAFF2/AM1-BCC from AmberTools26",
+  "polymer_n": 4,
+  "polymer_atoms": 65,
+  "graphene_atoms": 448,
+  "solvent_molecules": 226,
+  "total_atoms": 3225,
+  "box_nm": [
+    3.4032,
+    3.438467263185735,
+    3.8
+  ],
+  "seed": 20261006,
+  "liquid_number_chosen_using_density_g_cm3": 1.607,
+  "target_density_reference": "HFIP1.607 primaryCasoria; DMF/THF nominal25C initialization estimates, not fitted acceptance values",
+  "solvent_molar_mass_g_mol": 168.046,
+  "polymer_model": "Published2021 SI, documented end caps and1-4 assumption",
+  "graphene_model": "Rigid periodic sheet; LJ SI2021 S1; G-G constant omitted",
+  "scope": "Exploratory top-face polymer/liquid model; not950K, not SiO2 selectivity, not graphene damage.",
+  "forcefield_desorption_qualified": false,
+  "temperature_coupling": "System; frozen DOFs omitted by GROMACS; no COM removal with fixed surface"
+}

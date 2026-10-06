@@ -1,0 +1,31 @@
+                :-) GROMACS - gmx mdrun, 2026.3-conda_forge (-:
+
+Executable:   /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin.ARM_NEON_ASIMD/gmx
+Data prefix:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env
+Working dir:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/orientation-pilots/HFIP_z1.050_rgz0.220_100ps/forward
+Command line:
+  gmx mdrun -deffnm run -plumed plumed.dat -ntmpi 1 -ntomp 1 -pin off -nice 8
+
+Reading file run.tpr, VERSION 2026.3-conda_forge (single precision)
+Changing nstlist from 20 to 100, rlist from 1.004 to 1.093
+
+Update groups can not be used for this system because atoms that are (in)directly constrained together are interdispersed with other atoms
+
+Using 1 MPI thread
+Using 1 OpenMP thread 
+
++++ Loading the PLUMED kernel runtime +++
++++ PLUMED_KERNEL="/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/lib/libplumedKernel.dylib" +++
+starting mdrun 'HFIP comparator n4'
+100000 steps,    100.0 ps.
+
+Writing final coordinates.
+
+               Core t (s)   Wall t (s)        (%)
+       Time:      282.739      282.740      100.0
+                 (ns/day)    (hour/ns)    (ms/step)  (Matom*steps/s) 
+Performance:       30.558        0.785        2.827            1.141 
+
+GROMACS reminds you: "...sometimes a scream is better than a thesis." (Ralph Waldo Emerson)
+
+{"guard": {"command": ["/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin/gmx", "mdrun", "-deffnm", "run", "-plumed", "plumed.dat", "-ntmpi", "1", "-ntomp", "1", "-pin", "off", "-nice", "8"], "pid": 44375, "exitcode": 0, "peak_RSS_MB": 26.296875, "elapsed_seconds": 283.69876745902, "termination_reason": null}}

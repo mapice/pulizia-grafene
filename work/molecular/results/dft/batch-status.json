@@ -1,0 +1,65 @@
+[
+  {
+    "pair": "AceticAcid__MethylAcetate",
+    "basis": "def2-svp",
+    "exitcode": 0,
+    "elapsed_seconds": 28.825989125063643,
+    "log": "work/molecular/logs/dft-AceticAcid__MethylAcetate-def2-svp.txt"
+  },
+  {
+    "pair": "IPA__MethylAcetate",
+    "basis": "def2-svp",
+    "exitcode": 0,
+    "elapsed_seconds": 34.57062941696495,
+    "log": "work/molecular/logs/dft-IPA__MethylAcetate-def2-svp.txt"
+  },
+  {
+    "pair": "HFIP__HFIP",
+    "basis": "def2-svp",
+    "exitcode": 0,
+    "elapsed_seconds": 98.79661504202522,
+    "log": "work/molecular/logs/dft-HFIP__HFIP-def2-svp.txt"
+  },
+  {
+    "pair": "HFIP__DMF",
+    "basis": "def2-svp",
+    "exitcode": 0,
+    "elapsed_seconds": 58.06943304184824,
+    "log": "work/molecular/logs/dft-HFIP__DMF-def2-svp.txt"
+  },
+  {
+    "pair": "HFIP__THF",
+    "basis": "def2-svp",
+    "exitcode": 0,
+    "elapsed_seconds": 140.4136517920997,
+    "log": "work/molecular/logs/dft-HFIP__THF-def2-svp.txt"
+  },
+  {
+    "pair": "HFIP__Acetone",
+    "basis": "def2-svp",
+    "exitcode": 0,
+    "elapsed_seconds": 61.099842166062444,
+    "log": "work/molecular/logs/dft-HFIP__Acetone-def2-svp.txt"
+  },
+  {
+    "pair": "HFIP__MethylAcetate",
+    "basis": "def2-tzvp",
+    "exitcode": 0,
+    "elapsed_seconds": 213.05273958388716,
+    "log": "work/molecular/logs/dft-HFIP__MethylAcetate-def2-tzvp.txt"
+  },
+  {
+    "pair": "AceticAcid__MethylAcetate",
+    "basis": "def2-tzvp",
+    "exitcode": 0,
+    "elapsed_seconds": 80.26813937514089,
+    "log": "work/molecular/logs/dft-AceticAcid__MethylAcetate-def2-tzvp.txt"
+  },
+  {
+    "pair": "IPA__MethylAcetate",
+    "basis": "def2-tzvp",
+    "exitcode": 0,
+    "elapsed_seconds": 92.6519647501409,
+    "log": "work/molecular/logs/dft-IPA__MethylAcetate-def2-tzvp.txt"
+  }
+]

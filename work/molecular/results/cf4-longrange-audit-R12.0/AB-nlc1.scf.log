@@ -1,0 +1,218 @@
+#INFO: **** input file is /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/cf4_tail_audit.py ****
+"""Direct long-distance energy audit for two neutral CF4 molecules.
+
+CF4 is a fluorinated, nonpolar diagnostic with no H bonds. It is not a
+cleaning candidate and cannot by itself explain the HFIP equation of state.
+Counterpoise wB97M-V/TZVPD uses VV10; no D3 is added to either Hamiltonian.
+"""
+import os
+for v in ['OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','VECLIB_MAXIMUM_THREADS']:os.environ[v]='1'
+os.nice(8)
+from pathlib import Path
+import hashlib, json, time, subprocess,sys,argparse
+import numpy as np
+import torch
+torch.set_num_threads(1);torch.set_num_interop_threads(1);torch.set_default_dtype(torch.float64)
+from ase import Atoms
+from ase.io import write,read
+from scipy.spatial.transform import Rotation
+from mace.calculators import MACECalculator
+from pyscf import dft,gto,lib
+from neural_structure import SHA
+from fused_radial_interaction import wrap_radial_interactions
+from chunk_node_products import wrap_node_products
+lib.num_threads(1)
+
+HERE=Path(__file__).resolve().parent
+ROOT=HERE/'results/cf4-longrange-audit'
+HA_KJ=2625.499638;EV_KJ=96.4853321233
+
+
+def main():
+    global ROOT
+    parser=argparse.ArgumentParser();parser.add_argument('--reference-distance',type=float,choices=[8.5,12.],default=8.5)
+    args=parser.parse_args()
+    if args.reference_distance!=8.5:ROOT=ROOT.with_name(ROOT.name+f'-R{args.reference_distance:.1f}')
+    assert not ROOT.exists(),'Preserve completed/interrupted reference'
+    ROOT.mkdir(parents=True)
+    # TBLite and torch ship different OpenMP runtimes on this Mac. Isolate
+    # geometry preparation; never allow duplicate runtimes via KMP flags.
+    subprocess.run([sys.executable,str(HERE/'prepare_cf4_geometry.py'),str(ROOT)],check=True,timeout=120)
+    geometry_record=json.loads((ROOT/'geometry.json').read_text())
+    converged=geometry_record['GFN2_geometry_converged'];assert converged
+    a=read(ROOT/'monomer.xyz')
+    path=HERE/'sources/MACE-POLAR-1-M.model';assert hashlib.sha256(path.read_bytes()).hexdigest()==SHA
+    torch.serialization.add_safe_globals([slice]);model=torch.load(path,map_location='cpu',weights_only=False).double()
+    with torch.no_grad():model.atomic_energies_fn.atomic_energies.zero_()
+    wrap_radial_interactions(model,256);wrap_node_products(model,16)
+    calc=MACECalculator(models=model,model_type='PolarMACE',device='cpu',default_dtype='float64')
+
+    def energy(x):
+        b=x.copy();b.info.update(charge=0,spin=1,external_field=[0.,0.,0.])
+        data=calc._atoms_to_batch(b).to_dict()
+        with torch.no_grad():out=model(data,compute_force=False,compute_stress=False,compute_virials=False,training=False)
+        return float(out['energy'].item())*calc.energy_units_to_eV
+
+    e0=energy(a);rows=[];reference=None
+    for orientation in [0.,90.]:
+        b=a.copy();b.positions=b.positions@Rotation.from_euler('z',orientation,degrees=True).as_matrix().T
+        em=energy(b)
+        for distance in [7.8,8.5,10.,12.,16.,20.]:
+            c=b.copy();c.positions[:,0]+=distance;ab=a+c
+            nearest=float(np.linalg.norm(a.positions[:,None,:]-c.positions[None,:,:],axis=-1).min())
+            assert nearest>float(model.r_max)
+            value=(energy(ab)-e0-em)*EV_KJ
+            row=dict(carbon_distance_A=distance,orientation_z_degrees=orientation,
+                     nearest_cross_atom_A=nearest,all_cross_edges_beyond_local_cutoff=True,
+                     interaction_M_kJ_mol=value,rotated_monomer_energy_difference_kJ_mol=(em-e0)*EV_KJ)
+            rows.append(row);print(row,flush=True)
+            if orientation==0. and distance==args.reference_distance:reference=ab.copy();write(ROOT/'reference-dimer.xyz',reference)
+    (ROOT/'learned-curve.json').write_text(json.dumps(dict(model_sha256=SHA,rows=rows,
+        local_cutoff_A=float(model.r_max),GFN2_geometry_converged=converged,
+        scope='Fixed neutral CF4 gas diagnostic; not an HFIP density or graphene-cleaning prediction'),indent=2)+'\n')
+    # Match the training functional on the same frozen geometry. Ghost
+    # fragments are calculated independently, not identified by symmetry.
+    results=[];old_density={}
+    for level in [0,1]:
+        energies={}
+        for tag,indices in [('A',range(5)),('B',range(5,10)),('AB',range(10)),('Acp',range(5)),('Bcp',range(5,10))]:
+            current=(reference[:5] if tag=='A' else reference[5:] if tag=='B' else reference)
+            real=set(range(5)) if tag in ['A','B'] else set(indices)
+            geometry=[(symbol if i in real else 'ghost-'+symbol,tuple(x))
+                      for i,(symbol,x) in enumerate(zip(current.get_chemical_symbols(),current.positions))]
+            label=f'{tag}-nlc{level}'
+            mol=gto.M(atom=geometry,basis='def2-tzvpd',unit='Angstrom',charge=0,spin=0,
+                      verbose=4,max_memory=1600,output=str(ROOT/(label+'.scf.log')))
+            mf=dft.RKS(mol).density_fit();mf.xc='wb97m-v';mf.grids.level=3;mf.nlcgrids.level=level
+            mf.conv_tol=1e-10;mf.max_cycle=100;mf.chkfile=None
+            assert mf.do_nlc() and dft.libxc.is_nlc(mf.xc)
+            start=time.monotonic()
+            def callback(env):
+                np.savez(ROOT/(label+'-progress.npz'),density=env['dm'])
+                if time.monotonic()-start>600:raise TimeoutError('SCF own 10-minute cap')
+            mf.callback=callback
+            initial=old_density.get(tag)
+            if initial is None and tag in ['AB','Acp','Bcp']:
+                da=old_density['A'];db=old_density['B'];initial=np.zeros((mol.nao,mol.nao))
+                if tag in ['AB','Acp']:initial[:len(da),:len(da)]=da
+                if tag in ['AB','Bcp']:initial[len(da):,len(da):]=db
+            value=float(mf.kernel(dm0=initial));energies[tag]=value
+            record=dict(energy_Ha=value,SCF_converged=bool(mf.converged),basis='def2-tzvpd',
+                        functional='omegaB97M-V with VV10, no additional D3',nlc_grid_level=level,
+                        basis_functions=mol.nao,elapsed_seconds=time.monotonic()-start)
+            (ROOT/(label+'.json')).write_text(json.dumps(record,indent=2)+'\n');print(label,record,flush=True)
+            assert mf.converged
+            old_density[tag]=mf.make_rdm1();np.savez(ROOT/(label+'-state.npz'),density=mf.make_rdm1())
+        result=dict(nlc_grid_level=level,energies_Ha=energies,
+                    frozen_counterpoise_interaction_kJ_mol=(energies['AB']-energies['Acp']-energies['Bcp'])*HA_KJ,
+                    uncorrected_interaction_kJ_mol=(energies['AB']-energies['A']-energies['B'])*HA_KJ,
+                    ghost_fragment_symmetry_difference_kJ_mol=(energies['Acp']-energies['Bcp'])*HA_KJ)
+        results.append(result);(ROOT/'quantum-progress.json').write_text(json.dumps(results,indent=2)+'\n')
+        print(result,flush=True)
+    final=dict(model_sha256=SHA,learned_curve=rows,quantum_reference=results,
+               quantum_reference_carbon_distance_A=args.reference_distance,quantum_reference_orientation_z_degrees=0.,
+               nonlinear_grid_shift_kJ_mol=results[1]['frozen_counterpoise_interaction_kJ_mol']-results[0]['frozen_counterpoise_interaction_kJ_mol'],
+               scope='Neutral CF4 frozen gas diagnostic only; no liquid EOS, PMMA/graphene free energy or chemical cleanup inferred',
+               no_added_dispersion_to_learned_model=True,cleaning_solution_established=False)
+    (ROOT/'complete.json').write_text(json.dumps(final,indent=2)+'\n')
+
+
+if __name__=='__main__':main()
+#INFO: ******************** input file end ********************
+
+
+System: uname_result(system='Darwin', node='MacBookPro.lan', release='24.6.0', version='Darwin Kernel Version 24.6.0: Sun Aug 23 20:37:03 PDT 2026; root:xnu-11417.140.69.712.69~1/RELEASE_ARM64_T6000', machine='arm64')  Threads 1
+Python 3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]
+numpy 2.5.3  scipy 1.18.1  h5py 3.16.0
+Date: Tue Oct  6 12:15:00 2026
+PySCF version 2.14.0
+PySCF path  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/pyscf
+
+[CONFIG] conf_file None
+[INPUT] verbose = 4
+[INPUT] num. atoms = 10
+[INPUT] num. electrons = 84
+[INPUT] charge = 0
+[INPUT] spin (= nelec alpha-beta = 2S) = 0
+[INPUT] symmetry False subgroup None
+[INPUT] Mole.unit = Angstrom
+[INPUT] Symbol           X                Y                Z      unit          X                Y                Z       unit  Magmom
+[INPUT]  1 C      0.000000000000   0.000000000000   0.000000000000 AA    0.000000000000   0.000000000000   0.000000000000 Bohr   0.0
+[INPUT]  2 F      0.758724650000   0.758724650000   0.758724650000 AA    1.433781792456   1.433781792456   1.433781792456 Bohr   0.0
+[INPUT]  3 F      0.758724650000  -0.758724650000  -0.758724650000 AA    1.433781792456  -1.433781792456  -1.433781792456 Bohr   0.0
+[INPUT]  4 F     -0.758724650000   0.758724650000  -0.758724650000 AA   -1.433781792456   1.433781792456  -1.433781792456 Bohr   0.0
+[INPUT]  5 F     -0.758724650000  -0.758724650000   0.758724650000 AA   -1.433781792456  -1.433781792456   1.433781792456 Bohr   0.0
+[INPUT]  6 C     12.000000000000   0.000000000000   0.000000000000 AA   22.676713494781   0.000000000000   0.000000000000 Bohr   0.0
+[INPUT]  7 F     12.758724650000   0.758724650000   0.758724650000 AA   24.110495287237   1.433781792456   1.433781792456 Bohr   0.0
+[INPUT]  8 F     12.758724650000  -0.758724650000  -0.758724650000 AA   24.110495287237  -1.433781792456  -1.433781792456 Bohr   0.0
+[INPUT]  9 F     11.241275350000   0.758724650000  -0.758724650000 AA   21.242931702324   1.433781792456  -1.433781792456 Bohr   0.0
+[INPUT] 10 F     11.241275350000  -0.758724650000   0.758724650000 AA   21.242931702324  -1.433781792456   1.433781792456 Bohr   0.0
+
+nuclear repulsion = 491.421125201422
+number of shells = 138
+number of NR pGTOs = 544
+number of NR cGTOs = 394
+basis = def2-tzvpd
+ecp = {}
+CPU time:       140.86
+
+
+******** <class 'pyscf.df.df_jk.DFRKS'> ********
+method = DFRKS
+initial guess = minao
+damping factor = 0
+level_shift factor = 0
+DIIS = <class 'pyscf.scf.diis.CDIIS'>
+diis_start_cycle = 1
+diis_space = 8
+diis_damp = 0
+SCF conv_tol = 1e-10
+SCF conv_tol_grad = None
+SCF max_cycles = 100
+direct_scf = False
+max_memory 1600 MB (current use 560 MB)
+XC library pyscf.dft.libxc version 7.0.0
+    S. Lehtola, C. Steigemann, M. J.T. Oliveira, and M. A.L. Marques.,  SoftwareX 7, 1–5 (2018)
+XC functionals = wb97m-v
+    N. Mardirossian and M. Head-Gordon.,  J. Chem. Phys. 144, 214110 (2016)
+radial grids: 
+    Treutler-Ahlrichs [JCP 102, 346 (1995); DOI:10.1063/1.469408] (M4) radial grids
+    
+becke partition: Becke, JCP 88, 2547 (1988); DOI:10.1063/1.454033
+pruning grids: <function nwchem_prune at 0x136282700>
+grids dens level: 3
+symmetrized grids: False
+atomic radii adjust function: <function treutler_atomic_radii_adjust at 0x136282c00>
+** Following is NLC and NLC Grids **
+NLC functional = wb97m-v
+radial grids: 
+    Treutler-Ahlrichs [JCP 102, 346 (1995); DOI:10.1063/1.469408] (M4) radial grids
+    
+becke partition: Becke, JCP 88, 2547 (1988); DOI:10.1063/1.454033
+pruning grids: <function nwchem_prune at 0x136282700>
+grids dens level: 1
+symmetrized grids: False
+atomic radii adjust function: <function treutler_atomic_radii_adjust at 0x136282c00>
+small_rho_cutoff = 0
+Set gradient conv threshold to 1e-05
+tot grids = 142336
+tot grids = 52760
+******** <class 'pyscf.df.df.DF'> ********
+auxbasis = None
+max_memory = 1600
+Create RSH-DF object <pyscf.df.df.DF object at 0x13693ddc0> for omega=0.3
+******** <class 'pyscf.df.df.DF'> ********
+auxbasis = auxmol.basis = {'F': 'def2-tzvp-jkfit', 'C': 'def2-tzvp-jkfit'}
+max_memory = 1600
+init E= -875.189984660831
+  HOMO = -0.558919821205789  LUMO = 0.0363813424003227  gap/eV = 16.19897
+cycle= 1 E= -875.18998467291  delta_E= -1.21e-08  |g|= 0.000182  |ddm|= 0.00169
+  HOMO = -0.558928212288275  LUMO = 0.0363818974970293  gap/eV = 16.19921
+cycle= 2 E= -875.1899846729  delta_E= 9.32e-12  |g|= 0.000188  |ddm|= 0.000225
+  HOMO = -0.558921580699986  LUMO = 0.0363818981084324  gap/eV = 16.19903
+cycle= 3 E= -875.189984677653  delta_E= -4.75e-09  |g|= 5.86e-06  |ddm|= 7.31e-05
+  HOMO = -0.558922676186462  LUMO = 0.0363818317300792  gap/eV = 16.19906
+cycle= 4 E= -875.189984677661  delta_E= -7.96e-12  |g|= 1.98e-06  |ddm|= 1.4e-05
+  HOMO = -0.558922292945416  LUMO = 0.0363818686473725  gap/eV = 16.19905
+Extra cycle  E= -875.189984677659  delta_E= 1.36e-12  |g|= 1.05e-06  |ddm|= 4.47e-06
+converged SCF energy = -875.189984677659

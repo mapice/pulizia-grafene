@@ -1,0 +1,25 @@
+
+################################################################################
+
+ PACKMOL - Packing optimization for the automated generation of
+ starting configurations for molecular dynamics simulations.
+ 
+                                                             Version 21.0.1 
+
+################################################################################
+
+  Packmol must be run with: packmol < inputfile.inp 
+
+  Userguide at: http://m3g.iqm.unicamp.br/packmol 
+
+  Reading input file... (Control-C aborts)
+At line 91 of file /Users/runner/miniforge3/conda-bld/ambertools_1784081893708/work/AmberTools/src/packmol_memgen/packmol_memgen/lib/packmol/setsizes.f90 (unit = 5, file = 'stdin')
+Fortran runtime error: Illegal seek
+
+Error termination. Backtrace:
+#0  0x104f9c403
+#1  0x104f9cfd7
+#2  0x104f9d8ab
+#3  0x104b96f67
+#4  0x104bad3fb
+#5  0x104bb8a1f

@@ -1,0 +1,20 @@
+reading input data file: liquid.inp
+tabulating potentials and intramolecular functions ...
+relaxing RISM:
+step= 100     Res=  1.9838635431819152E-01     MDIIS=  1
+step= 200     Res=  1.9838635431819152E-01     MDIIS=  1
+step= 300     Res=  1.9838635431819152E-01     MDIIS=  1
+step= 400     Res=  1.9838635431819152E-01     MDIIS=  1
+step= 500     Res=  1.9838635431819152E-01     MDIIS=  1
+step= 600     Res=  1.9838635431819152E-01     MDIIS=  1
+step= 700     Res=  1.9838635431819152E-01     MDIIS=  1
+step= 800     Res=  1.9838635431819152E-01     MDIIS=  1
+step= 900     Res=  1.9838635431819152E-01     MDIIS=  1
+step=1000     Res=  1.9838635431819152E-01     MDIIS=  1
+step=1100     Res=  1.9838635431819152E-01     MDIIS=  1
+step=1200     Res=  1.9838635431819152E-01     MDIIS=  1
+step=1300     Res=  1.9838635431819152E-01     MDIIS=  1
+step=1400     Res=  1.9838635431819152E-01     MDIIS=  1
+step=1500     Res=  1.9838635431819152E-01     MDIIS=  1
+step=1600     Res=  1.9838635431819152E-01     MDIIS=  1
+{"guard": {"command": ["/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/rism1d", "liquid"], "pid": 975, "exitcode": -15, "peak_RSS_MB": 260.265625, "elapsed_seconds": 576.9534254157916, "termination_reason": null}}

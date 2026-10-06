@@ -1,0 +1,8 @@
+{
+  "pair": "HFIP__HFIP",
+  "model_sha256": "fab8b8713c832f31a2a853aaa22fd638be8a369cbf5095e6b3e982a18d10e93a",
+  "geometry": "HFIP__HFIP_1.refined.xyz",
+  "frozen_interaction_kJ_mol": -29.983524015638444,
+  "binding_relative_refined_monomers_kJ_mol": -28.205142781246327,
+  "scope": "Electronic gas-cluster energies, not liquid chemical potentials or cleaning selectivity"
+}

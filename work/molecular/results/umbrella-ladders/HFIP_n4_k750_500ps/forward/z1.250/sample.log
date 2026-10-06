@@ -1,0 +1,29 @@
+                :-) GROMACS - gmx mdrun, 2026.3-conda_forge (-:
+
+Executable:   /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin.ARM_NEON_ASIMD/gmx
+Data prefix:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env
+Working dir:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/umbrella-ladders/HFIP_n4_k750_500ps/forward/z1.250
+Command line:
+  gmx mdrun -deffnm run -pf pullf.xvg -px pullx.xvg -ntmpi 1 -ntomp 2 -pin off -nice 8
+
+Reading file run.tpr, VERSION 2026.3-conda_forge (single precision)
+Changing nstlist from 20 to 100, rlist from 1.004 to 1.093
+
+Update groups can not be used for this system because atoms that are (in)directly constrained together are interdispersed with other atoms
+
+Using 1 MPI thread
+Using 2 OpenMP threads 
+
+starting mdrun 'HFIP comparator n4'
+500000 steps,    500.0 ps.
+
+Writing final coordinates.
+
+               Core t (s)   Wall t (s)        (%)
+       Time:     1841.290      920.645      200.0
+                 (ns/day)    (hour/ns)    (ms/step)  (Matom*steps/s) 
+Performance:       46.924        0.511        1.841            1.751 
+
+GROMACS reminds you: "I am driven by two main philosophies: know more today about the world than I knew yesterday and lessen the suffering of others. You'd be surprised how far that gets you." (Neil deGrasse Tyson)
+
+{"guard": {"command": ["/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin/gmx", "mdrun", "-deffnm", "run", "-pf", "pullf.xvg", "-px", "pullx.xvg", "-ntmpi", "1", "-ntomp", "2", "-pin", "off", "-nice", "8"], "pid": 11294, "exitcode": 0, "peak_RSS_MB": 20.4375, "elapsed_seconds": 921.7600908339955, "termination_reason": null}}

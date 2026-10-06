@@ -1,0 +1,17 @@
+{
+  "label": "HFIP__DMF_pbe0_def2-svp_A",
+  "basis": "def2-svp",
+  "xc": "pbe0",
+  "converged": true,
+  "electronic_Ha": -248.04263096020122,
+  "dispersion_Ha": -0.006967984927163499,
+  "total_Ha": -248.0495989451284,
+  "basis_functions": 105,
+  "real_atoms": 12,
+  "ghost_atoms": 0,
+  "geometry_hash": "0c8da1ae9bcf433a2beeefb9e59be0d6c3e85b1a18319f6e6d2fe1d53951b919",
+  "elapsed_seconds": 3.2858835419174284,
+  "peak_rss_MB": 1472.6875,
+  "grid_level": 3,
+  "conv_tol_Ha": 1e-09
+}

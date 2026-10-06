@@ -1,0 +1,88 @@
+                :-) GROMACS - gmx grompp, 2026.3-conda_forge (-:
+
+Executable:   /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin.ARM_NEON_ASIMD/gmx
+Data prefix:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env
+Working dir:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/umbrella-ladders/DMF_n4_k750_500ps/forward/z1.250
+Command line:
+  gmx grompp -f run.mdp -c /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/umbrella-ladders/DMF_n4_k750_500ps/forward/z1.150/run.gro -t /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/umbrella-ladders/DMF_n4_k750_500ps/forward/z1.150/run.cpt -p system.top -n index.ndx -o run.tpr
+
+Generating 1-4 interactions: fudge = 0.5
+
+NOTE 1 [file system.top, line 1015]:
+  In moleculetype 'GRAPHENE' 448 atoms are not bound by a potential or
+  constraint to any other atom in the same moleculetype. Although
+  technically this might not cause issues in a simulation, this often means
+  that the user forgot to add a bond/potential/constraint or put multiple
+  molecules in the same moleculetype definition by mistake. Run with -v to
+  get information for each atom.
+
+Pull group 1 'GRAPHENE' has 448 atoms
+Pull group 2 'PMMA' has 65 atoms
+Number of degrees of freedom in T-Coupling group System is 9004.00
+Last frame         -1 time  500.000   
+
+ERROR 1 [file run.mdp]:
+  The maximum distance from the chosen PBC atom (462) of pull group 2 to
+  other atoms in the group is larger than 0.5 times half the box size. Set
+  the pull-pbc-ref-prev-step-com option to yes.
+
+Pull group  natoms  pbc atom  distance at start  reference at t=0
+       1       448         1
+       2        65       462       1.121 nm          1.250 nm
+
+There was 1 NOTE
+
+-------------------------------------------------------
+Program:     gmx grompp, version 2026.3-conda_forge
+Source file: src/gromacs/gmxpreprocess/grompp.cpp (line 2923)
+
+Fatal error:
+There was 1 error in input file(s)
+
+For more information and tips for troubleshooting, please check the GROMACS
+website at https://manual.gromacs.org/current/user-guide/run-time-errors.html
+-------------------------------------------------------
+Setting the LD random seed to -572809986
+
+Generated 119 of the 120 non-bonded parameter combinations
+
+Generated 120 of the 120 1-4 parameter combinations
+
+Excluding 0 bonded neighbours molecule type 'GRAPHENE'
+
+turning H bonds into constraints...
+
+Excluding 2 bonded neighbours molecule type 'PMMA'
+
+turning H bonds into constraints...
+
+Excluding 3 bonded neighbours molecule type 'DMF'
+
+turning H bonds into constraints...
+
+Taking velocities from '/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/umbrella-ladders/DMF_n4_k750_500ps/forward/z1.150/run.gro'
+
+The largest distance between excluded atoms is 0.375 nm between atom 1476 and 1478
+
+Determining Verlet buffer for a tolerance of 0.005 kJ/mol/ps at 298.15 K
+
+Calculated rlist for 1x1 atom pair-list as 1.034 nm, buffer size 0.034 nm
+
+Set rlist, assuming 4x4 atom pair-list, to 1.009 nm, buffer size 0.009 nm
+
+Note that mdrun will redetermine rlist based on the actual pair-list setup
+
+Reading Coordinates, Velocities and Box size from old trajectory
+
+Will read whole trajectory
+
+Using frame at t = 500 ps
+
+Starting time for run is 0 ps
+Calculating fourier grid dimensions for X Y Z
+Using a fourier grid of 32x32x32, spacing 0.106 0.107 0.119
+
+Estimate for the relative computational load of the PME mesh part: 0.19
+
+This run will generate roughly 13 Mb of data
+{"guard": {"command": ["/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin/gmx", "grompp", "-f", "run.mdp", "-c", "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/umbrella-ladders/DMF_n4_k750_500ps/forward/z1.150/run.gro", "-t", "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/umbrella-ladders/DMF_n4_k750_500ps/forward/z1.150/run.cpt", "-p", "system.top", "-n", "index.ndx", "-o", "run.tpr"], "pid": 49764, "exitcode": 1, "peak_RSS_MB": 1.59375, "elapsed_seconds": 2.0090067088603973, "termination_reason": null}}

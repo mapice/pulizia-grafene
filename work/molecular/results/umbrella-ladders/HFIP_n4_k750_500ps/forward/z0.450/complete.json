@@ -1,0 +1,14 @@
+{
+  "solvent": "HFIP",
+  "direction": "forward",
+  "center_nm": 0.45,
+  "k_kJ_mol_nm2": 750.0,
+  "run_ps": 500,
+  "pilot_discard_ps": 250.0,
+  "coordinate_mean_nm": 0.5771423158736505,
+  "coordinate_sd_nm": 0.012513616990307475,
+  "spring_force_mean_kJ_mol_nm": -95.35674002399041,
+  "independent_spring_force_kJ_mol_nm": -95.35673690523787,
+  "elapsed_seconds": 875.3983142499346,
+  "equilibrium_and_hidden_coordinate_convergence_not_assumed": true
+}

@@ -1,0 +1,17 @@
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/e3nn/o3/_wigner.py:10: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  _Jd, _W3j_flat, _W3j_indices = torch.load(os.path.join(os.path.dirname(__file__), 'constants.pt'))
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+cuequivariance or cuequivariance_torch is not available. Cuequivariance acceleration will be disabled.
+{'model': 'MACE-POLAR-1-M', 'model_sha256': 'fab8b8713c832f31a2a853aaa22fd638be8a369cbf5095e6b3e982a18d10e93a', 'device': 'mps', 'dtype': 'float32', 'atoms': 768, 'periodic': True, 'cell_A': [[21.8892, 0.0, 0.0], [0.0, 21.8892, 0.0], [0.0, 0.0, 21.8892]], 'input_sha256': 'eac2a89e954c245232cc0cc483180f92cda223f607ce43d2a5b2bb7dacf8a5af', 'torch_version': '2.14.1', 'scope': 'Feasibility/numerical benchmark, not liquid or cleaning qualification', 'checkpointed_modules': ['interactions.0.conv_tp+target_sum', 'interactions.1.conv_tp+target_sum'], 'edge_chunk_size': 0, 'fused_chunk_size': 256, 'accepted_finite_evaluation': False, 'error': 'MPS backend out of memory (MPS allocated: 3.12 GiB, other allocations: 102.62 MiB, max allowed: 2.67 GiB). Tried to allocate 384.00 MiB on shared pool. Use PYTORCH_MPS_HIGH_WATERMARK_RATIO=0.0 to disable upper limit for memory allocations (may cause system failure).'}
+{"guard": {"command": ["work/molecular/.venv/bin/python", "work/molecular/mace_liquid_bench.py", "--structure", "liquid64", "--device", "mps", "--dtype", "float32", "--tag", "fused", "--fused-chunk", "256"], "pid": 33661, "exitcode": 1, "peak_RSS_MB": 684.015625, "elapsed_seconds": 6.051325167063624, "termination_reason": null}}

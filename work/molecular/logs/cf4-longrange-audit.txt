@@ -1,0 +1,52 @@
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/e3nn/o3/_wigner.py:10: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  _Jd, _W3j_flat, _W3j_indices = torch.load(os.path.join(os.path.dirname(__file__), 'constants.pt'))
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+cuequivariance or cuequivariance_torch is not available. Cuequivariance acceleration will be disabled.
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/pyscf/lib/misc.py:203: UserWarning: OpenMP is not available. Setting omp_threads to 1 has no effects.
+  warnings.warn('OpenMP is not available. '
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+{'carbon_distance_A': 7.8, 'orientation_z_degrees': 0.0, 'nearest_cross_atom_A': 6.463210941640461, 'all_cross_edges_beyond_local_cutoff': True, 'interaction_M_kJ_mol': -0.061576726996131086, 'rotated_monomer_energy_difference_kJ_mol': 0.0}
+{'carbon_distance_A': 8.5, 'orientation_z_degrees': 0.0, 'nearest_cross_atom_A': 7.145534735493278, 'all_cross_edges_beyond_local_cutoff': True, 'interaction_M_kJ_mol': -0.026567310564251972, 'rotated_monomer_energy_difference_kJ_mol': 0.0}
+{'carbon_distance_A': 10.0, 'orientation_z_degrees': 0.0, 'nearest_cross_atom_A': 8.617210613425959, 'all_cross_edges_beyond_local_cutoff': True, 'interaction_M_kJ_mol': -0.001093428137920642, 'rotated_monomer_energy_difference_kJ_mol': 0.0}
+{'carbon_distance_A': 12.0, 'orientation_z_degrees': 0.0, 'nearest_cross_atom_A': 10.591813893575594, 'all_cross_edges_beyond_local_cutoff': True, 'interaction_M_kJ_mol': 0.001118767726768, 'rotated_monomer_energy_difference_kJ_mol': 0.0}
+{'carbon_distance_A': 16.0, 'orientation_z_degrees': 0.0, 'nearest_cross_atom_A': 14.561831174551537, 'all_cross_edges_beyond_local_cutoff': True, 'interaction_M_kJ_mol': 1.952949817626276e-05, 'rotated_monomer_energy_difference_kJ_mol': 0.0}
+{'carbon_distance_A': 20.0, 'orientation_z_degrees': 0.0, 'nearest_cross_atom_A': 18.544738681257844, 'all_cross_edges_beyond_local_cutoff': True, 'interaction_M_kJ_mol': -1.415983231782172e-06, 'rotated_monomer_energy_difference_kJ_mol': 0.0}
+{'carbon_distance_A': 7.8, 'orientation_z_degrees': 90.0, 'nearest_cross_atom_A': 6.2825507, 'all_cross_edges_beyond_local_cutoff': True, 'interaction_M_kJ_mol': -0.020216883049338014, 'rotated_monomer_energy_difference_kJ_mol': 7.421562122906586e-08}
+{'carbon_distance_A': 8.5, 'orientation_z_degrees': 90.0, 'nearest_cross_atom_A': 6.982550699999999, 'all_cross_edges_beyond_local_cutoff': True, 'interaction_M_kJ_mol': -0.002647097247025244, 'rotated_monomer_energy_difference_kJ_mol': 7.421562122906586e-08}
+{'carbon_distance_A': 10.0, 'orientation_z_degrees': 90.0, 'nearest_cross_atom_A': 8.4825507, 'all_cross_edges_beyond_local_cutoff': True, 'interaction_M_kJ_mol': 0.005492700066039458, 'rotated_monomer_energy_difference_kJ_mol': 7.421562122906586e-08}
+{'carbon_distance_A': 12.0, 'orientation_z_degrees': 90.0, 'nearest_cross_atom_A': 10.4825507, 'all_cross_edges_beyond_local_cutoff': True, 'interaction_M_kJ_mol': 0.0022286342628208863, 'rotated_monomer_energy_difference_kJ_mol': 7.421562122906586e-08}
+{'carbon_distance_A': 16.0, 'orientation_z_degrees': 90.0, 'nearest_cross_atom_A': 14.4825507, 'all_cross_edges_beyond_local_cutoff': True, 'interaction_M_kJ_mol': 9.259729041345248e-05, 'rotated_monomer_energy_difference_kJ_mol': 7.421562122906586e-08}
+{'carbon_distance_A': 20.0, 'orientation_z_degrees': 90.0, 'nearest_cross_atom_A': 18.482550699999997, 'all_cross_edges_beyond_local_cutoff': True, 'interaction_M_kJ_mol': 1.3063799259965009e-05, 'rotated_monomer_energy_difference_kJ_mol': 7.421562122906586e-08}
+output file: /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/cf4-longrange-audit/A-nlc0.scf.log
+A-nlc0 {'energy_Ha': -437.59504154013894, 'SCF_converged': True, 'basis': 'def2-tzvpd', 'functional': 'omegaB97M-V with VV10, no additional D3', 'nlc_grid_level': 0, 'basis_functions': 197, 'elapsed_seconds': 7.496159749804065}
+output file: /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/cf4-longrange-audit/B-nlc0.scf.log
+B-nlc0 {'energy_Ha': -437.5950415401388, 'SCF_converged': True, 'basis': 'def2-tzvpd', 'functional': 'omegaB97M-V with VV10, no additional D3', 'nlc_grid_level': 0, 'basis_functions': 197, 'elapsed_seconds': 7.32225958397612}
+output file: /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/cf4-longrange-audit/AB-nlc0.scf.log
+AB-nlc0 {'energy_Ha': -875.1901078722144, 'SCF_converged': True, 'basis': 'def2-tzvpd', 'functional': 'omegaB97M-V with VV10, no additional D3', 'nlc_grid_level': 0, 'basis_functions': 394, 'elapsed_seconds': 51.114516915986314}
+output file: /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/cf4-longrange-audit/Acp-nlc0.scf.log
+Acp-nlc0 {'energy_Ha': -437.5950424278334, 'SCF_converged': True, 'basis': 'def2-tzvpd', 'functional': 'omegaB97M-V with VV10, no additional D3', 'nlc_grid_level': 0, 'basis_functions': 394, 'elapsed_seconds': 52.293425207957625}
+output file: /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/cf4-longrange-audit/Bcp-nlc0.scf.log
+Bcp-nlc0 {'energy_Ha': -437.59504242783305, 'SCF_converged': True, 'basis': 'def2-tzvpd', 'functional': 'omegaB97M-V with VV10, no additional D3', 'nlc_grid_level': 0, 'basis_functions': 394, 'elapsed_seconds': 64.52305924985558}
+{'nlc_grid_level': 0, 'energies_Ha': {'A': -437.59504154013894, 'B': -437.5950415401388, 'AB': -875.1901078722144, 'Acp': -437.5950424278334, 'Bcp': -437.59504242783305}, 'frozen_counterpoise_interaction_kJ_mol': -0.06042993836496608, 'uncorrected_interaction_kJ_mol': -0.06509122070762834, 'ghost_fragment_symmetry_difference_kJ_mol': -8.954542538504029e-10}
+output file: /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/cf4-longrange-audit/A-nlc1.scf.log
+A-nlc1 {'energy_Ha': -437.59499101946653, 'SCF_converged': True, 'basis': 'def2-tzvpd', 'functional': 'omegaB97M-V with VV10, no additional D3', 'nlc_grid_level': 1, 'basis_functions': 197, 'elapsed_seconds': 12.600746375042945}
+output file: /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/cf4-longrange-audit/B-nlc1.scf.log
+B-nlc1 {'energy_Ha': -437.59499101946744, 'SCF_converged': True, 'basis': 'def2-tzvpd', 'functional': 'omegaB97M-V with VV10, no additional D3', 'nlc_grid_level': 1, 'basis_functions': 197, 'elapsed_seconds': 12.44903887505643}
+output file: /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/cf4-longrange-audit/AB-nlc1.scf.log
+AB-nlc1 {'energy_Ha': -875.1900067994502, 'SCF_converged': True, 'basis': 'def2-tzvpd', 'functional': 'omegaB97M-V with VV10, no additional D3', 'nlc_grid_level': 1, 'basis_functions': 394, 'elapsed_seconds': 82.13339650002308}
+output file: /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/cf4-longrange-audit/Acp-nlc1.scf.log
+Acp-nlc1 {'energy_Ha': -437.5949919236592, 'SCF_converged': True, 'basis': 'def2-tzvpd', 'functional': 'omegaB97M-V with VV10, no additional D3', 'nlc_grid_level': 1, 'basis_functions': 394, 'elapsed_seconds': 53.27533750003204}
+output file: /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/cf4-longrange-audit/Bcp-nlc1.scf.log
+Bcp-nlc1 {'energy_Ha': -437.5949919236572, 'SCF_converged': True, 'basis': 'def2-tzvpd', 'functional': 'omegaB97M-V with VV10, no additional D3', 'nlc_grid_level': 1, 'basis_functions': 394, 'elapsed_seconds': 65.01893933303654}
+{'nlc_grid_level': 1, 'energies_Ha': {'A': -437.59499101946653, 'B': -437.59499101946744, 'AB': -875.1900067994502, 'Acp': -437.5949919236592, 'Bcp': -437.5949919236572}, 'frozen_counterpoise_interaction_kJ_mol': -0.06026081899428212, 'uncorrected_interaction_kJ_mol': -0.06500872638752286, 'ghost_fragment_symmetry_difference_kJ_mol': -5.372725523102417e-09}
+{"guard": {"command": ["work/molecular/.venv/bin/python", "-u", "work/molecular/cf4_tail_audit.py"], "pid": 84185, "exitcode": 0, "peak_RSS_MB": 2154.375, "elapsed_seconds": 432.4976867500227, "termination_reason": null}}

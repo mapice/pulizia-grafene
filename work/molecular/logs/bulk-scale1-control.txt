@@ -1,0 +1,13 @@
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/gromacs/bulk_scale1_seed20261006
+Starting min-prep
+{'stage': 'min-prep', 'exitcode': 0, 'elapsed_seconds': 2.0729299169033766}
+Starting min
+{'stage': 'min', 'exitcode': 0, 'elapsed_seconds': 2.073179957922548}
+Starting nvt-prep
+{'stage': 'nvt-prep', 'exitcode': 0, 'elapsed_seconds': 2.0635277919936925}
+Starting nvt
+{'stage': 'nvt', 'exitcode': 0, 'elapsed_seconds': 36.26969700003974}
+Starting npt-prep
+{'stage': 'npt-prep', 'exitcode': 0, 'elapsed_seconds': 2.1013695418369025}
+Starting npt
+{'stage': 'npt', 'exitcode': 0, 'elapsed_seconds': 430.5886387079954}

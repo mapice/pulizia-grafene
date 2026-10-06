@@ -1,0 +1,391 @@
+{
+  "url": "https://api.github.com/repos/bytedance/bamboo/git/trees/release_202404?recursive=1",
+  "sha256": "053a06d0533f30be472795bb152aef2385b8cce22339f907a3a920da65a9d0a9",
+  "result": {
+    "sha": "386ac0f256ebd7fea2af83d04e0cf8a48e8ce1a9",
+    "url": "https://api.github.com/repos/bytedance/bamboo/git/trees/386ac0f256ebd7fea2af83d04e0cf8a48e8ce1a9",
+    "tree": [
+      {
+        "path": ".gitignore",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "83658ec52733073084336058333361a36e6c8de6",
+        "size": 12,
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/blobs/83658ec52733073084336058333361a36e6c8de6"
+      },
+      {
+        "path": "CONTRIBUTING.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5ea7cee2752fea9f9c78166c5449e851f21ed47e",
+        "size": 2799,
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/blobs/5ea7cee2752fea9f9c78166c5449e851f21ed47e"
+      },
+      {
+        "path": "LICENSE",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ecbc0593737be657aef92e3adcf3bcbd6fdb812e",
+        "size": 18091,
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/blobs/ecbc0593737be657aef92e3adcf3bcbd6fdb812e"
+      },
+      {
+        "path": "Notice.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c16d856fce8447d9b75430e0b6e7c2785c58f6af",
+        "size": 57,
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/blobs/c16d856fce8447d9b75430e0b6e7c2785c58f6af"
+      },
+      {
+        "path": "README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ae872bc04768550da32f8e1a3d448f879b2a9ab0",
+        "size": 16739,
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/blobs/ae872bc04768550da32f8e1a3d448f879b2a9ab0"
+      },
+      {
+        "path": "benchmark",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "e1017d78e97bdc9fa3cadaebb8a256ccab85717f",
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/trees/e1017d78e97bdc9fa3cadaebb8a256ccab85717f"
+      },
+      {
+        "path": "benchmark/benchmark.pt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f08a6666266765b192fbf8ec8df447c29e8b300c",
+        "size": 482976,
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/blobs/f08a6666266765b192fbf8ec8df447c29e8b300c"
+      },
+      {
+        "path": "benchmark/in.data",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5c2ecdbb92629c22188e377b140aff77fb6dacbf",
+        "size": 161740,
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/blobs/5c2ecdbb92629c22188e377b140aff77fb6dacbf"
+      },
+      {
+        "path": "benchmark/in.lammps",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ef1fb1f060ffe9a6e9af0a6fac1b1c74c3ef5d1f",
+        "size": 1084,
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/blobs/ef1fb1f060ffe9a6e9af0a6fac1b1c74c3ef5d1f"
+      },
+      {
+        "path": "benchmark/paper.pt",
+        "mode": "100755",
+        "type": "blob",
+        "sha": "bdd732ea7191aad3453a8c42afa2669ac256183f",
+        "size": 493801,
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/blobs/bdd732ea7191aad3453a8c42afa2669ac256183f"
+      },
+      {
+        "path": "benchmark/paper_new_disp.pt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "74d5680f22776bf179b9195d852d57cb988ebc93",
+        "size": 5555366,
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/blobs/74d5680f22776bf179b9195d852d57cb988ebc93"
+      },
+      {
+        "path": "configs",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "5e2208336c88324797a0a34789391e9dee5574a5",
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/trees/5e2208336c88324797a0a34789391e9dee5574a5"
+      },
+      {
+        "path": "configs/alignment_config",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "a7e9e49c77a007924aa339f45f3f30a0ea13cb88",
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/trees/a7e9e49c77a007924aa339f45f3f30a0ea13cb88"
+      },
+      {
+        "path": "configs/alignment_config/config.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "769472fa6b77d70797dc82834a03948f13795d61",
+        "size": 732,
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/blobs/769472fa6b77d70797dc82834a03948f13795d61"
+      },
+      {
+        "path": "configs/ensemble_config",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "bf52bf871814ee3cc9b136c39370b59afb1798bd",
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/trees/bf52bf871814ee3cc9b136c39370b59afb1798bd"
+      },
+      {
+        "path": "configs/ensemble_config/config.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f2b864be8facc61a8817f1f07ec5cd0558c709ab",
+        "size": 866,
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/blobs/f2b864be8facc61a8817f1f07ec5cd0558c709ab"
+      },
+      {
+        "path": "configs/train_config",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "e6ac741d4228e11d643ebcd843dda80adef318b7",
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/trees/e6ac741d4228e11d643ebcd843dda80adef318b7"
+      },
+      {
+        "path": "configs/train_config/config.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "13a3c12837359ab9be4f363540a4d98e1c2d8537",
+        "size": 744,
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/blobs/13a3c12837359ab9be4f363540a4d98e1c2d8537"
+      },
+      {
+        "path": "models",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "94a3ef20726f7c2e8967e2968f613ee14779f902",
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/trees/94a3ef20726f7c2e8967e2968f613ee14779f902"
+      },
+      {
+        "path": "models/__init__.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "547241a3ddc1332f8bb7dd9aed563a13483cd6d0",
+        "size": 814,
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/blobs/547241a3ddc1332f8bb7dd9aed563a13483cd6d0"
+      },
+      {
+        "path": "models/bamboo_base.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c2034708ecb08d8e9436ec1645e7f3515f7f3617",
+        "size": 17124,
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/blobs/c2034708ecb08d8e9436ec1645e7f3515f7f3617"
+      },
+      {
+        "path": "models/bamboo_get.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fa7f4dc0f7a3dd79a58509dc483e89a053f94eaa",
+        "size": 11085,
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/blobs/fa7f4dc0f7a3dd79a58509dc483e89a053f94eaa"
+      },
+      {
+        "path": "models/modules",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "c4ca9480acedd2cdbb03aa6366ffcab83a2b3acd",
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/trees/c4ca9480acedd2cdbb03aa6366ffcab83a2b3acd"
+      },
+      {
+        "path": "models/modules/__init__.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "547241a3ddc1332f8bb7dd9aed563a13483cd6d0",
+        "size": 814,
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/blobs/547241a3ddc1332f8bb7dd9aed563a13483cd6d0"
+      },
+      {
+        "path": "models/modules/dftd3",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "7394c9b7585efe694639df506d8521e6dab8d5a5",
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/trees/7394c9b7585efe694639df506d8521e6dab8d5a5"
+      },
+      {
+        "path": "models/modules/dftd3/__init__.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "03da42165b6127515a540abd364d024c2e5d40db",
+        "size": 843,
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/blobs/03da42165b6127515a540abd364d024c2e5d40db"
+      },
+      {
+        "path": "models/modules/dftd3/dftd3.pt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "975196da40c667a542386146f8ca2c0eed2a7e79",
+        "size": 4248896,
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/blobs/975196da40c667a542386146f8ca2c0eed2a7e79"
+      },
+      {
+        "path": "models/modules/dftd3/dftd3.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4b8d60f45a61e63ae021577c7da6ee9b942c1009",
+        "size": 7469,
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/blobs/4b8d60f45a61e63ae021577c7da6ee9b942c1009"
+      },
+      {
+        "path": "pair",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "523ad82a79ec4d3f78cb9fb460b692c78ea9b556",
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/trees/523ad82a79ec4d3f78cb9fb460b692c78ea9b556"
+      },
+      {
+        "path": "pair/build.sh",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "91cf8badb77a91f1565af83f283b7ac869e6d741",
+        "size": 1679,
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/blobs/91cf8badb77a91f1565af83f283b7ac869e6d741"
+      },
+      {
+        "path": "pair/init_compile.sh",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "be88458f9edfa303b85380fbb6eabf39a7b55cd5",
+        "size": 2543,
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/blobs/be88458f9edfa303b85380fbb6eabf39a7b55cd5"
+      },
+      {
+        "path": "pair/src",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "24b876bb42efb9028d14db39717635953cb51011",
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/trees/24b876bb42efb9028d14db39717635953cb51011"
+      },
+      {
+        "path": "pair/src/pair_bamboo.cpp",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e4885b11499519d038eb2c892258d92afd8fecea",
+        "size": 9707,
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/blobs/e4885b11499519d038eb2c892258d92afd8fecea"
+      },
+      {
+        "path": "pair/src/pair_bamboo.h",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6f39715e86ec97121344869edd9797848129df71",
+        "size": 2047,
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/blobs/6f39715e86ec97121344869edd9797848129df71"
+      },
+      {
+        "path": "pair/src/pair_bamboo_kokkos.cpp",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7348ae9a7eaef06ea6e6c890afabd67419719317",
+        "size": 22689,
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/blobs/7348ae9a7eaef06ea6e6c890afabd67419719317"
+      },
+      {
+        "path": "pair/src/pair_bamboo_kokkos.h",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f58be3be04cdf26968194a943f4df1519ac7ecef",
+        "size": 5102,
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/blobs/f58be3be04cdf26968194a943f4df1519ac7ecef"
+      },
+      {
+        "path": "train",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "b2dfb297f81774f93963da96b36ebe47dc21af5c",
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/trees/b2dfb297f81774f93963da96b36ebe47dc21af5c"
+      },
+      {
+        "path": "train/alignment.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "876e739437c16929dccd422d8a384c7b9b497973",
+        "size": 18454,
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/blobs/876e739437c16929dccd422d8a384c7b9b497973"
+      },
+      {
+        "path": "train/ensemble.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e3154e97f1e45363202a992e90498491d7cdb7d2",
+        "size": 23784,
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/blobs/e3154e97f1e45363202a992e90498491d7cdb7d2"
+      },
+      {
+        "path": "train/train.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b4332f6c41ea018ae81f10d986cb1ab8ddfead7e",
+        "size": 12156,
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/blobs/b4332f6c41ea018ae81f10d986cb1ab8ddfead7e"
+      },
+      {
+        "path": "utils",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "52e97a902021aed13c38a3c0164e420fbe6139d6",
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/trees/52e97a902021aed13c38a3c0164e420fbe6139d6"
+      },
+      {
+        "path": "utils/__init__.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "72dea1adaccd52b802ef81444e96f872a55d0214",
+        "size": 845,
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/blobs/72dea1adaccd52b802ef81444e96f872a55d0214"
+      },
+      {
+        "path": "utils/batchify.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b2f416a6f61a473fc93ebb60d58ac58fddae3fbc",
+        "size": 2957,
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/blobs/b2f416a6f61a473fc93ebb60d58ac58fddae3fbc"
+      },
+      {
+        "path": "utils/constant.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e7bf7a668329b92f74c98e140d37dbe9c426d4c2",
+        "size": 2724,
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/blobs/e7bf7a668329b92f74c98e140d37dbe9c426d4c2"
+      },
+      {
+        "path": "utils/funcs.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "839ae75fa2fc4dc688828c6fd64e341bd490dab7",
+        "size": 3754,
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/blobs/839ae75fa2fc4dc688828c6fd64e341bd490dab7"
+      },
+      {
+        "path": "utils/load_traj.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "260742414551dbe23283a547ad5a03be72cb6708",
+        "size": 12197,
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/blobs/260742414551dbe23283a547ad5a03be72cb6708"
+      },
+      {
+        "path": "utils/log_helper.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ad65e9b3aad8caafa334657dbe53f177d2064cc3",
+        "size": 1659,
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/blobs/ad65e9b3aad8caafa334657dbe53f177d2064cc3"
+      },
+      {
+        "path": "utils/path.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "69141b15b4dd5e27c9a532209a0ec86870d47be9",
+        "size": 1173,
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/blobs/69141b15b4dd5e27c9a532209a0ec86870d47be9"
+      },
+      {
+        "path": "utils/rejit.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "562c4d7a37c7f626c230fc78a118f2dc7484f57a",
+        "size": 3317,
+        "url": "https://api.github.com/repos/bytedance/bamboo/git/blobs/562c4d7a37c7f626c230fc78a118f2dc7484f57a"
+      }
+    ],
+    "truncated": false
+  }
+}

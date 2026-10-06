@@ -1,0 +1,67 @@
+model:
+  ff_block:
+  - act: gelu
+    out_mlp_dims:
+    - 256
+    - 4
+    post_mlp_dims:
+    - 256
+    - 256
+    - 1
+    pre_mlp_dims:
+    - 256
+    - 256
+    - 3
+    tanh_output: 20.0
+    type: MMBondedConj
+  - act: gelu
+    out_mlp_dims:
+    - 256
+    - 3
+    pre_mlp_dims:
+    - 256
+    - 256
+    - 3
+    type: ChargeVolume
+  - act: gelu
+    charge14: 0.5
+    disp_damping_factor: 120.0
+    fix_li_alpha: 1.0e-06
+    ind14: 0.5
+    li_damp_clip: 0.2
+    out_mlp_dims:
+    - 256
+    - 3
+    pol_damping_factor: 0.39
+    pre_mlp_dims:
+    - 256
+    - 256
+    - 3
+    s12: 1.5
+    type: Exp6Pol
+    vdw14: 0.5
+  graph_block:
+    feature_layer:
+      act: gelu
+      atom_embedding_dim: 32
+      edge_mlp_dims:
+      - 64
+      - 256
+      - 2
+      node_mlp_dims:
+      - 64
+      - 256
+      - 2
+    gnn_layer:
+      act: gelu
+      at_channels: 16
+      ffn_dims:
+      - 256
+      - 2
+      gnn_dims:
+      - 256
+      - 256
+      - 4
+      gnn_type: EGT
+      heads: 16
+      jk: cat

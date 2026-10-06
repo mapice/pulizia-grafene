@@ -1,0 +1,17 @@
+{
+  "label": "HFIP__Acetone_pbe0_def2-svp_Acp",
+  "basis": "def2-svp",
+  "xc": "pbe0",
+  "converged": true,
+  "electronic_Ha": -192.78821251360392,
+  "dispersion_Ha": -0.0049623747742669234,
+  "total_Ha": -192.7931748883782,
+  "basis_functions": 236,
+  "real_atoms": 10,
+  "ghost_atoms": 12,
+  "geometry_hash": "a7852df5b71b831bf00e3bbd7002836667afabf82b0de3ebb11797a2f6bd8a18",
+  "elapsed_seconds": 15.48545949999243,
+  "peak_rss_MB": 1241.21875,
+  "grid_level": 3,
+  "conv_tol_Ha": 1e-09
+}

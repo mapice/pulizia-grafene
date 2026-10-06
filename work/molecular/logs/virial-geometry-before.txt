@@ -1,0 +1,21 @@
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/e3nn/o3/_wigner.py:10: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  _Jd, _W3j_flat, _W3j_indices = torch.load(os.path.join(os.path.dirname(__file__), 'constants.pt'))
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+cuequivariance or cuequivariance_torch is not available. Cuequivariance acceleration will be disabled.
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+{'strain': 'xx', 'step': 0.0001, 'analytic_eV_A3': -0.01309422616704936, 'numerical_eV_A3': np.float64(-0.01298156536079374), 'difference_eV_A3': np.float64(0.00011266080625561836), 'energies_eV': [-19.098651506050206, -19.105864554514664]}
+{'strain': 'xx', 'step': 5e-05, 'analytic_eV_A3': -0.01309422616704936, 'numerical_eV_A3': np.float64(-0.012981556249585515), 'difference_eV_A3': np.float64(0.00011266991746384375), 'energies_eV': [-19.100468213915693, -19.104074735616656]}
+{'strain': 'isotropic', 'step': 0.0001, 'analytic_eV_A3': -0.013090887905168084, 'numerical_eV_A3': np.float64(-0.012976336422810974), 'difference_eV_A3': np.float64(0.00011455148235711005), 'energies_eV': [-19.091381391032577, -19.1130118202391]}
+{'strain': 'isotropic', 'step': 5e-05, 'analytic_eV_A3': -0.013090887905168084, 'numerical_eV_A3': np.float64(-0.012976316609940801), 'difference_eV_A3': np.float64(0.00011457129522728267), 'energies_eV': [-19.096848519560332, -19.107663717650425]}
+Audit completed before max residual 0.00011457129522728267
+{"guard": {"command": ["work/molecular/.venv/bin/python", "-u", "work/molecular/virial_geometry_audit.py", "--tag", "before"], "pid": 91624, "exitcode": 0, "peak_RSS_MB": 1841.40625, "elapsed_seconds": 102.55295216687955, "termination_reason": null}}

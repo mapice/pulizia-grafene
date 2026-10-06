@@ -1,0 +1,70 @@
+{
+  "bias_z_nm": 1.05,
+  "bias_stiffness_kJ_mol_nm2": 750,
+  "duration_ps_each": 500,
+  "discarded_ps": 250,
+  "histories": [
+    {
+      "direction": "forward",
+      "frames": 251,
+      "sampling_interval_ps": 1,
+      "means": {
+        "CM_z_from_sheet_nm": 0.9709647751121099,
+        "Rg_normal_to_sheet_nm": 0.2804387834742553,
+        "longest_gyration_axis_normal_squared": 0.8758104640454877,
+        "nearest_heavy_min_nm": 0.45949533054340613,
+        "smooth_heavy_contacts": 1.5903350213964946,
+        "polymer_graphene_LJ_energy_kJ_mol": -11.673579711475261,
+        "HFIP_carbonyl_hbonds": 3.454183266932271
+      },
+      "matched_z_range_nm": [
+        1.0,
+        1.04
+      ],
+      "matched_frames": 52,
+      "matched_z_means": {
+        "CM_z_from_sheet_nm": 1.0207475103591235,
+        "Rg_normal_to_sheet_nm": 0.2769408676227015,
+        "longest_gyration_axis_normal_squared": 0.8528813072634064,
+        "nearest_heavy_min_nm": 0.5138484806760958,
+        "smooth_heavy_contacts": 0.9324406490515857,
+        "polymer_graphene_LJ_energy_kJ_mol": -5.973379218656394,
+        "HFIP_carbonyl_hbonds": 3.25
+      },
+      "frames_are_not_independent_samples": true
+    },
+    {
+      "direction": "reverse",
+      "frames": 251,
+      "sampling_interval_ps": 1,
+      "means": {
+        "CM_z_from_sheet_nm": 1.0657479970392667,
+        "Rg_normal_to_sheet_nm": 0.1506538555437913,
+        "longest_gyration_axis_normal_squared": 0.06563497615253781,
+        "nearest_heavy_min_nm": 0.7806422885152903,
+        "smooth_heavy_contacts": 0.2535194022921005,
+        "polymer_graphene_LJ_energy_kJ_mol": -0.6072563277475036,
+        "HFIP_carbonyl_hbonds": 3.4820717131474104
+      },
+      "matched_z_range_nm": [
+        1.0,
+        1.04
+      ],
+      "matched_frames": 63,
+      "matched_z_means": {
+        "CM_z_from_sheet_nm": 1.0206714213225265,
+        "Rg_normal_to_sheet_nm": 0.15383850755648726,
+        "longest_gyration_axis_normal_squared": 0.01891728037144929,
+        "nearest_heavy_min_nm": 0.738652528148101,
+        "smooth_heavy_contacts": 0.3220177306630962,
+        "polymer_graphene_LJ_energy_kJ_mol": -0.8536339620490679,
+        "HFIP_carbonyl_hbonds": 3.5396825396825395
+      },
+      "frames_are_not_independent_samples": true
+    }
+  ],
+  "empirical_z_overlap_mass": 0.3545816733067729,
+  "empirical_z_rgz_overlap_mass": 0.0,
+  "conclusion": "Distance alone does not equilibrate the observed normal-orientation/contact mode in these samples",
+  "inference_scope": "Single n4 rigid graphene/GAFF2 HFIP model; no true barrier, material cleaning or novelty established"
+}

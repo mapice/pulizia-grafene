@@ -1,0 +1,5 @@
+Context initialized, minimizing
+Minimization finished
+{"time_ps": 10.0, "density_g_cm3": 1.4598336626047148, "volume_nm3": 23.892704298168393, "energy_kJ_mol": 662.9074754829685, "dipole_e_nm": [-0.07352299433623755, 0.03227236462183192, -0.14669912344279923], "peak_rss_MB": 114.375, "elapsed_seconds": 27.525991833070293}
+Finished hfip_scale0.5_seed20261006 {'time_ps': 10.0, 'density_g_cm3': 1.4598336626047148, 'volume_nm3': 23.892704298168393, 'energy_kJ_mol': 662.9074754829685, 'dipole_e_nm': [-0.07352299433623755, 0.03227236462183192, -0.14669912344279923], 'peak_rss_MB': 114.375, 'elapsed_seconds': 27.525991833070293}
+{"guard": {"command": ["work/molecular/.venv/bin/python", "work/molecular/bulk_hfip.py", "--side", "5", "--ps", "10"], "pid": 7820, "exitcode": 0, "peak_RSS_MB": 114.375, "elapsed_seconds": 30.169777834089473, "termination_reason": null}}

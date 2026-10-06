@@ -1,0 +1,6 @@
+{
+  "converged": false,
+  "steps": 60,
+  "fixed_initial_volume": true,
+  "equilibrium_not_implied": true
+}

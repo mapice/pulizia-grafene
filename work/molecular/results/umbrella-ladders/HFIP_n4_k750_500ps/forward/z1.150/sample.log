@@ -1,0 +1,29 @@
+                :-) GROMACS - gmx mdrun, 2026.3-conda_forge (-:
+
+Executable:   /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin.ARM_NEON_ASIMD/gmx
+Data prefix:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env
+Working dir:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/umbrella-ladders/HFIP_n4_k750_500ps/forward/z1.150
+Command line:
+  gmx mdrun -deffnm run -pf pullf.xvg -px pullx.xvg -ntmpi 1 -ntomp 2 -pin off -nice 8
+
+Reading file run.tpr, VERSION 2026.3-conda_forge (single precision)
+Changing nstlist from 20 to 100, rlist from 1.004 to 1.093
+
+Update groups can not be used for this system because atoms that are (in)directly constrained together are interdispersed with other atoms
+
+Using 1 MPI thread
+Using 2 OpenMP threads 
+
+starting mdrun 'HFIP comparator n4'
+500000 steps,    500.0 ps.
+
+Writing final coordinates.
+
+               Core t (s)   Wall t (s)        (%)
+       Time:     1809.447      904.724      200.0
+                 (ns/day)    (hour/ns)    (ms/step)  (Matom*steps/s) 
+Performance:       47.749        0.503        1.809            1.782 
+
+GROMACS reminds you: "error: too many template-parameter-lists" (g++)
+
+{"guard": {"command": ["/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin/gmx", "mdrun", "-deffnm", "run", "-pf", "pullf.xvg", "-px", "pullx.xvg", "-ntmpi", "1", "-ntomp", "2", "-pin", "off", "-nice", "8"], "pid": 119, "exitcode": 0, "peak_RSS_MB": 20.5, "elapsed_seconds": 905.5280311249662, "termination_reason": null}}

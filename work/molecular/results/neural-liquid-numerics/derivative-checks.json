@@ -1,0 +1,27 @@
+[
+  {
+    "type": "atomic_force",
+    "atom": 580,
+    "axis": 1,
+    "step_A": 0.002,
+    "analytical_eV_A": 4.471076965332031,
+    "numerical_eV_A": 4.486083984375,
+    "relative_error": 0.0033564663026481867
+  },
+  {
+    "type": "whole_molecule_force",
+    "molecule": 27,
+    "axis": 2,
+    "step_A": 0.01,
+    "analytical_eV_A": 0.6121635437011719,
+    "numerical_eV_A": 0.6046295166015625,
+    "relative_error": 0.012307212688028812
+  },
+  {
+    "type": "xx_strain_derivative",
+    "strain_step": 0.0001,
+    "analytical_eV_A3": 0.02027297578752041,
+    "numerical_eV_A3": 0.020441215908242102,
+    "relative_error": 0.008298738304874709
+  }
+]

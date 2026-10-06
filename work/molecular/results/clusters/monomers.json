@@ -1,0 +1,86 @@
+{
+  "HFIP": {
+    "smiles": "OC(C(F)(F)F)C(F)(F)F",
+    "atoms": 12,
+    "energy_eV": -1085.862062959378,
+    "converged": true,
+    "max_force_eV_A": 0.0232410310382024
+  },
+  "MeOH": {
+    "smiles": "CO",
+    "atoms": 6,
+    "energy_eV": -223.84404210549047,
+    "converged": true,
+    "max_force_eV_A": 0.02089393861551379
+  },
+  "Acetone": {
+    "smiles": "CC(=O)C",
+    "atoms": 10,
+    "energy_eV": -368.2826381772382,
+    "converged": true,
+    "max_force_eV_A": 0.01655883875848695
+  },
+  "DMF": {
+    "smiles": "CN(C)C=O",
+    "atoms": 12,
+    "energy_eV": -462.1436343984972,
+    "converged": true,
+    "max_force_eV_A": 0.014747219109059075
+  },
+  "THF": {
+    "smiles": "C1CCOC1",
+    "atoms": 13,
+    "energy_eV": -454.6174277826811,
+    "converged": true,
+    "max_force_eV_A": 0.022316742899387676
+  },
+  "MethylAcetate": {
+    "smiles": "CC(=O)OC",
+    "atoms": 11,
+    "energy_eV": -479.45776489901965,
+    "converged": true,
+    "max_force_eV_A": 0.019735463895976683
+  },
+  "MethylPivalate": {
+    "smiles": "CC(C)(C)C(=O)OC",
+    "atoms": 20,
+    "energy_eV": -737.8943428628534,
+    "converged": true,
+    "max_force_eV_A": 0.019794706693981
+  },
+  "DimethylCarbonate": {
+    "smiles": "COC(=O)OC",
+    "atoms": 12,
+    "energy_eV": -590.4997725299379,
+    "converged": true,
+    "max_force_eV_A": 0.02257806425571903
+  },
+  "IPA": {
+    "smiles": "CC(O)C",
+    "atoms": 12,
+    "energy_eV": -396.2426580508431,
+    "converged": true,
+    "max_force_eV_A": 0.023578636707729365
+  },
+  "AceticAcid": {
+    "smiles": "CC(=O)O",
+    "atoms": 8,
+    "energy_eV": -393.47502710857884,
+    "converged": true,
+    "max_force_eV_A": 0.01771079142598662
+  },
+  "TFE": {
+    "smiles": "OCC(F)(F)F",
+    "atoms": 9,
+    "energy_eV": -655.0404163566319,
+    "converged": true,
+    "max_force_eV_A": 0.021746371523063895
+  },
+  "Water": {
+    "smiles": "O",
+    "atoms": 3,
+    "energy_eV": -137.9765422607538,
+    "converged": true,
+    "max_force_eV_A": 0.0032069350130563227
+  }
+}

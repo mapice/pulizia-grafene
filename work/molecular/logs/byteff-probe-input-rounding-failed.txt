@@ -1,0 +1,22 @@
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+HFIP 12 q -2.7755575615628914e-17 sum atomic alpha nm3 0.00977229856118616
+DMF 12 q 3.8163916471489756e-17 sum atomic alpha nm3 0.009625236285628325
+THF 13 q 1.3877787807814457e-17 sum atomic alpha nm3 0.010373648126370913
+Anisole 16 q -1.3877787807814457e-17 sum atomic alpha nm3 0.016817431743676028
+AceticAcid 8 q -2.7755575615628914e-17 sum atomic alpha nm3 0.006458472275265707
+MethylPivalate 20 q -5.551115123125783e-17 sum atomic alpha nm3 0.01596595109571714
+DimethylCarbonate 12 q -1.3877787807814457e-17 sum atomic alpha nm3 0.009016996326272812
+HFIP__HFIP -19.956066981012672 {'DISP': -26.83586759595662, 'PAULI': 37.652926736688705, 'ELEC': -16.084600122586206, 'POLARIZATION': -4.591618541144291, 'CHARGE_TRANSFER': -10.096907458014307}
+HFIP__MeOH -31.682203114094005 {'DISP': -22.645256227557777, 'PAULI': 55.19041597118376, 'ELEC': -37.16424008746328, 'POLARIZATION': -9.509729822990778, 'CHARGE_TRANSFER': -17.55339294726594}
+HFIP__Acetone -38.02631471759151 {'DISP': -30.130232021278566, 'PAULI': 58.40426443354686, 'ELEC': -40.937212869629214, 'POLARIZATION': -10.583046450035889, 'CHARGE_TRANSFER': -14.780087810194724}
+HFIP__DMF -39.79469381761377 {'DISP': -31.359347840466825, 'PAULI': 71.32707217271151, 'ELEC': -45.77934217438537, 'POLARIZATION': -13.26743231696851, 'CHARGE_TRANSFER': -20.71564365850457}
+HFIP__THF -36.74590049427377 {'DISP': -29.376784901674057, 'PAULI': 54.30001492642739, 'ELEC': -33.089831792679334, 'POLARIZATION': -9.783821186868757, 'CHARGE_TRANSFER': -18.795477539479016}
+Traceback (most recent call last):
+  File "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/byteff_probe.py", line 143, in <module>
+    main()
+  File "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/byteff_probe.py", line 121, in main
+    assert abs(f_model-f_numeric) < 2e-4, (f_model, f_numeric)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (43.27210472648669, 43.282465625118505)
+{"guard": {"command": ["work/molecular/.venv/bin/python", "-u", "work/molecular/byteff_probe.py"], "pid": 64102, "exitcode": 1, "peak_RSS_MB": 704.625, "elapsed_seconds": 10.04533154098317, "termination_reason": null}}

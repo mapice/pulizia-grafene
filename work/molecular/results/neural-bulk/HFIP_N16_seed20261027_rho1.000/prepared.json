@@ -1,0 +1,16 @@
+{
+  "model_sha256": "fab8b8713c832f31a2a853aaa22fd638be8a369cbf5095e6b3e982a18d10e93a",
+  "molecules": 16,
+  "atoms": 192,
+  "cell_A": 16.4661685148741,
+  "model_local_cutoff_A": 6.0,
+  "seed": 20261027,
+  "molar_mass_g_mol": 168.03841897800004,
+  "density_used_only_for_initialization_g_cm3": 1.0,
+  "gas_monomer_fmax_eV_A": 0.013912712670363285,
+  "periodic_intermolecular_min_distance_A": 2.0700990910391224,
+  "input_sha256": "4c47277019f37ec62125601606cbb33f5da5a5b27c7410ccf2d41252f4766f30",
+  "scope": "Prepared initial state, no liquid property measured or inferred",
+  "equilibrium_liquid_qualified": false,
+  "cleaning_solution_established": false
+}

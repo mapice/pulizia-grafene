@@ -1,0 +1,182 @@
+#INFO: **** input file is /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/dft_counterpoise.py ****
+"""DFT electronic interaction checks at frozen, refined GFN2 geometries.
+
+PBE0-D3(BJ), density fitting. Boys-Bernardi counterpoise corrects basis
+superposition error. Dispersion uses only REAL atoms in each fragment.
+This is neither liquid free energy nor a prediction of residue removal.
+"""
+import os
+for var in ['OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','VECLIB_MAXIMUM_THREADS']:
+    os.environ[var]='2'
+os.nice(8)
+from pathlib import Path
+import json,time,resource,sys,argparse,hashlib
+import numpy as np
+from ase.io import read
+from pyscf import gto,dft,lib
+from dftd3.interface import DispersionModel,RationalDampingParam
+
+lib.num_threads(2)
+HERE=Path(__file__).resolve().parent
+CLUST=HERE/'results/clusters'
+OUT=HERE/'results/dft'
+OUT.mkdir(parents=True,exist_ok=True)
+HARTREE_KJMOL=2625.499638
+BOHR_A=.529177210903
+
+def rss():
+    return resource.getrusage(resource.RUSAGE_SELF).ru_maxrss/(1024**2 if sys.platform=='darwin' else 1024)
+
+def energy(atoms,real_indices,label,args):
+    path=OUT/f'{label}.json'
+    xyz=atoms.positions
+    geometry_hash=hashlib.sha256(xyz.tobytes()+bytes(atoms.numbers)).hexdigest()
+    if path.exists():
+        old=json.loads(path.read_text())
+        if old['geometry_hash']==geometry_hash and old['basis']==args.basis and old['xc']==args.xc and old['converged']:
+            return old
+    real=set(real_indices)
+    atom_input=[(symbol if i in real else 'ghost-'+symbol,tuple(p)) for i,(symbol,p) in enumerate(zip(atoms.get_chemical_symbols(),xyz))]
+    mol=gto.M(atom=atom_input,basis=args.basis,unit='Angstrom',charge=0,spin=0,verbose=4,max_memory=1800,output=str(OUT/f'{label}.scf.log'))
+    mf=dft.RKS(mol).density_fit()
+    mf.xc=args.xc
+    mf.grids.level=3
+    mf.conv_tol=1e-9
+    mf.max_cycle=120
+    mf.chkfile=None
+    start=time.monotonic()
+    def callback(env):
+        if rss()>3000:raise MemoryError('3 GB RSS limit exceeded')
+        if time.monotonic()-start>1800:raise TimeoutError('30 min single-point cap')
+    mf.callback=callback
+    e=float(mf.kernel())
+    real_atoms=atoms[list(real_indices)]
+    model=DispersionModel(real_atoms.numbers,real_atoms.positions/BOHR_A)
+    correction=float(model.get_dispersion(RationalDampingParam(method=args.xc),grad=False)['energy'])
+    r=dict(label=label,basis=args.basis,xc=args.xc,converged=bool(mf.converged),electronic_Ha=e,dispersion_Ha=correction,total_Ha=e+correction,basis_functions=mol.nao,real_atoms=len(real),ghost_atoms=len(atoms)-len(real),geometry_hash=geometry_hash,elapsed_seconds=time.monotonic()-start,peak_rss_MB=rss(),grid_level=3,conv_tol_Ha=1e-9)
+    path.write_text(json.dumps(r,indent=2)+'\n')
+    print(json.dumps(r),flush=True)
+    if not mf.converged:raise RuntimeError('SCF did not converge '+label)
+    return r
+
+def main():
+    p=argparse.ArgumentParser()
+    p.add_argument('--pair',default='HFIP__MethylAcetate')
+    p.add_argument('--basis',default='def2-svp')
+    p.add_argument('--xc',default='pbe0')
+    args=p.parse_args()
+    r=json.loads((CLUST/'binding-refined.json').read_text())['pairs'][args.pair]
+    atoms=read(CLUST/r['best_geometry'])
+    n=next(t['n_acceptor'] for t in r['trials'] if t['name']+'.refined.xyz'==r['best_geometry'])
+    tag=f'{args.pair}_{args.xc}_{args.basis}'
+    ab=energy(atoms,range(len(atoms)),tag+'_AB',args)
+    a_cp=energy(atoms,range(n),tag+'_Acp',args)
+    b_cp=energy(atoms,range(n,len(atoms)),tag+'_Bcp',args)
+    a=energy(atoms[:n],range(n),tag+'_A',args)
+    b=energy(atoms[n:],range(len(atoms)-n),tag+'_B',args)
+    ecp=ab['total_Ha']-a_cp['total_Ha']-b_cp['total_Ha']
+    eraw=ab['total_Ha']-a['total_Ha']-b['total_Ha']
+    record=dict(pair=args.pair,method=args.xc+'-D3(BJ)',basis=args.basis,geometry=r['best_geometry'],geometry_method='GFN2-xTB refined; not DFT optimized',interaction_counterpoise_kJ_mol=ecp*HARTREE_KJMOL,interaction_raw_kJ_mol=eraw*HARTREE_KJMOL,BSSE_correction_kJ_mol=(ecp-eraw)*HARTREE_KJMOL,scope='Vacuum frozen-fragment electronic interaction energies. No liquid entropy/solvation, no cleaning efficacy.',all_converged=all(x['converged'] for x in [ab,a_cp,b_cp,a,b]),peak_rss_MB=rss(),energies=dict(AB=ab,Acp=a_cp,Bcp=b_cp,A=a,B=b))
+    (OUT/f'{tag}_interaction.json').write_text(json.dumps(record,indent=2)+'\n')
+    print(json.dumps(record),flush=True)
+
+if __name__=='__main__':main()
+#INFO: ******************** input file end ********************
+
+
+System: uname_result(system='Darwin', node='Mattias-MacBook-Pro.local', release='24.6.0', version='Darwin Kernel Version 24.6.0: Sun Aug 23 20:37:03 PDT 2026; root:xnu-11417.140.69.712.69~1/RELEASE_ARM64_T6000', machine='arm64')  Threads 1
+Python 3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]
+numpy 2.5.3  scipy 1.18.1  h5py 3.16.0
+Date: Tue Oct  6 03:09:54 2026
+PySCF version 2.14.0
+PySCF path  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/pyscf
+
+[CONFIG] conf_file None
+[INPUT] verbose = 4
+[INPUT] num. atoms = 12
+[INPUT] num. electrons = 82
+[INPUT] charge = 0
+[INPUT] spin (= nelec alpha-beta = 2S) = 0
+[INPUT] symmetry False subgroup None
+[INPUT] Mole.unit = Angstrom
+[INPUT] Symbol           X                Y                Z      unit          X                Y                Z       unit  Magmom
+[INPUT]  1 O      2.719322550000   0.034157850000   0.016308650000 AA    5.138774863854   0.064548981504   0.030818881961 Bohr   0.0
+[INPUT]  2 C      3.184951340000  -0.412541020000  -1.196224670000 AA    6.018685752667  -0.779589542949  -2.260537009748 Bohr   0.0
+[INPUT]  3 C      2.720770290000   0.482131590000  -2.368974450000 AA    5.141510695953   0.911096661101  -4.476712906592 Bohr   0.0
+[INPUT]  4 F      3.276904500000   1.692797510000  -2.287500620000 AA    6.192452041355   3.198923678246  -4.322749681573 Bohr   0.0
+[INPUT]  5 F      1.398325750000   0.663076330000  -2.377664690000 AA    2.642452700427   1.253032663382  -4.493135080149 Bohr   0.0
+[INPUT]  6 F      3.060102700000  -0.027183220000  -3.557496060000 AA    5.782756016042  -0.051368840984  -6.722693242619 Bohr   0.0
+[INPUT]  7 C      2.800826610000  -1.884282210000  -1.488504110000 AA    5.292795215294  -3.560777318290  -2.812865103189 Bohr   0.0
+[INPUT]  8 F      1.576681730000  -2.012123760000  -2.010985530000 AA    2.979496655305  -3.802362835130  -3.800211892163 Bohr   0.0
+[INPUT]  9 F      2.823993660000  -2.609528790000  -0.371047750000 AA    5.336574594908  -4.931294727268  -0.701178626636 Bohr   0.0
+[INPUT] 10 F      3.652875420000  -2.452249270000  -2.348304050000 AA    6.902934110956  -4.634079509465  -4.437651511707 Bohr   0.0
+[INPUT] 11 H      1.732417000000  -0.008817260000   0.078157130000 AA    3.273793663541  -0.016662206569   0.147695570382 Bohr   0.0
+[INPUT] 12 H      4.283265100000  -0.365810280000  -1.168570840000 AA    8.094197957908  -0.691281242750  -2.208278844753 Bohr   0.0
+
+nuclear repulsion = 664.194603562484
+number of shells = 66
+number of NR pGTOs = 254
+number of NR cGTOs = 150
+basis = def2-svp
+ecp = {}
+CPU time:        97.74
+
+
+******** <class 'pyscf.df.df_jk.DFRKS'> ********
+method = DFRKS
+initial guess = minao
+damping factor = 0
+level_shift factor = 0
+DIIS = <class 'pyscf.scf.diis.CDIIS'>
+diis_start_cycle = 1
+diis_space = 8
+diis_damp = 0
+SCF conv_tol = 1e-09
+SCF conv_tol_grad = None
+SCF max_cycles = 120
+direct_scf = False
+max_memory 1800 MB (current use 0 MB)
+XC library pyscf.dft.libxc version 7.0.0
+    S. Lehtola, C. Steigemann, M. J.T. Oliveira, and M. A.L. Marques.,  SoftwareX 7, 1–5 (2018)
+XC functionals = pbe0
+    C. Adamo and V. Barone.,  J. Chem. Phys. 110, 6158 (1999)
+    M. Ernzerhof and G. E. Scuseria.,  J. Chem. Phys. 110, 5029 (1999)
+radial grids: 
+    Treutler-Ahlrichs [JCP 102, 346 (1995); DOI:10.1063/1.469408] (M4) radial grids
+    
+becke partition: Becke, JCP 88, 2547 (1988); DOI:10.1063/1.454033
+pruning grids: <function nwchem_prune at 0x110f8a980>
+grids dens level: 3
+symmetrized grids: False
+atomic radii adjust function: <function treutler_atomic_radii_adjust at 0x110f8ae80>
+small_rho_cutoff = 0
+Set gradient conv threshold to 3.16228e-05
+Initial guess from minao.
+tot grids = 161624
+******** <class 'pyscf.df.df.DF'> ********
+auxbasis = None
+max_memory = 1800
+init E= -789.91861387378
+  HOMO = -0.342317272844164  LUMO = 0.0100458581106957  gap/eV = 9.58829
+cycle= 1 E= -788.11665232434  delta_E=  1.8  |g|= 1.38  |ddm|= 3.71
+  HOMO = -0.27511114619117  LUMO = 0.0025561493640387  gap/eV = 7.55571
+cycle= 2 E= -787.677539537813  delta_E= 0.439  |g|= 2.15  |ddm|= 2.66
+  HOMO = -0.343500453901549  LUMO = 0.0318579980844915  gap/eV = 10.21402
+cycle= 3 E= -788.445391663391  delta_E= -0.768  |g|= 0.083  |ddm|= 1.72
+  HOMO = -0.340055073959217  LUMO = 0.0373276888572263  gap/eV = 10.26911
+cycle= 4 E= -788.446141284795  delta_E= -0.00075  |g|= 0.0589  |ddm|= 0.127
+  HOMO = -0.342601819646626  LUMO = 0.0373220700522512  gap/eV = 10.33826
+cycle= 5 E= -788.446776586818  delta_E= -0.000635  |g|= 0.0104  |ddm|= 0.0519
+  HOMO = -0.341567006080335  LUMO = 0.0375336865999674  gap/eV = 10.31586
+cycle= 6 E= -788.446792119152  delta_E= -1.55e-05  |g|= 0.00344  |ddm|= 0.0102
+  HOMO = -0.341904292927187  LUMO = 0.0373402069230448  gap/eV = 10.31977
+cycle= 7 E= -788.446794480888  delta_E= -2.36e-06  |g|= 0.000354  |ddm|= 0.00331
+  HOMO = -0.341918836090372  LUMO = 0.0373439355969758  gap/eV = 10.32027
+cycle= 8 E= -788.446794502964  delta_E= -2.21e-08  |g|= 0.000124  |ddm|= 0.000458
+  HOMO = -0.341905284940702  LUMO = 0.0373448805745831  gap/eV = 10.31992
+cycle= 9 E= -788.446794505113  delta_E= -2.15e-09  |g|= 5.84e-05  |ddm|= 0.000139
+  HOMO = -0.341911541056688  LUMO = 0.0373423077462345  gap/eV = 10.32002
+cycle= 10 E= -788.44679450568  delta_E= -5.67e-10  |g|= 5.61e-06  |ddm|= 4.67e-05
+  HOMO = -0.341910806310052  LUMO = 0.0373427363752903  gap/eV = 10.32001
+Extra cycle  E= -788.446794505677  delta_E= 3.64e-12  |g|= 6.28e-06  |ddm|= 9.16e-06
+converged SCF energy = -788.446794505677

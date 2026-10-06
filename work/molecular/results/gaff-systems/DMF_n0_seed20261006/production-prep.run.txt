@@ -1,0 +1,50 @@
+                :-) GROMACS - gmx grompp, 2026.3-conda_forge (-:
+
+Executable:   /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin.ARM_NEON_ASIMD/gmx
+Data prefix:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env
+Working dir:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/gaff-systems/DMF_n0_seed20261006
+Command line:
+  gmx grompp -f production.mdp -c nvt.gro -t nvt.cpt -p system.top -n index.ndx -o production.tpr
+
+Generating 1-4 interactions: fudge = 0.5
+Number of degrees of freedom in T-Coupling group System is 3622.00
+Last frame         -1 time   50.000   
+
+GROMACS reminds you: "Your Proposal is Accepted" (Men In Black)
+
+Setting the LD random seed to 1806625021
+
+Generated 21 of the 21 non-bonded parameter combinations
+
+Generated 21 of the 21 1-4 parameter combinations
+
+Excluding 3 bonded neighbours molecule type 'DMF'
+
+turning H bonds into constraints...
+
+Taking velocities from 'nvt.gro'
+
+The largest distance between excluded atoms is 0.377 nm between atom 1347 and 1349
+
+Determining Verlet buffer for a tolerance of 0.005 kJ/mol/ps at 298.15 K
+
+Calculated rlist for 1x1 atom pair-list as 1.030 nm, buffer size 0.030 nm
+
+Set rlist, assuming 4x4 atom pair-list, to 1.005 nm, buffer size 0.005 nm
+
+Note that mdrun will redetermine rlist based on the actual pair-list setup
+
+Reading Coordinates, Velocities and Box size from old trajectory
+
+Will read whole trajectory
+
+Using frame at t = 50 ps
+
+Starting time for run is 0 ps
+Calculating fourier grid dimensions for X Y Z
+Using a fourier grid of 24x24x24, spacing 0.111 0.111 0.111
+
+Estimate for the relative computational load of the PME mesh part: 0.22
+
+This run will generate roughly 6 Mb of data
+{"guard": {"command": ["/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin/gmx", "grompp", "-f", "production.mdp", "-c", "nvt.gro", "-t", "nvt.cpt", "-p", "system.top", "-n", "index.ndx", "-o", "production.tpr"], "pid": 63188, "exitcode": 0, "peak_RSS_MB": 1.65625, "elapsed_seconds": 2.014215874951333, "termination_reason": null}}

@@ -1,0 +1,544 @@
+[
+  {
+    "name": "HFIP",
+    "smiles": "OC(C(F)(F)F)C(F)(F)F",
+    "residue": "HFI",
+    "atoms": 12,
+    "method": "GAFF2/AM1-BCC via AmberTools26",
+    "charges_e": [
+      -0.5398835,
+      0.0690165,
+      0.6028165,
+      -0.2197165,
+      -0.2197165,
+      -0.2197165,
+      0.6028165,
+      -0.2197165,
+      -0.2197165,
+      -0.2197165,
+      0.4359165,
+      0.1476165
+    ],
+    "charge_total_e": -6.938893903907228e-17,
+    "generated_unadjusted_charge_total_e": 0.0010020000000000584,
+    "neutrality_correction_per_atom_e": -8.350000000000486e-05,
+    "neutrality_method": "Minimum L2 charge correction under sum(q)=0; bounded .005e total; original charges kept",
+    "logs": [
+      {
+        "stage": "antechamber",
+        "command": [
+          "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/antechamber",
+          "-i",
+          "input.sdf",
+          "-fi",
+          "sdf",
+          "-o",
+          "molecule.mol2",
+          "-fo",
+          "mol2",
+          "-c",
+          "bcc",
+          "-nc",
+          "0",
+          "-at",
+          "gaff2",
+          "-rn",
+          "HFI",
+          "-s",
+          "2",
+          "-pf",
+          "y"
+        ],
+        "seconds": 2.0646483751479536
+      },
+      {
+        "stage": "parmchk",
+        "command": [
+          "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/parmchk2",
+          "-i",
+          "molecule.mol2",
+          "-f",
+          "mol2",
+          "-s",
+          "gaff2",
+          "-o",
+          "molecule.frcmod"
+        ],
+        "seconds": 2.0938788750208914
+      },
+      {
+        "stage": "tleap",
+        "command": [
+          "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/tleap",
+          "-f",
+          "leap.in"
+        ],
+        "seconds": 2.1268218338955194
+      },
+      {
+        "stage": "convert",
+        "command": [
+          "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/python",
+          "-c",
+          "import parmed as p; s=p.load_file(\"molecule.prmtop\",xyz=\"molecule.inpcrd\"); s.save(\"molecule.top\",overwrite=False); s.save(\"molecule.gro\",overwrite=False); print(\"atoms\",len(s.atoms),\"charge\",sum(a.charge for a in s.atoms)); print(\"charges\",[(a.name,a.type,a.charge) for a in s.atoms])"
+        ],
+        "seconds": 2.1249207919463515
+      }
+    ],
+    "file_sha256": {
+      "molecule.inpcrd": "7f39825cfc54a25efa180ce7e03150c07c4b5036a3531e43b98943796ffa635a",
+      "antechamber.log": "cd4901c01b78e85ba313ac151669497484676bae5813bca8472a55a8876e4261",
+      "sqm.out": "7464e5d575404ef440b95a102b08e1220d0b50f1261a41381da1b0639a7bccc0",
+      "leap.log": "132cddbda929e44f4cbc30837b68d292e8b11a5b4943c0764f2f564e924ce1b7",
+      "convert.log": "d34cc03ce81e1e3f88092af092156b91026c928d17b6aa1419f7af3c534b47f7",
+      "molecule.gro": "7547328c62f4721f45fc875760ae4cc0cc9046060face83c668332289fc4dcef",
+      "leap.in": "a97015f455418202a6dd870b8285adca2ce5b68136221486ce22ea9d29f6414e",
+      "parmchk.log": "563757cf6f4a4265c18c777b444d65ec5bae7723c4c0e6f1dec9c0d9323dd596",
+      "input.sdf": "54b7cd3c6ed308f075ecea435210dc7dd976978b448ffc788c64ff9687c7ac40",
+      "molecule.top": "03bbb3365cd4b4d650ffcc15040e514d19f856b29976c8c058b891164467c02b",
+      "sqm.in": "a8a56f19eaa4c86e42bb5d40fc702c3ab367a5ef1a8be7410d352dfb435fa2d7",
+      "molecule.prmtop": "0a3e276b76ee8c9b9a46830412138662153e1d196638aa2badc8dc7096fe1749",
+      "molecule.mol2": "538e016fcd0e39650e07e4127e1b960bf31e3dc97fef2364a6e017dbf6fda432",
+      "molecule-unadjusted.mol2": "d1666ff1439a71adf6116ab9a27b5ad4cb4c3db0bcf8a1b9b2edfc8b12c93651",
+      "sqm.pdb": "2c85d8e5f2d4543e1ec2f54e8abdc13eaed81df487edd0333f5adb1923bd0643",
+      "tleap.log": "a08582b026bc2b20b81274e9924d462ab4e5274e6f82c8b88285da5b37ac6601",
+      "molecule.frcmod": "bf922808a85c35c2c11e49229322f906ba4bfc17fa247ee240d7221744a82dd5"
+    },
+    "scope": "Comparator force field generated, not qualified for bulk/interfacial desorption.",
+    "source": "https://ambermd.org/AmberTools.php"
+  },
+  {
+    "name": "DMF",
+    "smiles": "CN(C)C=O",
+    "residue": "DMF",
+    "atoms": 12,
+    "method": "GAFF2/AM1-BCC via AmberTools26",
+    "charges_e": [
+      0.079383333333,
+      -0.494716666667,
+      0.079383333333,
+      0.660983333333,
+      -0.604016666667,
+      0.041783333333,
+      0.041783333333,
+      0.041783333333,
+      0.041783333333,
+      0.041783333333,
+      0.041783333333,
+      0.028283333333
+    ],
+    "charge_total_e": -4.00004682155064e-12,
+    "generated_unadjusted_charge_total_e": -0.0009999999999999488,
+    "neutrality_correction_per_atom_e": 8.333333333332908e-05,
+    "neutrality_method": "Minimum L2 charge correction under sum(q)=0; bounded .005e total; original charges kept",
+    "logs": [
+      {
+        "stage": "antechamber",
+        "command": [
+          "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/antechamber",
+          "-i",
+          "input.sdf",
+          "-fi",
+          "sdf",
+          "-o",
+          "molecule.mol2",
+          "-fo",
+          "mol2",
+          "-c",
+          "bcc",
+          "-nc",
+          "0",
+          "-at",
+          "gaff2",
+          "-rn",
+          "DMF",
+          "-s",
+          "2",
+          "-pf",
+          "y"
+        ],
+        "seconds": 2.069681332912296
+      },
+      {
+        "stage": "parmchk",
+        "command": [
+          "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/parmchk2",
+          "-i",
+          "molecule.mol2",
+          "-f",
+          "mol2",
+          "-s",
+          "gaff2",
+          "-o",
+          "molecule.frcmod"
+        ],
+        "seconds": 2.102496583946049
+      },
+      {
+        "stage": "tleap",
+        "command": [
+          "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/tleap",
+          "-f",
+          "leap.in"
+        ],
+        "seconds": 2.084998708916828
+      },
+      {
+        "stage": "convert",
+        "command": [
+          "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/python",
+          "-c",
+          "import parmed as p; s=p.load_file(\"molecule.prmtop\",xyz=\"molecule.inpcrd\"); s.save(\"molecule.top\",overwrite=False); s.save(\"molecule.gro\",overwrite=False); print(\"atoms\",len(s.atoms),\"charge\",sum(a.charge for a in s.atoms)); print(\"charges\",[(a.name,a.type,a.charge) for a in s.atoms])"
+        ],
+        "seconds": 2.0684259578119963
+      }
+    ],
+    "file_sha256": {
+      "molecule.inpcrd": "08d128239b06b12eb0bc80923f63d7c2758dac655cb2e49fe15b89f6df71e1f9",
+      "antechamber.log": "bd8d5f823b557fc1b2494dfaa78846093e32ee6f06229bfee3e80c51ac1ed110",
+      "sqm.out": "bb976eb00156fd27ed52b68e67e9c502e7696fd689039bfd774d83b3aa032b2e",
+      "leap.log": "57e892b5f61152db20a0de8b5771dc42097298f3798d8c66506ef9993dbd27fe",
+      "convert.log": "cebf1a1ecd7646c8f6458f63df7c1145575d987368279d5ce26dae8f8e3df31f",
+      "molecule.gro": "e286305c1385aa98ae02b94836b49e0e3ce30bb79cb3daa89928eba8e9f74ad7",
+      "leap.in": "a97015f455418202a6dd870b8285adca2ce5b68136221486ce22ea9d29f6414e",
+      "parmchk.log": "0d7cc29ae0e4d0c5e4420934eb673b21032b9e47a8be24cc53a3c44cc4da2593",
+      "input.sdf": "4d1933e387038c2709841568463ee564595c0cd872b74544ef5a29e6dbb0131d",
+      "molecule.top": "42922bd5231e92d5c666c41d78d52c2bd57174aec52adf64512084a2c26b4ff9",
+      "sqm.in": "d738a4a6eff5d434a3dac9d53e6ea98ab4ec8dba1fd885aec653953bbab7dc3b",
+      "molecule.prmtop": "283a3df3cbcb2ae82a8e71610eae2c961b56f52a0840a017a25ec69a6b0c190e",
+      "molecule.mol2": "6f2856eb22c74d705f331642a5ea45b3258c233c94eb9ffb0009749cdd8d3711",
+      "molecule-unadjusted.mol2": "c534e9179b46ee7ef9d70cea5751ede0c011863f5d6f88e3bbddb39827a09e88",
+      "sqm.pdb": "d057e21dc6b222b5c83fe101cff93fef8d0b1e1a7a3042acc50afcb7f9fa7a7b",
+      "tleap.log": "19b8d2cfb5b1dcf72a762d7cbecbc324b878f2e63691c58bf880c3437a555095",
+      "molecule.frcmod": "9fb79fb6028ab7ab0c97c6dbd167cf729d43a10d594c93ff82d84b2db2de1aff"
+    },
+    "scope": "Comparator force field generated, not qualified for bulk/interfacial desorption.",
+    "source": "https://ambermd.org/AmberTools.php"
+  },
+  {
+    "name": "THF",
+    "smiles": "C1CCOC1",
+    "residue": "THF",
+    "atoms": 13,
+    "method": "GAFF2/AM1-BCC via AmberTools26",
+    "charges_e": [
+      -0.1064,
+      -0.1064,
+      0.1274,
+      -0.4276,
+      0.1274,
+      0.0517,
+      0.0517,
+      0.0517,
+      0.0517,
+      0.0447,
+      0.0447,
+      0.0447,
+      0.0447
+    ],
+    "charge_total_e": 5.551115123125783e-17,
+    "generated_unadjusted_charge_total_e": 5.551115123125783e-17,
+    "neutrality_correction_per_atom_e": -4.270088556250602e-18,
+    "neutrality_method": "Minimum L2 charge correction under sum(q)=0; bounded .005e total; original charges kept",
+    "logs": [
+      {
+        "stage": "antechamber",
+        "command": [
+          "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/antechamber",
+          "-i",
+          "input.sdf",
+          "-fi",
+          "sdf",
+          "-o",
+          "molecule.mol2",
+          "-fo",
+          "mol2",
+          "-c",
+          "bcc",
+          "-nc",
+          "0",
+          "-at",
+          "gaff2",
+          "-rn",
+          "THF",
+          "-s",
+          "2",
+          "-pf",
+          "y"
+        ],
+        "seconds": 2.0881592920050025
+      },
+      {
+        "stage": "parmchk",
+        "command": [
+          "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/parmchk2",
+          "-i",
+          "molecule.mol2",
+          "-f",
+          "mol2",
+          "-s",
+          "gaff2",
+          "-o",
+          "molecule.frcmod"
+        ],
+        "seconds": 2.0917569999583066
+      },
+      {
+        "stage": "tleap",
+        "command": [
+          "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/tleap",
+          "-f",
+          "leap.in"
+        ],
+        "seconds": 2.1208543330430984
+      },
+      {
+        "stage": "convert",
+        "command": [
+          "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/python",
+          "-c",
+          "import parmed as p; s=p.load_file(\"molecule.prmtop\",xyz=\"molecule.inpcrd\"); s.save(\"molecule.top\",overwrite=False); s.save(\"molecule.gro\",overwrite=False); print(\"atoms\",len(s.atoms),\"charge\",sum(a.charge for a in s.atoms)); print(\"charges\",[(a.name,a.type,a.charge) for a in s.atoms])"
+        ],
+        "seconds": 2.055234291125089
+      }
+    ],
+    "file_sha256": {
+      "molecule.inpcrd": "0b0ff4e25d1b00197634ad9d561d36f53ea56d83962760ec768f62963bb34205",
+      "antechamber.log": "99cadcfe6f0c03fc7480c3f2a431778b40fbb6b67e020c44b7675c01ad57fa0e",
+      "sqm.out": "a7f1ef02542b5baad09c1b84f37fd3c8f6eb37d40af59f836ad46d7137dad74b",
+      "leap.log": "5ab09d0a99bcd74429caeba5402a2c3a8554dec057bd621a6d77773fce1ebddd",
+      "convert.log": "f00efb414013e37ebb51997effdb966846a483d8599eeab7dc88f889c827f82c",
+      "molecule.gro": "f89a16c5904cc3348fc7a0be4855a875c3773dd41285f52a82da4e2abdcc51a7",
+      "leap.in": "a97015f455418202a6dd870b8285adca2ce5b68136221486ce22ea9d29f6414e",
+      "parmchk.log": "5b4fadca157c659ad051f45619eae386a268b623ba29b64c02758159d578c50e",
+      "input.sdf": "8f9fc5f80064a091341141fd9ab531283df70caab9259c6c61be09f6f93a0b09",
+      "molecule.top": "ed2b862722269178e5c71c760deb9c0ccc56faee63a1eb4f940c76d022ab98c8",
+      "sqm.in": "15216ef8d60ed98c4108105c8b4a97032a33b908833eba9272841d73ff196de6",
+      "molecule.prmtop": "284c97ead60aaac104b55195369821ab204287c5152e49a99e2908efd96e992d",
+      "molecule.mol2": "ae379221f4466f2dfb060828bb7f543c9b216ef40635083e2abb5c1294227850",
+      "molecule-unadjusted.mol2": "7d500960f20cf6cc0a37c9d6990ee489916a6148e15fca71a553f1a5ebffc0e8",
+      "sqm.pdb": "2e3b9e5e2b289af0522538a9453e6838e8c5141811d9424f46e5e7521e0d37dd",
+      "tleap.log": "eb50d6911b4ee91445c29d614274326b84b069b5d7282c0f35988ff2f2a5d4ef",
+      "molecule.frcmod": "ff6ba150b96cca398baa7936880efce266a02a0f4086fd860ba98379befff137"
+    },
+    "scope": "Comparator force field generated, not qualified for bulk/interfacial desorption.",
+    "source": "https://ambermd.org/AmberTools.php"
+  },
+  {
+    "name": "AceticAcid",
+    "smiles": "CC(=O)O",
+    "residue": "ACE",
+    "atoms": 8,
+    "method": "GAFF2/AM1-BCC via AmberTools26",
+    "charges_e": [
+      -0.149975,
+      0.635225,
+      -0.551875,
+      -0.610975,
+      0.077825,
+      0.077825,
+      0.077825,
+      0.444125
+    ],
+    "charge_total_e": 0.0,
+    "generated_unadjusted_charge_total_e": -0.0010000000000000148,
+    "neutrality_correction_per_atom_e": 0.00012500000000000185,
+    "neutrality_method": "Minimum L2 charge correction under sum(q)=0; bounded .005e total; original charges kept",
+    "logs": [
+      {
+        "stage": "antechamber",
+        "command": [
+          "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/antechamber",
+          "-i",
+          "input.sdf",
+          "-fi",
+          "sdf",
+          "-o",
+          "molecule.mol2",
+          "-fo",
+          "mol2",
+          "-c",
+          "bcc",
+          "-nc",
+          "0",
+          "-at",
+          "gaff2",
+          "-rn",
+          "ACE",
+          "-s",
+          "2",
+          "-pf",
+          "y"
+        ],
+        "seconds": 4.060021500103176
+      },
+      {
+        "stage": "parmchk",
+        "command": [
+          "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/parmchk2",
+          "-i",
+          "molecule.mol2",
+          "-f",
+          "mol2",
+          "-s",
+          "gaff2",
+          "-o",
+          "molecule.frcmod"
+        ],
+        "seconds": 2.0835861661471426
+      },
+      {
+        "stage": "tleap",
+        "command": [
+          "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/tleap",
+          "-f",
+          "leap.in"
+        ],
+        "seconds": 2.0630802079103887
+      },
+      {
+        "stage": "convert",
+        "command": [
+          "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/python",
+          "-c",
+          "import parmed as p; s=p.load_file(\"molecule.prmtop\",xyz=\"molecule.inpcrd\"); s.save(\"molecule.top\",overwrite=False); s.save(\"molecule.gro\",overwrite=False); print(\"atoms\",len(s.atoms),\"charge\",sum(a.charge for a in s.atoms)); print(\"charges\",[(a.name,a.type,a.charge) for a in s.atoms])"
+        ],
+        "seconds": 2.0547115420922637
+      }
+    ],
+    "file_sha256": {
+      "molecule.inpcrd": "77f2271a93654dc8d0789904bef55d310193963365b5cd1df9e347c5c6f12ffc",
+      "antechamber.log": "7ccc183b9297bc95e009c5fccd12c32f625d73dee9b3ab038686c4c43bdbe23b",
+      "sqm.out": "860ce1f41f9c59d8e562dc63bf5b337b55ed4becf2e37118e35cb7d2103f2640",
+      "leap.log": "49cd1d4b5cb5394035ddb5933ed6c7141d16bfb5835b042dd8c6a18de2f677b3",
+      "convert.log": "368c4336fbc589bbcacde1f7a11b93d497dd052a4b26332161c2d0ef69fb2d41",
+      "molecule.gro": "37aaa8a56309ae0be376e5c5ec8401aff6bdc7ae7ece802792eef59e19f72d9a",
+      "leap.in": "a97015f455418202a6dd870b8285adca2ce5b68136221486ce22ea9d29f6414e",
+      "parmchk.log": "f6a937d849956eac01ce1adf80bb92669b7176ee2049dda519f41849d356dfb0",
+      "input.sdf": "6f19d67831d74e7bb8e82bfe61674f71d8fbcbd933df7ab7986c64ed74629af1",
+      "molecule.top": "1cd1b9fd81db76b8429fae1591153fa768a5655ecfb78ea7030b169e848c2589",
+      "sqm.in": "1f4b3e90dbe9c75d24447834f8d0a22a4c00ff5213867aede9c7a5cd9928a329",
+      "molecule.prmtop": "c177fc5c865b74e804570e8ac2224cd027eca0cb80c9889068cd09099c48da3d",
+      "molecule.mol2": "26cc7c4be4c559d15d4c5fbc7707f8daba6cbd734615fe2d8c7325374ccf415d",
+      "molecule-unadjusted.mol2": "bb7cc6acfa7792480fb6970ef5304a8b6527af739852ae03a80ba371ba15583b",
+      "sqm.pdb": "8a03c84e313f0da21514cffb12e8c7162da00b3a5cc382e816e0c7636093dcd5",
+      "tleap.log": "4b15acb6cb88c233fb072fb05c365c4302fb260bece6f53bf5c6572b1f8d672d",
+      "molecule.frcmod": "bf922808a85c35c2c11e49229322f906ba4bfc17fa247ee240d7221744a82dd5"
+    },
+    "scope": "Comparator force field generated, not qualified for bulk/interfacial desorption.",
+    "source": "https://ambermd.org/AmberTools.php"
+  },
+  {
+    "name": "Anisole",
+    "smiles": "COc1ccccc1",
+    "residue": "ANI",
+    "atoms": 16,
+    "method": "GAFF2/AM1-BCC via AmberTools26",
+    "charges_e": [
+      0.113825,
+      -0.328775,
+      0.123225,
+      -0.179875,
+      -0.097875,
+      -0.164875,
+      -0.097875,
+      -0.179875,
+      0.043825,
+      0.043825,
+      0.043825,
+      0.142125,
+      0.132125,
+      0.132125,
+      0.132125,
+      0.142125
+    ],
+    "charge_total_e": -1.3877787807814457e-17,
+    "generated_unadjusted_charge_total_e": -0.0020000000000000295,
+    "neutrality_correction_per_atom_e": 0.00012500000000000185,
+    "neutrality_method": "Minimum L2 charge correction under sum(q)=0; bounded .005e total; original charges kept",
+    "logs": [
+      {
+        "stage": "antechamber",
+        "command": [
+          "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/antechamber",
+          "-i",
+          "input.sdf",
+          "-fi",
+          "sdf",
+          "-o",
+          "molecule.mol2",
+          "-fo",
+          "mol2",
+          "-c",
+          "bcc",
+          "-nc",
+          "0",
+          "-at",
+          "gaff2",
+          "-rn",
+          "ANI",
+          "-s",
+          "2",
+          "-pf",
+          "y"
+        ],
+        "seconds": 2.0921349998097867
+      },
+      {
+        "stage": "parmchk",
+        "command": [
+          "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/parmchk2",
+          "-i",
+          "molecule.mol2",
+          "-f",
+          "mol2",
+          "-s",
+          "gaff2",
+          "-o",
+          "molecule.frcmod"
+        ],
+        "seconds": 2.0708982080686837
+      },
+      {
+        "stage": "tleap",
+        "command": [
+          "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/tleap",
+          "-f",
+          "leap.in"
+        ],
+        "seconds": 2.091076249955222
+      },
+      {
+        "stage": "convert",
+        "command": [
+          "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/python",
+          "-c",
+          "import parmed as p; s=p.load_file(\"molecule.prmtop\",xyz=\"molecule.inpcrd\"); s.save(\"molecule.top\",overwrite=False); s.save(\"molecule.gro\",overwrite=False); print(\"atoms\",len(s.atoms),\"charge\",sum(a.charge for a in s.atoms)); print(\"charges\",[(a.name,a.type,a.charge) for a in s.atoms])"
+        ],
+        "seconds": 2.083834207849577
+      }
+    ],
+    "file_sha256": {
+      "molecule.inpcrd": "2455badeb3a903d1b5beb8397f55273b81b579961f920e047aa3a0cc59b199b7",
+      "antechamber.log": "e13233aa0b386a1533f0357faa6924fb792996e05d8700ab39ff5021f3e562b6",
+      "sqm.out": "a1894e3fbd3248b54f441f92d2e785036e72741f54a2b69829ac3959f3d9b559",
+      "leap.log": "c7b4571c261b902e234f4b33dda4a839cb0da69d7c3174608bf44f72dcfbc46d",
+      "convert.log": "78bfb7f0f505c4156b3abbd76861a3f8841350e8727de58bfb03c3cb2d129970",
+      "quantum-geometry.log": "d1e70c3b64d848bf266719111d1467418c5a06268fde88694cc2f3f55b19b779",
+      "molecule.gro": "0f541db74066453d62b648b66fa146768e6f0f940e6fae35089fd21322da5246",
+      "leap.in": "a97015f455418202a6dd870b8285adca2ce5b68136221486ce22ea9d29f6414e",
+      "parmchk.log": "891f769106bf8b2e9a6694424d516c6ad52d95c63d2869cdb057f0f6afa22663",
+      "input.sdf": "7b1aaacfda494cc780613d62bf5016cc8b357c1a5d11735f9baad6d19ba6e658",
+      "molecule.top": "796950da6100ee77734c21a8962c6e1d057599a8542c8640f9df03c6de66f09b",
+      "sqm.in": "150cc851449b0fc7f3c148f03ea0778d49a41aca97809363898acf39e4503b43",
+      "molecule.prmtop": "486a3d6e2a512ce2d702ee7e7301800cd516f262b7315252b188f6d757191460",
+      "molecule.mol2": "1e81e9ccea3a2eefd04c6b0ffc8170748543b02905fbd8a1f23f9f6ea0577704",
+      "molecule-unadjusted.mol2": "68e89698654945916e8db075e814ab76a0a6e107e6fb31fc01e5811680c31156",
+      "sqm.pdb": "225522d76b6284096c07e87716119d536ea084a940d44fe80c5f46316f90eaf2",
+      "tleap.log": "ca16e5a93836a0255a592c2afb912a4fdaea0b135d47db6603489e3731074b8a",
+      "molecule.frcmod": "81e75bc5c4fa595edb07f24336e99863e94ea3f790c061822af389a6d3a7b901"
+    },
+    "scope": "Comparator force field generated, not qualified for bulk/interfacial desorption.",
+    "source": "https://ambermd.org/AmberTools.php"
+  }
+]

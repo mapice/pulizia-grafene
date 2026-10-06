@@ -1,0 +1,23 @@
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/e3nn/o3/_wigner.py:10: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  _Jd, _W3j_flat, _W3j_indices = torch.load(os.path.join(os.path.dirname(__file__), 'constants.pt'))
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+cuequivariance or cuequivariance_torch is not available. Cuequivariance acceleration will be disabled.
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/pyscf/lib/misc.py:203: UserWarning: OpenMP is not available. Setting omp_threads to 1 has no effects.
+  warnings.warn('OpenMP is not available. '
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+{'carbon_distance_A': 7.8, 'orientation_z_degrees': 0.0, 'nearest_cross_atom_A': 6.463210941640461, 'all_cross_edges_beyond_local_cutoff': True, 'interaction_M_kJ_mol': -0.061576726996131086, 'rotated_monomer_energy_difference_kJ_mol': 0.0}
+{'carbon_distance_A': 8.5, 'orientation_z_degrees': 0.0, 'nearest_cross_atom_A': 7.145534735493278, 'all_cross_edges_beyond_local_cutoff': True, 'interaction_M_kJ_mol': -0.026567310564251972, 'rotated_monomer_energy_difference_kJ_mol': 0.0}
+{'carbon_distance_A': 10.0, 'orientation_z_degrees': 0.0, 'nearest_cross_atom_A': 8.617210613425959, 'all_cross_edges_beyond_local_cutoff': True, 'interaction_M_kJ_mol': -0.001093428137920642, 'rotated_monomer_energy_difference_kJ_mol': 0.0}
+{'carbon_distance_A': 12.0, 'orientation_z_degrees': 0.0, 'nearest_cross_atom_A': 10.591813893575594, 'all_cross_edges_beyond_local_cutoff': True, 'interaction_M_kJ_mol': 0.001118767726768, 'rotated_monomer_energy_difference_kJ_mol': 0.0}
+{'carbon_distance_A': 16.0, 'orientation_z_degrees': 0.0, 'nearest_cross_atom_A': 14.561831174551537, 'all_cross_edges_beyond_local_cutoff': True, 'interaction_M_kJ_mol': 1.952949817626276e-05, 'rotated_monomer_energy_difference_kJ_mol': 0.0}
+{"guard": {"command": ["work/molecular/.venv/bin/python", "-u", "work/molecular/cf4_tail_audit.py", "--reference-distance", "12"], "pid": 87427, "exitcode": -15, "peak_RSS_MB": 2309.90625, "elapsed_seconds": 18.296347792027518, "termination_reason": "RSS cap"}}

@@ -1,0 +1,29 @@
+                :-) GROMACS - gmx mdrun, 2026.3-conda_forge (-:
+
+Executable:   /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin.ARM_NEON_ASIMD/gmx
+Data prefix:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env
+Working dir:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/gaff-systems/AceticAcid_n4_seed20261006
+Command line:
+  gmx mdrun -deffnm nvt -ntmpi 1 -ntomp 2 -pin off -nice 8
+
+Reading file nvt.tpr, VERSION 2026.3-conda_forge (single precision)
+Changing nstlist from 20 to 80, rlist from 1.007 to 1.113
+
+Update groups can not be used for this system because atoms that are (in)directly constrained together are interdispersed with other atoms
+
+Using 1 MPI thread
+Using 2 OpenMP threads 
+
+starting mdrun 'AceticAcid comparator n4'
+50000 steps,     50.0 ps.
+
+Writing final coordinates.
+
+               Core t (s)   Wall t (s)        (%)
+       Time:      217.553      108.776      200.0
+                 (ns/day)    (hour/ns)    (ms/step)  (Matom*steps/s) 
+Performance:       39.715        0.604        2.175            1.747 
+
+GROMACS reminds you: "You got one part of that wrong. This is not meth." (Breaking Bad)
+
+{"guard": {"command": ["/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin/gmx", "mdrun", "-deffnm", "nvt", "-ntmpi", "1", "-ntomp", "2", "-pin", "off", "-nice", "8"], "pid": 76487, "exitcode": 0, "peak_RSS_MB": 23.046875, "elapsed_seconds": 110.70716804196127, "termination_reason": null}}

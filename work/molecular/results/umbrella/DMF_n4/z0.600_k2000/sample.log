@@ -1,0 +1,29 @@
+                :-) GROMACS - gmx mdrun, 2026.3-conda_forge (-:
+
+Executable:   /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin.ARM_NEON_ASIMD/gmx
+Data prefix:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env
+Working dir:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/umbrella/DMF_n4/z0.600_k2000
+Command line:
+  gmx mdrun -deffnm run -pf pullf.xvg -px pullx.xvg -ntmpi 1 -ntomp 2 -pin off -nice 8
+
+Reading file run.tpr, VERSION 2026.3-conda_forge (single precision)
+Changing nstlist from 20 to 80, rlist from 1.009 to 1.127
+
+Update groups can not be used for this system because atoms that are (in)directly constrained together are interdispersed with other atoms
+
+Using 1 MPI thread
+Using 2 OpenMP threads 
+
+starting mdrun 'DMF comparator n4'
+125000 steps,    125.0 ps.
+
+Writing final coordinates.
+
+               Core t (s)   Wall t (s)        (%)
+       Time:      621.833      310.917      200.0
+                 (ns/day)    (hour/ns)    (ms/step)  (Matom*steps/s) 
+Performance:       34.736        0.691        2.487            1.678 
+
+GROMACS reminds you: "FORTRAN was the language of choice for the same reason that three-legged races are popular." (Ken Thompson)
+
+{"guard": {"command": ["/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin/gmx", "mdrun", "-deffnm", "run", "-pf", "pullf.xvg", "-px", "pullx.xvg", "-ntmpi", "1", "-ntomp", "2", "-pin", "off", "-nice", "8"], "pid": 88235, "exitcode": 0, "peak_RSS_MB": 23.8125, "elapsed_seconds": 311.7781585829798, "termination_reason": null}}

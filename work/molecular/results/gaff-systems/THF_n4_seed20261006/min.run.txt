@@ -1,0 +1,29 @@
+                :-) GROMACS - gmx mdrun, 2026.3-conda_forge (-:
+
+Executable:   /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin.ARM_NEON_ASIMD/gmx
+Data prefix:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env
+Working dir:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/gaff-systems/THF_n4_seed20261006
+Command line:
+  gmx mdrun -deffnm min -ntmpi 1 -ntomp 2 -pin off -nice 8
+
+Reading file min.tpr, VERSION 2026.3-conda_forge (single precision)
+Update groups can not be used for this system because atoms that are (in)directly constrained together are interdispersed with other atoms
+
+Using 1 MPI thread
+Using 2 OpenMP threads 
+
+
+Steepest Descents:
+   Tolerance (Fmax)   =  5.00000e+02
+   Number of steps    =         5000
+
+writing lowest energy coordinates.
+
+Steepest Descents converged to Fmax < 500 in 354 steps
+Potential Energy  =  3.0596343e+03
+Maximum force     =  4.3467697e+02 on atom 466
+Norm of force     =  3.3423270e+01
+
+GROMACS reminds you: "If it's all right with Dirac, it's all right with me." (Enrico Fermi, on being told that there was experimental evidence He-3 nuclei obey Fermi-Dirac statistics.)
+
+{"guard": {"command": ["/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin/gmx", "mdrun", "-deffnm", "min", "-ntmpi", "1", "-ntomp", "2", "-pin", "off", "-nice", "8"], "pid": 70245, "exitcode": 0, "peak_RSS_MB": 1.59375, "elapsed_seconds": 2.005758750019595, "termination_reason": null}}

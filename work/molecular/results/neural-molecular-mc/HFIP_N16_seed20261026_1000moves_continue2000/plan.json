@@ -1,0 +1,31 @@
+{
+  "model_sha256": "fab8b8713c832f31a2a853aaa22fd638be8a369cbf5095e6b3e982a18d10e93a",
+  "source_sha256": "0f328560e2d10b6799faa3b13b14b8ca3e67242dc0acba5819b33557e28c7527",
+  "T_K": 298.15,
+  "P_bar": 1,
+  "molecules": 16,
+  "atoms": 192,
+  "moves": 2000,
+  "seed": 20261026,
+  "volume_proposal": "symmetric logV, centers only; Jacobian plus proposal factor exponent17",
+  "move_probabilities": {
+    "translation": 0.35,
+    "rotation": 0.3,
+    "OH_torsion": 0.25,
+    "volume": 0.075,
+    "HMC": 0.025
+  },
+  "HMC_timestep_fs": 0.25,
+  "HMC_leapfrog_steps": 4,
+  "volume_box_bounds_A": [
+    12.2,
+    22.0
+  ],
+  "periodic_translation_energy_error_eV": 3.814697265625e-06,
+  "MPS_memory_fraction": 0.25,
+  "chemical_lifting_domain": "Each assigned HFIP group is whole within half a box",
+  "qualified_for_equilibrium_properties": false,
+  "qualified_for_cleaning": false,
+  "completed_parent_chain": "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/neural-molecular-mc/HFIP_N16_seed20261026_1000moves",
+  "preserved_parent_RNG_positions_cell_momenta": true
+}

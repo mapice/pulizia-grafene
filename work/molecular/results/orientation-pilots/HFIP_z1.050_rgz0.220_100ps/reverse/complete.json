@@ -1,0 +1,9 @@
+{
+  "direction": "reverse",
+  "run_ps": 100,
+  "pilot_discard_ps": 50.0,
+  "mean_z_nm": 1.0075922083407185,
+  "mean_rgz_nm": 0.14426176715309383,
+  "elapsed_seconds": 283.71932733408175,
+  "conditional_single_start_sampling_only": true
+}

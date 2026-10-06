@@ -1,0 +1,60 @@
+{
+  "molecular_center_Jacobian_checks": [
+    {
+      "atoms_in_group": 3,
+      "volume_ratio": 0.8,
+      "logdet_error": -2.7755575615628914e-17
+    },
+    {
+      "atoms_in_group": 3,
+      "volume_ratio": 1.0,
+      "logdet_error": 0.0
+    },
+    {
+      "atoms_in_group": 3,
+      "volume_ratio": 1.2,
+      "logdet_error": 5.828670879282072e-16
+    },
+    {
+      "atoms_in_group": 7,
+      "volume_ratio": 0.8,
+      "logdet_error": 1.6653345369377348e-16
+    },
+    {
+      "atoms_in_group": 7,
+      "volume_ratio": 1.0,
+      "logdet_error": 0.0
+    },
+    {
+      "atoms_in_group": 7,
+      "volume_ratio": 1.2,
+      "logdet_error": 2.7200464103316335e-15
+    },
+    {
+      "atoms_in_group": 12,
+      "volume_ratio": 0.8,
+      "logdet_error": -5.551115123125783e-17
+    },
+    {
+      "atoms_in_group": 12,
+      "volume_ratio": 1.0,
+      "logdet_error": 0.0
+    },
+    {
+      "atoms_in_group": 12,
+      "volume_ratio": 1.2,
+      "logdet_error": -6.38378239159465e-16
+    }
+  ],
+  "ideal_gas_NPT": {
+    "N_molecules": 16,
+    "expected_mean_V": 17.0,
+    "expected_variance_V": 17.0,
+    "measured_mean_V": 16.992621099705925,
+    "measured_variance_V": 17.007916962771525,
+    "saved_samples": 10000,
+    "accept_fraction": 0.6214181818181819
+  },
+  "accepted_numerical_and_analytic_sampler_control": true,
+  "scope": "Jacobian/ensemble control only, no molecular or cleaning result"
+}

@@ -1,0 +1,12 @@
+{
+  "coordinates_max_decoding_error_nm": 1.1900000052023074e-07,
+  "solvent_rigid_shape_max_difference_nm": 1.379389171773937e-07,
+  "index_group_sizes": {
+    "System": 3969,
+    "GRAPHENE": 448,
+    "PMMA": 65,
+    "Mobile": 3521,
+    "SOLVENT": 3456
+  },
+  "scope": "Input serialization and molecular geometry verified, no physical-model qualification"
+}

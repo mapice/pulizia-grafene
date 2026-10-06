@@ -1,0 +1,12 @@
+AceticAcid_n4_seed20261006 Starting min-prep
+{'stage': 'min-prep', 'exitcode': 0, 'seconds': 2.0692904158495367}
+AceticAcid_n4_seed20261006 Starting min
+{'stage': 'min', 'exitcode': 0, 'seconds': 4.116060750093311}
+AceticAcid_n4_seed20261006 Starting nvt-prep
+{'stage': 'nvt-prep', 'exitcode': 0, 'seconds': 2.0583313750103116}
+AceticAcid_n4_seed20261006 Starting nvt
+{'stage': 'nvt', 'exitcode': 0, 'seconds': 110.80053895805031}
+AceticAcid_n4_seed20261006 Starting production-prep
+{'stage': 'production-prep', 'exitcode': 0, 'seconds': 2.077919709030539}
+AceticAcid_n4_seed20261006 Starting production
+{'stage': 'production', 'exitcode': 0, 'seconds': 219.37144004111178}

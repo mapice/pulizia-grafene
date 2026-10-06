@@ -1,0 +1,17 @@
+{
+  "label": "AceticAcid__MethylAcetate_pbe0_def2-svp_Bcp",
+  "basis": "def2-svp",
+  "xc": "pbe0",
+  "converged": true,
+  "electronic_Ha": -228.66664914963107,
+  "dispersion_Ha": -0.0034412479869668977,
+  "total_Ha": -228.67009039761803,
+  "basis_functions": 176,
+  "real_atoms": 8,
+  "ghost_atoms": 11,
+  "geometry_hash": "eeccccece2b1266d8bf8d0000889b58485037f4a9ef8c5b5dabe498ea2240dc2",
+  "elapsed_seconds": 7.323870625114068,
+  "peak_rss_MB": 939.5,
+  "grid_level": 3,
+  "conv_tol_Ha": 1e-09
+}

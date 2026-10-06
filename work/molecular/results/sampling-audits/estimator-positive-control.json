@@ -1,0 +1,7 @@
+{
+  "known_free_energy": "30/2*(z-.82)^2 kJ/mol, independent exact Gaussian biased samples",
+  "profile_RMS_error_kJ_mol": 0.06780557100122937,
+  "windows": 11,
+  "independent_samples_each": 12000,
+  "scope": "Estimator numerical check only, not a graphene or cleaning simulation"
+}

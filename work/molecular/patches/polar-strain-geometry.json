@@ -1,0 +1,6 @@
+{
+  "before_sha256": "7fb925989af6d81099e182837e39cde4ed4c4369553f0f07bbb9be72405b0f80",
+  "after_sha256": "be856d64405d5839bc221925f9f62d2591c861f982afdab92140f6eeaf055525",
+  "scope": "Derivative consistency correction in isolated environment; neural weights and zero-strain energy preserved",
+  "independent_verification_required": true
+}

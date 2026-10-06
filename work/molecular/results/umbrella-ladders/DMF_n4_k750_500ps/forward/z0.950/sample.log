@@ -1,0 +1,29 @@
+                :-) GROMACS - gmx mdrun, 2026.3-conda_forge (-:
+
+Executable:   /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin.ARM_NEON_ASIMD/gmx
+Data prefix:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env
+Working dir:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/umbrella-ladders/DMF_n4_k750_500ps/forward/z0.950
+Command line:
+  gmx mdrun -deffnm run -pf pullf.xvg -px pullx.xvg -ntmpi 1 -ntomp 2 -pin off -nice 8
+
+Reading file run.tpr, VERSION 2026.3-conda_forge (single precision)
+Changing nstlist from 20 to 80, rlist from 1.009 to 1.127
+
+Update groups can not be used for this system because atoms that are (in)directly constrained together are interdispersed with other atoms
+
+Using 1 MPI thread
+Using 2 OpenMP threads 
+
+starting mdrun 'DMF comparator n4'
+500000 steps,    500.0 ps.
+
+Writing final coordinates.
+
+               Core t (s)   Wall t (s)        (%)
+       Time:     2579.048     1289.526      200.0
+                 (ns/day)    (hour/ns)    (ms/step)  (Matom*steps/s) 
+Performance:       33.501        0.716        2.579            1.618 
+
+GROMACS reminds you: "I tend to consider myself as a scientist." (Emmanuelle Charpentier, when asked about the importance of two women sharing the Nobel Prize for Chemistry)
+
+{"guard": {"command": ["/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin/gmx", "mdrun", "-deffnm", "run", "-pf", "pullf.xvg", "-px", "pullx.xvg", "-ntmpi", "1", "-ntomp", "2", "-pin", "off", "-nice", "8"], "pid": 2251, "exitcode": 0, "peak_RSS_MB": 24.03125, "elapsed_seconds": 1290.032088042004, "termination_reason": null}}

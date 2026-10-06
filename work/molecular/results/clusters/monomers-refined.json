@@ -1,0 +1,98 @@
+{
+  "HFIP": {
+    "smiles": "OC(C(F)(F)F)C(F)(F)F",
+    "atoms": 12,
+    "energy_eV": -1085.8629070931152,
+    "converged": true,
+    "max_force_eV_A": 0.0047591649804425325,
+    "geometry": "HFIP.refined.xyz"
+  },
+  "MeOH": {
+    "smiles": "CO",
+    "atoms": 6,
+    "energy_eV": -223.8440830969502,
+    "converged": true,
+    "max_force_eV_A": 0.0035381037061575442,
+    "geometry": "MeOH.refined.xyz"
+  },
+  "Acetone": {
+    "smiles": "CC(=O)C",
+    "atoms": 10,
+    "energy_eV": -368.2827178868671,
+    "converged": true,
+    "max_force_eV_A": 0.00456182023701264,
+    "geometry": "Acetone.refined.xyz"
+  },
+  "DMF": {
+    "smiles": "CN(C)C=O",
+    "atoms": 12,
+    "energy_eV": -462.14366313561675,
+    "converged": true,
+    "max_force_eV_A": 0.0032733849672937246,
+    "geometry": "DMF.refined.xyz"
+  },
+  "THF": {
+    "smiles": "C1CCOC1",
+    "atoms": 13,
+    "energy_eV": -454.61806261294026,
+    "converged": true,
+    "max_force_eV_A": 0.004038167724762458,
+    "geometry": "THF.refined.xyz"
+  },
+  "MethylAcetate": {
+    "smiles": "CC(=O)OC",
+    "atoms": 11,
+    "energy_eV": -479.45815775307125,
+    "converged": true,
+    "max_force_eV_A": 0.003925990410370919,
+    "geometry": "MethylAcetate.refined.xyz"
+  },
+  "MethylPivalate": {
+    "smiles": "CC(C)(C)C(=O)OC",
+    "atoms": 20,
+    "energy_eV": -737.8954333916618,
+    "converged": true,
+    "max_force_eV_A": 0.0049339317353781975,
+    "geometry": "MethylPivalate.refined.xyz"
+  },
+  "DimethylCarbonate": {
+    "smiles": "COC(=O)OC",
+    "atoms": 12,
+    "energy_eV": -590.500159760349,
+    "converged": true,
+    "max_force_eV_A": 0.004680842947194278,
+    "geometry": "DimethylCarbonate.refined.xyz"
+  },
+  "IPA": {
+    "smiles": "CC(O)C",
+    "atoms": 12,
+    "energy_eV": -396.2431308276932,
+    "converged": true,
+    "max_force_eV_A": 0.0044495417197964555,
+    "geometry": "IPA.refined.xyz"
+  },
+  "AceticAcid": {
+    "smiles": "CC(=O)O",
+    "atoms": 8,
+    "energy_eV": -393.4750760939332,
+    "converged": true,
+    "max_force_eV_A": 0.003160288616016508,
+    "geometry": "AceticAcid.refined.xyz"
+  },
+  "TFE": {
+    "smiles": "OCC(F)(F)F",
+    "atoms": 9,
+    "energy_eV": -655.040788127668,
+    "converged": true,
+    "max_force_eV_A": 0.004649853876081392,
+    "geometry": "TFE.refined.xyz"
+  },
+  "Water": {
+    "smiles": "O",
+    "atoms": 3,
+    "energy_eV": -137.97654226068394,
+    "converged": true,
+    "max_force_eV_A": 0.0032199781296508197,
+    "geometry": "Water.refined.xyz"
+  }
+}

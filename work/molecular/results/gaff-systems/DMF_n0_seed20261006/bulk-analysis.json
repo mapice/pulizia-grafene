@@ -1,0 +1,20 @@
+{
+  "solvent": "DMF",
+  "model": "GAFF2/AM1-BCC neutralized to known formal charge",
+  "last_ps": 500.0,
+  "analysis_start_ps": 100,
+  "density_g_cm3": 0.965370093436409,
+  "density_temporal_sd_g_cm3": 0.011346356956106697,
+  "temperature_K": 298.64113490274315,
+  "epsilon_GROMACS": 19.8369,
+  "epsilon_independent_SI": 19.836914679362025,
+  "blocks_density_g_cm3": [
+    0.9668680534752477,
+    0.9669691870500001,
+    0.96455797665,
+    0.9630701769699997
+  ],
+  "scope": "Single short bulk qualification pilot; no desorption, no experimental efficacy.",
+  "independent_seeds": 1,
+  "desorption_model_qualified": false
+}

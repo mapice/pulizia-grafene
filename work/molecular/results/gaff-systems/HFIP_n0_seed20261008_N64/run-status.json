@@ -1,0 +1,32 @@
+[
+  {
+    "stage": "min-prep",
+    "exitcode": 0,
+    "seconds": 2.062471916899085
+  },
+  {
+    "stage": "min",
+    "exitcode": 0,
+    "seconds": 2.0994248331990093
+  },
+  {
+    "stage": "nvt-prep",
+    "exitcode": 0,
+    "seconds": 2.0844328328967094
+  },
+  {
+    "stage": "nvt",
+    "exitcode": 0,
+    "seconds": 28.23220420908183
+  },
+  {
+    "stage": "production-prep",
+    "exitcode": 0,
+    "seconds": 2.1150177498348057
+  },
+  {
+    "stage": "production",
+    "exitcode": 0,
+    "seconds": 352.3608335000463
+  }
+]

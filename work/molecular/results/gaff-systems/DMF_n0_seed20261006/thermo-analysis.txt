@@ -1,0 +1,83 @@
+
+Statistics over 500001 steps [ 0.0000 through 500.0000 ps ], 3 data sets
+All statistics are over 5001 points
+
+Energy                      Average   Err.Est.       RMSD  Tot-Drift
+-------------------------------------------------------------------------------
+Temperature                   298.2       0.13    6.80849  -0.595347  (K)
+Volume                      15.7615      0.042   0.292401  -0.176116  (nm^3)
+Density                     962.929        2.4     16.684     9.7983  (kg/m^3)
+                :-) GROMACS - gmx energy, 2026.3-conda_forge (-:
+
+Executable:   /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin.ARM_NEON_ASIMD/gmx
+Data prefix:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env
+Working dir:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/gaff-systems/DMF_n0_seed20261006
+Command line:
+  gmx energy -f production.edr -o thermo.xvg
+
+Opened production.edr as single precision energy file
+
+Select the terms you want from the following list by
+selecting either (part of) the name or the number or a combination.
+End your selection with an empty line or a zero.
+-------------------------------------------------------------------
+  1  Bond             2  Angle            3  Proper-Dih.      4  Per.-Imp.-Dih.
+  5  LJ-14            6  Coulomb-14       7  LJ-(SR)          8  Disper.-corr. 
+  9  Coulomb-(SR)    10  Coul.-recip.    11  Potential       12  Kinetic-En.   
+ 13  Total-Energy    14  Conserved-En.   15  Temperature     16  Pres.-DC      
+ 17  Pressure        18  Constr.-rmsd    19  Box-X           20  Box-Y         
+ 21  Box-Z           22  Volume          23  Density         24  pV            
+ 25  Enthalpy        26  Vir-XX          27  Vir-XY          28  Vir-XZ        
+ 29  Vir-YX          30  Vir-YY          31  Vir-YZ          32  Vir-ZX        
+ 33  Vir-ZY          34  Vir-ZZ          35  Pres-XX         36  Pres-XY       
+ 37  Pres-XZ         38  Pres-YX         39  Pres-YY         40  Pres-YZ       
+ 41  Pres-ZX         42  Pres-ZY         43  Pres-ZZ         44  #Surf*SurfTen 
+ 45  T-System        46  Lamb-System   
+
+
+Reading energy frame      0 time    0.000         
+Reading energy frame      1 time    1.000         
+Reading energy frame      2 time    2.000         
+Reading energy frame      3 time    3.000         
+Reading energy frame      4 time    4.000         
+Reading energy frame      5 time    5.000         
+Reading energy frame      6 time    6.000         
+Reading energy frame      7 time    7.000         
+Reading energy frame      8 time    8.000         
+Reading energy frame      9 time    9.000         
+Reading energy frame     10 time   10.000         
+Reading energy frame     11 time   11.000         
+Reading energy frame     12 time   12.000         
+Reading energy frame     13 time   13.000         
+Reading energy frame     14 time   14.000         
+Reading energy frame     15 time   15.000         
+Reading energy frame     16 time   16.000         
+Reading energy frame     17 time   17.000         
+Reading energy frame     18 time   18.000         
+Reading energy frame     19 time   19.000         
+Reading energy frame     20 time   20.000         
+Reading energy frame     30 time   30.000         
+Reading energy frame     40 time   40.000         
+Reading energy frame     50 time   50.000         
+Reading energy frame     60 time   60.000         
+Reading energy frame     70 time   70.000         
+Reading energy frame     80 time   80.000         
+Reading energy frame     90 time   90.000         
+Reading energy frame    100 time  100.000         
+Reading energy frame    110 time  110.000         
+Reading energy frame    120 time  120.000         
+Reading energy frame    130 time  130.000         
+Reading energy frame    140 time  140.000         
+Reading energy frame    150 time  150.000         
+Reading energy frame    160 time  160.000         
+Reading energy frame    170 time  170.000         
+Reading energy frame    180 time  180.000         
+Reading energy frame    190 time  190.000         
+Reading energy frame    200 time  200.000         
+Reading energy frame    300 time  300.000         
+Reading energy frame    400 time  400.000         
+Reading energy frame    500 time  500.000         
+Last energy frame read 500 time  500.000         
+
+GROMACS reminds you: "BioBeat is Not Available In Regular Shops" (P.J. Meulenhoff)
+

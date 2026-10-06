@@ -1,0 +1,83 @@
+
+Statistics over 500001 steps [ 0.0000 through 500.0000 ps ], 3 data sets
+All statistics are over 5001 points
+
+Energy                      Average   Err.Est.       RMSD  Tot-Drift
+-------------------------------------------------------------------------------
+Temperature                 298.011       0.18    6.36004   0.562562  (K)
+Volume                      23.5932        2.1    5.22142   -11.2195  (nm^3)
+Density                     1527.71         95    224.766    507.638  (kg/m^3)
+                :-) GROMACS - gmx energy, 2026.3-conda_forge (-:
+
+Executable:   /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin.ARM_NEON_ASIMD/gmx
+Data prefix:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env
+Working dir:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/gaff-systems/HFIP_n0_seed20261006
+Command line:
+  gmx energy -f production.edr -o thermo.xvg
+
+Opened production.edr as single precision energy file
+
+Select the terms you want from the following list by
+selecting either (part of) the name or the number or a combination.
+End your selection with an empty line or a zero.
+-------------------------------------------------------------------
+  1  Bond             2  Angle            3  Proper-Dih.      4  LJ-14         
+  5  Coulomb-14       6  LJ-(SR)          7  Disper.-corr.    8  Coulomb-(SR)  
+  9  Coul.-recip.    10  Potential       11  Kinetic-En.     12  Total-Energy  
+ 13  Conserved-En.   14  Temperature     15  Pres.-DC        16  Pressure      
+ 17  Constr.-rmsd    18  Box-X           19  Box-Y           20  Box-Z         
+ 21  Volume          22  Density         23  pV              24  Enthalpy      
+ 25  Vir-XX          26  Vir-XY          27  Vir-XZ          28  Vir-YX        
+ 29  Vir-YY          30  Vir-YZ          31  Vir-ZX          32  Vir-ZY        
+ 33  Vir-ZZ          34  Pres-XX         35  Pres-XY         36  Pres-XZ       
+ 37  Pres-YX         38  Pres-YY         39  Pres-YZ         40  Pres-ZX       
+ 41  Pres-ZY         42  Pres-ZZ         43  #Surf*SurfTen   44  T-System      
+ 45  Lamb-System   
+
+
+Reading energy frame      0 time    0.000         
+Reading energy frame      1 time    1.000         
+Reading energy frame      2 time    2.000         
+Reading energy frame      3 time    3.000         
+Reading energy frame      4 time    4.000         
+Reading energy frame      5 time    5.000         
+Reading energy frame      6 time    6.000         
+Reading energy frame      7 time    7.000         
+Reading energy frame      8 time    8.000         
+Reading energy frame      9 time    9.000         
+Reading energy frame     10 time   10.000         
+Reading energy frame     11 time   11.000         
+Reading energy frame     12 time   12.000         
+Reading energy frame     13 time   13.000         
+Reading energy frame     14 time   14.000         
+Reading energy frame     15 time   15.000         
+Reading energy frame     16 time   16.000         
+Reading energy frame     17 time   17.000         
+Reading energy frame     18 time   18.000         
+Reading energy frame     19 time   19.000         
+Reading energy frame     20 time   20.000         
+Reading energy frame     30 time   30.000         
+Reading energy frame     40 time   40.000         
+Reading energy frame     50 time   50.000         
+Reading energy frame     60 time   60.000         
+Reading energy frame     70 time   70.000         
+Reading energy frame     80 time   80.000         
+Reading energy frame     90 time   90.000         
+Reading energy frame    100 time  100.000         
+Reading energy frame    110 time  110.000         
+Reading energy frame    120 time  120.000         
+Reading energy frame    130 time  130.000         
+Reading energy frame    140 time  140.000         
+Reading energy frame    150 time  150.000         
+Reading energy frame    160 time  160.000         
+Reading energy frame    170 time  170.000         
+Reading energy frame    180 time  180.000         
+Reading energy frame    190 time  190.000         
+Reading energy frame    200 time  200.000         
+Reading energy frame    300 time  300.000         
+Reading energy frame    400 time  400.000         
+Reading energy frame    500 time  500.000         
+Last energy frame read 500 time  500.000         
+
+GROMACS reminds you: "It takes money to make money, they say" (Lou Reed)
+

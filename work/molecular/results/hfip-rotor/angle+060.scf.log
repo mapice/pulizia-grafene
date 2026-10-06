@@ -1,0 +1,224 @@
+#INFO: **** input file is /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/hfip_rotor.py ****
+"""Frozen-geometry HFIP OH torsion: quantum and published classical models.
+
+Only the OH hydrogen moves. Bond length and C-O-H angle remain fixed, so
+classical bonded terms are constant and cancel in relative energy. This is
+a diagnostic gas rotor; no liquid free energy or cleaning prediction.
+"""
+import os
+for v in ['OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','VECLIB_MAXIMUM_THREADS']:
+    os.environ[v]='2'
+os.nice(8)
+from pathlib import Path
+import time,json,resource,sys,hashlib
+import numpy as np
+from ase.io import read,write
+from rdkit import Chem
+from pyscf import gto,dft,lib
+from dftd3.interface import DispersionModel,RationalDampingParam
+from tblite.ase import TBLite
+import openmm as mm
+from openmm import unit as u
+from published_hfip import MOL,TYPES,NONBONDED,system
+
+lib.num_threads(2)
+HERE=Path(__file__).resolve().parent
+OUT=HERE/'results/hfip-rotor';OUT.mkdir(parents=True,exist_ok=True)
+HA_KJ=2625.499638;EV_KJ=96.4853321233;BOHR_A=.529177210903
+COULOMB=138.93545764438198
+ho=TYPES.index('HO');oh=TYPES.index('OH');hc=TYPES.index('HC');ct=TYPES.index('CT')
+original=read(HERE/'results/clusters/HFIP.refined.xyz')
+dist=Chem.GetDistanceMatrix(MOL)
+params=np.array([NONBONDED[t] for t in TYPES])
+
+def geometry(angle):
+    a=original.copy()
+    # Reverse the conventional H_O-O-C-H_C quartet so the moved OH-H is last.
+    a.set_dihedral(hc,ct,oh,ho,float(angle))
+    actual=a.get_dihedral(ho,oh,ct,hc)
+    assert abs((actual-angle+180)%360-180)<1e-7,(actual,angle)
+    assert abs(a.get_distance(ho,oh)-original.get_distance(ho,oh))<1e-12
+    assert abs(a.get_angle(ct,oh,ho)-original.get_angle(ct,oh,ho))<1e-10
+    return a
+
+def classical(a,scale):
+    value=0.
+    for i in range(len(a)):
+        for j in range(i+1,len(a)):
+            if dist[i,j]<=2:continue
+            factor=scale if dist[i,j]==3 else 1.
+            r=np.linalg.norm(a.positions[i]-a.positions[j])*.1
+            q1,s1,e1=params[i];q2,s2,e2=params[j]
+            sr6=((s1+s2)/2/r)**6
+            value+=factor*(4*np.sqrt(e1*e2)*(sr6*sr6-sr6)+COULOMB*q1*q2/r)
+    return float(value)
+
+def dft_energy(a,angle,dm=None):
+    stem=f'angle{int(angle):+04d}'
+    digest=hashlib.sha256(a.positions.tobytes()).hexdigest()
+    path=OUT/(stem+'.json')
+    if path.exists():
+        r=json.loads(path.read_text())
+        if r['geometry_sha256']==digest and r['converged']:
+            return r,None
+    mol=gto.M(atom=list(zip(a.get_chemical_symbols(),a.positions)),basis='def2-tzvp',
+              unit='Angstrom',charge=0,spin=0,verbose=4,max_memory=1500,
+              output=str(OUT/(stem+'.scf.log')))
+    mf=dft.RKS(mol).density_fit()
+    mf.xc='pbe0';mf.grids.level=3;mf.conv_tol=1e-10;mf.max_cycle=100;mf.chkfile=None
+    start=time.monotonic()
+    energy=float(mf.kernel(dm0=dm))
+    if not mf.converged:raise RuntimeError('Unconverged torsion '+stem)
+    correction=float(DispersionModel(a.numbers,a.positions/BOHR_A).get_dispersion(
+        RationalDampingParam(method='pbe0'),grad=False)['energy'])
+    mu=np.array(mf.dip_moment(unit='Debye',verbose=0))
+    r=dict(angle_degree=float(angle),method='PBE0-D3(BJ)/def2-TZVP',
+           electronic_Ha=energy,dispersion_Ha=correction,
+           total_kJ_mol=(energy+correction)*HA_KJ,dipole_Debye=mu.tolist(),
+           dipole_norm_Debye=float(np.linalg.norm(mu)),converged=True,
+           geometry_sha256=digest,elapsed_seconds=time.monotonic()-start)
+    path.write_text(json.dumps(r,indent=2)+'\n')
+    return r,mf.make_rdm1()
+
+def main():
+    rows=[];start=time.monotonic();dm=None
+    contexts={}
+    for scale in [.5,1.]:
+        s,_,_=system(1,10.,scale14=scale)
+        nb=s.getForce(0);nb.setNonbondedMethod(mm.NonbondedForce.NoCutoff)
+        contexts[scale]=mm.Context(s,mm.VerletIntegrator(.001),
+                                  mm.Platform.getPlatformByName('Reference'))
+    for angle in range(-180,180,30):
+        a=geometry(angle);write(OUT/f'angle{angle:+04d}.xyz',a)
+        row,dm=dft_energy(a,angle,dm)
+        a.calc=TBLite(method='GFN2-xTB',verbosity=0,accuracy=1.0)
+        row['GFN2_kJ_mol']=float(a.get_potential_energy())*EV_KJ
+        for scale,context in contexts.items():
+            row[f'classical{scale:g}_nonbonded_kJ_mol']=classical(a,scale)
+            context.setPositions(a.positions*.1*u.nanometer)
+            row[f'OpenMM{scale:g}_total_kJ_mol']=float(context.getState(
+                getEnergy=True).getPotentialEnergy().value_in_unit(u.kilojoule_per_mole))
+        rows.append(row)
+        print(angle,row['dipole_norm_Debye'],row['elapsed_seconds'],flush=True)
+        (OUT/'partial.json').write_text(json.dumps(rows,indent=2)+'\n')
+    fields=['total_kJ_mol','GFN2_kJ_mol',
+            'classical0.5_nonbonded_kJ_mol','classical1_nonbonded_kJ_mol']
+    for field in fields:
+        minimum=min(r[field] for r in rows)
+        for row in rows:row[field.replace('_kJ_mol','_relative_kJ_mol')]=row[field]-minimum
+    errors={}
+    for scale in [.5,1.]:
+        dclass=np.array([r[f'classical{scale:g}_nonbonded_kJ_mol'] for r in rows])
+        dmm=np.array([r[f'OpenMM{scale:g}_total_kJ_mol'] for r in rows])
+        err=float(np.max(np.abs((dclass-dclass[0])-(dmm-dmm[0]))))
+        assert err<1e-8,err
+        errors[str(scale)]=err
+    result=dict(scope='Gas HFIP frozen OH rotor; not liquid free energy or cleaning.',
+                quartet_zero_based=[ho,oh,ct,hc],initial_angle_degree=original.get_dihedral(ho,oh,ct,hc),
+                fixed_nuclei_except='OH-H only',rows=rows,
+                direct_vs_OpenMM_relative_energy_max_error_kJ_mol=errors,
+                elapsed_seconds=time.monotonic()-start,
+                peak_RSS_MB=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss/
+                    (1024**2 if sys.platform=='darwin' else 1024))
+    (OUT/'scan.json').write_text(json.dumps(result,indent=2)+'\n')
+    print('Finished',result['elapsed_seconds'],result['peak_RSS_MB'],errors,flush=True)
+
+if __name__=='__main__':main()
+#INFO: ******************** input file end ********************
+
+
+System: uname_result(system='Darwin', node='Mattias-MacBook-Pro.local', release='24.6.0', version='Darwin Kernel Version 24.6.0: Sun Aug 23 20:37:03 PDT 2026; root:xnu-11417.140.69.712.69~1/RELEASE_ARM64_T6000', machine='arm64')  Threads 1
+Python 3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]
+numpy 2.5.3  scipy 1.18.1  h5py 3.16.0
+Date: Tue Oct  6 04:09:32 2026
+PySCF version 2.14.0
+PySCF path  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/pyscf
+
+[CONFIG] conf_file None
+[INPUT] verbose = 4
+[INPUT] num. atoms = 12
+[INPUT] num. electrons = 82
+[INPUT] charge = 0
+[INPUT] spin (= nelec alpha-beta = 2S) = 0
+[INPUT] symmetry False subgroup None
+[INPUT] Mole.unit = Angstrom
+[INPUT] Symbol           X                Y                Z      unit          X                Y                Z       unit  Magmom
+[INPUT]  1 O     -0.656570900000   1.362866670000  -0.749959210000 AA   -1.240739182359   2.575444750598  -1.417217511495 Bohr   0.0
+[INPUT]  2 C     -0.078221690000   0.118100930000  -0.573224400000 AA   -0.147817571101   0.223178412756  -1.083237123918 Bohr   0.0
+[INPUT]  3 C     -1.018234540000  -0.816614520000   0.222603240000 AA   -1.924184411172  -1.543177792143   0.420659158041 Bohr   0.0
+[INPUT]  4 F     -2.165871460000  -0.987172700000  -0.433837440000 AA   -4.092903880412  -1.865486040647  -0.819833944182 Bohr   0.0
+[INPUT]  5 F     -1.322738880000  -0.287659270000   1.413320410000 AA   -2.499614217514  -0.543597237492   2.670788501158 Bohr   0.0
+[INPUT]  6 F     -0.498363640000  -2.023807280000   0.434073350000 AA   -0.941770790041  -3.824441488101   0.820279749472 Bohr   0.0
+[INPUT]  7 C      1.295250450000   0.244505130000   0.125528170000 AA    2.447668613220   0.462047731751   0.237213862218 Bohr   0.0
+[INPUT]  8 F      1.175301490000   0.858111270000   1.308500570000 AA    2.220997929893   1.621595284703   2.472707711137 Bohr   0.0
+[INPUT]  9 F      2.124820730000   0.980824970000  -0.613877790000 AA    4.015329243498   1.853490569435  -1.160060897053 Bohr   0.0
+[INPUT] 10 F      1.885578100000  -0.930371220000   0.334043390000 AA    3.563226195478  -1.758146799977   0.631250520821 Bohr   0.0
+[INPUT] 11 H     -1.505811294100   1.292925187371  -1.212910524868 AA   -2.845570941125   2.443274503683  -2.292068705603 Bohr   0.0
+[INPUT] 12 H      0.079466650000  -0.316726070000  -1.568262840000 AA    0.150170204537  -0.598525528810  -2.963587258933 Bohr   0.0
+
+nuclear repulsion = 663.31041414342
+number of shells = 118
+number of NR pGTOs = 476
+number of NR cGTOs = 322
+basis = def2-tzvp
+ecp = {}
+CPU time:       112.51
+
+
+******** <class 'pyscf.df.df_jk.DFRKS'> ********
+method = DFRKS
+initial guess = minao
+damping factor = 0
+level_shift factor = 0
+DIIS = <class 'pyscf.scf.diis.CDIIS'>
+diis_start_cycle = 1
+diis_space = 8
+diis_damp = 0
+SCF conv_tol = 1e-10
+SCF conv_tol_grad = None
+SCF max_cycles = 100
+direct_scf = False
+max_memory 1500 MB (current use 0 MB)
+XC library pyscf.dft.libxc version 7.0.0
+    S. Lehtola, C. Steigemann, M. J.T. Oliveira, and M. A.L. Marques.,  SoftwareX 7, 1–5 (2018)
+XC functionals = pbe0
+    C. Adamo and V. Barone.,  J. Chem. Phys. 110, 6158 (1999)
+    M. Ernzerhof and G. E. Scuseria.,  J. Chem. Phys. 110, 5029 (1999)
+radial grids: 
+    Treutler-Ahlrichs [JCP 102, 346 (1995); DOI:10.1063/1.469408] (M4) radial grids
+    
+becke partition: Becke, JCP 88, 2547 (1988); DOI:10.1063/1.454033
+pruning grids: <function nwchem_prune at 0x109918e00>
+grids dens level: 3
+symmetrized grids: False
+atomic radii adjust function: <function treutler_atomic_radii_adjust at 0x109919300>
+small_rho_cutoff = 0
+Set gradient conv threshold to 1e-05
+tot grids = 161624
+******** <class 'pyscf.df.df.DF'> ********
+auxbasis = None
+max_memory = 1500
+init E= -789.334640444823
+  HOMO = -0.38345936361155  LUMO = -0.018921379953877  gap/eV = 9.91958
+cycle= 1 E= -789.382741819663  delta_E= -0.0481  |g|= 0.149  |ddm|= 0.628
+  HOMO = -0.311296082256515  LUMO = 0.0213769431510933  gap/eV = 9.05249
+cycle= 2 E= -789.379448340434  delta_E= 0.00329  |g|= 0.212  |ddm|= 0.266
+  HOMO = -0.344138239714063  LUMO = 0.0131819644011877  gap/eV = 9.72318
+cycle= 3 E= -789.387133107542  delta_E= -0.00768  |g|= 0.0143  |ddm|= 0.14
+  HOMO = -0.346059736268639  LUMO = 0.0112815222596119  gap/eV = 9.72375
+cycle= 4 E= -789.387163780075  delta_E= -3.07e-05  |g|= 0.00697  |ddm|= 0.0183
+  HOMO = -0.345729020748688  LUMO = 0.0115286425641017  gap/eV = 9.72148
+cycle= 5 E= -789.387171399448  delta_E= -7.62e-06  |g|= 0.0027  |ddm|= 0.00595
+  HOMO = -0.345745756664133  LUMO = 0.0115827468620289  gap/eV = 9.72340
+cycle= 6 E= -789.387172478392  delta_E= -1.08e-06  |g|= 0.000573  |ddm|= 0.00184
+  HOMO = -0.345742814508434  LUMO = 0.0115839711904577  gap/eV = 9.72336
+cycle= 7 E= -789.387172530346  delta_E= -5.2e-08  |g|= 0.000163  |ddm|= 0.000454
+  HOMO = -0.345722171647274  LUMO = 0.0115909133448184  gap/eV = 9.72298
+cycle= 8 E= -789.387172535892  delta_E= -5.55e-09  |g|= 3.84e-05  |ddm|= 0.000185
+  HOMO = -0.345721550724765  LUMO = 0.0115912379075525  gap/eV = 9.72298
+cycle= 9 E= -789.387172536133  delta_E= -2.41e-10  |g|= 1.37e-05  |ddm|= 3.81e-05
+  HOMO = -0.345721312464551  LUMO = 0.0115915819094781  gap/eV = 9.72298
+cycle= 10 E= -789.387172536156  delta_E= -2.32e-11  |g|= 3.97e-06  |ddm|= 9.94e-06
+  HOMO = -0.345721637742109  LUMO = 0.0115913840247472  gap/eV = 9.72298
+Extra cycle  E= -789.387172536157  delta_E= -1.14e-12  |g|= 5.33e-06  |ddm|= 4.64e-06
+converged SCF energy = -789.387172536157

@@ -1,0 +1,7 @@
+{
+  "SCF_accepted": false,
+  "reason": "DenseVV10grid291k points;initialdensity alone~3min; explicit grid-convergence campaign replaces impractical pilot",
+  "nlc_grid_level": 3,
+  "only_own_process_group_stopped": 70930,
+  "next": "SCF withnlcgrid0 followedbyfinerenergy/residual controls; no claimof referenceaccuracy beforegridcheck"
+}

@@ -1,0 +1,19 @@
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/pyscf/lib/misc.py:203: UserWarning: OpenMP is not available. Setting omp_threads to 1 has no effects.
+  warnings.warn('OpenMP is not available. '
+output file: /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/dft-matched-nlc0/HFIP__HFIP_AB.scf.log
+Traceback (most recent call last):
+  File "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/dft_matched_reference.py", line 82, in <module>
+    main()
+  File "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/dft_matched_reference.py", line 59, in main
+    e=float(mf.kernel(dm0=initial))
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in kernel
+  File "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/pyscf/scf/hf.py", line 2099, in scf
+    kernel(self, self.conv_tol, self.conv_tol_grad,
+  File "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/pyscf/scf/hf.py", line 202, in kernel
+    callback(locals())
+  File "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/dft_matched_reference.py", line 50, in callback
+    if time.monotonic()-started>600:raise TimeoutError('Ten-minute SCF bound')
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: Ten-minute SCF bound
+{"guard": {"command": ["work/molecular/.venv/bin/python", "-u", "work/molecular/dft_matched_reference.py", "--pair", "HFIP__HFIP", "--nlc-grid", "0"], "pid": 80874, "exitcode": 1, "peak_RSS_MB": 1701.96875, "elapsed_seconds": 611.6000530829187, "termination_reason": null}}

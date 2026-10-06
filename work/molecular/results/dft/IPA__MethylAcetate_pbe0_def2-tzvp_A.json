@@ -1,0 +1,17 @@
+{
+  "label": "IPA__MethylAcetate_pbe0_def2-tzvp_A",
+  "basis": "def2-tzvp",
+  "xc": "pbe0",
+  "converged": true,
+  "electronic_Ha": -268.19300757181645,
+  "dispersion_Ha": -0.0055097898790784664,
+  "total_Ha": -268.1985173616955,
+  "basis_functions": 191,
+  "real_atoms": 11,
+  "ghost_atoms": 0,
+  "geometry_hash": "66edcb5a06ea2e8264c6d89bb224c7fc7c97f4e184a79d7cede3574f2f2830e5",
+  "elapsed_seconds": 6.577523082960397,
+  "peak_rss_MB": 1756.265625,
+  "grid_level": 3,
+  "conv_tol_Ha": 1e-09
+}

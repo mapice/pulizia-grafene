@@ -1,0 +1,49 @@
+                :-) GROMACS - gmx grompp, 2026.3-conda_forge (-:
+
+Executable:   /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin.ARM_NEON_ASIMD/gmx
+Data prefix:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env
+Working dir:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/gaff-systems/HFIP_n4_seed20261006
+Command line:
+  gmx grompp -f nvt.mdp -c min.gro -p system.top -n index.ndx -o nvt.tpr
+
+Generating 1-4 interactions: fudge = 0.5
+
+NOTE 1 [file system.top, line 1029]:
+  In moleculetype 'GRAPHENE' 448 atoms are not bound by a potential or
+  constraint to any other atom in the same moleculetype. Although
+  technically this might not cause issues in a simulation, this often means
+  that the user forgot to add a bond/potential/constraint or put multiple
+  molecules in the same moleculetype definition by mistake. Run with -v to
+  get information for each atom.
+
+
+-------------------------------------------------------
+Program:     gmx grompp, version 2026.3-conda_forge
+Source file: src/gromacs/gmxpreprocess/readir.cpp (line 3312)
+
+Fatal error:
+448 atoms are not part of any of the T-Coupling groups
+
+For more information and tips for troubleshooting, please check the GROMACS
+website at https://manual.gromacs.org/current/user-guide/run-time-errors.html
+-------------------------------------------------------
+Setting the LD random seed to -1342310405
+
+Generated 104 of the 105 non-bonded parameter combinations
+
+Generated 105 of the 105 1-4 parameter combinations
+
+Excluding 0 bonded neighbours molecule type 'GRAPHENE'
+
+turning H bonds into constraints...
+
+Excluding 2 bonded neighbours molecule type 'PMMA'
+
+turning H bonds into constraints...
+
+Excluding 3 bonded neighbours molecule type 'HFI'
+
+turning H bonds into constraints...
+
+Velocities were taken from a Maxwell distribution at 298.15 K
+{"guard": {"command": ["/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin/gmx", "grompp", "-f", "nvt.mdp", "-c", "min.gro", "-p", "system.top", "-n", "index.ndx", "-o", "nvt.tpr"], "pid": 62535, "exitcode": 1, "peak_RSS_MB": 1.59375, "elapsed_seconds": 2.0124930408783257, "termination_reason": null}}

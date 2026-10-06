@@ -1,0 +1,83 @@
+Collecting numpy
+  Downloading numpy-2.5.3-cp312-cp312-macosx_14_0_arm64.whl.metadata (6.6 kB)
+Collecting scipy
+  Using cached scipy-1.18.1-cp312-cp312-macosx_14_0_arm64.whl.metadata (62 kB)
+Collecting openmm
+  Downloading openmm-8.6.1-cp312-cp312-macosx_10_12_universal2.whl.metadata (1.4 kB)
+Collecting rdkit
+  Downloading rdkit-2026.3.6-cp312-cp312-macosx_11_0_arm64.whl.metadata (3.8 kB)
+Collecting ase
+  Downloading ase-3.29.0-py3-none-any.whl.metadata (4.4 kB)
+Collecting tblite
+  Downloading tblite-0.7.0-cp312-cp312-macosx_15_0_arm64.whl.metadata (6.3 kB)
+Collecting pyscf
+  Downloading pyscf-2.14.0-py3-none-macosx_11_0_arm64.whl.metadata (6.6 kB)
+Collecting dftd3
+  Downloading dftd3-1.6.0-cp312-cp312-macosx_14_0_arm64.whl.metadata (13 kB)
+Collecting Pillow (from rdkit)
+  Using cached pillow-12.3.0-cp312-cp312-macosx_11_0_arm64.whl.metadata (9.1 kB)
+Collecting matplotlib>=3.5.2 (from ase)
+  Using cached matplotlib-3.11.2-cp312-cp312-macosx_11_0_arm64.whl.metadata (80 kB)
+Collecting typing_extensions>=4.13.1 (from ase)
+  Using cached typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting cffi (from tblite)
+  Downloading cffi-2.1.1-cp312-cp312-macosx_11_0_arm64.whl.metadata (2.5 kB)
+Collecting h5py>=2.7 (from pyscf)
+  Downloading h5py-3.16.0-cp312-cp312-macosx_11_0_arm64.whl.metadata (3.0 kB)
+Collecting setuptools (from pyscf)
+  Using cached setuptools-84.0.0-py3-none-any.whl.metadata (6.6 kB)
+Collecting contourpy>=1.0.1 (from matplotlib>=3.5.2->ase)
+  Using cached contourpy-1.4.0-cp312-cp312-macosx_11_0_arm64.whl.metadata (3.8 kB)
+Collecting cycler>=0.10 (from matplotlib>=3.5.2->ase)
+  Using cached cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting fonttools>=4.28.2 (from matplotlib>=3.5.2->ase)
+  Downloading fonttools-4.66.1-cp312-cp312-macosx_10_13_universal2.whl.metadata (130 kB)
+Collecting kiwisolver>=1.3.1 (from matplotlib>=3.5.2->ase)
+  Using cached kiwisolver-1.5.1-cp312-cp312-macosx_11_0_arm64.whl.metadata (5.2 kB)
+Collecting packaging>=20.0 (from matplotlib>=3.5.2->ase)
+  Using cached packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+Collecting pyparsing>=3 (from matplotlib>=3.5.2->ase)
+  Using cached pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+Collecting python-dateutil>=2.7 (from matplotlib>=3.5.2->ase)
+  Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting pycparser (from cffi->tblite)
+  Using cached pycparser-3.0-py3-none-any.whl.metadata (8.2 kB)
+Collecting six>=1.5 (from python-dateutil>=2.7->matplotlib>=3.5.2->ase)
+  Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Downloading numpy-2.5.3-cp312-cp312-macosx_14_0_arm64.whl (5.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 9.7 MB/s eta 0:00:00
+Using cached scipy-1.18.1-cp312-cp312-macosx_14_0_arm64.whl (20.5 MB)
+Downloading openmm-8.6.1-cp312-cp312-macosx_10_12_universal2.whl (14.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.1/14.1 MB 11.7 MB/s eta 0:00:00
+Downloading rdkit-2026.3.6-cp312-cp312-macosx_11_0_arm64.whl (30.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 30.3/30.3 MB 31.3 MB/s eta 0:00:00
+Downloading ase-3.29.0-py3-none-any.whl (3.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.0/3.0 MB 27.1 MB/s eta 0:00:00
+Downloading tblite-0.7.0-cp312-cp312-macosx_15_0_arm64.whl (12.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.0/12.0 MB 5.9 MB/s eta 0:00:00
+Downloading pyscf-2.14.0-py3-none-macosx_11_0_arm64.whl (36.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 36.5/36.5 MB 17.9 MB/s eta 0:00:00
+Downloading dftd3-1.6.0-cp312-cp312-macosx_14_0_arm64.whl (1.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 11.1 MB/s eta 0:00:00
+Downloading h5py-3.16.0-cp312-cp312-macosx_11_0_arm64.whl (3.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.1/3.1 MB 13.7 MB/s eta 0:00:00
+Using cached matplotlib-3.11.2-cp312-cp312-macosx_11_0_arm64.whl (9.3 MB)
+Using cached pillow-12.3.0-cp312-cp312-macosx_11_0_arm64.whl (4.8 MB)
+Using cached typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Downloading cffi-2.1.1-cp312-cp312-macosx_11_0_arm64.whl (184 kB)
+Using cached setuptools-84.0.0-py3-none-any.whl (818 kB)
+Using cached contourpy-1.4.0-cp312-cp312-macosx_11_0_arm64.whl (284 kB)
+Using cached cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Downloading fonttools-4.66.1-cp312-cp312-macosx_10_13_universal2.whl (3.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.1/3.1 MB 11.6 MB/s eta 0:00:00
+Using cached kiwisolver-1.5.1-cp312-cp312-macosx_11_0_arm64.whl (64 kB)
+Using cached packaging-26.3-py3-none-any.whl (129 kB)
+Using cached pyparsing-3.3.3-py3-none-any.whl (126 kB)
+Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Using cached pycparser-3.0-py3-none-any.whl (48 kB)
+Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
+Installing collected packages: typing_extensions, six, setuptools, pyparsing, pycparser, Pillow, packaging, numpy, kiwisolver, fonttools, cycler, scipy, rdkit, python-dateutil, openmm, h5py, contourpy, cffi, tblite, pyscf, matplotlib, dftd3, ase
+Successfully installed Pillow-12.3.0 ase-3.29.0 cffi-2.1.1 contourpy-1.4.0 cycler-0.12.1 dftd3-1.6.0 fonttools-4.66.1 h5py-3.16.0 kiwisolver-1.5.1 matplotlib-3.11.2 numpy-2.5.3 openmm-8.6.1 packaging-26.3 pycparser-3.0 pyparsing-3.3.3 pyscf-2.14.0 python-dateutil-2.9.0.post0 rdkit-2026.3.6 scipy-1.18.1 setuptools-84.0.0 six-1.17.0 tblite-0.7.0 typing_extensions-4.16.0
+
+[notice] A new release of pip is available: 25.0.1 -> 26.2.1
+[notice] To update, run: /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/bin/python -m pip install --upgrade pip

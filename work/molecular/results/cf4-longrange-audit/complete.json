@@ -1,0 +1,133 @@
+{
+  "model_sha256": "fab8b8713c832f31a2a853aaa22fd638be8a369cbf5095e6b3e982a18d10e93a",
+  "learned_curve": [
+    {
+      "carbon_distance_A": 7.8,
+      "orientation_z_degrees": 0.0,
+      "nearest_cross_atom_A": 6.463210941640461,
+      "all_cross_edges_beyond_local_cutoff": true,
+      "interaction_M_kJ_mol": -0.061576726996131086,
+      "rotated_monomer_energy_difference_kJ_mol": 0.0
+    },
+    {
+      "carbon_distance_A": 8.5,
+      "orientation_z_degrees": 0.0,
+      "nearest_cross_atom_A": 7.145534735493278,
+      "all_cross_edges_beyond_local_cutoff": true,
+      "interaction_M_kJ_mol": -0.026567310564251972,
+      "rotated_monomer_energy_difference_kJ_mol": 0.0
+    },
+    {
+      "carbon_distance_A": 10.0,
+      "orientation_z_degrees": 0.0,
+      "nearest_cross_atom_A": 8.617210613425959,
+      "all_cross_edges_beyond_local_cutoff": true,
+      "interaction_M_kJ_mol": -0.001093428137920642,
+      "rotated_monomer_energy_difference_kJ_mol": 0.0
+    },
+    {
+      "carbon_distance_A": 12.0,
+      "orientation_z_degrees": 0.0,
+      "nearest_cross_atom_A": 10.591813893575594,
+      "all_cross_edges_beyond_local_cutoff": true,
+      "interaction_M_kJ_mol": 0.001118767726768,
+      "rotated_monomer_energy_difference_kJ_mol": 0.0
+    },
+    {
+      "carbon_distance_A": 16.0,
+      "orientation_z_degrees": 0.0,
+      "nearest_cross_atom_A": 14.561831174551537,
+      "all_cross_edges_beyond_local_cutoff": true,
+      "interaction_M_kJ_mol": 1.952949817626276e-05,
+      "rotated_monomer_energy_difference_kJ_mol": 0.0
+    },
+    {
+      "carbon_distance_A": 20.0,
+      "orientation_z_degrees": 0.0,
+      "nearest_cross_atom_A": 18.544738681257844,
+      "all_cross_edges_beyond_local_cutoff": true,
+      "interaction_M_kJ_mol": -1.415983231782172e-06,
+      "rotated_monomer_energy_difference_kJ_mol": 0.0
+    },
+    {
+      "carbon_distance_A": 7.8,
+      "orientation_z_degrees": 90.0,
+      "nearest_cross_atom_A": 6.2825507,
+      "all_cross_edges_beyond_local_cutoff": true,
+      "interaction_M_kJ_mol": -0.020216883049338014,
+      "rotated_monomer_energy_difference_kJ_mol": 7.421562122906586e-08
+    },
+    {
+      "carbon_distance_A": 8.5,
+      "orientation_z_degrees": 90.0,
+      "nearest_cross_atom_A": 6.982550699999999,
+      "all_cross_edges_beyond_local_cutoff": true,
+      "interaction_M_kJ_mol": -0.002647097247025244,
+      "rotated_monomer_energy_difference_kJ_mol": 7.421562122906586e-08
+    },
+    {
+      "carbon_distance_A": 10.0,
+      "orientation_z_degrees": 90.0,
+      "nearest_cross_atom_A": 8.4825507,
+      "all_cross_edges_beyond_local_cutoff": true,
+      "interaction_M_kJ_mol": 0.005492700066039458,
+      "rotated_monomer_energy_difference_kJ_mol": 7.421562122906586e-08
+    },
+    {
+      "carbon_distance_A": 12.0,
+      "orientation_z_degrees": 90.0,
+      "nearest_cross_atom_A": 10.4825507,
+      "all_cross_edges_beyond_local_cutoff": true,
+      "interaction_M_kJ_mol": 0.0022286342628208863,
+      "rotated_monomer_energy_difference_kJ_mol": 7.421562122906586e-08
+    },
+    {
+      "carbon_distance_A": 16.0,
+      "orientation_z_degrees": 90.0,
+      "nearest_cross_atom_A": 14.4825507,
+      "all_cross_edges_beyond_local_cutoff": true,
+      "interaction_M_kJ_mol": 9.259729041345248e-05,
+      "rotated_monomer_energy_difference_kJ_mol": 7.421562122906586e-08
+    },
+    {
+      "carbon_distance_A": 20.0,
+      "orientation_z_degrees": 90.0,
+      "nearest_cross_atom_A": 18.482550699999997,
+      "all_cross_edges_beyond_local_cutoff": true,
+      "interaction_M_kJ_mol": 1.3063799259965009e-05,
+      "rotated_monomer_energy_difference_kJ_mol": 7.421562122906586e-08
+    }
+  ],
+  "quantum_reference": [
+    {
+      "nlc_grid_level": 0,
+      "energies_Ha": {
+        "A": -437.59504154013894,
+        "B": -437.5950415401388,
+        "AB": -875.1901078722144,
+        "Acp": -437.5950424278334,
+        "Bcp": -437.59504242783305
+      },
+      "frozen_counterpoise_interaction_kJ_mol": -0.06042993836496608,
+      "uncorrected_interaction_kJ_mol": -0.06509122070762834,
+      "ghost_fragment_symmetry_difference_kJ_mol": -8.954542538504029e-10
+    },
+    {
+      "nlc_grid_level": 1,
+      "energies_Ha": {
+        "A": -437.59499101946653,
+        "B": -437.59499101946744,
+        "AB": -875.1900067994502,
+        "Acp": -437.5949919236592,
+        "Bcp": -437.5949919236572
+      },
+      "frozen_counterpoise_interaction_kJ_mol": -0.06026081899428212,
+      "uncorrected_interaction_kJ_mol": -0.06500872638752286,
+      "ghost_fragment_symmetry_difference_kJ_mol": -5.372725523102417e-09
+    }
+  ],
+  "nonlinear_grid_shift_kJ_mol": 0.00016911937068395805,
+  "scope": "Neutral CF4 frozen gas diagnostic only; no liquid EOS, PMMA/graphene free energy or chemical cleanup inferred",
+  "no_added_dispersion_to_learned_model": true,
+  "cleaning_solution_established": false
+}

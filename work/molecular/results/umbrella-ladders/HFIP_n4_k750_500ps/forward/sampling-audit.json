@@ -1,0 +1,325 @@
+{
+  "windows": [
+    {
+      "directory": "results/umbrella-ladders/HFIP_n4_k750_500ps/forward/z0.450",
+      "center_nm": 0.45,
+      "duration_ps": 500,
+      "discarded_ps": 250.0,
+      "z_mean_nm": 0.5771423158736505,
+      "z_sd_nm": 0.012513616990307475,
+      "block_z_means_nm": [
+        0.5805780095846645,
+        0.5775134352,
+        0.5736076943999999,
+        0.5768646272
+      ],
+      "block_force_means_kJ_mol_nm": [
+        -97.93352507987221,
+        -95.63506351999999,
+        -92.70578992,
+        -95.14845872000001
+      ],
+      "coordinate_statistical_inefficiency": 6.026334463811262,
+      "nominal_effective_coordinate_samples": 415.01181439874506,
+      "equilibration_not_implied_by_inefficiency": true
+    },
+    {
+      "directory": "results/umbrella-ladders/HFIP_n4_k750_500ps/forward/z0.550",
+      "center_nm": 0.55,
+      "duration_ps": 500,
+      "discarded_ps": 250.0,
+      "z_mean_nm": 0.5885371171531387,
+      "z_sd_nm": 0.013781123074807382,
+      "block_z_means_nm": [
+        0.5906216054313098,
+        0.5838917968,
+        0.5899744976,
+        0.5896572336
+      ],
+      "block_force_means_kJ_mol_nm": [
+        -30.466197507987218,
+        -25.41884983552,
+        -29.980865931200004,
+        -29.7429256
+      ],
+      "coordinate_statistical_inefficiency": 28.42393781209206,
+      "nominal_effective_coordinate_samples": 87.98921586916887,
+      "equilibration_not_implied_by_inefficiency": true
+    },
+    {
+      "directory": "results/umbrella-ladders/HFIP_n4_k750_500ps/forward/z0.650",
+      "center_nm": 0.65,
+      "duration_ps": 500,
+      "discarded_ps": 250.0,
+      "z_mean_nm": 0.5882187548980409,
+      "z_sd_nm": 0.0153407698107281,
+      "block_z_means_nm": [
+        0.587479501597444,
+        0.5846191184,
+        0.5906534992000001,
+        0.5901240832
+      ],
+      "block_force_means_kJ_mol_nm": [
+        46.890359776357826,
+        49.035649744000004,
+        44.509848,
+        44.9069221888
+      ],
+      "coordinate_statistical_inefficiency": 12.357880451648551,
+      "nominal_effective_coordinate_samples": 202.38098351779772,
+      "equilibration_not_implied_by_inefficiency": true
+    },
+    {
+      "directory": "results/umbrella-ladders/HFIP_n4_k750_500ps/forward/z0.750",
+      "center_nm": 0.75,
+      "duration_ps": 500,
+      "discarded_ps": 250.0,
+      "z_mean_nm": 0.6001238296681327,
+      "z_sd_nm": 0.018453031179854588,
+      "block_z_means_nm": [
+        0.5962501038338658,
+        0.60426696,
+        0.5922263616,
+        0.6077580911999999
+      ],
+      "block_force_means_kJ_mol_nm": [
+        115.31242619808305,
+        109.29980480000002,
+        118.33022095999999,
+        106.68143024
+      ],
+      "coordinate_statistical_inefficiency": 58.144029729382524,
+      "nominal_effective_coordinate_samples": 43.01387453948937,
+      "equilibration_not_implied_by_inefficiency": true
+    },
+    {
+      "directory": "results/umbrella-ladders/HFIP_n4_k750_500ps/forward/z0.850",
+      "center_nm": 0.85,
+      "duration_ps": 500,
+      "discarded_ps": 250.0,
+      "z_mean_nm": 0.7935249720111955,
+      "z_sd_nm": 0.022317911695833713,
+      "block_z_means_nm": [
+        0.7893007539936102,
+        0.7835428544,
+        0.7871251055999999,
+        0.8141379328
+      ],
+      "block_force_means_kJ_mol_nm": [
+        45.524460431309905,
+        49.842868624,
+        47.156186751999996,
+        26.896559248
+      ],
+      "coordinate_statistical_inefficiency": 172.14493220013404,
+      "nominal_effective_coordinate_samples": 14.528455575400626,
+      "equilibration_not_implied_by_inefficiency": true
+    },
+    {
+      "directory": "results/umbrella-ladders/HFIP_n4_k750_500ps/forward/z0.950",
+      "center_nm": 0.95,
+      "duration_ps": 500,
+      "discarded_ps": 250.0,
+      "z_mean_nm": 0.8739928028788485,
+      "z_sd_nm": 0.028573263997508914,
+      "block_z_means_nm": [
+        0.8518352124600639,
+        0.8870451951999999,
+        0.8785242912,
+        0.8786019648000001
+      ],
+      "block_force_means_kJ_mol_nm": [
+        73.62358642172525,
+        47.2160959408,
+        53.60676446400001,
+        53.54852013920001
+      ],
+      "coordinate_statistical_inefficiency": 152.8833545150901,
+      "nominal_effective_coordinate_samples": 16.358877053244818,
+      "equilibration_not_implied_by_inefficiency": true
+    },
+    {
+      "directory": "results/umbrella-ladders/HFIP_n4_k750_500ps/forward/z1.050",
+      "center_nm": 1.05,
+      "duration_ps": 500,
+      "discarded_ps": 250.0,
+      "z_mean_nm": 0.9703477976809276,
+      "z_sd_nm": 0.05414974228710555,
+      "block_z_means_nm": [
+        1.0067049968051118,
+        0.9503058416,
+        1.0016335776,
+        0.9226886032000002
+      ],
+      "block_force_means_kJ_mol_nm": [
+        32.47127569488818,
+        74.77062993119999,
+        36.274878140800006,
+        95.48349552000002
+      ],
+      "coordinate_statistical_inefficiency": 253.83901411037337,
+      "nominal_effective_coordinate_samples": 9.852701361787215,
+      "equilibration_not_implied_by_inefficiency": true
+    },
+    {
+      "directory": "results/umbrella-ladders/HFIP_n4_k750_500ps/forward/z1.150",
+      "center_nm": 1.15,
+      "duration_ps": 500,
+      "discarded_ps": 250.0,
+      "z_mean_nm": 1.1499942902838864,
+      "z_sd_nm": 0.03406576878253305,
+      "block_z_means_nm": [
+        1.1456240894568692,
+        1.178019264,
+        1.1548374879999999,
+        1.121503312
+      ],
+      "block_force_means_kJ_mol_nm": [
+        3.2818135728434505,
+        -21.014563294880002,
+        -3.62810923408,
+        21.372538706048
+      ],
+      "coordinate_statistical_inefficiency": 276.8462804492921,
+      "nominal_effective_coordinate_samples": 9.033894173839514,
+      "equilibration_not_implied_by_inefficiency": true
+    },
+    {
+      "directory": "results/umbrella-ladders/HFIP_n4_k750_500ps/forward/z1.250",
+      "center_nm": 1.25,
+      "duration_ps": 500,
+      "discarded_ps": 250.0,
+      "z_mean_nm": 1.2549609076369452,
+      "z_sd_nm": 0.043661401693678166,
+      "block_z_means_nm": [
+        1.2602110063897765,
+        1.2525814880000001,
+        1.251645648,
+        1.255397088
+      ],
+      "block_force_means_kJ_mol_nm": [
+        -7.658460376996806,
+        -1.9360482524,
+        -1.2341729432000008,
+        -4.047810473279998
+      ],
+      "coordinate_statistical_inefficiency": 99.22434018055914,
+      "nominal_effective_coordinate_samples": 25.205509005642316,
+      "equilibration_not_implied_by_inefficiency": true
+    },
+    {
+      "directory": "results/umbrella-ladders/HFIP_n4_k750_500ps/forward/z1.350",
+      "center_nm": 1.35,
+      "duration_ps": 500,
+      "discarded_ps": 250.0,
+      "z_mean_nm": 1.3720357536985206,
+      "z_sd_nm": 0.042729553957526256,
+      "block_z_means_nm": [
+        1.4008435782747601,
+        1.38545448,
+        1.367838608,
+        1.333960256
+      ],
+      "block_force_means_kJ_mol_nm": [
+        -38.13258671821087,
+        -26.59080642432,
+        -13.378922233599997,
+        12.029729342080001
+      ],
+      "coordinate_statistical_inefficiency": 285.60603045348427,
+      "nominal_effective_coordinate_samples": 8.756817900619678,
+      "equilibration_not_implied_by_inefficiency": true
+    },
+    {
+      "directory": "results/umbrella-ladders/HFIP_n4_k750_500ps/forward/z1.450",
+      "center_nm": 1.45,
+      "duration_ps": 500,
+      "discarded_ps": 250.0,
+      "z_mean_nm": 1.4582539024390242,
+      "z_sd_nm": 0.04477626683429774,
+      "block_z_means_nm": [
+        1.4575827476038337,
+        1.434332256,
+        1.493464272,
+        1.447637408
+      ],
+      "block_force_means_kJ_mol_nm": [
+        -5.686974345047923,
+        11.7507157616,
+        -32.5981127568,
+        1.7719936543999981
+      ],
+      "coordinate_statistical_inefficiency": 151.6001828785406,
+      "nominal_effective_coordinate_samples": 16.497341576452826,
+      "equilibration_not_implied_by_inefficiency": true
+    }
+  ],
+  "adjacent_distance_overlaps": [
+    {
+      "left": 0.45,
+      "right": 0.55,
+      "empirical_overlap_mass": 0.6769292283086765,
+      "Bhattacharyya": 0.9083775128382056
+    },
+    {
+      "left": 0.55,
+      "right": 0.65,
+      "empirical_overlap_mass": 0.9436225509796081,
+      "Bhattacharyya": 0.9951380206802704
+    },
+    {
+      "left": 0.65,
+      "right": 0.75,
+      "empirical_overlap_mass": 0.7277089164334267,
+      "Bhattacharyya": 0.9370224942703594
+    },
+    {
+      "left": 0.75,
+      "right": 0.85,
+      "empirical_overlap_mass": 0.0,
+      "Bhattacharyya": 0.0
+    },
+    {
+      "left": 0.85,
+      "right": 0.95,
+      "empirical_overlap_mass": 0.11155537784886047,
+      "Bhattacharyya": 0.30670946832252655
+    },
+    {
+      "left": 0.95,
+      "right": 1.05,
+      "empirical_overlap_mass": 0.2586965213914434,
+      "Bhattacharyya": 0.46325005062912455
+    },
+    {
+      "left": 1.05,
+      "right": 1.15,
+      "empirical_overlap_mass": 0.03278688524590164,
+      "Bhattacharyya": 0.0796606562485705
+    },
+    {
+      "left": 1.15,
+      "right": 1.25,
+      "empirical_overlap_mass": 0.164734106357457,
+      "Bhattacharyya": 0.3403137723897462
+    },
+    {
+      "left": 1.25,
+      "right": 1.35,
+      "empirical_overlap_mass": 0.20591763294682128,
+      "Bhattacharyya": 0.38310336567875536
+    },
+    {
+      "left": 1.35,
+      "right": 1.45,
+      "empirical_overlap_mass": 0.29668132746901243,
+      "Bhattacharyya": 0.5614250558654315
+    }
+  ],
+  "global_free_energy_profile_accepted": false,
+  "cleaning_ranking_accepted": false,
+  "reasons": [
+    "Distance overlap does not establish stationarity of ester/backbone contacts or hidden torsions.",
+    "Both directions, independent starting conformations, complete coordinate range and model qualification required."
+  ]
+}

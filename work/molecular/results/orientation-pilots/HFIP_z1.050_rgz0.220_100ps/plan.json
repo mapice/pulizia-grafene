@@ -1,0 +1,12 @@
+{
+  "z_center_nm": 1.05,
+  "rg_normal_center_nm": 0.22,
+  "stiffnesses_kJ_mol_nm2": [
+    750,
+    2000
+  ],
+  "duration_ps": 100,
+  "threads": 1,
+  "scope": "Implementation/sampling pilot in unqualified n4 rigid-sheet model",
+  "desorption_equilibrium_or_cleaning_established": false
+}

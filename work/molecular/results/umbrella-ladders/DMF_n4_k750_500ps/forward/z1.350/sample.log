@@ -1,0 +1,30 @@
+                :-) GROMACS - gmx mdrun, 2026.3-conda_forge (-:
+
+Executable:   /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin.ARM_NEON_ASIMD/gmx
+Data prefix:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env
+Working dir:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/umbrella-ladders/DMF_n4_k750_500ps/forward/z1.350
+Command line:
+  gmx mdrun -deffnm run -pf pullf.xvg -px pullx.xvg -ntmpi 1 -ntomp 1 -pin off -nice 8
+
+Reading file run.tpr, VERSION 2026.3-conda_forge (single precision)
+Changing nstlist from 20 to 80, rlist from 1.009 to 1.127
+
+Update groups can not be used for this system because atoms that are (in)directly constrained together are interdispersed with other atoms
+
+Using 1 MPI thread
+Using 1 OpenMP thread 
+
+starting mdrun 'DMF comparator n4'
+500000 steps,    500.0 ps.
+
+Writing final coordinates.
+
+               Core t (s)   Wall t (s)        (%)
+       Time:     2092.538     2092.541      100.0
+                         34:52
+                 (ns/day)    (hour/ns)    (ms/step)  (Matom*steps/s) 
+Performance:       20.645        1.163        4.185            0.997 
+
+GROMACS reminds you: "Heavier-than-air flying machines are impossible." (Lord Kelvin, President of Royal Society, 1895.)
+
+{"guard": {"command": ["/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin/gmx", "mdrun", "-deffnm", "run", "-pf", "pullf.xvg", "-px", "pullx.xvg", "-ntmpi", "1", "-ntomp", "1", "-pin", "off", "-nice", "8"], "pid": 79982, "exitcode": 0, "peak_RSS_MB": 22.375, "elapsed_seconds": 2093.28332062508, "termination_reason": null}}

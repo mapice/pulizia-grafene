@@ -1,0 +1,67 @@
+[
+  {
+    "pair": "HFIP__HFIP",
+    "geometry": "HFIP__HFIP_1.refined.xyz",
+    "interaction_kJ_mol": -19.956066981012672,
+    "components_kJ_mol": {
+      "DISP": -26.83586759595662,
+      "PAULI": 37.652926736688705,
+      "ELEC": -16.084600122586206,
+      "POLARIZATION": -4.591618541144291,
+      "CHARGE_TRANSFER": -10.096907458014307
+    },
+    "component_sum_independent_error_kJ_mol": -4.618527782440651e-14
+  },
+  {
+    "pair": "HFIP__MeOH",
+    "geometry": "HFIP__MeOH_0.refined.xyz",
+    "interaction_kJ_mol": -31.682203114094005,
+    "components_kJ_mol": {
+      "DISP": -22.645256227557777,
+      "PAULI": 55.19041597118376,
+      "ELEC": -37.16424008746328,
+      "POLARIZATION": -9.509729822990778,
+      "CHARGE_TRANSFER": -17.55339294726594
+    },
+    "component_sum_independent_error_kJ_mol": -7.105427357601002e-15
+  },
+  {
+    "pair": "HFIP__Acetone",
+    "geometry": "HFIP__Acetone_1.refined.xyz",
+    "interaction_kJ_mol": -38.02631471759151,
+    "components_kJ_mol": {
+      "DISP": -30.130232021278566,
+      "PAULI": 58.40426443354686,
+      "ELEC": -40.937212869629214,
+      "POLARIZATION": -10.583046450035889,
+      "CHARGE_TRANSFER": -14.780087810194724
+    },
+    "component_sum_independent_error_kJ_mol": -2.1316282072803006e-14
+  },
+  {
+    "pair": "HFIP__DMF",
+    "geometry": "HFIP__DMF_1.refined.xyz",
+    "interaction_kJ_mol": -39.79469381761377,
+    "components_kJ_mol": {
+      "DISP": -31.359347840466825,
+      "PAULI": 71.32707217271151,
+      "ELEC": -45.77934217438537,
+      "POLARIZATION": -13.26743231696851,
+      "CHARGE_TRANSFER": -20.71564365850457
+    },
+    "component_sum_independent_error_kJ_mol": 7.105427357601002e-15
+  },
+  {
+    "pair": "HFIP__THF",
+    "geometry": "HFIP__THF_1.refined.xyz",
+    "interaction_kJ_mol": -36.74590049427377,
+    "components_kJ_mol": {
+      "DISP": -29.376784901674057,
+      "PAULI": 54.30001492642739,
+      "ELEC": -33.089831792679334,
+      "POLARIZATION": -9.783821186868757,
+      "CHARGE_TRANSFER": -18.795477539479016
+    },
+    "component_sum_independent_error_kJ_mol": -7.105427357601002e-15
+  }
+]

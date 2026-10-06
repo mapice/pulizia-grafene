@@ -1,0 +1,23 @@
+[
+  {
+    "name": "source-v1.0.0.zip",
+    "url": "https://api.github.com/repos/ByteDance-Seed/byteff2/zipball/8f2813407ba5fbecfb5ec5c69e10b124c5b5bdc2",
+    "bytes": 4889589,
+    "sha256": "a1b9175bf1916939417d7823abc27a2d67670cf4c319d29fe9c8ed7cbaea6ceb",
+    "expected_lfs_sha256": null
+  },
+  {
+    "name": "optimal.pt",
+    "url": "https://huggingface.co/ByteDance-Seed/byteff2/resolve/b92ac49058c113625012c1f50d98a7bf9cf4e46e/trained_models/optimal.pt",
+    "bytes": 111892932,
+    "sha256": "ae47a6e6860b563908a2e0a83d4a3f6adc1c36b48f544e2241d24066d43d539c",
+    "expected_lfs_sha256": "ae47a6e6860b563908a2e0a83d4a3f6adc1c36b48f544e2241d24066d43d539c"
+  },
+  {
+    "name": "fftrainer_config_in_use.yaml",
+    "url": "https://huggingface.co/ByteDance-Seed/byteff2/resolve/b92ac49058c113625012c1f50d98a7bf9cf4e46e/trained_models/fftrainer_config_in_use.yaml",
+    "bytes": 986,
+    "sha256": "8245a5c6ad9b4aa9d180c8bb24d6f05c210f1724ffae93aec0ef4f88e5fd7ea3",
+    "expected_lfs_sha256": null
+  }
+]

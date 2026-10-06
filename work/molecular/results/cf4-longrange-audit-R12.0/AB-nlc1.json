@@ -1,0 +1,9 @@
+{
+  "energy_Ha": -875.1899846776594,
+  "SCF_converged": true,
+  "basis": "def2-tzvpd",
+  "functional": "omegaB97M-V with VV10, no additional D3",
+  "nlc_grid_level": 1,
+  "basis_functions": 394,
+  "elapsed_seconds": 95.03524675010704
+}

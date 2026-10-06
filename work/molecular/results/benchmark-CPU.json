@@ -1,0 +1,15 @@
+{
+  "scope": "engine benchmark, 216 generic Lennard-Jones particles, NOT sample/solvent prediction",
+  "platform": "CPU",
+  "platform_properties": {
+    "Threads": "2",
+    "DeterministicForces": "false"
+  },
+  "atoms": 216,
+  "steps": 2000,
+  "dt_ps": 0.001,
+  "warmup_seconds": 0.016921000089496374,
+  "seconds": 0.2709213749039918,
+  "peak_rss_mb": 38.9375,
+  "potential_kj_mol": -558.231469423412
+}

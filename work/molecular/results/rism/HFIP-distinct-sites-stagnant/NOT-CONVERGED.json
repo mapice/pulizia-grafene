@@ -1,0 +1,4 @@
+{
+  "converged": false,
+  "reason": "Residual exactly unchanged through1400iterations; equivalent sites were represented separately. No XVV or solvation energy accepted."
+}

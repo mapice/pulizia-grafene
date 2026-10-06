@@ -1,0 +1,29 @@
+                :-) GROMACS - gmx mdrun, 2026.3-conda_forge (-:
+
+Executable:   /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin.ARM_NEON_ASIMD/gmx
+Data prefix:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env
+Working dir:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/gaff-systems/HFIP_n0_seed20261006
+Command line:
+  gmx mdrun -deffnm nvt -ntmpi 1 -ntomp 2 -pin off -nice 8
+
+Reading file nvt.tpr, VERSION 2026.3-conda_forge (single precision)
+Changing nstlist from 20 to 100, rlist from 1 to 1.065
+
+Update groups can not be used for this system because atoms that are (in)directly constrained together are interdispersed with other atoms
+
+Using 1 MPI thread
+Using 2 OpenMP threads 
+
+starting mdrun 'HFIP comparator n0'
+50000 steps,     50.0 ps.
+
+Writing final coordinates.
+
+               Core t (s)   Wall t (s)        (%)
+       Time:       81.726       40.863      200.0
+                 (ns/day)    (hour/ns)    (ms/step)  (Matom*steps/s) 
+Performance:      105.721        0.227        0.817            1.835 
+
+GROMACS reminds you: "We should change the code to FORTRAN, so it would be all caps, same as the name." (Paul Bauer, while discussing the spelling of GROMACS)
+
+{"guard": {"command": ["/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin/gmx", "mdrun", "-deffnm", "nvt", "-ntmpi", "1", "-ntomp", "2", "-pin", "off", "-nice", "8"], "pid": 76472, "exitcode": 0, "peak_RSS_MB": 17.171875, "elapsed_seconds": 42.273272917140275, "termination_reason": null}}

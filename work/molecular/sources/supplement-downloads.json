@@ -1,0 +1,34 @@
+[
+  {
+    "name": "pmma-graphene-2021-si.pdf",
+    "url": "https://mdpi-res.com/d_attachment/polymers/polymers-13-00830/article_deploy/polymers-13-00830-s001.pdf",
+    "resolved": "https://mdpi-res.com/d_attachment/polymers/polymers-13-00830/article_deploy/polymers-13-00830-s001.pdf",
+    "bytes": 351841,
+    "content_type": "application/pdf",
+    "sha256": "e92e8770817d98b02c5d8f827bb94614e64b29e862369bb657f5dba3073f51a8"
+  },
+  {
+    "name": "pmma-correction.xml",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8747699/fullTextXML",
+    "resolved": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8747699/fullTextXML",
+    "bytes": 12577,
+    "content_type": "application/xml",
+    "sha256": "3380b2294f6ff89c7b7e2bf813e91eac25e8e3a4750ef0831ac7b0e5498cf321"
+  },
+  {
+    "name": "hfip-2022-si.zip",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9298724/supplementaryFiles",
+    "resolved": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9298724/supplementaryFiles",
+    "bytes": 52383330,
+    "content_type": "application/zip",
+    "sha256": "b6bc1d1a506981862a87a5599f77b1d2783bc68e65c5c085f9c561b20ce0faec"
+  },
+  {
+    "name": "pmma-2021-si.zip",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7962820/supplementaryFiles",
+    "resolved": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7962820/supplementaryFiles",
+    "bytes": 1563227,
+    "content_type": "application/zip",
+    "sha256": "6088a63b25b4eecf909c263c9b58c2fe42ff6d78ded503ab9053c80e77ef0ef3"
+  }
+]

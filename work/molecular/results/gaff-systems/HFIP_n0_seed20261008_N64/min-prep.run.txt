@@ -1,0 +1,32 @@
+                :-) GROMACS - gmx grompp, 2026.3-conda_forge (-:
+
+Executable:   /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin.ARM_NEON_ASIMD/gmx
+Data prefix:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env
+Working dir:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/gaff-systems/HFIP_n0_seed20261008_N64
+Command line:
+  gmx grompp -f min.mdp -c initial.gro -p system.top -n index.ndx -o min.tpr
+
+Generating 1-4 interactions: fudge = 0.5
+Number of degrees of freedom in T-Coupling group rest is 2173.00
+The integrator does not provide a ensemble temperature, there is no system ensemble temperature
+
+GROMACS reminds you: "Those who cannot remember the past are condemned to compute it." (Steve Pinker)
+
+Setting the LD random seed to -138420249
+
+Generated 15 of the 15 non-bonded parameter combinations
+
+Generated 15 of the 15 1-4 parameter combinations
+
+Excluding 3 bonded neighbours molecule type 'HFI'
+
+turning H bonds into constraints...
+
+The largest distance between excluded atoms is 0.372 nm between atom 231 and 237
+Calculating fourier grid dimensions for X Y Z
+Using a fourier grid of 24x24x24, spacing 0.117 0.117 0.117
+
+Estimate for the relative computational load of the PME mesh part: 0.35
+
+This run will generate roughly 0 Mb of data
+{"guard": {"command": ["/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin/gmx", "grompp", "-f", "min.mdp", "-c", "initial.gro", "-p", "system.top", "-n", "index.ndx", "-o", "min.tpr"], "pid": 8332, "exitcode": 0, "peak_RSS_MB": 1.640625, "elapsed_seconds": 2.013793291989714, "termination_reason": null}}

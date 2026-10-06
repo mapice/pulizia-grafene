@@ -1,0 +1,4 @@
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/pyscf/lib/misc.py:203: UserWarning: OpenMP is not available. Setting omp_threads to 1 has no effects.
+  warnings.warn('OpenMP is not available. '
+output file: /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/dft-matched/HFIP__MethylAcetate_AB.scf.log
+{"guard": {"command": ["work/molecular/.venv/bin/python", "-u", "work/molecular/dft_matched_reference.py", "--pair", "HFIP__MethylAcetate"], "pid": 70930, "exitcode": -15, "peak_RSS_MB": 2035.4375, "elapsed_seconds": 370.23567554191686, "termination_reason": null}}

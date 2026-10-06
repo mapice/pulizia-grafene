@@ -1,0 +1,14 @@
+{
+  "solvent": "HFIP",
+  "polymer_n": 4,
+  "center_nm": 0.9,
+  "k_kJ_mol_nm2": 2000,
+  "run_ps": 125,
+  "discard_ps": 25,
+  "coordinate_mean_nm": 0.8416835944055945,
+  "coordinate_sd_nm": 0.027255807566997522,
+  "reported_pull_force_mean_kJ_mol_nm": 116.6327371058941,
+  "independently_reconstructed_spring_force_kJ_mol_nm": 116.63281118881108,
+  "elapsed_seconds": 223.40454045892693,
+  "scope": "Single short biased window; not a converged free-energy profile or actual cleaning."
+}

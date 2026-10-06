@@ -1,0 +1,108 @@
+{
+  "name": "DMF",
+  "smiles": "CN(C)C=O",
+  "residue": "DMF",
+  "atoms": 12,
+  "method": "GAFF2/AM1-BCC via AmberTools26",
+  "charges_e": [
+    0.079383333333,
+    -0.494716666667,
+    0.079383333333,
+    0.660983333333,
+    -0.604016666667,
+    0.041783333333,
+    0.041783333333,
+    0.041783333333,
+    0.041783333333,
+    0.041783333333,
+    0.041783333333,
+    0.028283333333
+  ],
+  "charge_total_e": -4.00004682155064e-12,
+  "generated_unadjusted_charge_total_e": -0.0009999999999999488,
+  "neutrality_correction_per_atom_e": 8.333333333332908e-05,
+  "neutrality_method": "Minimum L2 charge correction under sum(q)=0; bounded .005e total; original charges kept",
+  "logs": [
+    {
+      "stage": "antechamber",
+      "command": [
+        "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/antechamber",
+        "-i",
+        "input.sdf",
+        "-fi",
+        "sdf",
+        "-o",
+        "molecule.mol2",
+        "-fo",
+        "mol2",
+        "-c",
+        "bcc",
+        "-nc",
+        "0",
+        "-at",
+        "gaff2",
+        "-rn",
+        "DMF",
+        "-s",
+        "2",
+        "-pf",
+        "y"
+      ],
+      "seconds": 2.069681332912296
+    },
+    {
+      "stage": "parmchk",
+      "command": [
+        "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/parmchk2",
+        "-i",
+        "molecule.mol2",
+        "-f",
+        "mol2",
+        "-s",
+        "gaff2",
+        "-o",
+        "molecule.frcmod"
+      ],
+      "seconds": 2.102496583946049
+    },
+    {
+      "stage": "tleap",
+      "command": [
+        "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/tleap",
+        "-f",
+        "leap.in"
+      ],
+      "seconds": 2.084998708916828
+    },
+    {
+      "stage": "convert",
+      "command": [
+        "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/python",
+        "-c",
+        "import parmed as p; s=p.load_file(\"molecule.prmtop\",xyz=\"molecule.inpcrd\"); s.save(\"molecule.top\",overwrite=False); s.save(\"molecule.gro\",overwrite=False); print(\"atoms\",len(s.atoms),\"charge\",sum(a.charge for a in s.atoms)); print(\"charges\",[(a.name,a.type,a.charge) for a in s.atoms])"
+      ],
+      "seconds": 2.0684259578119963
+    }
+  ],
+  "file_sha256": {
+    "molecule.inpcrd": "08d128239b06b12eb0bc80923f63d7c2758dac655cb2e49fe15b89f6df71e1f9",
+    "antechamber.log": "bd8d5f823b557fc1b2494dfaa78846093e32ee6f06229bfee3e80c51ac1ed110",
+    "sqm.out": "bb976eb00156fd27ed52b68e67e9c502e7696fd689039bfd774d83b3aa032b2e",
+    "leap.log": "57e892b5f61152db20a0de8b5771dc42097298f3798d8c66506ef9993dbd27fe",
+    "convert.log": "cebf1a1ecd7646c8f6458f63df7c1145575d987368279d5ce26dae8f8e3df31f",
+    "molecule.gro": "e286305c1385aa98ae02b94836b49e0e3ce30bb79cb3daa89928eba8e9f74ad7",
+    "leap.in": "a97015f455418202a6dd870b8285adca2ce5b68136221486ce22ea9d29f6414e",
+    "parmchk.log": "0d7cc29ae0e4d0c5e4420934eb673b21032b9e47a8be24cc53a3c44cc4da2593",
+    "input.sdf": "4d1933e387038c2709841568463ee564595c0cd872b74544ef5a29e6dbb0131d",
+    "molecule.top": "42922bd5231e92d5c666c41d78d52c2bd57174aec52adf64512084a2c26b4ff9",
+    "sqm.in": "d738a4a6eff5d434a3dac9d53e6ea98ab4ec8dba1fd885aec653953bbab7dc3b",
+    "molecule.prmtop": "283a3df3cbcb2ae82a8e71610eae2c961b56f52a0840a017a25ec69a6b0c190e",
+    "molecule.mol2": "6f2856eb22c74d705f331642a5ea45b3258c233c94eb9ffb0009749cdd8d3711",
+    "molecule-unadjusted.mol2": "c534e9179b46ee7ef9d70cea5751ede0c011863f5d6f88e3bbddb39827a09e88",
+    "sqm.pdb": "d057e21dc6b222b5c83fe101cff93fef8d0b1e1a7a3042acc50afcb7f9fa7a7b",
+    "tleap.log": "19b8d2cfb5b1dcf72a762d7cbecbc324b878f2e63691c58bf880c3437a555095",
+    "molecule.frcmod": "9fb79fb6028ab7ab0c97c6dbd167cf729d43a10d594c93ff82d84b2db2de1aff"
+  },
+  "scope": "Comparator force field generated, not qualified for bulk/interfacial desorption.",
+  "source": "https://ambermd.org/AmberTools.php"
+}

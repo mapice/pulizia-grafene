@@ -1,0 +1,25 @@
+DMF forward 0.45 started
+{'solvent': 'DMF', 'direction': 'forward', 'center_nm': 0.45, 'k_kJ_mol_nm2': 750.0, 'run_ps': 500, 'pilot_discard_ps': 250.0, 'coordinate_mean_nm': 0.6098393314674131, 'coordinate_sd_nm': 0.02869238225564904, 'spring_force_mean_kJ_mol_nm': -119.87951459416232, 'independent_spring_force_kJ_mol_nm': -119.87949860055981, 'elapsed_seconds': 1267.8323994169477, 'equilibrium_and_hidden_coordinate_convergence_not_assumed': True}
+DMF forward 0.55 started
+{'solvent': 'DMF', 'direction': 'forward', 'center_nm': 0.55, 'k_kJ_mol_nm2': 750.0, 'run_ps': 500, 'pilot_discard_ps': 250.0, 'coordinate_mean_nm': 0.6293183370651739, 'coordinate_sd_nm': 0.026015473520198507, 'spring_force_mean_kJ_mol_nm': -59.48874521591364, 'independent_spring_force_kJ_mol_nm': -59.48875279888041, 'elapsed_seconds': 1316.257533957949, 'equilibrium_and_hidden_coordinate_convergence_not_assumed': True}
+DMF forward 0.65 started
+{'solvent': 'DMF', 'direction': 'forward', 'center_nm': 0.65, 'k_kJ_mol_nm2': 750.0, 'run_ps': 500, 'pilot_discard_ps': 250.0, 'coordinate_mean_nm': 0.7070455757696922, 'coordinate_sd_nm': 0.024633166376811115, 'spring_force_mean_kJ_mol_nm': -42.78420075033986, 'independent_spring_force_kJ_mol_nm': -42.784181827269116, 'elapsed_seconds': 1259.639925708063, 'equilibrium_and_hidden_coordinate_convergence_not_assumed': True}
+DMF forward 0.75 started
+{'solvent': 'DMF', 'direction': 'forward', 'center_nm': 0.75, 'k_kJ_mol_nm2': 750.0, 'run_ps': 500, 'pilot_discard_ps': 250.0, 'coordinate_mean_nm': 0.7464812606957217, 'coordinate_sd_nm': 0.03162873268616809, 'spring_force_mean_kJ_mol_nm': 2.639054959588165, 'independent_spring_force_kJ_mol_nm': 2.6390544782086964, 'elapsed_seconds': 1306.5904935840517, 'equilibrium_and_hidden_coordinate_convergence_not_assumed': True}
+DMF forward 0.85 started
+{'solvent': 'DMF', 'direction': 'forward', 'center_nm': 0.85, 'k_kJ_mol_nm2': 750.0, 'run_ps': 500, 'pilot_discard_ps': 250.0, 'coordinate_mean_nm': 0.8478117780887645, 'coordinate_sd_nm': 0.024239722081832824, 'spring_force_mean_kJ_mol_nm': 1.6411896801679324, 'independent_spring_force_kJ_mol_nm': 1.6411664334265996, 'elapsed_seconds': 1313.3319653749932, 'equilibrium_and_hidden_coordinate_convergence_not_assumed': True}
+DMF forward 0.95 started
+{'solvent': 'DMF', 'direction': 'forward', 'center_nm': 0.95, 'k_kJ_mol_nm2': 750.0, 'run_ps': 500, 'pilot_discard_ps': 250.0, 'coordinate_mean_nm': 0.8713817201119551, 'coordinate_sd_nm': 0.02596560346996402, 'spring_force_mean_kJ_mol_nm': 58.963698424630145, 'independent_spring_force_kJ_mol_nm': 58.963709916033615, 'elapsed_seconds': 1292.1876334580593, 'equilibrium_and_hidden_coordinate_convergence_not_assumed': True}
+DMF forward 1.05 started
+{'solvent': 'DMF', 'direction': 'forward', 'center_nm': 1.05, 'k_kJ_mol_nm2': 750.0, 'run_ps': 500, 'pilot_discard_ps': 250.0, 'coordinate_mean_nm': 0.9532534722111156, 'coordinate_sd_nm': 0.06522091013313666, 'spring_force_mean_kJ_mol_nm': 72.55989598348661, 'independent_spring_force_kJ_mol_nm': 72.55989584166336, 'elapsed_seconds': 1261.6069042498711, 'equilibrium_and_hidden_coordinate_convergence_not_assumed': True}
+DMF forward 1.15 started
+{'solvent': 'DMF', 'direction': 'forward', 'center_nm': 1.15, 'k_kJ_mol_nm2': 750.0, 'run_ps': 500, 'pilot_discard_ps': 250.0, 'coordinate_mean_nm': 1.153628656537385, 'coordinate_sd_nm': 0.044882449598942185, 'spring_force_mean_kJ_mol_nm': -2.721447593602558, 'independent_spring_force_kJ_mol_nm': -2.7214924030388166, 'elapsed_seconds': 1287.9636470840778, 'equilibrium_and_hidden_coordinate_convergence_not_assumed': True}
+DMF forward 1.25 started
+Traceback (most recent call last):
+  File "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/umbrella_ladder.py", line 133, in <module>
+    if __name__ == '__main__':
+        ^^^^^^
+  File "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/umbrella_ladder.py", line 108, in main
+    if r.returncode:
+        ^^^^^^^^^^^^^
+RuntimeError: Window failed /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/umbrella-ladders/DMF_n4_k750_500ps/forward/z1.250 prepare

@@ -1,0 +1,822 @@
+from pathlib import Path
+
+root=Path(__file__).resolve().parent.parent
+old=(root/'work/versione-1/pulizia-grafene-pmma-ppc.tex').read_text()
+preamble=old.split(r'\title[')[0]
+preamble=preamble.replace(r'\usepackage{booktabs,array}',r'''\usepackage{booktabs,array,longtable}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}''')
+preamble=preamble.replace('Analisi della letteratura e proposta sperimentale; nessun nuovo risultato di laboratorio','Revisione 2: teoria cinetica, simulazioni condizionali e prove per la sequenza DMF-IPA-THF')
+body=r'''
+\title[Grafene: teoria della pulizia a solventi sequenziali]{Pulizia chimica del grafene con residui di PMMA/PPC:\\ teoria della sequenza dei solventi e prove discriminanti}
+\author{Codex}
+\date{6 ottobre 2026 --- revisione 2}
+\thanks{Studio redatto su richiesta di Mattia Apicella per il confronto con Armando Serio. Include calcoli eseguiti e verificati, ma nessun nuovo esperimento sui materiali. Le costanti cinetiche delle simulazioni sono scenari dichiarati, non stime del campione. Questa revisione sostituisce la raccomandazione iniziale di HCl alla luce dei tentativi gi\`a effettuati.}
+\keywords{Grafene CVD, PMMA AR-P 672.045, PPC, desorbimento, sequenza dei solventi, bilanci di massa}
+\begin{document}
+\begin{abstract}
+Il problema considerato \`e rimuovere chimicamente residui da grafene
+su \SiO/Si, trasferito dal rame con PMMA AR-P 672.045 e PPC.
+L'insuccesso riferito di numerosi solventi, acidi e prodotti commerciali
+esclude di ripresentarli come nuove soluzioni. L'unico trattamento con
+un modesto effetto combina DMF, isopropanolo e THF. Proponiamo di
+verificare se il risultato dipenda dalla preparazione di uno stato
+polimerico estraibile, dalla sua successiva perdita durante i
+risciacqui, oppure da una frazione persistente di diversa natura.
+Deriviamo un modello conservativo a tre stati che mostra quando
+l'ordine dei liquidi conta e quando l'alternanza aiuta o peggiora.
+Un secondo modello separa distacco, trasporto e riadsorbimento;
+un bilancio indipendente limita la massa depositabile durante
+l'asciugatura. Le simulazioni includono controesempi e controlli
+analitici. Ne segue una proposta concreta: confrontare la sequenza
+esistente con varianti prive dei passaggi IPA e, se emerge una
+mobilizzazione utile, con alternanze a esposizioni complessive uguali.
+L'obiettivo \`e amplificare un meccanismo misurabile conservando il
+grafene. L'efficacia sul campione reale rimane una domanda sperimentale.
+\end{abstract}
+\maketitle
+
+\section{La proposta che sceglierei ora}
+
+\textbf{La mia ipotesi di lavoro \`e che la frazione ancora rimovibile
+sia limitata dal passaggio tra stati interfaciali del polimero e dalla
+successiva estrazione, pi\`u che dalla scelta di un altro solvente
+generico.} La prova pi\`u immediata conserva DMF e THF, ma separa
+l'effetto dell'IPA intermedio da quello finale. La prova successiva
+confronta quattro brevi alternanze con gli stessi liquidi raggruppati
+in blocchi, mantenendo uguali esposizioni e ricambi.
+
+Non assumo in partenza che l'IPA sia dannoso. Pu\`o favorire la
+precipitazione o il riattacco di materiale gi\`a mobilizzato, oppure
+modificare la conformazione di una frazione aderente e renderla
+estraibile nel bagno seguente. Queste ipotesi danno previsioni
+opposte. Il modello delle Sezioni~\ref{sec:states}--\ref{sec:sim}
+le rende quantitative senza attribuire al campione costanti che
+nessuno ha misurato.
+
+La modifica da provare per prima, se occorre scegliere un solo
+nuovo percorso, \`e \emph{DMF con ricambi freschi, seguito direttamente
+da THF, mantenendo inizialmente invariato il risciacquo finale}.
+In questo modo si verifica se l'IPA intermedio annulli una
+mobilizzazione ottenuta nel DMF. La Tabella~\ref{tab:factorial}
+specifica tempi e controlli. Se invece quel passaggio risulta utile,
+si passa alla prova di alternanza della Tabella~\ref{tab:cycles}.
+
+La scelta \`e motivata dall'unico percorso che ha gi\`a prodotto un
+segnale favorevole. Non \`e deducibile una probabilit\`a di successo
+dal suo semplice esistere: il miglioramento riferito non \`e ancora
+quantificato e i confronti precedenti non sono descritti abbastanza
+da isolare l'effetto della sequenza.
+
+\section{Il caso reale e i risultati negativi da conservare}
+
+Il materiale iniziale indicato \`e PMMA AR-P 672.045, che il produttore
+identifica come 950K al 4,5\% in anisolo \cite{Allresist}. Il campione
+comprende anche PPC sopra il PMMA, senza contatto intenzionale del
+PPC con il grafene. Sono riferiti un passaggio a 90\,\degC\ per
+2 minuti, distacco elettrochimico dal Cu e trasferimento su \SiO/Si.
+Elettrolita, spessori, eventuali altre cotture e identificazione
+chimica delle particelle non sono ancora noti.
+
+Il lavoro di Tyagi, Mi\v{s}eikis, Coletti e collaboratori
+\cite{Tyagi2022} corrisponde bene a questo schema PMMA/PPC e ai
+passaggi termici indicati. Non attribuiamo automaticamente al caso
+attuale tutti i parametri del loro supplemento. Quel lavoro \`e
+utile come riferimento di processo; il suo solvente commerciale
+non \`e una nuova risposta all'elenco di tentativi di Armando.
+
+Sono gi\`a stati provati, secondo quanto comunicato:
+\begin{itemize}
+\item HCl per 48 ore e acido acetico glaciale;
+\item acetato di etile, cloroformio, DMF, THF, MPK, acetone;
+\item IPA/acqua 75/25 e prodotti indicati come AR600.7 e AR300-76,
+quest'ultimo sia a temperatura ambiente sia a 80\,\degC.
+\end{itemize}
+Manteniamo ``MPK'' e ``AR600.7'' come sigle riferite, senza
+correggerle arbitrariamente in altri prodotti. Il precedente con
+HCl \cite{Xiao2019} resta un risultato pubblicato, ma \textbf{HCl
+48 ore viene ritirato come nuova raccomandazione per questo caso}.
+La concentrazione mancante limita un confronto quantitativo, senza
+cancellare il risultato negativo ricevuto.
+
+L'unica pulizia descritta come debolmente efficace \`e
+\begin{equation}\label{eq:real}
+\begin{split}
+ &\mathrm{DMF}\ (30\,\mathrm{min})
+ \longrightarrow \mathrm{IPA}\ (5+3\,\mathrm{min})\\[-2pt]
+ &\longrightarrow \mathrm{THF}\ (30\,\mathrm{min})
+ \longrightarrow \mathrm{IPA}\ (5+3\,\mathrm{min})
+ \longrightarrow \mathrm{N_2}.
+\end{split}
+\end{equation}
+La somma dei bagni \`e 76 minuti. L'agitazione riferita \`e 500 rpm:
+non descriviamo quindi il trattamento come un bagno quiescente.
+Questa velocit\`a non determina per\`o il moto locale al campione
+senza geometria, posizione, volume e tipo di agitatore.
+
+\section{Che cosa aggiunge la letteratura estesa}
+
+\subsection{La sequenza pu\`o cambiare il comportamento del polimero}
+Manjkow e collaboratori \cite{Manjkow1987} osservano mediante
+ellissometria un passaggio stretto fra dissoluzione e rigonfiamento
+del PMMA in miscele solvente/non solvente. Le miscele studiate non
+sono quelle di Armando: il lavoro giustifica studiare la traiettoria
+di composizione, non applicare qui le sue soglie. Rooks e
+collaboratori \cite{Rooks2002} mostrano inoltre perch\'e IPA e
+IPA/acqua non si possano classificare con una sola etichetta
+indipendente da massa molecolare e stato del resist.
+
+La solubilit\`a del polimero libero non determina il distacco
+dall'interfaccia. Simulazioni di desorbimento di catene adsorbite
+\cite{Huston2020} trovano regimi cinetici molto diversi al variare
+dell'adsorbimento. Si tratta di modelli generici, non di una
+parametrizzazione di AR-P 672.045 su grafene. Non \`e corretto
+ricavare una barriera moltiplicando l'energia di un monomero per
+tutta la catena: distacco progressivo, conformazione e contatti
+effettivi contano.
+
+\subsection{Perch\'e il semplice ricambio non \`e gi\`a la soluzione}
+Ayodele e collaboratori \cite{Ayodele2022} impiegano PMMA 950K,
+distacco elettrochimico dal rame e un estrattore Soxhlet con acetone
+distillato. Osservano miglioramenti morfologici, ma il confronto
+varia anche temperatura, durata e risciacquo; manca una misura XPS
+che certifichi l'assenza del residuo. La storia termica \`e diversa
+da quella comunicata per questo caso.
+
+Il risultato del 2025 di Tang e collaboratori \cite{Tang2025}
+\`e particolarmente istruttivo: un processo ciclico migliora
+l'aspetto macroscopico, ma i rapporti XPS
+C=C:C--O:O--C=O sono circa 100:28:8 nel controllo e 100:30:7
+nel processo ciclico. I residui rimangono. Questo impedisce di
+promettere che solvente rinnovato o assenza di IPA finale bastino
+da soli. Il lavoro non testa l'alternanza DMF/IPA/THF qui proposta.
+
+\subsection{Miscela IPA/acqua, etanolo e prestazioni elettriche}
+Duan e collaboratori \cite{Duan2022} riportano un miglioramento
+con IPA/acqua 75/25, ma dopo acetone e ricottura in vuoto a
+200\,\degC. La loro frazione di componenti C--O e C=O resta
+misurabile; inoltre il controllo in sola acqua subisce danni.
+Il metodo \`e gi\`a nell'elenco di Armando e non viene riproposto.
+
+Merino e collaboratori \cite{Merino2024} studiano residui da
+fabbricazione anche con etanolo e THF: documentano miglioramenti
+elettrici e chimici parziali, ma anche problemi di distacco con
+THF. Non \`e una prova sul nostro PMMA/PPC. Suk e collaboratori
+\cite{Suk2013} forniscono un controesempio ancora pi\`u netto:
+formammide assorbita nei residui migliora le propriet\`a elettriche
+senza corrispondente scomparsa della morfologia residua.
+Una migliore curva del transistor, da sola, non decide la pulizia.
+
+\subsection{Acido, identit\`a chimica e diagnosi del residuo}
+Nel PMMA l'idrolisi dell'estere laterale non rompe automaticamente
+la catena carboniosa. Nei polimetacrilati di Sch\"onemann e
+collaboratori \cite{Schoenemann2018}, diversi dal PMMA, la stabilit\`a
+all'acido mostra quanto sia rischioso inferire la cinetica dal solo
+gruppo funzionale. Anche il PPC ha una risposta all'idrolisi
+dipendente dalle condizioni \cite{Jung2006}. Questi studi non
+forniscono una nuova miscela di pulizia validata per il campione.
+
+Wang e collaboratori \cite{Wang2017} usano marcatura isotopica del
+PMMA per seguirne i residui. Schwartz e collaboratori
+\cite{Schwartz2019} identificano localmente polimeri intrappolati
+in eterostrutture mediante spettroscopia infrarossa associata
+all'AFM. Non studiano il nostro PPC: il loro PC \`e un materiale
+diverso. Il punto trasferibile \`e il metodo di identificazione.
+Una particella vista in AFM non acquista identit\`a chimica dalla
+sola somiglianza con un residuo di PMMA.
+
+\section{Una teoria della sequenza: preparare, estrarre, ribloccare}
+\label{sec:states}
+
+\subsection{Una previsione che non richiede conoscere i tassi}
+Supponiamo che ogni liquido $j$ rimuova una stessa popolazione di
+residuo $m$ con un tasso costante $k_j$, senza memoria:
+\begin{equation}\label{eq:scalar}
+ \dot m=-k_jm.
+\end{equation}
+Dopo tempi totali $T_j$ nei vari liquidi,
+\begin{equation}\label{eq:orderindependent}
+ m_{\mathrm{finale}}=m_0\exp\!\left(-\sum_j k_jT_j\right).
+\end{equation}
+L'ordine e il numero di alternanze non compaiono. Dunque una
+differenza riproducibile fra ordine a blocchi e alternato, a pari
+esposizioni, ricambi e condizioni, \emph{falsifica questo modello}.
+Non identifica da sola il meccanismo alternativo: concentrazione
+del bagno, trasformazioni, stati conformazionali e danno meccanico
+possono introdurre memoria. L'osservazione finora riferita non \`e
+ancora un confronto controllato di questo tipo.
+
+\subsection{Il modello minimo che permette un effetto dell'ordine}
+Dividiamo la massa in tre stati:
+$L$, residuo ancora aderente e non prontamente estraibile;
+$M$, residuo mobilizzato ma ancora sul campione;
+$R$, materiale gi\`a esportato fuori dalla zona di riadesione.
+Nel liquido $j$ poniamo
+\begin{equation}\label{eq:generator}
+ \frac{d}{dt}
+ \begin{pmatrix}L\\M\\R\end{pmatrix}
+ =K_j\begin{pmatrix}L\\M\\R\end{pmatrix},\qquad
+ K_j=\begin{pmatrix}
+ -a_j&b_j&0\\a_j&-(b_j+e_j)&0\\0&e_j&0
+ \end{pmatrix}.
+\end{equation}
+Il tasso $a_j$ mobilizza, $b_j$ riblocca, $e_j$ esporta.
+Sono non negativi e hanno dimensione tempo$^{-1}$.
+La somma $L+M+R$ si conserva e masse inizialmente non negative
+rimangono tali. L'assorbimento nello stato $R$ presuppone un
+allontanamento efficace: se il polimero resta nel bagno e torna
+sulla superficie, occorre aggiungere il comparto della
+Sezione~\ref{sec:transport}.
+
+Per due trattamenti D e T, con tempi $t_D,t_T$, l'ordine D poi T
+d\`a
+\begin{equation}\label{eq:ordered}
+ v_{DT}=e^{K_Tt_T}e^{K_Dt_D}v_0,
+ \qquad v=(L,M,R)^{\mathsf T}.
+\end{equation}
+I due esponenziali generalmente non commutano. Per tempi piccoli,
+la differenza di ordine parte da
+\begin{equation}\label{eq:commutator}
+ v_{DT}-v_{TD}=(K_TK_D-K_DK_T)v_0\,t_Dt_T+
+ O\bigl((t_D+t_T)^3\bigr).
+\end{equation}
+Questa \`e una ragione quantitativa per cui due solventi
+mediocri separatamente potrebbero essere complementari. Non
+assegniamo automaticamente a DMF il ruolo $a$ e a THF il ruolo
+$e$: sono proprio i ruoli da mettere alla prova.
+
+\subsection{Lo stesso IPA pu\`o aiutare o ostacolare}
+Consideriamo un caso esatto: nel passaggio P non vi \`e esportazione,
+ma $L\rightleftarrows M$ con tassi $a,b$; nel successivo G vi sono
+$M\to R$ a tasso $k$ e $M\to L$ a tasso $c$. Per tempi $t,u$,
+la massa esportata in pi\`u da P poi G rispetto a G poi P \`e
+\begin{equation}\label{eq:sign}
+ \Delta R=
+ \frac{k}{k+c}\bigl(1-e^{-(k+c)u}\bigr)
+ \bigl(1-e^{-(a+b)t}\bigr)
+ \frac{aL_0-bM_0}{a+b}.
+\end{equation}
+La formula vale per $a+b>0$ e $k+c>0$, con i casi nulli ottenuti
+per continuit\`a. Quando i prefattori sono positivi, il segno
+\`e quello di $aL_0-bM_0$.
+
+Se la superficie \`e soprattutto bloccata e P la mobilizza,
+il passaggio intermedio aiuta. Se il DMF ha gi\`a prodotto molta
+frazione $M$ e l'IPA la riblocca, lo stesso passaggio ostacola
+l'estrazione. Questa previsione \`e pi\`u precisa di ``l'IPA fa
+precipitare'' o ``l'IPA pulisce''. L'ordine inverso termina in
+un liquido diverso: la verifica deve misurare materiale esportato
+prima dell'asciugatura o imporre un passaggio finale comune.
+
+\subsection{Perch\'e la contrazione non \`e automaticamente un vantaggio}
+Un solvente meno favorevole pu\`o ridurre il volume occupato dalla
+catena, ma anche aumentare aggregazione e adesione alla superficie.
+Per rendere utile un ciclo occorrono due condizioni: una quota
+misurabile passi a uno stato pi\`u estraibile, e il liquido seguente
+la allontani prima che torni aderente. Una diminuzione dell'impronta
+AFM con aumento dell'altezza e volume conservato suggerisce
+riorganizzazione, non ancora rimozione. Il bagno seguente deve
+ridurre la massa o il volume con un riscontro chimico.
+
+\section{Calcoli eseguiti e loro conseguenze}
+\label{sec:sim}
+
+Abbiamo calcolato gli esponenziali dei generatori con una somma
+di matrici stocastiche, detta uniformizzazione, evitando tassi
+negativi o perdite artificiali di massa. Il programma allegato
+contiene parametri, formule, risultati e verifiche. Nessun
+parametro \`e stato adattato a immagini o misure di Armando.
+
+\subsection{Alternanze a tempi totali fissi}
+Dividendo in $N$ parti le stesse esposizioni complessive si ottiene
+\begin{equation}\label{eq:cycles}
+ v_N=\left(e^{K_TT_T/N}e^{K_DT_D/N}\right)^Nv_0.
+\end{equation}
+Non si confrontano quindi quattro cicli lunghi con un solo ciclo
+breve. Per $N\to\infty$,
+\begin{equation}\label{eq:trotter}
+ v_N\longrightarrow e^{K_TT_T+K_DT_D}v_0.
+\end{equation}
+Il modello mantiene memoria dello stato mobile fra le fasi.
+Un modello che lo azzeri a ogni cambio, anche infinitamente rapido,
+avrebbe un limite diverso e non sarebbe equivalente.
+
+La Figura~\ref{fig:cycles} confronta tre scenari adimensionali,
+con $T_D=T_T=1$, $v_0=(1,0,0)^{\mathsf T}$ e i tassi della
+Tabella~\ref{tab:rates}. Il tempo unitario \`e convenzionale:
+non significa un minuto o trenta minuti reali.
+
+\begin{table}[htbp]
+\caption{Tassi illustrativi $(a,b,e)$ usati nelle simulazioni.
+Non sono propriet\`a misurate di DMF o THF.}
+\label{tab:rates}\centering\small
+\begin{tabular}{@{}lcc@{}}\toprule
+Scenario & Trattamento D & Trattamento T\\\midrule
+Complementare &(2; 4; 0{,}02)&(0{,}02; 0{,}1; 4)\\
+Preparazione poi estrazione &(2; 0; 0)&(0; 0; 2)\\
+Tassi uguali &(0{,}4; 0{,}5; 0{,}3)&(0{,}4; 0{,}5; 0{,}3)\\\bottomrule
+\end{tabular}
+\end{table}
+
+Nel primo scenario il residuo scende da 0,6680 con una sequenza
+a 0,4478 con otto alternanze; a venti risale leggermente a 0,4519.
+Nel secondo scenario frammentare la preparazione peggiora la
+rimozione. Nel terzo non cambia nulla, come deve accadere con
+generatori identici. Questi numeri dimostrano possibilit\`a e limiti
+del modello, \emph{non} riduzioni previste per il campione.
+
+Un controesempio \`e anche analitico. Se D mobilizza senza ritorno,
+T estrae senza ritorno, e $aT_D=kT_T=w$, la frazione rimossa \`e
+\begin{equation}\label{eq:counterexample}
+ R_N=1-e^{-w}\left[1+N\bigl(1-e^{-w/N}\bigr)\right].
+\end{equation}
+Essa diminuisce all'aumentare di $N$: preparare tutta la frazione
+prima di estrarla \`e qui pi\`u efficace. Cercare un beneficio dei
+cicli senza includere questo caso negativo produrrebbe una teoria
+costruita per dare ragione alla proposta.
+
+% FIGURA_CICLI
+
+\section{Il solvente deve anche portare via il materiale}
+\label{sec:transport}
+
+\subsection{Bilancio fra superficie, strato vicino e bagno}
+Sia $\Gamma$ la massa accessibile per area, $I$ una frazione
+schermata, $c$ la concentrazione nel bagno, $c_s$ quella prossima
+alla superficie. Con $A$ area, $V$ volume, $Q$ portata di ricambio,
+poniamo
+\begin{align}
+ J&=k_d\Gamma-k_a c_s=k_m(c_s-c),\label{eq:flux}\\
+ J&=\lambda\Gamma-bc,\qquad
+ \lambda=\frac{k_d}{1+k_a/k_m},\quad
+ b=\frac{k_a}{1+k_a/k_m},\label{eq:effective}\\
+ \dot I&=-k_iI,\quad
+ \dot\Gamma=k_iI-J,\quad
+ V\dot c=AJ-Qc.\label{eq:balance}
+\end{align}
+Qui $k_d,k_i$ hanno unit\`a s$^{-1}$; $k_a,k_m$ m/s;
+$\Gamma,I$ kg/m$^2$; $c$ kg/m$^3$. Il fluido in entrata \`e
+assunto privo del polimero considerato. Si verifica
+\begin{equation}
+ \frac{d}{dt}\{A(\Gamma+I)+Vc\}=-Qc.
+\end{equation}
+Il modello assume regime diluito, risposta lineare e parametri
+costanti in ciascuna fase. Non rappresenta in dettaglio la forma
+delle particelle n\'e una rete reticolata.
+
+Con $h=V/A$, $\tau=\lambda t$, $x=\Gamma/\Gamma_0$,
+$y=hc/\Gamma_0$, $z=I/\Gamma_0$,
+\begin{equation}\label{eq:dimensionless}
+ x'=-x+\beta y+\varepsilon z,\quad
+ y'=x-(\beta+r)y,\quad z'=-\varepsilon z,
+\end{equation}
+dove $\beta=b/(h\lambda)$, $r=Q/(V\lambda)$ e
+$\varepsilon=k_i/\lambda$. $\beta$ misura la tendenza a
+ripartirsi tra superficie e bagno: \textbf{non \`e la saturazione
+del solvente rispetto alla solubilit\`a del PMMA massivo}.
+
+\subsection{Un limite che impedisce di promettere troppo al ricambio}
+Da $c,I\ge0$ segue
+\begin{equation}\label{eq:bound}
+ \Gamma(t)\ge\Gamma_0e^{-\lambda t},\qquad \lambda\le k_d.
+\end{equation}
+Anche un bagno perfettamente pulito non supera il distacco
+intrinseco nel modello. Un trasporto migliore aiuta quando limita
+il riadsorbimento; pu\`o essere quasi inutile se domina una
+barriera di distacco o una frazione inaccessibile.
+
+Per un bagno senza ricambio, inizialmente pulito e senza $I$,
+\begin{equation}\label{eq:static}
+ x(\tau)=\frac{\beta+e^{-(1+\beta)\tau}}{1+\beta}.
+\end{equation}
+Compare un plateau pur essendo tutto reversibile: osservare un
+plateau non prova una rete insolubile. La
+Figura~\ref{fig:transport} mostra come cambia l'andamento con $r$.
+
+% FIGURA_TRASPORTO
+
+\subsection{Ricambi a volume e tempo totali invariati}
+Nel caso senza frazione schermata, $I_0=0$, se si dividono
+$V_{\rm tot}$ e $t_{\rm tot}$ in $N$ bagni freschi
+uguali, mantenendo $\lambda$ invariato per ipotesi e ponendo
+$B=Ak_a/(V_{\rm tot}k_d)$, il residuo \`e
+\begin{equation}\label{eq:resource}
+ x_N=\left[\frac{NB+e^{-(1+NB)\tau_{\rm tot}/N}}{1+NB}\right]^N,
+ \quad \tau_{\rm tot}=\lambda t_{\rm tot}.
+\end{equation}
+Per $B>0$,
+\begin{equation}\label{eq:resource-limit}
+ \lim_{N\to\infty}x_N=
+ \exp\!\left[-\frac{1-e^{-B\tau_{\rm tot}}}{B}\right].
+\end{equation}
+Per $B=0$ il risultato \`e $e^{-\tau_{\rm tot}}$ per ogni $N$.
+Ad esempio, con $B=1$ e $\tau_{\rm tot}=5$, passare da uno a
+quattro bagni porta il residuo da 0,5000 a 0,4104; il limite
+di infiniti ricambi \`e 0,3704. Sono valori del modello.
+La formula non giustifica bagni arbitrariamente piccoli in
+laboratorio: cambiare geometria pu\`o cambiare $k_m$ e $\lambda$.
+
+\subsection{Un parametro fisico verificato, con un uso delimitato}
+Arai e collaboratori \cite{Arai1996} misurano
+$D=2{,}93\times10^{-11}\,\mathrm{m^2/s}$ per PMMA atattico
+di $M_w=9{,}52\times10^5$ in acetone a 25\,\degC.
+\`E la diffusione di catene gi\`a sciolte. Per distanze
+ipotetiche $\delta$ di 10, 100 e 1000\,\um,
+$\delta^2/D$ vale circa 3,4 secondi, 5,7 minuti e 9,5 ore.
+Questi ordini di grandezza mostrano il peso della geometria.
+Non determinano la diffusione in DMF/THF, il tempo di ingresso
+nel residuo, $k_d$, o uno spessore $\delta$ dai soli 500 rpm.
+
+\section{Una spiegazione dell'asciugatura che si pu\`o smentire}
+
+Se il liquido trattenuto sul campione all'uscita ha concentrazione
+massica $c_f$ e volume $V_f$, la massa che pu\`o depositare \`e
+limitata da
+\begin{equation}\label{eq:mass-bound}
+ M_{\rm dep}\le c_fV_f,\qquad
+ \Gamma_{\rm dep}\le c_fh_f,\quad h_f=V_f/A.
+\end{equation}
+Per uno spessore equivalente e densit\`a $\rho$,
+\begin{equation}\label{eq:units}
+ t_{\rm eq}[\mathrm{nm}]\le
+ \frac{0{,}001\;c_f[\mathrm{mg/L}]\;h_f[\mu\mathrm m]}
+ {\rho[\mathrm{g/cm^3}]}.
+\end{equation}
+L'esempio $c_f=1$ mg/L, $h_f=10$\,\um\ e densit\`a
+assunta 1,18 g/cm$^3$ d\`a al massimo 0,0085 nm medi.
+Per spiegare 0,5 nm medi, con quello stesso film, servirebbero
+almeno 59 mg/L. Non sono misure di questo campione.
+
+Per usare il limite occorre delimitare la concentrazione
+\emph{locale} del liquido trascinato: la media di un bagno grande
+pu\`o sottostimarla. Il confronto va fatto su massa e area
+complessive; l'evaporazione pu\`o concentrare il materiale in
+isole alte. Il limite esclude soltanto il deposito proveniente
+dall'ultimo film liquido, non il riadsorbimento avvenuto durante
+tutto il bagno.
+
+Questa misura decide se valga la pena ottimizzare l'asciugatura.
+Se perfino il massimo materiale trascinabile \`e insufficiente,
+``\`e tutto un deposito finale'' non spiega il residuo.
+Se \`e sufficiente, il meccanismo rimane possibile ma non provato.
+
+\section{Il programma sperimentale proposto}
+\label{sec:experiment}
+
+\subsection{Prima prova: separare i due passaggi IPA}
+Si usano campioni gemelli dello stesso trasferimento e la stessa
+temperatura del procedimento di Armando, da registrare. Ogni
+numero della Tabella~\ref{tab:factorial} \`e un bagno distinto;
+i bagni sostitutivi sono freschi. Volume, geometria, agitazione,
+intervallo di trasferimento e getto di azoto devono essere
+uguali. Non si lasciano asciugare i campioni fra due bagni.
+R riproduce la sequenza riferita con freschezza dei bagni
+standardizzata; non sappiamo se questo dettaglio coincida con
+le prove gi\`a eseguite da Armando.
+
+\begin{table}[htbp]
+\caption{Quattro percorsi da 76 minuti. ``5+3'' significa due
+bagni freschi distinti. Nessun risultato \`e ancora acquisito.}
+\label{tab:factorial}\centering\small
+\begin{tabular}{@{}lcccc@{}}\toprule
+Gruppo & Primo & Intermedio & Secondo & Finale\\\midrule
+R, riferimento &DMF 30&IPA 5+3&THF 30&IPA 5+3\\
+I, cambia intermedio &DMF 30&DMF 5+3&THF 30&IPA 5+3\\
+F, cambia finale &DMF 30&IPA 5+3&THF 30&THF 5+3\\
+IF, cambia entrambi &DMF 30&DMF 5+3&THF 30&THF 5+3\\\bottomrule
+\end{tabular}
+\end{table}
+
+Le varianti I e IF costituiscono il primo tentativo concreto di
+evitare un eventuale riblocco prima dell'estrazione in THF.
+Il confronto I contro R e IF contro F misura la sostituzione
+intermedia nei due contesti. F contro R e IF contro I studia
+il passaggio finale, che cambia anche evaporazione e forze
+capillari. Nessuna di queste differenze va chiamata automaticamente
+``precipitazione''.
+
+Si raccoglie separatamente il liquido dopo DMF, dopo ciascun IPA
+e dopo THF. Su aliquote dell'eluato reale, fuori dal campione,
+si verifica l'eventuale comparsa di particelle durante l'aggiunta
+di IPA, usando bianchi e PMMA/PPC dello stesso lotto. Si cerca
+anche se il materiale torna solubile reintroducendo il liquido
+di partenza. L'esito pu\`o motivare un percorso di scambio
+graduale, ma non fissa un rapporto ottimale senza misure.
+
+Un esito negativo della prova di torbidit\`a non esclude
+aggregati molto piccoli o nucleazione selettiva sulla superficie.
+Un bianco di solo \SiO\ non riproduce tutte le propriet\`a
+del grafene: serve anche, se disponibile, un testimone grafenico
+pulito sottoposto al medesimo eluato.
+
+\subsection{Seconda prova: sfruttare un'eventuale mobilizzazione reversibile}
+Se l'IPA intermedio \`e utile, oppure se si osserva riorganizzazione
+seguita da esportazione nel THF, si prova la
+Tabella~\ref{tab:cycles}. L'ipotesi \`e estrarre presto la
+frazione mobile prima che ritorni aderente.
+
+\begin{table}[htbp]
+\caption{Confronto fra blocchi e alternanze, entrambi da 76 minuti:
+30 minuti DMF, 16 IPA, 30 THF. Stesso numero di bagni freschi,
+stesso liquido finale. Il riferimento R va misurato separatamente.}
+\label{tab:cycles}\centering\small
+\begin{tabular}{@{}p{0.14\textwidth}p{0.77\textwidth}@{}}\toprule
+Percorso & Sequenza\\\midrule
+Blocchi & DMF 30; quattro bagni IPA da 4 minuti;
+quattro bagni THF da 7,5 minuti; azoto.\\[4pt]
+Alternato & DMF 30; quattro ripetizioni di IPA 4 minuti
+seguito da THF 7,5 minuti; azoto.\\\bottomrule
+\end{tabular}
+\end{table}
+
+Non \`e un invito a moltiplicare indiscriminatamente i bagni.
+Le due varianti hanno nove bagni ciascuna, incluso il DMF
+iniziale, e terminano entrambe nel THF. Il confronto tiene
+fissi il tempo complessivo in ogni liquido e il numero di
+manipolazioni; l'ordine resta la variabile. Per ciascuna coppia
+si usano volumi, recipienti e modalit\`a di ricambio identici.
+
+Il materiale esportato nei singoli bagni \`e il primo esito
+da confrontare, insieme alla superficie conservata. Se
+l'alternanza migliora solo l'immagine finale ma non le altre
+misure, non \`e ancora l'amplificazione del meccanismo proposto.
+La ricerca di una durata ottimale dei cicli ha senso soltanto
+dopo un segnale replicato a tempi totali uguali.
+
+\subsection{Una previsione geometrica aggiuntiva}
+Se domina una rimozione dal bordo di isole isolate e di altezza
+costante, con velocit\`a $v$, allora
+\begin{equation}\label{eq:edge}
+ r(t)=\max(r_0-vt,0),\qquad
+ \frac{M(t)}{M_0}=\left[\max\left(1-\frac{vt}{r_0},0\right)\right]^2.
+\end{equation}
+Il tempo di sparizione cresce come $r_0$. Una rimozione
+volumetrica di primo ordine prevede invece lo stesso tempo
+di riduzione frazionale per tutte le dimensioni. Si seguono
+quindi anche raggio, altezza e volume delle stesse isole.
+Una dipendenza dal raggio non dimostra da sola il meccanismo
+di bordo: diffusione, eterogeneit\`a e coalescenza vanno distinti.
+
+\section{Le misure che decidono la riuscita}
+
+\subsection{Identit\`a: un controllo breve prima di inseguire altri liquidi}
+Si confrontano residuo persistente, eluati e riferimenti PMMA,
+PPC e loro sovrapposizione, trattati con la stessa storia.
+Se il riferimento libero si dissolve ma il residuo sul grafene
+resta, diventa plausibile una barriera interfaciale. Se persiste
+anche il riferimento privo di grafene, occorre verificare
+alterazione, reticolazione o materiale diverso. I 90\,\degC\
+per due minuti, da soli, non provano carbonizzazione.
+
+Un singolo picco carbonilico XPS non separa PMMA e PPC.
+Si usano firme complete e, se la quantit\`a lo consente,
+spettroscopia infrarossa locale o frammenti ToF-SIMS confrontati
+con riferimenti. Le analisi distruttive richiedono gemelli
+dedicati. I materiali ausiliari, come PDMS o adesivi, entrano
+nei controlli soltanto se sono effettivamente usati. Il segnale
+globale di silicio su \SiO\ non identifica un residuo siliconico.
+
+Per studiare un'eventuale modifica chimica si analizzano anche
+riferimenti esposti ai bagni. La perdita della firma dell'estere
+pu\`o indicare trasformazione senza asportazione. La cromatografia
+dimensionale del materiale estratto, se misurabile, riguarda la
+frazione solubile e non esclude una rete insolubile rimasta sul
+campione. Nessun singolo strumento chiude da solo il bilancio.
+
+\subsection{Morfologia, integrit\`a e limite di rivelabilit\`a}
+Si misurano copertura, volume apparente per area e firma chimica,
+non soltanto rugosit\`a. Una pellicola uniforme pu\`o essere
+liscia e ancora presente. Le stesse aree vengono registrate
+prima e dopo, insieme ad aree casuali e campioni non
+prescansionati. La punta AFM non deve diventare l'agente di
+pulizia; in liquido si confrontano campioni nello stesso mezzo.
+
+La rimozione va calcolata sull'intersezione delle regioni dove
+il grafene \`e presente prima e dopo. Le regioni asportate
+sono danno, non superficie pulita. Mappa Raman, fori,
+delaminazioni e substrati testimone controllano l'integrit\`a.
+Mobilit\`a, resistenza di contatto e drogaggio restano esiti
+separati dalla quantit\`a di polimero.
+
+Come primo obiettivo progettuale si pu\`o fissare una riduzione
+del 90\% di copertura e volume residuo, con diminuzione
+chimica coerente e almeno 99\% dell'area di grafene conservata.
+Non sono risultati ottenuti n\'e standard universali. Per la
+scommessa occorre concordare prima se basta tale miglioramento
+oppure se si richiede residuo non rilevato a un limite dichiarato.
+Quest'ultimo richiede calibrazione della sensibilit\`a e non
+equivale ad assenza assoluta di ogni molecola.
+
+Una prima esplorazione pu\`o usare un trasferimento suddiviso
+fra condizioni; la conferma deve coinvolgere trasferimenti
+indipendenti, inizialmente almeno tre e poi un numero adeguato
+alla variabilit\`a osservata. I pixel e le immagini dello
+stesso campione non sono repliche indipendenti. Si riportano
+tutte le condizioni, incluse quelle che non migliorano.
+
+\section{Decisione scientifica e prossimo risultato da cercare}
+
+La nuova proposta consiste nel \emph{modificare l'ordine e la
+tempistica di una sequenza gi\`a parzialmente attiva}, controllando
+quando il residuo diventa estraibile e quando torna aderente.
+Il risultato teorico \`e che questo effetto \`e possibile, ha
+condizioni di segno e pu\`o essere distinto da una semplice
+somma di tempi in solventi. Le simulazioni escludono una
+promessa generale di efficacia dei cicli.
+
+Se I migliora rispetto a R senza danno, il primo progresso
+operativo \`e una sequenza DMF--THF senza IPA intermedio.
+Se l'IPA \`e utile e il confronto alternato supera quello
+a blocchi, il progresso \`e un'estrazione a cicli da ottimizzare
+con un bilancio di massa. Se la massa trascinabile non pu\`o
+spiegare il residuo, l'asciugatura perde priorit\`a. Se il
+residuo ha un'identit\`a diversa, il bersaglio chimico va
+corretto prima di scegliere altri reagenti.
+
+Nessuna di queste conclusioni \`e stata ancora osservata sul
+campione di Armando. Il contributo qui ottenuto \`e una teoria
+con previsioni controllabili, calcoli riproducibili e due
+interventi nuovi rispetto ai tentativi riferiti. Non viene
+rivendicata priorit\`a scientifica della strategia o risoluzione
+sperimentale del problema.
+
+\appendix
+\section{Verifica dei calcoli e riproduzione}
+
+Il programma \texttt{model\_cleaning.py} richiede Python e NumPy.
+Il comando
+\begin{center}
+\texttt{python model\_cleaning.py --out-dir risultati}
+\end{center}
+genera \texttt{risultati.json} e le coordinate dei grafici
+in \texttt{figure-incorporate.tex}. I grafici di questo
+documento contengono direttamente tali coordinate e non
+dipendono da immagini esterne.
+
+Sono stati controllati 540 casi del modello di trasporto
+(6 valori di $\beta$, 6 di $r$, 3 di $\varepsilon$ e 5 tempi).
+L'errore massimo di conservazione della matrice di transizione
+\`e $7{,}8\times10^{-14}$; lo scarto dalla soluzione analitica
+del bagno senza ricambio \`e $2{,}0\times10^{-14}$.
+Il minimo elemento delle matrici \`e zero. Sono inoltre
+verificati il limite di estrazione ideale, la catena
+irreversibile $L\to M\to R$, l'invarianza quando i due
+generatori coincidono e il limite dei ricambi a risorse fisse.
+Un'integrazione indipendente a passi piccoli conferma
+l'evoluzione anche con popolazione inizialmente schermata,
+con scarto inferiore a $10^{-12}$ nei casi confrontati.
+
+Questi controlli attestano la soluzione delle equazioni
+implementate. Non attestano che le equazioni descrivano
+correttamente il residuo reale. Le costanti $a,b,e$, $k_d$,
+$k_a$, $k_m$ e la frazione inaccessibile restano da identificare
+con esperimenti. Non \`e stata eseguita una simulazione
+atomistica del sistema PMMA950K/PPC/grafene/\SiO\ nei
+solventi effettivi.
+
+\section{Derivazioni brevi dei limiti usati}
+
+Per la formula~\eqref{eq:sign}, durante P la massa mobile
+varia di
+\[
+ M(t)-M_0=\frac{aL_0-bM_0}{a+b}
+                 (1-e^{-(a+b)t}).
+\]
+Durante G viene esportata la frazione
+$k(1-e^{-(k+c)u})/(k+c)$ della massa mobile iniziale.
+Il prodotto d\`a la differenza fra i due ordini.
+
+Per~\eqref{eq:resource}, in ogni bagno la quantit\`a
+$\beta$ diventa $NB$ e il tempo $\tau_{\rm tot}/N$.
+Si applica~\eqref{eq:static} e si moltiplicano i fattori
+perch\'e ogni nuovo bagno riparte pulito. Il logaritmo del
+fattore \`e asintotico a
+$-(1-e^{-B\tau_{\rm tot}})/(NB)$, da cui
+\eqref{eq:resource-limit}. Lasciare un bagno carico non
+equivale a questo azzeramento della concentrazione.
+
+Per~\eqref{eq:counterexample}, in ciascuna fase D la massa
+$L$ si moltiplica per $e^{-w/N}$; nella fase T accade
+lo stesso a $M$. Sommando le quote mobilizzate nei vari
+stadi si ottiene la formula. La funzione
+$N(1-e^{-w/N})$ cresce strettamente: ponendo $x=w/N>0$,
+la sua derivata \`e $1-(1+x)e^{-x}>0$.
+Quindi in questo caso la rimozione peggiora con pi\`u cicli.
+
+'''
+
+figures=(root/'work/model/figure-incorporate.tex').read_text()
+transport,cycles=figures.split(r'\end{figure}',1)
+transport+=r'\end{figure}'
+cycles=cycles.strip()
+body=body.replace('% FIGURA_CICLI',cycles).replace('% FIGURA_TRASPORTO',transport)
+
+bib=r'''
+\begin{thebibliography}{99}
+\bibitem{Allresist}
+Allresist GmbH, \emph{AR-P 630--670: PMMA-Resists}, scheda tecnica,
+serie AR-P 672, prodotto 672.045.
+\href{https://www.allresist.de/wp-content/uploads/2020/03/AR-P630-670_Deutsch_Allresist_Produktinformation.pdf}{Scheda del produttore}.
+
+\bibitem{Tyagi2022}
+A. Tyagi, V. Mi\v{s}eikis, L. Martini et al.,
+\emph{Ultra-clean high-mobility graphene on technologically relevant substrates},
+Nanoscale \textbf{14} (2022), 2167--2176.
+\href{https://doi.org/10.1039/D1NR05904A}{doi:10.1039/D1NR05904A}.
+\href{https://www.rsc.org/suppdata/d1/nr/d1nr05904a/d1nr05904a1.pdf}{Supplemento consultato}.
+
+\bibitem{Xiao2019}
+Z. Xiao, Q. Wan e C. Durkan,
+\emph{Cleaning Transferred Graphene for Optimization of Device Performance},
+Advanced Materials Interfaces \textbf{6} (2019), 1801794.
+\href{https://doi.org/10.1002/admi.201801794}{doi:10.1002/admi.201801794}.
+\href{https://www.repository.cam.ac.uk/handle/1810/291256}{Manoscritto degli autori consultato}.
+
+\bibitem{Manjkow1987}
+J. Manjkow, J. S. Papanu, D. S. Soong, D. W. Hess e A. T. Bell,
+\emph{An in situ study of dissolution and swelling behavior of
+poly-(methyl methacrylate) thin films in solvent/nonsolvent binary mixtures},
+Journal of Applied Physics \textbf{62} (1987), 682--688.
+\href{https://doi.org/10.1063/1.339742}{doi:10.1063/1.339742}.
+Consultato il riassunto primario, non il testo integrale.
+
+\bibitem{Rooks2002}
+M. J. Rooks et al., \emph{Low stress development of poly(methylmethacrylate)
+for high aspect ratio structures}, Journal of Vacuum Science \& Technology B
+\textbf{20} (2002), 2937--2941.
+\href{https://doi.org/10.1116/1.1524971}{doi:10.1116/1.1524971}.
+\href{https://nano.yale.edu/sites/default/files/files/pmma_develop_ipa_water.pdf}{Testo consultato}.
+
+\bibitem{Huston2020}
+K. J. Huston, C. E. Rice e R. G. Larson,
+\emph{Forward Flux Sampling of Polymer Desorption Paths from a Solid Surface
+into Dilute Solution}, Polymers \textbf{12} (2020), 2275.
+\href{https://doi.org/10.3390/polym12102275}{doi:10.3390/polym12102275}.
+
+\bibitem{Ayodele2022}
+O. O. Ayodele, S. Pourianejad, A. Trofe, A. Prokofjevs e T. Ignatova,
+\emph{Application of Soxhlet Extractor for Ultra-clean Graphene Transfer},
+ACS Omega \textbf{7} (2022), 7297--7303.
+\href{https://doi.org/10.1021/acsomega.1c07113}{doi:10.1021/acsomega.1c07113}.
+
+\bibitem{Tang2025}
+Z. Tang et al., \emph{A Closed-Loop Solvent Recycling Device for Polymer
+Removal in Graphene Transfer Process}, Separations \textbf{12} (2025), 295.
+\href{https://doi.org/10.3390/separations12110295}{doi:10.3390/separations12110295}.
+
+\bibitem{Duan2022}
+T. Duan, H. Li, R. Papadakis e K. Leifer,
+\emph{Towards ballistic transport CVD graphene by controlled removal of
+polymer residues}, Nanotechnology \textbf{33} (2022), 495704.
+\href{https://doi.org/10.1088/1361-6528/ac8d9b}{doi:10.1088/1361-6528/ac8d9b}.
+
+\bibitem{Merino2024}
+J. P. Merino, S. Brosel-Oliu, G. Rius et al.,
+\emph{Ethanol Solvation of Polymer Residues in Graphene Solution-Gated
+Field Effect Transistors}, ACS Sustainable Chemistry \& Engineering
+\textbf{12} (2024), 9133--9143.
+\href{https://doi.org/10.1021/acssuschemeng.4c01538}{doi:10.1021/acssuschemeng.4c01538}.
+
+\bibitem{Suk2013}
+J. W. Suk et al., \emph{Enhancement of the Electrical Properties of Graphene
+Grown by Chemical Vapor Deposition via Controlling the Effects of Polymer Residue},
+Nano Letters \textbf{13} (2013), 1462--1467.
+\href{https://doi.org/10.1021/nl304420b}{doi:10.1021/nl304420b}.
+
+\bibitem{Schoenemann2018}
+E. Sch\"onemann, A. Laschewsky e A. Rosenhahn,
+\emph{Exploring the Long-Term Hydrolytic Behavior of Zwitterionic
+Polymethacrylates and Polymethacrylamides}, Polymers \textbf{10} (2018), 639.
+\href{https://doi.org/10.3390/polym10060639}{doi:10.3390/polym10060639}.
+
+\bibitem{Jung2006}
+J. H. Jung, M. Ree e H. Kim,
+\emph{Acid- and base-catalyzed hydrolyses of aliphatic polycarbonates and
+polyesters}, Catalysis Today \textbf{115} (2006), 283--287.
+\href{https://doi.org/10.1016/j.cattod.2006.02.060}{doi:10.1016/j.cattod.2006.02.060}.
+Consultati riassunto e passaggio metodologico accessibile.
+
+\bibitem{Wang2017}
+X. Wang et al., \emph{Direct Observation of Poly(Methyl Methacrylate)
+Removal from a Graphene Surface}, Chemistry of Materials
+\textbf{29} (2017), 2033--2039.
+\href{https://doi.org/10.1021/acs.chemmater.6b03875}{doi:10.1021/acs.chemmater.6b03875}.
+
+\bibitem{Schwartz2019}
+J. J. Schwartz et al., \emph{Chemical Identification of Interlayer
+Contaminants within van der Waals Heterostructures},
+ACS Applied Materials \& Interfaces \textbf{11} (2019), 25578--25585.
+\href{https://doi.org/10.1021/acsami.9b06594}{doi:10.1021/acsami.9b06594}.
+
+\bibitem{Arai1996}
+T. Arai, N. Sawatari, T. Yoshizaki, Y. Einaga e H. Yamakawa,
+\emph{Excluded-Volume Effects on the Hydrodynamic Radius of Atactic and
+Isotactic Oligo- and Poly(methyl methacrylate)s in Dilute Solution},
+Macromolecules \textbf{29} (1996), 2309--2314.
+\href{https://doi.org/10.1021/ma951274n}{doi:10.1021/ma951274n}.
+Parametro impiegato dalla Tabella 3.
+\end{thebibliography}
+\end{document}
+'''
+(root/'outputs/pulizia-grafene-pmma-ppc.tex').write_text(preamble+body+bib)
+print('Documento aggiornato:',len((preamble+body+bib).split()),'parole LaTeX incluse')

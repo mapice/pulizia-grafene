@@ -1,0 +1,14 @@
+{
+  "solvent": "DMF",
+  "polymer_n": 4,
+  "center_nm": 1.35,
+  "k_kJ_mol_nm2": 2000,
+  "run_ps": 125,
+  "discard_ps": 25,
+  "coordinate_mean_nm": 1.3527156343656344,
+  "coordinate_sd_nm": 0.03519513953339868,
+  "reported_pull_force_mean_kJ_mol_nm": -5.431423397832168,
+  "independently_reconstructed_spring_force_kJ_mol_nm": -5.431268731268535,
+  "elapsed_seconds": 301.97641970799305,
+  "scope": "Single short biased window; not a converged free-energy profile or actual cleaning."
+}

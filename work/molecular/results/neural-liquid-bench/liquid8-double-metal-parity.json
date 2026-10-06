@@ -1,0 +1,8 @@
+{
+  "scope": "Periodic dilute 96-atom numerical control against original CPU64; not liquid equilibrium",
+  "energy_difference_eV": 1.2870892098781894e-05,
+  "force_RMS_eV_A": 1.3637184109427509e-05,
+  "force_relative_RMS": 1.5020069547500863e-05,
+  "force_max_eV_A": 7.035969232253164e-05,
+  "stress_max_eV_A3": 7.594002719084163e-09
+}

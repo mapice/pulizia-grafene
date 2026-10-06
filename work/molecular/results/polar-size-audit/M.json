@@ -1,0 +1,575 @@
+{
+  "model": "MACE-POLAR-1-M",
+  "model_sha256": "fab8b8713c832f31a2a853aaa22fd638be8a369cbf5095e6b3e982a18d10e93a",
+  "electronic_input": "neutral charge, singlet multiplicity1; verified total_spin-1 in the installed official caller",
+  "field_scope": "Static electronic response at fixed nuclei, not bulk dielectric response",
+  "fixed_gas_rotor_scope": "Only the OH hydrogen is rotated; no solution torsional PMF",
+  "response_checks": [
+    {
+      "molecule": "HFIP",
+      "zero": {
+        "energy_eV": -21496.584257518894,
+        "field_argument_V_A": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "density_dipole_eA": [
+          -0.05180300427536541,
+          0.10549668090415729,
+          -0.08418259734996116
+        ],
+        "total_charge_e": 1.734723475976807e-17
+      },
+      "axes": [
+        {
+          "axis": 0,
+          "step_V_A": 0.01,
+          "alpha_diagonal_eA2_V": 0.5650748789776117,
+          "energy_derivative_eA": -0.048554026943747886,
+          "plus": {
+            "energy_eV": -21496.584771312908,
+            "field_argument_V_A": [
+              0.01,
+              0.0,
+              0.0
+            ],
+            "density_dipole_eA": [
+              -0.055281892204524875,
+              0.10557237844260597,
+              -0.08405843689016
+            ],
+            "total_charge_e": 1.0408340855860843e-17
+          },
+          "minus": {
+            "energy_eV": -21496.58380023237,
+            "field_argument_V_A": [
+              -0.01,
+              -0.0,
+              -0.0
+            ],
+            "density_dipole_eA": [
+              -0.04832397979759022,
+              0.1054210927183478,
+              -0.08430715599140867
+            ],
+            "total_charge_e": 1.734723475976807e-17
+          }
+        },
+        {
+          "axis": 1,
+          "step_V_A": 0.01,
+          "alpha_diagonal_eA2_V": 0.579996412852779,
+          "energy_derivative_eA": 0.09839070207817713,
+          "plus": {
+            "energy_eV": -21496.583302611696,
+            "field_argument_V_A": [
+              0.0,
+              0.01,
+              0.0
+            ],
+            "density_dipole_eA": [
+              -0.05172848237774992,
+              0.1018589455788097,
+              -0.08446543982600309
+            ],
+            "total_charge_e": -5.551115123125783e-17
+          },
+          "minus": {
+            "energy_eV": -21496.585270425738,
+            "field_argument_V_A": [
+              -0.0,
+              -0.01,
+              -0.0
+            ],
+            "density_dipole_eA": [
+              -0.05187791101089845,
+              0.10913472656561558,
+              -0.08390100801457862
+            ],
+            "total_charge_e": 2.42861286636753e-17
+          }
+        },
+        {
+          "axis": 2,
+          "step_V_A": 0.01,
+          "alpha_diagonal_eA2_V": 0.4947355773765594,
+          "energy_derivative_eA": -0.08013251299416879,
+          "plus": {
+            "energy_eV": -21496.585083580805,
+            "field_argument_V_A": [
+              0.0,
+              0.0,
+              0.01
+            ],
+            "density_dipole_eA": [
+              -0.05169044921401106,
+              0.1052400140053009,
+              -0.08774823141794472
+            ],
+            "total_charge_e": -2.42861286636753e-17
+          },
+          "minus": {
+            "energy_eV": -21496.583480930545,
+            "field_argument_V_A": [
+              -0.0,
+              -0.0,
+              -0.01
+            ],
+            "density_dipole_eA": [
+              -0.05191583586094921,
+              0.1057539553518806,
+              -0.08061648481954581
+            ],
+            "total_charge_e": -2.7755575615628914e-17
+          }
+        }
+      ],
+      "translation_energy_difference_eV": 0.0,
+      "all_diagonal_curvatures_positive": true
+    },
+    {
+      "molecule": "DMF",
+      "zero": {
+        "energy_eV": -6762.08082738467,
+        "field_argument_V_A": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "density_dipole_eA": [
+          -0.15336451026821316,
+          0.8217444369268161,
+          -0.17164230693006058
+        ],
+        "total_charge_e": 5.204170427930421e-18
+      },
+      "axes": [
+        {
+          "axis": 0,
+          "step_V_A": 0.01,
+          "alpha_diagonal_eA2_V": 0.6562106682395097,
+          "energy_derivative_eA": -0.14868778434902197,
+          "plus": {
+            "energy_eV": -6762.082347073047,
+            "field_argument_V_A": [
+              0.01,
+              0.0,
+              0.0
+            ],
+            "density_dipole_eA": [
+              -0.15756881021572697,
+              0.8216764912108201,
+              -0.171701344812419
+            ],
+            "total_charge_e": 5.551115123125783e-17
+          },
+          "minus": {
+            "energy_eV": -6762.07937331736,
+            "field_argument_V_A": [
+              -0.01,
+              -0.0,
+              -0.0
+            ],
+            "density_dipole_eA": [
+              -0.1491585804807592,
+              0.8218148879278435,
+              -0.17158367614841946
+            ],
+            "total_charge_e": -1.457167719820518e-16
+          }
+        },
+        {
+          "axis": 1,
+          "step_V_A": 0.01,
+          "alpha_diagonal_eA2_V": 0.7120823465811554,
+          "energy_derivative_eA": 0.8269915650544135,
+          "plus": {
+            "energy_eV": -6762.072593073137,
+            "field_argument_V_A": [
+              0.0,
+              0.01,
+              0.0
+            ],
+            "density_dipole_eA": [
+              -0.15347457384373175,
+              0.8172249400747451,
+              -0.17122464929788123
+            ],
+            "total_charge_e": 1.214306433183765e-17
+          },
+          "minus": {
+            "energy_eV": -6762.089132904438,
+            "field_argument_V_A": [
+              -0.0,
+              -0.01,
+              -0.0
+            ],
+            "density_dipole_eA": [
+              -0.15325290682856638,
+              0.8262644208603926,
+              -0.17206056383920815
+            ],
+            "total_charge_e": 5.377642775528102e-17
+          }
+        },
+        {
+          "axis": 2,
+          "step_V_A": 0.01,
+          "alpha_diagonal_eA2_V": 0.3563062273315154,
+          "energy_derivative_eA": -0.17252416882911348,
+          "plus": {
+            "energy_eV": -6762.082570441669,
+            "field_argument_V_A": [
+              0.0,
+              0.0,
+              0.01
+            ],
+            "density_dipole_eA": [
+              -0.15341456413379384,
+              0.8221658046888077,
+              -0.1741478981893521
+            ],
+            "total_charge_e": 5.898059818321144e-17
+          },
+          "minus": {
+            "energy_eV": -6762.079119958293,
+            "field_argument_V_A": [
+              -0.0,
+              -0.0,
+              -0.01
+            ],
+            "density_dipole_eA": [
+              -0.15331347654713787,
+              0.821325334502985,
+              -0.16913663839158685
+            ],
+            "total_charge_e": -3.642919299551295e-17
+          }
+        }
+      ],
+      "translation_energy_difference_eV": -9.094947017729282e-13,
+      "all_diagonal_curvatures_positive": true
+    },
+    {
+      "molecule": "THF",
+      "zero": {
+        "energy_eV": -6324.7305329967385,
+        "field_argument_V_A": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "density_dipole_eA": [
+          -0.05855023403093308,
+          0.370002488185208,
+          0.10407728910581898
+        ],
+        "total_charge_e": -2.949029909160572e-17
+      },
+      "axes": [
+        {
+          "axis": 0,
+          "step_V_A": 0.01,
+          "alpha_diagonal_eA2_V": 0.7065745739964768,
+          "energy_derivative_eA": -0.0565816965263366,
+          "plus": {
+            "energy_eV": -6324.731134142432,
+            "field_argument_V_A": [
+              0.01,
+              0.0,
+              0.0
+            ],
+            "density_dipole_eA": [
+              -0.06307376405943557,
+              0.36989300387054863,
+              0.10401142508655177
+            ],
+            "total_charge_e": 3.2959746043559335e-17
+          },
+          "minus": {
+            "energy_eV": -6324.7300025085015,
+            "field_argument_V_A": [
+              -0.01,
+              -0.0,
+              -0.0
+            ],
+            "density_dipole_eA": [
+              -0.054026666030478614,
+              0.3701123479237944,
+              0.10414354363307325
+            ],
+            "total_charge_e": 2.42861286636753e-17
+          }
+        },
+        {
+          "axis": 1,
+          "step_V_A": 0.01,
+          "alpha_diagonal_eA2_V": 0.595407145738136,
+          "energy_derivative_eA": 0.3584837617836456,
+          "plus": {
+            "energy_eV": -6324.7269779294775,
+            "field_argument_V_A": [
+              0.0,
+              0.01,
+              0.0
+            ],
+            "density_dipole_eA": [
+              -0.05864958312702083,
+              0.3662289488838577,
+              0.10425423761984379
+            ],
+            "total_charge_e": 1.0408340855860843e-17
+          },
+          "minus": {
+            "energy_eV": -6324.734147604713,
+            "field_argument_V_A": [
+              -0.0,
+              -0.01,
+              -0.0
+            ],
+            "density_dipole_eA": [
+              -0.05845147463429274,
+              0.3737793767654374,
+              0.10390012207404575
+            ],
+            "total_charge_e": 2.0816681711721685e-17
+          }
+        },
+        {
+          "axis": 2,
+          "step_V_A": 0.01,
+          "alpha_diagonal_eA2_V": 0.6122708327893633,
+          "energy_derivative_eA": 0.10094353710883297,
+          "plus": {
+            "energy_eV": -6324.729554174909,
+            "field_argument_V_A": [
+              0.0,
+              0.0,
+              0.01
+            ],
+            "density_dipole_eA": [
+              -0.05865344547454578,
+              0.37017437784124985,
+              0.0997025691241589
+            ],
+            "total_charge_e": 6.938893903907228e-18
+          },
+          "minus": {
+            "energy_eV": -6324.731573045651,
+            "field_argument_V_A": [
+              -0.0,
+              -0.0,
+              -0.01
+            ],
+            "density_dipole_eA": [
+              -0.05844721164355568,
+              0.36983164436500116,
+              0.10845330035065122
+            ],
+            "total_charge_e": 5.204170427930421e-18
+          }
+        }
+      ],
+      "translation_energy_difference_eV": 9.094947017729282e-13,
+      "all_diagonal_curvatures_positive": true
+    }
+  ],
+  "rotor": [
+    {
+      "angle_degree": -180,
+      "energy_eV": -21496.584257518844,
+      "field_argument_V_A": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "density_dipole_eA": [
+        -0.05180260173834793,
+        0.1054968666328305,
+        -0.0841826146700472
+      ],
+      "total_charge_e": -4.163336342344337e-17,
+      "relative_energy_kJ_mol": 0.0
+    },
+    {
+      "angle_degree": -150,
+      "energy_eV": -21496.538116237265,
+      "field_argument_V_A": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "density_dipole_eA": [
+        0.09589049652621724,
+        0.16692398001869505,
+        -0.12260177207550112
+      ],
+      "total_charge_e": -3.469446951953614e-18,
+      "relative_energy_kJ_mol": 4.451956877692126
+    },
+    {
+      "angle_degree": -120,
+      "energy_eV": -21496.45559487624,
+      "field_argument_V_A": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "density_dipole_eA": [
+        0.19606368701720078,
+        0.1989679340245057,
+        -0.221578232970035
+      ],
+      "total_charge_e": -1.0408340855860843e-17,
+      "relative_energy_kJ_mol": 12.414057803553513
+    },
+    {
+      "angle_degree": -90,
+      "energy_eV": -21496.437655761434,
+      "field_argument_V_A": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "density_dipole_eA": [
+        0.22548083360406387,
+        0.1971206790769578,
+        -0.3610874475031395
+      ],
+      "total_charge_e": -3.122502256758253e-17,
+      "relative_energy_kJ_mol": 14.144919253502637
+    },
+    {
+      "angle_degree": -60,
+      "energy_eV": -21496.455201259792,
+      "field_argument_V_A": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "density_dipole_eA": [
+        0.17701433352669066,
+        0.16741747717934383,
+        -0.5085043420659443
+      ],
+      "total_charge_e": 2.7755575615628914e-17,
+      "relative_energy_kJ_mol": 12.452036017139879
+    },
+    {
+      "angle_degree": -30,
+      "energy_eV": -21496.455375158366,
+      "field_argument_V_A": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "density_dipole_eA": [
+        0.07119815338014936,
+        0.11908498978295265,
+        -0.6231063268986112
+      ],
+      "total_charge_e": -3.469446951953614e-17,
+      "relative_energy_kJ_mol": 12.435257355486344
+    },
+    {
+      "angle_degree": 0,
+      "energy_eV": -21496.44851173796,
+      "field_argument_V_A": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "density_dipole_eA": [
+        -0.0560497094094355,
+        0.061763473993169116,
+        -0.663003223985147
+      ],
+      "total_charge_e": 1.214306433183765e-17,
+      "relative_energy_kJ_mol": 13.097476752974108
+    },
+    {
+      "angle_degree": 30,
+      "energy_eV": -21496.45537753744,
+      "field_argument_V_A": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "density_dipole_eA": [
+        -0.17933939286607328,
+        0.004127343429963723,
+        -0.6125875214087927
+      ],
+      "total_charge_e": -6.418476861114186e-17,
+      "relative_energy_kJ_mol": 12.435027809699744
+    },
+    {
+      "angle_degree": 60,
+      "energy_eV": -21496.455233122164,
+      "field_argument_V_A": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "density_dipole_eA": [
+        -0.2767219462743328,
+        -0.04077768920550506,
+        -0.4894783086214424
+      ],
+      "total_charge_e": 2.0816681711721685e-17,
+      "relative_energy_kJ_mol": 12.44896176563932
+    },
+    {
+      "angle_degree": 90,
+      "energy_eV": -21496.437690747756,
+      "field_argument_V_A": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "density_dipole_eA": [
+        -0.32048707104677243,
+        -0.053388937769873863,
+        -0.33820308209561917
+      ],
+      "total_charge_e": 3.469446951953614e-18,
+      "relative_energy_kJ_mol": 14.141543586591716
+    },
+    {
+      "angle_degree": 120,
+      "energy_eV": -21496.455604584873,
+      "field_argument_V_A": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "density_dipole_eA": [
+        -0.29311380352047456,
+        -0.02547963950680531,
+        -0.20106912429775772
+      ],
+      "total_charge_e": 3.8163916471489756e-17,
+      "relative_energy_kJ_mol": 12.413121062775176
+    },
+    {
+      "angle_degree": 150,
+      "energy_eV": -21496.53811456655,
+      "field_argument_V_A": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "density_dipole_eA": [
+        -0.1969205200068984,
+        0.03256905848926119,
+        -0.11031936849415025
+      ],
+      "total_charge_e": 1.734723475976807e-17,
+      "relative_energy_kJ_mol": 4.452118077309342
+    }
+  ],
+  "rotor_barrier_kJ_mol": 14.144919253502637,
+  "elapsed_seconds": 24.763542582979426,
+  "condensed_phase_or_interface_qualification": false
+}

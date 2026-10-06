@@ -1,0 +1,246 @@
+{
+  "model_sha256": "fab8b8713c832f31a2a853aaa22fd638be8a369cbf5095e6b3e982a18d10e93a",
+  "device": "CPU64",
+  "same_hamiltonian": true,
+  "atomic_reference_gauge_zero": true,
+  "rows": [
+    {
+      "name": "dense_start",
+      "provenance": {
+        "source": "results/neural-molecular-mc/HFIP_N16_seed20261026_1000moves/frames.xyz",
+        "frame_index": 0,
+        "complete_frames_at_read": 51,
+        "source_snapshot_sha256": "2ef7e127424a92379ac831f694120085ed5ffe390f32d54dfb62a7607302c328",
+        "saved_frame_sha256": "fe22059d6ce974171695293acd3267f001cafc8af5ea046e54e7d346a29dbc3d"
+      },
+      "density_g_cm3": 1.6069999999999989,
+      "total_eV": -17.316864375895115,
+      "isolated_fragment_eV": [
+        -0.9976328607902225,
+        -0.9852416215361989,
+        -1.0675726592946682,
+        -0.8151711441072819,
+        -0.9609554954060958,
+        -1.070432299728397,
+        -0.8441306001710488,
+        -0.945395932087002,
+        -0.9811222332991595,
+        -0.9586787161097623,
+        -0.8729140912577986,
+        -1.081154725922422,
+        -1.1288361497564399,
+        -0.9424236829022783,
+        -0.9525461686220158,
+        -0.9710049513616706
+      ],
+      "gas_reference_eV": -1.2758575732117015,
+      "internal_distortion_kJ_mol_per_molecule": 29.177814739403722,
+      "intermolecular_energy_kJ_mol_per_molecule": -10.502736211194057,
+      "total_above_gas_kJ_mol_per_molecule": 18.675078528209664,
+      "OH_A_mean": 0.9677561252748594,
+      "OH_A_range": [
+        0.9470672120108913,
+        0.9866159023698339
+      ],
+      "CO_A_mean": 1.3904928814554167,
+      "CO_A_range": [
+        1.3576824803996013,
+        1.4258951534805253
+      ],
+      "force_max_eV_A": 3.1125838422758947,
+      "configurational_pressure_bar": 7618.8016923695,
+      "elapsed_seconds": 20.783494665985927
+    },
+    {
+      "name": "dense_1000",
+      "provenance": {
+        "source": "results/neural-molecular-mc/HFIP_N16_seed20261026_1000moves/frames.xyz",
+        "frame_index": 50,
+        "complete_frames_at_read": 51,
+        "source_snapshot_sha256": "2ef7e127424a92379ac831f694120085ed5ffe390f32d54dfb62a7607302c328",
+        "saved_frame_sha256": "14531e5b13e8edcc6bd2f2f803b3d8ece45db0034a2a3670c6a09d29951e294a"
+      },
+      "density_g_cm3": 1.2677318508001334,
+      "total_eV": -18.31703581847054,
+      "isolated_fragment_eV": [
+        -0.9115490581476929,
+        -0.8412161713087271,
+        -0.9483364530098118,
+        -0.7810653530919357,
+        -0.9563313376455156,
+        -1.0664821225938945,
+        -0.8475289786665603,
+        -0.8903862291221345,
+        -1.0065075087800184,
+        -0.8343507562960288,
+        -0.8336360929210733,
+        -1.0172807293715411,
+        -1.0586777631052804,
+        -0.755983601109195,
+        -0.8558226138580799,
+        -0.9845574807048463
+      ],
+      "gas_reference_eV": -1.2758575732117015,
+      "internal_distortion_kJ_mol_per_molecule": 35.12071469343338,
+      "intermolecular_energy_kJ_mol_per_molecule": -22.477003278794335,
+      "total_above_gas_kJ_mol_per_molecule": 12.643711414639041,
+      "OH_A_mean": 0.9681608500571726,
+      "OH_A_range": [
+        0.9272158959489635,
+        1.001053832326286
+      ],
+      "CO_A_mean": 1.3909089133439008,
+      "CO_A_range": [
+        1.3619666025566395,
+        1.4300964471309152
+      ],
+      "force_max_eV_A": 3.8573277191134805,
+      "configurational_pressure_bar": -2100.272163239994,
+      "elapsed_seconds": 40.25553270801902
+    },
+    {
+      "name": "dense_latest",
+      "provenance": {
+        "source": "results/neural-molecular-mc/HFIP_N16_seed20261026_1000moves_continue2000/frames.xyz",
+        "frame_index": 68,
+        "complete_frames_at_read": 69,
+        "source_snapshot_sha256": "e7999e3993b7d33a63e045000d9d1beefbacd0fd9d2627b9c593117d43df8157",
+        "saved_frame_sha256": "da58597c7c8023358b226cb0732276d467859526dc164050cb74f460c7ed87b3"
+      },
+      "density_g_cm3": 1.2200965547859703,
+      "total_eV": -18.198476764908257,
+      "isolated_fragment_eV": [
+        -0.8958975373500384,
+        -0.9109055322629339,
+        -0.9845716520315619,
+        -0.8820660386486641,
+        -0.9711168731273825,
+        -0.7944531421302035,
+        -0.9115444887154169,
+        -0.793952005687951,
+        -0.8865400348424226,
+        -0.8450458910713873,
+        -0.7246892509682163,
+        -1.0221335430923013,
+        -0.92348943507311,
+        -1.0111800369601769,
+        -0.9718953379214206,
+        -0.9443449731828294
+      ],
+      "gas_reference_eV": -1.2758575732117015,
+      "internal_distortion_kJ_mol_per_molecule": 35.81954876779269,
+      "intermolecular_energy_kJ_mol_per_molecule": -22.460886749454836,
+      "total_above_gas_kJ_mol_per_molecule": 13.358662018337853,
+      "OH_A_mean": 0.9655258219783512,
+      "OH_A_range": [
+        0.9393504278813771,
+        0.9943074651450784
+      ],
+      "CO_A_mean": 1.398887950623446,
+      "CO_A_range": [
+        1.3636833347536654,
+        1.4440755512949741
+      ],
+      "force_max_eV_A": 4.272328692108827,
+      "configurational_pressure_bar": -2216.900724308553,
+      "elapsed_seconds": 59.10271245799959
+    },
+    {
+      "name": "dilute_start",
+      "provenance": {
+        "source": "results/neural-molecular-mc/HFIP_N16_seed20261027_1000moves/frames.xyz",
+        "frame_index": 0,
+        "complete_frames_at_read": 40,
+        "source_snapshot_sha256": "7d834d9b4b269c01d186fe3ba6a5174913022572ae82493a5af18f57b1abf735",
+        "saved_frame_sha256": "a2cf44d5ede77e9226fca092961b62dfa3d0e382cba0f9221d2fd234b101ffef"
+      },
+      "density_g_cm3": 0.9999999999999993,
+      "total_eV": -15.423285532896928,
+      "isolated_fragment_eV": [
+        -1.2763268409700785,
+        -1.2763665735821215,
+        -1.276323569757258,
+        -1.2757189544604564,
+        -1.2760880497398144,
+        -1.2765969532136894,
+        -1.2758860874937483,
+        -1.2763645638809487,
+        -1.2758036858003146,
+        -1.2755933193863975,
+        -1.275464914170686,
+        -1.276467575926271,
+        -1.2759612258031776,
+        -1.2757558972848837,
+        -1.2761008322140608,
+        -1.2763775921355869
+      ],
+      "gas_reference_eV": -1.2758575732117015,
+      "internal_distortion_kJ_mol_per_molecule": -0.020958208751894847,
+      "intermolecular_energy_kJ_mol_per_molecule": 30.114948209982444,
+      "total_above_gas_kJ_mol_per_molecule": 30.09399000123055,
+      "OH_A_mean": 0.9658547792558738,
+      "OH_A_range": [
+        0.9658540464977101,
+        0.9658555599927975
+      ],
+      "CO_A_mean": 1.3937476844615269,
+      "CO_A_range": [
+        1.393747020005065,
+        1.393748621943354
+      ],
+      "force_max_eV_A": 2.076297538881824,
+      "configurational_pressure_bar": 10345.655497284148,
+      "elapsed_seconds": 77.19287341600284
+    },
+    {
+      "name": "dilute_latest",
+      "provenance": {
+        "source": "results/neural-molecular-mc/HFIP_N16_seed20261027_1000moves/frames.xyz",
+        "frame_index": 39,
+        "complete_frames_at_read": 40,
+        "source_snapshot_sha256": "7d834d9b4b269c01d186fe3ba6a5174913022572ae82493a5af18f57b1abf735",
+        "saved_frame_sha256": "152d2151d3fb001c043caa48680ce5bb860ce689496ea40f893c4d5111d08896"
+      },
+      "density_g_cm3": 0.7583847543973807,
+      "total_eV": -19.787780107407833,
+      "isolated_fragment_eV": [
+        -1.0546433378457691,
+        -1.0703786013755843,
+        -1.1494418213772764,
+        -1.2093581928038688,
+        -1.0641836587652522,
+        -1.1602046972856035,
+        -1.14803425988911,
+        -1.0989207504193703,
+        -1.1547372511243132,
+        -1.0183287413236994,
+        -1.2122374023078288,
+        -1.100236699212767,
+        -1.1310378617666017,
+        -1.1715261009566946,
+        -1.0104201827210302,
+        -1.0789630890067645
+      ],
+      "gas_reference_eV": -1.2758575732117015,
+      "internal_distortion_kJ_mol_per_molecule": 15.564703355906031,
+      "intermolecular_energy_kJ_mol_per_molecule": -11.79007014042708,
+      "total_above_gas_kJ_mol_per_molecule": 3.7746332154789504,
+      "OH_A_mean": 0.975879087178273,
+      "OH_A_range": [
+        0.9271561592566238,
+        1.0234350462794914
+      ],
+      "CO_A_mean": 1.3966442501559468,
+      "CO_A_range": [
+        1.3579618783771312,
+        1.4357014260588898
+      ],
+      "force_max_eV_A": 3.5760545181433763,
+      "configurational_pressure_bar": 1104.4546149415467,
+      "elapsed_seconds": 97.61525475000963
+    }
+  ],
+  "scope": "Frozen snapshot mechanical decomposition; no equilibrium chemical potential, entropy, EOS, solvent ranking or cleaning claim",
+  "liquid_equilibrium_qualified": false,
+  "cleaning_solution_established": false
+}

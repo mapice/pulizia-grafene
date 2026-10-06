@@ -1,0 +1,23 @@
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+HFIP 12 q -2.7755575615628914e-17 sum atomic alpha nm3 0.00977229856118616
+DMF 12 q 3.8163916471489756e-17 sum atomic alpha nm3 0.009625236285628325
+THF 13 q 1.3877787807814457e-17 sum atomic alpha nm3 0.010373648126370913
+Anisole 16 q -1.3877787807814457e-17 sum atomic alpha nm3 0.016817431743676028
+AceticAcid 8 q -2.7755575615628914e-17 sum atomic alpha nm3 0.006458472275265707
+MethylPivalate 20 q -5.551115123125783e-17 sum atomic alpha nm3 0.01596595109571714
+DimethylCarbonate 12 q -1.3877787807814457e-17 sum atomic alpha nm3 0.009016996326272812
+Traceback (most recent call last):
+  File "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/byteff_probe.py", line 141, in <module>
+    main()
+  File "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/byteff_probe.py", line 105, in main
+    e, fields, forces, numbers = pair_evaluation(names, a.positions)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/byteff_probe.py", line 88, in pair_evaluation
+    data.apply(lambda value: value.double() if value.is_floating_point() else value)
+    ^^^^^^^^^^
+  File "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/vendor/byteff-pol/byteff2/data/data.py", line 68, in __getattr__
+    super(Data).__getattr__(name)
+    ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'super' object has no attribute '__getattr__'. Did you mean: '__setattr__'?
+{"guard": {"command": ["work/molecular/.venv/bin/python", "-u", "work/molecular/byteff_probe.py"], "pid": 60268, "exitcode": 1, "peak_RSS_MB": 511.375, "elapsed_seconds": 8.05344079202041, "termination_reason": null}}

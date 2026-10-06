@@ -1,0 +1,8 @@
+{
+  "stopped_UTC": "2026-10-06T07:55:33.340794+00:00",
+  "reason": "Pressure audit: GraphContext supplies undeformed positions/cell to polar electrostatics while strain affects local vectors; reciprocal cell and volume input tensors stay detached",
+  "hypothesis_requires_independent_CPU64_finite_strain_test": true,
+  "NVT_fixed_volume_forces_not_invalidated_by_this_issue": true,
+  "NPT_equilibrium_properties_accepted": false,
+  "previous_states_and_logs_preserved": true
+}

@@ -1,0 +1,9 @@
+{
+  "reference_level": "omegaB97M-V/def2TZVPD with counterpoise and VV10",
+  "grid0_kJ_mol": -29.744284928611087,
+  "grid1_kJ_mol": -29.931655295072826,
+  "grid_shift_kJ_mol": -0.18737036646173877,
+  "model_M_kJ_mol": -29.983524015638444,
+  "model_absolute_error_kJ_mol": 0.05186872056561853,
+  "scope": "Local frozen HFIP self-dimer, no condensed-phase or cleaning qualification"
+}

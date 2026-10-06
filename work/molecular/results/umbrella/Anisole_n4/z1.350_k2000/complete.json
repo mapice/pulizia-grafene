@@ -1,0 +1,14 @@
+{
+  "solvent": "Anisole",
+  "polymer_n": 4,
+  "center_nm": 1.35,
+  "k_kJ_mol_nm2": 2000,
+  "run_ps": 125,
+  "discard_ps": 25,
+  "coordinate_mean_nm": 1.317552987012987,
+  "coordinate_sd_nm": 0.030943065673193656,
+  "reported_pull_force_mean_kJ_mol_nm": 64.89408827372627,
+  "independently_reconstructed_spring_force_kJ_mol_nm": 64.89402597402628,
+  "elapsed_seconds": 318.15917200013064,
+  "scope": "Single short biased window; not a converged free-energy profile or actual cleaning."
+}

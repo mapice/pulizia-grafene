@@ -1,0 +1,185 @@
+{
+  "model": "ByteFF-Pol officialv1.0.0",
+  "model_sha256": "ae47a6e6860b563908a2e0a83d4a3f6adc1c36b48f544e2241d24066d43d539c",
+  "torch_version": "2.14.1",
+  "precision": "CPU float64; state_dict loaded with weights_only=True",
+  "coordinate_construction_dtype": "float64 from numpy input, not cast after float32 rounding",
+  "scope": "Frozen gas proxies. No extended graphene/silica qualification, no liquid free energy or residue cleaning.",
+  "experimental_efficacy_not_established": true,
+  "pairs": [
+    {
+      "pair": "HFIP__HFIP",
+      "geometry": "HFIP__HFIP_1.refined.xyz",
+      "interaction_kJ_mol": -19.95606584225738,
+      "components_kJ_mol": {
+        "DISP": -26.83586805728333,
+        "PAULI": 37.652927036951276,
+        "ELEC": -16.08459954004938,
+        "POLARIZATION": -4.591618178112689,
+        "CHARGE_TRANSFER": -10.096907103763252
+      },
+      "component_sum_independent_error_kJ_mol": 7.105427357601002e-15
+    },
+    {
+      "pair": "HFIP__MeOH",
+      "geometry": "HFIP__MeOH_0.refined.xyz",
+      "interaction_kJ_mol": -31.68220927175521,
+      "components_kJ_mol": {
+        "DISP": -22.64525603873408,
+        "PAULI": 55.19041774779026,
+        "ELEC": -37.164244843560404,
+        "POLARIZATION": -9.509731608178797,
+        "CHARGE_TRANSFER": -17.553394529072204
+      },
+      "component_sum_independent_error_kJ_mol": -1.0658141036401503e-14
+    },
+    {
+      "pair": "HFIP__Acetone",
+      "geometry": "HFIP__Acetone_1.refined.xyz",
+      "interaction_kJ_mol": -38.02631395778285,
+      "components_kJ_mol": {
+        "DISP": -30.130232131394823,
+        "PAULI": 58.40426198394337,
+        "ELEC": -40.93721138209919,
+        "POLARIZATION": -10.583045784980278,
+        "CHARGE_TRANSFER": -14.780086643251868
+      },
+      "component_sum_independent_error_kJ_mol": 5.684341886080802e-14
+    },
+    {
+      "pair": "HFIP__DMF",
+      "geometry": "HFIP__DMF_1.refined.xyz",
+      "interaction_kJ_mol": -39.79469614824372,
+      "components_kJ_mol": {
+        "DISP": -31.359347424309288,
+        "PAULI": 71.32707671698391,
+        "ELEC": -45.77934509330416,
+        "POLARIZATION": -13.267433677044114,
+        "CHARGE_TRANSFER": -20.71564667057006
+      },
+      "component_sum_independent_error_kJ_mol": 1.4210854715202004e-14
+    },
+    {
+      "pair": "HFIP__THF",
+      "geometry": "HFIP__THF_1.refined.xyz",
+      "interaction_kJ_mol": -36.745901798075685,
+      "components_kJ_mol": {
+        "DISP": -29.376785164717745,
+        "PAULI": 54.30001244324999,
+        "ELEC": -33.089831307132705,
+        "POLARIZATION": -9.783820929161552,
+        "CHARGE_TRANSFER": -18.795476840313636
+      },
+      "component_sum_independent_error_kJ_mol": 3.552713678800501e-14
+    },
+    {
+      "pair": "HFIP__MethylAcetate",
+      "geometry": "HFIP__MethylAcetate_0.refined.xyz",
+      "interaction_kJ_mol": -34.569393851431514,
+      "components_kJ_mol": {
+        "DISP": -32.06178741855052,
+        "PAULI": 68.99426230364118,
+        "ELEC": -41.5988479083633,
+        "POLARIZATION": -12.36496526682848,
+        "CHARGE_TRANSFER": -17.538055561330314
+      },
+      "component_sum_independent_error_kJ_mol": 7.815970093361102e-14,
+      "rigid_fragment_force_finite_difference_kJ_mol_A": 43.2721128453295,
+      "rigid_fragment_force_reported_kJ_mol_A": 43.27211054911786,
+      "far_interaction_kJ_mol": -0.0020362428492412903
+    },
+    {
+      "pair": "HFIP__MethylPivalate",
+      "geometry": "HFIP__MethylPivalate_2.refined.xyz",
+      "interaction_kJ_mol": -40.285761072551175,
+      "components_kJ_mol": {
+        "DISP": -38.52567738931538,
+        "PAULI": 70.6165520479094,
+        "ELEC": -41.8157780209649,
+        "POLARIZATION": -12.433704180239559,
+        "CHARGE_TRANSFER": -18.127153529940795
+      },
+      "component_sum_independent_error_kJ_mol": -6.394884621840902e-14
+    },
+    {
+      "pair": "HFIP__DimethylCarbonate",
+      "geometry": "HFIP__DimethylCarbonate_1.refined.xyz",
+      "interaction_kJ_mol": -42.023698091657984,
+      "components_kJ_mol": {
+        "DISP": -34.40412629621363,
+        "PAULI": 62.29169165368744,
+        "ELEC": -44.401904790075804,
+        "POLARIZATION": -11.082564633060441,
+        "CHARGE_TRANSFER": -14.426794025995573
+      },
+      "component_sum_independent_error_kJ_mol": -2.842170943040401e-14
+    },
+    {
+      "pair": "IPA__MethylAcetate",
+      "geometry": "IPA__MethylAcetate_1.refined.xyz",
+      "interaction_kJ_mol": -20.864358060759457,
+      "components_kJ_mol": {
+        "DISP": -19.900059335652088,
+        "PAULI": 36.743675854003705,
+        "ELEC": -23.422773947340794,
+        "POLARIZATION": -4.284500416215895,
+        "CHARGE_TRANSFER": -10.000700215554382
+      },
+      "component_sum_independent_error_kJ_mol": 3.552713678800501e-15
+    },
+    {
+      "pair": "AceticAcid__MethylAcetate",
+      "geometry": "AceticAcid__MethylAcetate_1.refined.xyz",
+      "interaction_kJ_mol": -28.809220235239213,
+      "components_kJ_mol": {
+        "DISP": -22.71766008176285,
+        "PAULI": 63.997680400362306,
+        "ELEC": -41.26776388330203,
+        "POLARIZATION": -10.09970522773138,
+        "CHARGE_TRANSFER": -18.721771442805256
+      },
+      "component_sum_independent_error_kJ_mol": 0.0
+    },
+    {
+      "pair": "TFE__MethylAcetate",
+      "geometry": "TFE__MethylAcetate_0.refined.xyz",
+      "interaction_kJ_mol": -28.759934509273442,
+      "components_kJ_mol": {
+        "DISP": -28.570116869493138,
+        "PAULI": 53.32000691484859,
+        "ELEC": -32.60950573166756,
+        "POLARIZATION": -7.735850122633524,
+        "CHARGE_TRANSFER": -13.164468700327834
+      },
+      "component_sum_independent_error_kJ_mol": -2.1316282072803006e-14
+    },
+    {
+      "pair": "MeOH__MethylAcetate",
+      "geometry": "MeOH__MethylAcetate_1.refined.xyz",
+      "interaction_kJ_mol": -21.590243347587755,
+      "components_kJ_mol": {
+        "DISP": -16.386480685939645,
+        "PAULI": 33.7144751462359,
+        "ELEC": -25.32865739158898,
+        "POLARIZATION": -4.208808913950667,
+        "CHARGE_TRANSFER": -9.380771502344347
+      },
+      "component_sum_independent_error_kJ_mol": 1.4210854715202004e-14
+    },
+    {
+      "pair": "Water__MethylAcetate",
+      "geometry": "Water__MethylAcetate_1.refined.xyz",
+      "interaction_kJ_mol": -17.355744106865117,
+      "components_kJ_mol": {
+        "DISP": -15.00620061192169,
+        "PAULI": 37.48052187566566,
+        "ELEC": -25.29828449526344,
+        "POLARIZATION": -4.203469605785529,
+        "CHARGE_TRANSFER": -10.328311269560126
+      },
+      "component_sum_independent_error_kJ_mol": -1.0658141036401503e-14
+    }
+  ],
+  "elapsed_seconds": 0.9648506671655923,
+  "source_openmm_patches_not_applied_to_existing_installation": true
+}

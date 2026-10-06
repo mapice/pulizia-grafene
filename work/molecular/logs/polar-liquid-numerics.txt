@@ -1,0 +1,34 @@
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/e3nn/o3/_wigner.py:10: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  _Jd, _W3j_flat, _W3j_indices = torch.load(os.path.join(os.path.dirname(__file__), 'constants.pt'))
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+cuequivariance or cuequivariance_torch is not available. Cuequivariance acceleration will be disabled.
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+[{'type': 'atomic_force', 'atom': 580, 'axis': 1, 'step_A': 0.002, 'analytical_eV_A': 4.471076965332031, 'numerical_eV_A': 4.486083984375, 'relative_error': 0.0033564663026481867}, {'type': 'whole_molecule_force', 'molecule': 27, 'axis': 2, 'step_A': 0.01, 'analytical_eV_A': 0.6121635437011719, 'numerical_eV_A': 0.6046295166015625, 'relative_error': 0.012307212688028812}, {'type': 'xx_strain_derivative', 'strain_step': 0.0001, 'analytical_eV_A3': 0.02027297578752041, 'numerical_eV_A3': np.float64(0.020441215908242102), 'relative_error': 0.008298738304874709}]
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/polar_liquid_numerics.py:68: DeprecationWarning: Use thermalize_momenta
+  MaxwellBoltzmannDistribution(a,temperature_K=298.15,rng=np.random.default_rng(20261006));Stationary(a)
+NVE 0.5 0 dE 0.0
+NVE 0.5 4 dE 0.03904528188756018
+NVE 0.5 8 dE 0.005906394288800243
+NVE 0.5 12 dE 0.012526522108849747
+NVE 0.5 16 dE 0.014418828529677796
+NVE 0.25 0 dE 0.0
+NVE 0.25 4 dE 0.003701958262418259
+NVE 0.25 8 dE 0.009414201794662347
+NVE 0.25 12 dE 0.007532352679547216
+NVE 0.25 16 dE 0.001375265207698817
+NVE 0.25 20 dE -0.0004674063167513509
+NVE 0.25 24 dE 0.0028742985061853688
+NVE 0.25 28 dE 0.005953522106402431
+NVE 0.25 32 dE 0.0035824736616163477
+{'model_sha256': 'fab8b8713c832f31a2a853aaa22fd638be8a369cbf5095e6b3e982a18d10e93a', 'atoms': 768, 'periodic_fixed_cell': True, 'initial_state': 'GAFF2-generated configuration, not M-model equilibrium', 'numerical_derivative_checks': [{'type': 'atomic_force', 'atom': 580, 'axis': 1, 'step_A': 0.002, 'analytical_eV_A': 4.471076965332031, 'numerical_eV_A': 4.486083984375, 'relative_error': 0.0033564663026481867}, {'type': 'whole_molecule_force', 'molecule': 27, 'axis': 2, 'step_A': 0.01, 'analytical_eV_A': 0.6121635437011719, 'numerical_eV_A': 0.6046295166015625, 'relative_error': 0.012307212688028812}, {'type': 'xx_strain_derivative', 'strain_step': 0.0001, 'analytical_eV_A3': 0.02027297578752041, 'numerical_eV_A3': np.float64(0.020441215908242102), 'relative_error': 0.008298738304874709}], 'nve_branches': [{'timestep_fs': 0.5, 'duration_fs': 8, 'steps': 16, 'max_absolute_total_energy_change_eV': 0.039287244169784685, 'final_total_energy_change_eV': 0.014418828529677796, 'elapsed_seconds': 141.31520570791326}, {'timestep_fs': 0.25, 'duration_fs': 8, 'steps': 32, 'max_absolute_total_energy_change_eV': 0.009788614721898625, 'final_total_energy_change_eV': 0.0035824736616163477, 'elapsed_seconds': 276.7433409160003}], 'MPS_memory_fraction_limit': 0.25, 'CPU_threads': 1, 'scope': 'Numerical stability control only over 8fs', 'liquid_properties_or_interface_qualification': False, 'cleaning_solution_established': False}
+{"guard": {"command": ["work/molecular/.venv/bin/python", "-u", "work/molecular/polar_liquid_numerics.py"], "pid": 50958, "exitcode": 0, "peak_RSS_MB": 837.125, "elapsed_seconds": 484.5521588749252, "termination_reason": null}}

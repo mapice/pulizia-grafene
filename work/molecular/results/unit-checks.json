@@ -1,0 +1,11 @@
+{
+  "HFIP_molecules": 125,
+  "molar_mass_g_mol": 168.0404,
+  "density_g_cm3": 0.8,
+  "volume_nm3": 43.59963266617501,
+  "independent_SI_volume_nm3": 43.59963266617501,
+  "box_side_nm": 3.5196078426911384,
+  "water_density_control_g_cm3": 1.000001168753817,
+  "unit_constant": "602.214076 = NA*1e-21",
+  "initial_invalid_pilot": "Using 0.602214076 enlarged volume by 1000 and box by 10. Those pilots invalidated; no conclusions drawn."
+}

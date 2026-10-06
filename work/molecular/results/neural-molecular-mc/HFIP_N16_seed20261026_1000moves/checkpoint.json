@@ -1,0 +1,28 @@
+{
+  "next_move": 1000,
+  "energy_eV": -18.31700897216797,
+  "rng_state": {
+    "bit_generator": "PCG64",
+    "state": {
+      "state": 261479074181710085522020638389104571230,
+      "inc": 124071108580137324698873603787241791409
+    },
+    "has_uint32": 0,
+    "uinteger": 1739487326
+  },
+  "attempts": {
+    "translation": 380,
+    "rotation": 285,
+    "OH_torsion": 248,
+    "volume": 68,
+    "HMC": 19
+  },
+  "accepted": {
+    "translation": 217,
+    "rotation": 127,
+    "OH_torsion": 61,
+    "volume": 35,
+    "HMC": 19
+  },
+  "volume_bound_rejections": 0
+}

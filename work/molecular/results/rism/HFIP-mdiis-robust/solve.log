@@ -1,0 +1,17 @@
+reading input data file: liquid.inp
+tabulating potentials and intramolecular functions ...
+relaxing RISM:
+step= 100     Res=  1.7587694643257563E-02     MDIIS= 20
+step= 200     Res=  1.5586302241002851E-02     MDIIS= 20
+step= 300     Res=  1.1737216452675907E-02     MDIIS= 20
+step= 400     Res=  6.9793093692975079E-03     MDIIS= 20
+step= 500     Res=  6.9118096996810940E-03     MDIIS= 20
+step= 600     Res=  3.5722876621086266E-02     MDIIS= 20
+step= 700     Res=  1.1632827836920122E-02     MDIIS= 20
+step= 800     Res=  7.2461769544563029E-02     MDIIS= 20
+step= 900     Res=  1.1128430755010278E-02     MDIIS= 20
+step=1000     Res=  5.1153421228484243E-02     MDIIS= 20
+Note: The following floating-point exceptions are signalling: IEEE_UNDERFLOW_FLAG
+STOP 1
+ERROR> RXRISM: reached steps limit Maxstep= 1000
+{"guard": {"command": ["/usr/bin/nice", "-n", "8", "../../../amber-env/bin/rism1d", "liquid"], "pid": 33768, "exitcode": 1, "peak_RSS_MB": 74.65625, "elapsed_seconds": 58.33819920779206, "termination_reason": null}}

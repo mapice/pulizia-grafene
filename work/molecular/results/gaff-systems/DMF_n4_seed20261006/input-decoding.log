@@ -1,0 +1,15 @@
+Note that major changes are planned in future for editconf, to improve usability and utility.
+Read 4173 atoms
+Volume: 44.4668 nm^3, corresponds to roughly 20000 electrons
+No velocities found
+               :-) GROMACS - gmx editconf, 2026.3-conda_forge (-:
+
+Executable:   /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin.ARM_NEON_ASIMD/gmx
+Data prefix:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env
+Working dir:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/gaff-systems/DMF_n4_seed20261006
+Command line:
+  gmx editconf -f initial.gro -o input-parsed.g96
+
+
+GROMACS reminds you: "The greatest shortcoming of the human race is our inability to understand the exponential function." (Albert Bartlett)
+

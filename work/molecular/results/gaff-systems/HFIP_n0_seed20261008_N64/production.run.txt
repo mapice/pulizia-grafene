@@ -1,0 +1,29 @@
+                :-) GROMACS - gmx mdrun, 2026.3-conda_forge (-:
+
+Executable:   /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin.ARM_NEON_ASIMD/gmx
+Data prefix:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env
+Working dir:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/gaff-systems/HFIP_n0_seed20261008_N64
+Command line:
+  gmx mdrun -deffnm production -ntmpi 1 -ntomp 1 -pin off -nice 8
+
+Reading file production.tpr, VERSION 2026.3-conda_forge (single precision)
+Changing nstlist from 20 to 100, rlist from 1 to 1.064
+
+Update groups can not be used for this system because atoms that are (in)directly constrained together are interdispersed with other atoms
+
+Using 1 MPI thread
+Using 1 OpenMP thread 
+
+starting mdrun 'HFIP comparator n0'
+500000 steps,    500.0 ps.
+
+Writing final coordinates.
+
+               Core t (s)   Wall t (s)        (%)
+       Time:      351.140      351.140      100.0
+                 (ns/day)    (hour/ns)    (ms/step)  (Matom*steps/s) 
+Performance:      123.028        0.195        0.702            1.094 
+
+GROMACS reminds you: "Miggida-Miggida-Miggida-Mac" (Kriss Kross)
+
+{"guard": {"command": ["/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin/gmx", "mdrun", "-deffnm", "production", "-ntmpi", "1", "-ntomp", "1", "-pin", "off", "-nice", "8"], "pid": 8772, "exitcode": 0, "peak_RSS_MB": 14.671875, "elapsed_seconds": 352.2713410828728, "termination_reason": null}}

@@ -1,0 +1,73 @@
+{
+  "model": "MACE-POLAR-1-M",
+  "sha256": "fab8b8713c832f31a2a853aaa22fd638be8a369cbf5095e6b3e982a18d10e93a",
+  "pairs": [
+    {
+      "pair": "HFIP__HFIP",
+      "geometry": "HFIP__HFIP_1.refined.xyz",
+      "interaction_frozen_kJ_mol": -29.983524132703916
+    },
+    {
+      "pair": "HFIP__MeOH",
+      "geometry": "HFIP__MeOH_0.refined.xyz",
+      "interaction_frozen_kJ_mol": -38.296825927655604
+    },
+    {
+      "pair": "HFIP__Acetone",
+      "geometry": "HFIP__Acetone_1.refined.xyz",
+      "interaction_frozen_kJ_mol": -41.182275904831194
+    },
+    {
+      "pair": "HFIP__DMF",
+      "geometry": "HFIP__DMF_1.refined.xyz",
+      "interaction_frozen_kJ_mol": -56.31609349208511
+    },
+    {
+      "pair": "HFIP__THF",
+      "geometry": "HFIP__THF_1.refined.xyz",
+      "interaction_frozen_kJ_mol": -48.424451601807704
+    },
+    {
+      "pair": "HFIP__MethylAcetate",
+      "geometry": "HFIP__MethylAcetate_0.refined.xyz",
+      "interaction_frozen_kJ_mol": -46.53940111404472
+    },
+    {
+      "pair": "HFIP__MethylPivalate",
+      "geometry": "HFIP__MethylPivalate_2.refined.xyz",
+      "interaction_frozen_kJ_mol": -49.6984676136758
+    },
+    {
+      "pair": "HFIP__DimethylCarbonate",
+      "geometry": "HFIP__DimethylCarbonate_1.refined.xyz",
+      "interaction_frozen_kJ_mol": -43.24476007837974
+    },
+    {
+      "pair": "IPA__MethylAcetate",
+      "geometry": "IPA__MethylAcetate_1.refined.xyz",
+      "interaction_frozen_kJ_mol": -27.151026623378982
+    },
+    {
+      "pair": "AceticAcid__MethylAcetate",
+      "geometry": "AceticAcid__MethylAcetate_1.refined.xyz",
+      "interaction_frozen_kJ_mol": -45.09811569446728
+    },
+    {
+      "pair": "TFE__MethylAcetate",
+      "geometry": "TFE__MethylAcetate_0.refined.xyz",
+      "interaction_frozen_kJ_mol": -39.81053174776063
+    },
+    {
+      "pair": "MeOH__MethylAcetate",
+      "geometry": "MeOH__MethylAcetate_1.refined.xyz",
+      "interaction_frozen_kJ_mol": -27.633831912796758
+    },
+    {
+      "pair": "Water__MethylAcetate",
+      "geometry": "Water__MethylAcetate_1.refined.xyz",
+      "interaction_frozen_kJ_mol": -26.64707312734612
+    }
+  ],
+  "elapsed_seconds": 31.877144375117496,
+  "scope": "Gas electronic proxies, not a liquid free-energy or cleaning ranking"
+}

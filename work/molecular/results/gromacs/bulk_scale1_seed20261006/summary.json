@@ -1,0 +1,46 @@
+{
+  "scope": "Bulk HFIP pilot, not interface cleaning. One seed, 125 molecules; dielectric not a converged experimental prediction.",
+  "scale14": 1.0,
+  "seed": 20261006,
+  "last_ps": 500.0,
+  "analysis_start_ps": 200.0,
+  "density_g_cm3": 1.5939607209435216,
+  "density_sd_g_cm3": 0.02456999346829902,
+  "temperature_K": 298.00702298006644,
+  "volume_nm3": 21.887431013289035,
+  "dielectric_GROMACS": 3.40073,
+  "dielectric_independent_SI": 3.4007288405327296,
+  "dipole_variance_Debye2": 516.3771537371545,
+  "dipole_frames": 301,
+  "density_reference_experimental_g_cm3": 1.607,
+  "dielectric_reference_experimental": 16.7,
+  "reference_doi": "10.1002/psc.3543",
+  "blocks": [
+    {
+      "time_start_ps": 200.0,
+      "time_end_ps": 275.0,
+      "density_g_cm3": 1.5734500588157894,
+      "temperature_K": 297.9150932631578
+    },
+    {
+      "time_start_ps": 276.0,
+      "time_end_ps": 350.0,
+      "density_g_cm3": 1.60852152668,
+      "temperature_K": 297.8720292
+    },
+    {
+      "time_start_ps": 351.0,
+      "time_end_ps": 425.0,
+      "density_g_cm3": 1.6084238460800002,
+      "temperature_K": 297.69713170666665
+    },
+    {
+      "time_start_ps": 426.0,
+      "time_end_ps": 500.0,
+      "density_g_cm3": 1.5857209276933333,
+      "temperature_K": 298.54506348
+    }
+  ],
+  "forcefield_qualified_for_desorption": false,
+  "qualification_reason": "Density alone insufficient; response, convergence, conventions and interfacial interactions require validation before quantitative solvent ranking."
+}

@@ -1,0 +1,20 @@
+{
+  "solvent": "HFIP",
+  "polymer_n": 4,
+  "direction": "reverse",
+  "centers_nm": [
+    1.05,
+    0.95,
+    0.85,
+    0.75,
+    0.65
+  ],
+  "force_constant_kJ_mol_nm2": 750.0,
+  "ps_per_window": 500,
+  "initial_state": "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/umbrella/HFIP_n4/z1.350_k2000",
+  "max_wall_minutes": 180.0,
+  "threads": 1,
+  "scope": "Conditional rigid-graphene oligomer model; not a cleaning prediction.",
+  "qualified_for_PMF": false,
+  "qualified_for_solvent_ranking": false
+}

@@ -1,0 +1,873 @@
+{
+  "method": "Published Lorentz-Berthelot LJ plus Coulomb at frozen GFN2 geometries",
+  "scope": "Intermolecular model audit, not solvation/desorption/cleaning prediction",
+  "rows": [
+    {
+      "pair": "HFIP__HFIP",
+      "geometry": "HFIP__HFIP_1.refined.xyz",
+      "baseline": {
+        "LJ_kJ_mol": -7.051930080324192,
+        "Coulomb_kJ_mol": -27.483324107618003,
+        "total_kJ_mol": -34.53525418794219
+      },
+      "acceptor_parameter_scope": "published SI Tables I and V",
+      "donor_parameter_scope": "published SI Tables I and V",
+      "separation_curve": [
+        {
+          "translation_A": -0.25,
+          "LJ_kJ_mol": 10.231341769212698,
+          "Coulomb_kJ_mol": -39.858196110716165,
+          "total_kJ_mol": -29.626854341503467
+        },
+        {
+          "translation_A": -0.2,
+          "LJ_kJ_mol": 4.622955216322191,
+          "Coulomb_kJ_mol": -36.92162014023123,
+          "total_kJ_mol": -32.29866492390904
+        },
+        {
+          "translation_A": -0.15,
+          "LJ_kJ_mol": 0.3564101430029982,
+          "Coulomb_kJ_mol": -34.24067614539489,
+          "total_kJ_mol": -33.8842660023919
+        },
+        {
+          "translation_A": -0.09999999999999998,
+          "LJ_kJ_mol": -2.8665469603310183,
+          "Coulomb_kJ_mol": -31.78896355621616,
+          "total_kJ_mol": -34.65551051654718
+        },
+        {
+          "translation_A": -0.04999999999999999,
+          "LJ_kJ_mol": -5.276395469754427,
+          "Coulomb_kJ_mol": -29.543313029470013,
+          "total_kJ_mol": -34.81970849922444
+        },
+        {
+          "translation_A": 0.0,
+          "LJ_kJ_mol": -7.051930080324192,
+          "Coulomb_kJ_mol": -27.483324107618003,
+          "total_kJ_mol": -34.53525418794219
+        },
+        {
+          "translation_A": 0.050000000000000044,
+          "LJ_kJ_mol": -8.33234652783656,
+          "Coulomb_kJ_mol": -25.590978471228823,
+          "total_kJ_mol": -33.923324999065386
+        },
+        {
+          "translation_A": 0.10000000000000003,
+          "LJ_kJ_mol": -9.226366323106978,
+          "Coulomb_kJ_mol": -23.85031498039912,
+          "total_kJ_mol": -33.0766813035061
+        },
+        {
+          "translation_A": 0.15000000000000002,
+          "LJ_kJ_mol": -9.819159709524698,
+          "Coulomb_kJ_mol": -22.24715546863525,
+          "total_kJ_mol": -32.06631517815995
+        },
+        {
+          "translation_A": 0.2,
+          "LJ_kJ_mol": -10.177622808240622,
+          "Coulomb_kJ_mol": -20.768872417943967,
+          "total_kJ_mol": -30.946495226184588
+        },
+        {
+          "translation_A": 0.25,
+          "LJ_kJ_mol": -10.354418340037085,
+          "Coulomb_kJ_mol": -19.404191347907357,
+          "total_kJ_mol": -29.758609687944443
+        },
+        {
+          "translation_A": 0.30000000000000004,
+          "LJ_kJ_mol": -10.391082990343362,
+          "Coulomb_kJ_mol": -18.143022100201513,
+          "total_kJ_mol": -28.534105090544877
+        },
+        {
+          "translation_A": 0.3500000000000001,
+          "LJ_kJ_mol": -10.320426925690931,
+          "Coulomb_kJ_mol": -16.976314273158117,
+          "total_kJ_mol": -27.29674119884905
+        },
+        {
+          "translation_A": 0.4,
+          "LJ_kJ_mol": -10.16839408736789,
+          "Coulomb_kJ_mol": -15.895932919211972,
+          "total_kJ_mol": -26.064327006579862
+        },
+        {
+          "translation_A": 0.45000000000000007,
+          "LJ_kJ_mol": -9.955509951444464,
+          "Coulomb_kJ_mol": -14.894551307761795,
+          "total_kJ_mol": -24.850061259206257
+        },
+        {
+          "translation_A": 0.5,
+          "LJ_kJ_mol": -9.698012371208485,
+          "Coulomb_kJ_mol": -13.965558112724736,
+          "total_kJ_mol": -23.66357048393322
+        },
+        {
+          "translation_A": 0.55,
+          "LJ_kJ_mol": -9.40873798292018,
+          "Coulomb_kJ_mol": -13.102976835468233,
+          "total_kJ_mol": -22.511714818388413
+        },
+        {
+          "translation_A": 0.6000000000000001,
+          "LJ_kJ_mol": -9.097819350718357,
+          "Coulomb_kJ_mol": -12.301395641317576,
+          "total_kJ_mol": -21.399214992035933
+        },
+        {
+          "translation_A": 0.65,
+          "LJ_kJ_mol": -8.773235024427647,
+          "Coulomb_kJ_mol": -11.555906088215217,
+          "total_kJ_mol": -20.329141112642866
+        },
+        {
+          "translation_A": 0.7000000000000001,
+          "LJ_kJ_mol": -8.441244872933002,
+          "Coulomb_kJ_mol": -10.86204947258161,
+          "total_kJ_mol": -19.30329434551461
+        },
+        {
+          "translation_A": 0.75,
+          "LJ_kJ_mol": -8.106735621883434,
+          "Coulomb_kJ_mol": -10.215769720376791,
+          "total_kJ_mol": -18.322505342260225
+        },
+        {
+          "translation_A": 0.8,
+          "LJ_kJ_mol": -7.773495869273798,
+          "Coulomb_kJ_mol": -9.613371919072598,
+          "total_kJ_mol": -17.386867788346397
+        },
+        {
+          "translation_A": 0.8500000000000001,
+          "LJ_kJ_mol": -7.444435533743299,
+          "Coulomb_kJ_mol": -9.051485725315835,
+          "total_kJ_mol": -16.495921259059134
+        },
+        {
+          "translation_A": 0.9000000000000001,
+          "LJ_kJ_mol": -7.121761380044061,
+          "Coulomb_kJ_mol": -8.527032998744737,
+          "total_kJ_mol": -15.648794378788798
+        },
+        {
+          "translation_A": 0.9500000000000002,
+          "LJ_kJ_mol": -6.80711771945694,
+          "Coulomb_kJ_mol": -8.037199108957807,
+          "total_kJ_mol": -14.844316828414748
+        },
+        {
+          "translation_A": 1.0,
+          "LJ_kJ_mol": -6.501699416874616,
+          "Coulomb_kJ_mol": -7.579407443465357,
+          "total_kJ_mol": -14.081106860339972
+        },
+        {
+          "translation_A": 1.05,
+          "LJ_kJ_mol": -6.206342813248335,
+          "Coulomb_kJ_mol": -7.151296712295569,
+          "total_kJ_mol": -13.357639525543902
+        },
+        {
+          "translation_A": 1.1,
+          "LJ_kJ_mol": -5.921598988315554,
+          "Coulomb_kJ_mol": -6.750700702078603,
+          "total_kJ_mol": -12.672299690394158
+        },
+        {
+          "translation_A": 1.1500000000000001,
+          "LJ_kJ_mol": -5.647792865407748,
+          "Coulomb_kJ_mol": -6.375630180683686,
+          "total_kJ_mol": -12.023423046091434
+        },
+        {
+          "translation_A": 1.2000000000000002,
+          "LJ_kJ_mol": -5.385070937969368,
+          "Coulomb_kJ_mol": -6.024256694352978,
+          "total_kJ_mol": -11.409327632322345
+        },
+        {
+          "translation_A": 1.25,
+          "LJ_kJ_mol": -5.133439830672674,
+          "Coulomb_kJ_mol": -5.694898033978802,
+          "total_kJ_mol": -10.828337864651477
+        },
+        {
+          "translation_A": 1.3,
+          "LJ_kJ_mol": -4.8927974618589865,
+          "Coulomb_kJ_mol": -5.3860051767182355,
+          "total_kJ_mol": -10.278802638577222
+        },
+        {
+          "translation_A": 1.35,
+          "LJ_kJ_mol": -4.6629582217440575,
+          "Coulomb_kJ_mol": -5.096150534370267,
+          "total_kJ_mol": -9.759108756114324
+        },
+        {
+          "translation_A": 1.4000000000000001,
+          "LJ_kJ_mol": -4.443673301812692,
+          "Coulomb_kJ_mol": -4.824017361525726,
+          "total_kJ_mol": -9.267690663338417
+        },
+        {
+          "translation_A": 1.4500000000000002,
+          "LJ_kJ_mol": -4.234647089200921,
+          "Coulomb_kJ_mol": -4.568390195035242,
+          "total_kJ_mol": -8.803037284236163
+        },
+        {
+          "translation_A": 1.5,
+          "LJ_kJ_mol": -4.035550363311124,
+          "Coulomb_kJ_mol": -4.3281462122715695,
+          "total_kJ_mol": -8.363696575582694
+        },
+        {
+          "translation_A": 1.55,
+          "LJ_kJ_mol": -3.8460308908603746,
+          "Coulomb_kJ_mol": -4.102247409411916,
+          "total_kJ_mol": -7.948278300272291
+        },
+        {
+          "translation_A": 1.6,
+          "LJ_kJ_mol": -3.665721902571445,
+          "Coulomb_kJ_mol": -3.8897335128415946,
+          "total_kJ_mol": -7.555455415413039
+        },
+        {
+          "translation_A": 1.6500000000000001,
+          "LJ_kJ_mol": -3.4942488439544563,
+          "Coulomb_kJ_mol": -3.6897155470737957,
+          "total_kJ_mol": -7.183964391028252
+        },
+        {
+          "translation_A": 1.7000000000000002,
+          "LJ_kJ_mol": -3.3312347195300522,
+          "Coulomb_kJ_mol": -3.5013699915203276,
+          "total_kJ_mol": -6.832604711050379
+        },
+        {
+          "translation_A": 1.75,
+          "LJ_kJ_mol": -3.1763042908244112,
+          "Coulomb_kJ_mol": -3.3239334662242968,
+          "total_kJ_mol": -6.500237757048708
+        },
+        {
+          "translation_A": 1.8000000000000003,
+          "LJ_kJ_mol": -3.029087340694576,
+          "Coulomb_kJ_mol": -3.156697893451998,
+          "total_kJ_mol": -6.185785234146574
+        },
+        {
+          "translation_A": 1.85,
+          "LJ_kJ_mol": -2.889221177784357,
+          "Coulomb_kJ_mol": -2.999006087974152,
+          "total_kJ_mol": -5.888227265758509
+        },
+        {
+          "translation_A": 1.9,
+          "LJ_kJ_mol": -2.756352523394941,
+          "Coulomb_kJ_mol": -2.8502477340579233,
+          "total_kJ_mol": -5.606600257452865
+        },
+        {
+          "translation_A": 1.9500000000000002,
+          "LJ_kJ_mol": -2.6301388973725484,
+          "Coulomb_kJ_mol": -2.709855711756468,
+          "total_kJ_mol": -5.3399946091290165
+        },
+        {
+          "translation_A": 2.0,
+          "LJ_kJ_mol": -2.5102495986454834,
+          "Coulomb_kJ_mol": -2.577302739087571,
+          "total_kJ_mol": -5.0875523377330545
+        }
+      ]
+    },
+    {
+      "pair": "HFIP__Acetone",
+      "geometry": "HFIP__Acetone_1.refined.xyz",
+      "baseline": {
+        "LJ_kJ_mol": 1.541666169355267,
+        "Coulomb_kJ_mol": -45.86181246417908,
+        "total_kJ_mol": -44.320146294823815
+      },
+      "acceptor_parameter_scope": "published SI Tables I and V",
+      "donor_parameter_scope": "published SI Tables I and V",
+      "separation_curve": [
+        {
+          "translation_A": -0.25,
+          "LJ_kJ_mol": 33.26907216410226,
+          "Coulomb_kJ_mol": -62.07590298728225,
+          "total_kJ_mol": -28.806830823179986
+        },
+        {
+          "translation_A": -0.2,
+          "LJ_kJ_mol": 23.396709527689698,
+          "Coulomb_kJ_mol": -58.29228868762411,
+          "total_kJ_mol": -34.895579159934414
+        },
+        {
+          "translation_A": -0.15,
+          "LJ_kJ_mol": 15.737322102845583,
+          "Coulomb_kJ_mol": -54.807920993029185,
+          "total_kJ_mol": -39.070598890183604
+        },
+        {
+          "translation_A": -0.09999999999999998,
+          "LJ_kJ_mol": 9.78225530579125,
+          "Coulomb_kJ_mol": -51.59201287764904,
+          "total_kJ_mol": -41.80975757185779
+        },
+        {
+          "translation_A": -0.04999999999999999,
+          "LJ_kJ_mol": 5.147589509239856,
+          "Coulomb_kJ_mol": -48.61777832644643,
+          "total_kJ_mol": -43.47018881720657
+        },
+        {
+          "translation_A": 0.0,
+          "LJ_kJ_mol": 1.541666169355267,
+          "Coulomb_kJ_mol": -45.86181246417908,
+          "total_kJ_mol": -44.320146294823815
+        },
+        {
+          "translation_A": 0.050000000000000044,
+          "LJ_kJ_mol": -1.2584967417478499,
+          "Coulomb_kJ_mol": -43.303580786079536,
+          "total_kJ_mol": -44.562077527827384
+        },
+        {
+          "translation_A": 0.10000000000000003,
+          "LJ_kJ_mol": -3.4244405123702215,
+          "Coulomb_kJ_mol": -40.924996204635164,
+          "total_kJ_mol": -44.34943671700539
+        },
+        {
+          "translation_A": 0.15000000000000002,
+          "LJ_kJ_mol": -5.088938864041214,
+          "Coulomb_kJ_mol": -38.71006718378911,
+          "total_kJ_mol": -43.79900604783032
+        },
+        {
+          "translation_A": 0.2,
+          "LJ_kJ_mol": -6.35537221853191,
+          "Coulomb_kJ_mol": -36.64460372545089,
+          "total_kJ_mol": -42.999975943982804
+        },
+        {
+          "translation_A": 0.25,
+          "LJ_kJ_mol": -7.304702551419529,
+          "Coulomb_kJ_mol": -34.71597067175311,
+          "total_kJ_mol": -42.02067322317264
+        },
+        {
+          "translation_A": 0.30000000000000004,
+          "LJ_kJ_mol": -8.000692892064917,
+          "Coulomb_kJ_mol": -32.91287988573636,
+          "total_kJ_mol": -40.91357277780128
+        },
+        {
+          "translation_A": 0.3500000000000001,
+          "LJ_kJ_mol": -8.49383531590538,
+          "Coulomb_kJ_mol": -31.225214517157454,
+          "total_kJ_mol": -39.71904983306283
+        },
+        {
+          "translation_A": 0.4,
+          "LJ_kJ_mol": -8.824323391267558,
+          "Coulomb_kJ_mol": -29.643879855742142,
+          "total_kJ_mol": -38.4682032470097
+        },
+        {
+          "translation_A": 0.45000000000000007,
+          "LJ_kJ_mol": -9.024313779068764,
+          "Coulomb_kJ_mol": -28.160676301381258,
+          "total_kJ_mol": -37.18499008045002
+        },
+        {
+          "translation_A": 0.5,
+          "LJ_kJ_mol": -9.119656191369327,
+          "Coulomb_kJ_mol": -26.76819079971031,
+          "total_kJ_mol": -35.88784699107964
+        },
+        {
+          "translation_A": 0.55,
+          "LJ_kJ_mol": -9.131223659274898,
+          "Coulomb_kJ_mol": -25.45970374788726,
+          "total_kJ_mol": -34.590927407162155
+        },
+        {
+          "translation_A": 0.6000000000000001,
+          "LJ_kJ_mol": -9.07594078009869,
+          "Coulomb_kJ_mol": -24.22910890410583,
+          "total_kJ_mol": -33.30504968420452
+        },
+        {
+          "translation_A": 0.65,
+          "LJ_kJ_mol": -8.96758261314081,
+          "Coulomb_kJ_mol": -23.070844262268366,
+          "total_kJ_mol": -32.03842687540917
+        },
+        {
+          "translation_A": 0.7000000000000001,
+          "LJ_kJ_mol": -8.817398564961383,
+          "Coulomb_kJ_mol": -21.979832201074473,
+          "total_kJ_mol": -30.797230766035856
+        },
+        {
+          "translation_A": 0.75,
+          "LJ_kJ_mol": -8.634602098408687,
+          "Coulomb_kJ_mol": -20.951427500672963,
+          "total_kJ_mol": -29.586029599081648
+        },
+        {
+          "translation_A": 0.8,
+          "LJ_kJ_mol": -8.426757095708092,
+          "Coulomb_kJ_mol": -19.98137205267085,
+          "total_kJ_mol": -28.40812914837894
+        },
+        {
+          "translation_A": 0.8500000000000001,
+          "LJ_kJ_mol": -8.200084259362447,
+          "Coulomb_kJ_mol": -19.0657552806001,
+          "total_kJ_mol": -27.26583953996255
+        },
+        {
+          "translation_A": 0.9000000000000001,
+          "LJ_kJ_mol": -7.959705364803336,
+          "Coulomb_kJ_mol": -18.20097944581424,
+          "total_kJ_mol": -26.160684810617575
+        },
+        {
+          "translation_A": 0.9500000000000002,
+          "LJ_kJ_mol": -7.70983899312784,
+          "Coulomb_kJ_mol": -17.38372914446594,
+          "total_kJ_mol": -25.093568137593778
+        },
+        {
+          "translation_A": 1.0,
+          "LJ_kJ_mol": -7.453958212677321,
+          "Coulomb_kJ_mol": -16.610944409718904,
+          "total_kJ_mol": -24.064902622396225
+        },
+        {
+          "translation_A": 1.05,
+          "LJ_kJ_mol": -7.194918282895053,
+          "Coulomb_kJ_mol": -15.879796923675983,
+          "total_kJ_mol": -23.074715206571035
+        },
+        {
+          "translation_A": 1.1,
+          "LJ_kJ_mol": -6.935060630570058,
+          "Coulomb_kJ_mol": -15.187668918909125,
+          "total_kJ_mol": -22.122729549479182
+        },
+        {
+          "translation_A": 1.1500000000000001,
+          "LJ_kJ_mol": -6.676297955307557,
+          "Coulomb_kJ_mol": -14.532134412573143,
+          "total_kJ_mol": -21.2084323678807
+        },
+        {
+          "translation_A": 1.2000000000000002,
+          "LJ_kJ_mol": -6.420184252570415,
+          "Coulomb_kJ_mol": -13.910942469000545,
+          "total_kJ_mol": -20.33112672157096
+        },
+        {
+          "translation_A": 1.25,
+          "LJ_kJ_mol": -6.1679727204145625,
+          "Coulomb_kJ_mol": -13.32200223116255,
+          "total_kJ_mol": -19.48997495157711
+        },
+        {
+          "translation_A": 1.3,
+          "LJ_kJ_mol": -5.920663881292507,
+          "Coulomb_kJ_mol": -12.763369498840099,
+          "total_kJ_mol": -18.684033380132604
+        },
+        {
+          "translation_A": 1.35,
+          "LJ_kJ_mol": -5.6790457587704655,
+          "Coulomb_kJ_mol": -12.233234662982419,
+          "total_kJ_mol": -17.912280421752882
+        },
+        {
+          "translation_A": 1.4000000000000001,
+          "LJ_kJ_mol": -5.443727567246942,
+          "Coulomb_kJ_mol": -11.729911832466598,
+          "total_kJ_mol": -17.17363939971354
+        },
+        {
+          "translation_A": 1.4500000000000002,
+          "LJ_kJ_mol": -5.215168075386504,
+          "Coulomb_kJ_mol": -11.251829012136987,
+          "total_kJ_mol": -16.46699708752349
+        },
+        {
+          "translation_A": 1.5,
+          "LJ_kJ_mol": -4.993699571650898,
+          "Coulomb_kJ_mol": -10.79751921023582,
+          "total_kJ_mol": -15.791218781886716
+        },
+        {
+          "translation_A": 1.55,
+          "LJ_kJ_mol": -4.779548178235231,
+          "Coulomb_kJ_mol": -10.365612369696478,
+          "total_kJ_mol": -15.14516054793171
+        },
+        {
+          "translation_A": 1.6,
+          "LJ_kJ_mol": -4.572851116563363,
+          "Coulomb_kJ_mol": -9.954828031713397,
+          "total_kJ_mol": -14.52767914827676
+        },
+        {
+          "translation_A": 1.6500000000000001,
+          "LJ_kJ_mol": -4.3736714145481335,
+          "Coulomb_kJ_mol": -9.563968651898762,
+          "total_kJ_mol": -13.937640066446896
+        },
+        {
+          "translation_A": 1.7000000000000002,
+          "LJ_kJ_mol": -4.182010456363771,
+          "Coulomb_kJ_mol": -9.191913499518208,
+          "total_kJ_mol": -13.373923955881978
+        },
+        {
+          "translation_A": 1.75,
+          "LJ_kJ_mol": -3.9978187043247164,
+          "Coulomb_kJ_mol": -8.837613079018467,
+          "total_kJ_mol": -12.835431783343184
+        },
+        {
+          "translation_A": 1.8000000000000003,
+          "LJ_kJ_mol": -3.8210048656087237,
+          "Coulomb_kJ_mol": -8.500084020551867,
+          "total_kJ_mol": -12.321088886160592
+        },
+        {
+          "translation_A": 1.85,
+          "LJ_kJ_mol": -3.651443730897811,
+          "Coulomb_kJ_mol": -8.178404392646385,
+          "total_kJ_mol": -11.829848123544195
+        },
+        {
+          "translation_A": 1.9,
+          "LJ_kJ_mol": -3.488982875131491,
+          "Coulomb_kJ_mol": -7.8717093957315285,
+          "total_kJ_mol": -11.36069227086302
+        },
+        {
+          "translation_A": 1.9500000000000002,
+          "LJ_kJ_mol": -3.3334483806048874,
+          "Coulomb_kJ_mol": -7.579187400027713,
+          "total_kJ_mol": -10.9126357806326
+        },
+        {
+          "translation_A": 2.0,
+          "LJ_kJ_mol": -3.1846497181478552,
+          "Coulomb_kJ_mol": -7.300076295473325,
+          "total_kJ_mol": -10.48472601362118
+        }
+      ]
+    },
+    {
+      "pair": "HFIP__MethylPivalate",
+      "geometry": "HFIP__MethylPivalate_2.refined.xyz",
+      "baseline": {
+        "LJ_kJ_mol": -6.235105510317904,
+        "Coulomb_kJ_mol": -51.42992517168207,
+        "total_kJ_mol": -57.66503068199998
+      },
+      "acceptor_parameter_scope": "PMMA2021 Table S2 types applied to capped proxy; net +0.0051e distributed over three caps, an unvalidated boundary correction",
+      "donor_parameter_scope": "published SI Tables I and V",
+      "separation_curve": [
+        {
+          "translation_A": -0.25,
+          "LJ_kJ_mol": 22.3554995638519,
+          "Coulomb_kJ_mol": -72.16359591717384,
+          "total_kJ_mol": -49.808096353321936
+        },
+        {
+          "translation_A": -0.2,
+          "LJ_kJ_mol": 13.146393998300208,
+          "Coulomb_kJ_mol": -67.26101729082446,
+          "total_kJ_mol": -54.11462329252424
+        },
+        {
+          "translation_A": -0.15,
+          "LJ_kJ_mol": 6.153297078255669,
+          "Coulomb_kJ_mol": -62.77911807017537,
+          "total_kJ_mol": -56.6258209919197
+        },
+        {
+          "translation_A": -0.09999999999999998,
+          "LJ_kJ_mol": 0.8411695943155202,
+          "Coulomb_kJ_mol": -58.672159913278165,
+          "total_kJ_mol": -57.83099031896265
+        },
+        {
+          "translation_A": -0.04999999999999999,
+          "LJ_kJ_mol": -3.188667995149437,
+          "Coulomb_kJ_mol": -54.90056296247337,
+          "total_kJ_mol": -58.08923095762281
+        },
+        {
+          "translation_A": 0.0,
+          "LJ_kJ_mol": -6.235105510317904,
+          "Coulomb_kJ_mol": -51.42992517168207,
+          "total_kJ_mol": -57.66503068199998
+        },
+        {
+          "translation_A": 0.050000000000000044,
+          "LJ_kJ_mol": -8.523564545478337,
+          "Coulomb_kJ_mol": -48.23021895011483,
+          "total_kJ_mol": -56.75378349559317
+        },
+        {
+          "translation_A": 0.10000000000000003,
+          "LJ_kJ_mol": -10.225059534938742,
+          "Coulomb_kJ_mol": -45.27512955157695,
+          "total_kJ_mol": -55.5001890865157
+        },
+        {
+          "translation_A": 0.15000000000000002,
+          "LJ_kJ_mol": -11.47008241984218,
+          "Coulomb_kJ_mol": -42.541507467530934,
+          "total_kJ_mol": -54.01158988737311
+        },
+        {
+          "translation_A": 0.2,
+          "LJ_kJ_mol": -12.358774157432046,
+          "Coulomb_kJ_mol": -40.00891303464181,
+          "total_kJ_mol": -52.36768719207385
+        },
+        {
+          "translation_A": 0.25,
+          "LJ_kJ_mol": -12.96841704835764,
+          "Coulomb_kJ_mol": -37.65923602961999,
+          "total_kJ_mol": -50.62765307797763
+        },
+        {
+          "translation_A": 0.30000000000000004,
+          "LJ_kJ_mol": -13.358983039442585,
+          "Coulomb_kJ_mol": -35.47637654685337,
+          "total_kJ_mol": -48.83535958629596
+        },
+        {
+          "translation_A": 0.3500000000000001,
+          "LJ_kJ_mol": -13.57726380278783,
+          "Coulomb_kJ_mol": -33.44597619361721,
+          "total_kJ_mol": -47.02323999640504
+        },
+        {
+          "translation_A": 0.4,
+          "LJ_kJ_mol": -13.659960797816057,
+          "Coulomb_kJ_mol": -31.555190781922917,
+          "total_kJ_mol": -45.21515157973897
+        },
+        {
+          "translation_A": 0.45000000000000007,
+          "LJ_kJ_mol": -13.636008843317793,
+          "Coulomb_kJ_mol": -29.792497385049458,
+          "total_kJ_mol": -43.428506228367254
+        },
+        {
+          "translation_A": 0.5,
+          "LJ_kJ_mol": -13.528332052547267,
+          "Coulomb_kJ_mol": -28.147529964995087,
+          "total_kJ_mol": -41.67586201754236
+        },
+        {
+          "translation_A": 0.55,
+          "LJ_kJ_mol": -13.355177417545779,
+          "Coulomb_kJ_mol": -26.61093884319554,
+          "total_kJ_mol": -39.966116260741316
+        },
+        {
+          "translation_A": 0.6000000000000001,
+          "LJ_kJ_mol": -13.131132697281945,
+          "Coulomb_kJ_mol": -25.17427014063469,
+          "total_kJ_mol": -38.30540283791663
+        },
+        {
+          "translation_A": 0.65,
+          "LJ_kJ_mol": -12.867907261216873,
+          "Coulomb_kJ_mol": -23.82986200053567,
+          "total_kJ_mol": -36.69776926175254
+        },
+        {
+          "translation_A": 0.7000000000000001,
+          "LJ_kJ_mol": -12.574934142584361,
+          "Coulomb_kJ_mol": -22.57075496227597,
+          "total_kJ_mol": -35.14568910486033
+        },
+        {
+          "translation_A": 0.75,
+          "LJ_kJ_mol": -12.259836629879606,
+          "Coulomb_kJ_mol": -21.390614306157673,
+          "total_kJ_mol": -33.65045093603728
+        },
+        {
+          "translation_A": 0.8,
+          "LJ_kJ_mol": -11.9287917555722,
+          "Coulomb_kJ_mol": -20.283662556321175,
+          "total_kJ_mol": -32.212454311893374
+        },
+        {
+          "translation_A": 0.8500000000000001,
+          "LJ_kJ_mol": -11.586814946181452,
+          "Coulomb_kJ_mol": -19.244620629950354,
+          "total_kJ_mol": -30.831435576131806
+        },
+        {
+          "translation_A": 0.9000000000000001,
+          "LJ_kJ_mol": -11.23798410115659,
+          "Coulomb_kJ_mol": -18.26865636801837,
+          "total_kJ_mol": -29.50664046917496
+        },
+        {
+          "translation_A": 0.9500000000000002,
+          "LJ_kJ_mol": -10.885616909309704,
+          "Coulomb_kJ_mol": -17.351339386422794,
+          "total_kJ_mol": -28.236956295732497
+        },
+        {
+          "translation_A": 1.0,
+          "LJ_kJ_mol": -10.532411884669358,
+          "Coulomb_kJ_mol": -16.488601354686217,
+          "total_kJ_mol": -27.021013239355575
+        },
+        {
+          "translation_A": 1.05,
+          "LJ_kJ_mol": -10.180561112652375,
+          "Coulomb_kJ_mol": -15.676700948962605,
+          "total_kJ_mol": -25.857262061614982
+        },
+        {
+          "translation_A": 1.1,
+          "LJ_kJ_mol": -9.83184082588544,
+          "Coulomb_kJ_mol": -14.912192842127034,
+          "total_kJ_mol": -24.744033668012474
+        },
+        {
+          "translation_A": 1.1500000000000001,
+          "LJ_kJ_mol": -9.487684517809434,
+          "Coulomb_kJ_mol": -14.19190019049929,
+          "total_kJ_mol": -23.679584708308724
+        },
+        {
+          "translation_A": 1.2000000000000002,
+          "LJ_kJ_mol": -9.149242234136393,
+          "Coulomb_kJ_mol": -13.512890157625911,
+          "total_kJ_mol": -22.662132391762306
+        },
+        {
+          "translation_A": 1.25,
+          "LJ_kJ_mol": -8.817428870621043,
+          "Coulomb_kJ_mol": -12.872452083328959,
+          "total_kJ_mol": -21.689880953950002
+        },
+        {
+          "translation_A": 1.3,
+          "LJ_kJ_mol": -8.492963686200383,
+          "Coulomb_kJ_mol": -12.268077963171699,
+          "total_kJ_mol": -20.761041649372082
+        },
+        {
+          "translation_A": 1.35,
+          "LJ_kJ_mol": -8.176402765607145,
+          "Coulomb_kJ_mol": -11.697444951430107,
+          "total_kJ_mol": -19.87384771703725
+        },
+        {
+          "translation_A": 1.4000000000000001,
+          "LJ_kJ_mol": -7.868165799543265,
+          "Coulomb_kJ_mol": -11.158399641112965,
+          "total_kJ_mol": -19.026565440656228
+        },
+        {
+          "translation_A": 1.4500000000000002,
+          "LJ_kJ_mol": -7.568558266913062,
+          "Coulomb_kJ_mol": -10.648943908797577,
+          "total_kJ_mol": -18.21750217571064
+        },
+        {
+          "translation_A": 1.5,
+          "LJ_kJ_mol": -7.277789882674945,
+          "Coulomb_kJ_mol": -10.167222141045087,
+          "total_kJ_mol": -17.445012023720032
+        },
+        {
+          "translation_A": 1.55,
+          "LJ_kJ_mol": -6.99599000176562,
+          "Coulomb_kJ_mol": -9.71150968379947,
+          "total_kJ_mol": -16.70749968556509
+        },
+        {
+          "translation_A": 1.6,
+          "LJ_kJ_mol": -6.723220533174956,
+          "Coulomb_kJ_mol": -9.280202377152122,
+          "total_kJ_mol": -16.003422910327078
+        },
+        {
+          "translation_A": 1.6500000000000001,
+          "LJ_kJ_mol": -6.459486810243948,
+          "Coulomb_kJ_mol": -8.871807055742536,
+          "total_kJ_mol": -15.331293865986485
+        },
+        {
+          "translation_A": 1.7000000000000002,
+          "LJ_kJ_mol": -6.20474677731046,
+          "Coulomb_kJ_mol": -8.484932910373686,
+          "total_kJ_mol": -14.689679687684146
+        },
+        {
+          "translation_A": 1.75,
+          "LJ_kJ_mol": -5.958918784144307,
+          "Coulomb_kJ_mol": -8.118283619529535,
+          "total_kJ_mol": -14.077202403673843
+        },
+        {
+          "translation_A": 1.8000000000000003,
+          "LJ_kJ_mol": -5.721888224535088,
+          "Coulomb_kJ_mol": -7.770650170743991,
+          "total_kJ_mol": -13.49253839527908
+        },
+        {
+          "translation_A": 1.85,
+          "LJ_kJ_mol": -5.493513211106983,
+          "Coulomb_kJ_mol": -7.440904301466034,
+          "total_kJ_mol": -12.934417512573017
+        },
+        {
+          "translation_A": 1.9,
+          "LJ_kJ_mol": -5.273629442751368,
+          "Coulomb_kJ_mol": -7.12799249742838,
+          "total_kJ_mol": -12.401621940179748
+        },
+        {
+          "translation_A": 1.9500000000000002,
+          "LJ_kJ_mol": -5.062054392283116,
+          "Coulomb_kJ_mol": -6.830930493760391,
+          "total_kJ_mol": -11.892984886043507
+        },
+        {
+          "translation_A": 2.0,
+          "LJ_kJ_mol": -4.858590918692019,
+          "Coulomb_kJ_mol": -6.548798230355644,
+          "total_kJ_mol": -11.407389149047663
+        }
+      ]
+    }
+  ]
+}

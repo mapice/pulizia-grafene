@@ -1,0 +1,1 @@
+{"archive": "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/outputs/grafene-modelli-e-sorgenti.zip", "files": 1431, "bytes": 231774676, "sha256": "ef4573c328f5d77ab059ed1a1502881b50558ef9cae96071a6a3d7d80cbba14c", "integrity_verified": true}

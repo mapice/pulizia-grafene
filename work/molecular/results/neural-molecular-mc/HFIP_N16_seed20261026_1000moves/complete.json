@@ -1,0 +1,23 @@
+{
+  "moves": 1000,
+  "attempts": {
+    "translation": 380,
+    "rotation": 285,
+    "OH_torsion": 248,
+    "volume": 68,
+    "HMC": 19
+  },
+  "accepted": {
+    "translation": 217,
+    "rotation": 127,
+    "OH_torsion": 61,
+    "volume": 35,
+    "HMC": 19
+  },
+  "volume_bound_rejections": 0,
+  "elapsed_seconds": 955.1129478751682,
+  "scope": "Single preliminary model chain; convergence/replicas/size checks still required",
+  "no_physical_time_from_MC_moves": true,
+  "liquid_equilibrium_qualified": false,
+  "cleaning_solution_established": false
+}

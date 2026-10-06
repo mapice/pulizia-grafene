@@ -1,0 +1,8 @@
+6 ottobre2026. Ipotesi vagliata: convertire gruppiCOOMe di PMMA in gruppiCOOH, con chimica non ossidante, per ridurre ancoraggi e favorire estrazione in acqua. Non è un protocollo validato.
+
+Fonte primaria: HiroshiYabu,RSCAdvances2018,8,10627-10632,DOI10.1039/C8RA00630J,PMC9078898; XML ufficiale EuropePMC scaricato.
+Il testo dice esplicitamente che gli esteri metilici del PMMA rimangono dopo BBr3, mentre vengono deprotetti gli eteri aromatici del blocco catecolico. Non trasferire a PMMA il successo sull'altro blocco. Il prodotto polimerico è raccolto come precipitato: non dimostra esportazione di un residuo dalla superficie.
+
+La fonteTMSI1997 DOI10.1002/marc.1997.030180505 riguarda metilacrilato e copolimeri con etilmetacrilato; non prova depolimerizzazione o rimozione di PMMA950K. Un brevettoTMSI sul PMMA riguarda gruppi protettivi terminali tert-butossi, non conversione di tutti gli esteri pendenti.
+
+Decisione: BBr3/TMSI non vengono promossi a soluzione per Armando. La trasformazione del residuo resta un'ipotesi condizionata a dimostrazione di conversione selettiva, esportazione del prodotto e compatibilità conG/SiO2. Nessun trattamento chimico eseguito.

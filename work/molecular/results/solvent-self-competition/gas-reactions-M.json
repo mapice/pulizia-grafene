@@ -1,0 +1,27 @@
+{
+  "rows": [
+    {
+      "solvent": "HFIP",
+      "self_binding_kJ_mol": -28.205142781246327,
+      "ester_binding_kJ_mol": -36.772107640194065,
+      "gas_electronic_exchange_kJ_mol": -8.566964858947738,
+      "reaction": "S2 + methyl acetate -> S/methyl acetate + S",
+      "same_model_and_common_refined_monomer_geometries": true
+    },
+    {
+      "solvent": "AceticAcid",
+      "self_binding_kJ_mol": -71.21337133107254,
+      "ester_binding_kJ_mol": -38.46187192967004,
+      "gas_electronic_exchange_kJ_mol": 32.7514994014025,
+      "reaction": "S2 + methyl acetate -> S/methyl acetate + S",
+      "same_model_and_common_refined_monomer_geometries": true
+    }
+  ],
+  "method": "MACE-POLAR-M, fixed GFN2-refined molecular geometries; electronic gas reactions",
+  "scope": "Exploratory self-association competition. Not liquid chemical potentials or polymer/surface free energy.",
+  "caveats": [
+    "Carbonyl solvation can cancel between adhered/free chains",
+    "Entropy, multiple solvent partners, many-body liquid structure and oxide selectivity are absent"
+  ],
+  "cleaning_solution_established": false
+}

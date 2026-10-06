@@ -1,0 +1,15 @@
+{
+  "model_sha256": "fab8b8713c832f31a2a853aaa22fd638be8a369cbf5095e6b3e982a18d10e93a",
+  "molecules": 16,
+  "atoms": 192,
+  "timestep_fs": 0.25,
+  "fixed_volume_stage_fs": 100,
+  "variable_volume_stage_fs": 100,
+  "target_temperature_K": 298.15,
+  "target_pressure_bar": 1.0,
+  "thermostat_damping_fs": 25.0,
+  "barostat_damping_fs": 250.0,
+  "NPT_integrator": "ASE IsotropicMTKNPT; 1bar=1e5Pa, converted with ASE units.Pascal",
+  "MPS_memory_fraction_limit": 0.25,
+  "scope": "Small-cell transient pilot only, not equilibrium properties or cleaning"
+}

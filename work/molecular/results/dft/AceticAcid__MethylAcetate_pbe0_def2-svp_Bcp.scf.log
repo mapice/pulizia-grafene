@@ -1,0 +1,189 @@
+#INFO: **** input file is /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/dft_counterpoise.py ****
+"""DFT electronic interaction checks at frozen, refined GFN2 geometries.
+
+PBE0-D3(BJ), density fitting. Boys-Bernardi counterpoise corrects basis
+superposition error. Dispersion uses only REAL atoms in each fragment.
+This is neither liquid free energy nor a prediction of residue removal.
+"""
+import os
+for var in ['OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','VECLIB_MAXIMUM_THREADS']:
+    os.environ[var]='2'
+os.nice(8)
+from pathlib import Path
+import json,time,resource,sys,argparse,hashlib
+import numpy as np
+from ase.io import read
+from pyscf import gto,dft,lib
+from dftd3.interface import DispersionModel,RationalDampingParam
+
+lib.num_threads(2)
+HERE=Path(__file__).resolve().parent
+CLUST=HERE/'results/clusters'
+OUT=HERE/'results/dft'
+OUT.mkdir(parents=True,exist_ok=True)
+HARTREE_KJMOL=2625.499638
+BOHR_A=.529177210903
+
+def rss():
+    return resource.getrusage(resource.RUSAGE_SELF).ru_maxrss/(1024**2 if sys.platform=='darwin' else 1024)
+
+def energy(atoms,real_indices,label,args):
+    path=OUT/f'{label}.json'
+    xyz=atoms.positions
+    geometry_hash=hashlib.sha256(xyz.tobytes()+bytes(atoms.numbers)).hexdigest()
+    if path.exists():
+        old=json.loads(path.read_text())
+        if old['geometry_hash']==geometry_hash and old['basis']==args.basis and old['xc']==args.xc and old['converged']:
+            return old
+    real=set(real_indices)
+    atom_input=[(symbol if i in real else 'ghost-'+symbol,tuple(p)) for i,(symbol,p) in enumerate(zip(atoms.get_chemical_symbols(),xyz))]
+    mol=gto.M(atom=atom_input,basis=args.basis,unit='Angstrom',charge=0,spin=0,verbose=4,max_memory=1800,output=str(OUT/f'{label}.scf.log'))
+    mf=dft.RKS(mol).density_fit()
+    mf.xc=args.xc
+    mf.grids.level=3
+    mf.conv_tol=1e-9
+    mf.max_cycle=120
+    mf.chkfile=None
+    start=time.monotonic()
+    def callback(env):
+        if rss()>3000:raise MemoryError('3 GB RSS limit exceeded')
+        if time.monotonic()-start>1800:raise TimeoutError('30 min single-point cap')
+    mf.callback=callback
+    e=float(mf.kernel())
+    real_atoms=atoms[list(real_indices)]
+    model=DispersionModel(real_atoms.numbers,real_atoms.positions/BOHR_A)
+    correction=float(model.get_dispersion(RationalDampingParam(method=args.xc),grad=False)['energy'])
+    r=dict(label=label,basis=args.basis,xc=args.xc,converged=bool(mf.converged),electronic_Ha=e,dispersion_Ha=correction,total_Ha=e+correction,basis_functions=mol.nao,real_atoms=len(real),ghost_atoms=len(atoms)-len(real),geometry_hash=geometry_hash,elapsed_seconds=time.monotonic()-start,peak_rss_MB=rss(),grid_level=3,conv_tol_Ha=1e-9)
+    path.write_text(json.dumps(r,indent=2)+'\n')
+    print(json.dumps(r),flush=True)
+    if not mf.converged:raise RuntimeError('SCF did not converge '+label)
+    return r
+
+def main():
+    p=argparse.ArgumentParser()
+    p.add_argument('--pair',default='HFIP__MethylAcetate')
+    p.add_argument('--basis',default='def2-svp')
+    p.add_argument('--xc',default='pbe0')
+    args=p.parse_args()
+    r=json.loads((CLUST/'binding-refined.json').read_text())['pairs'][args.pair]
+    atoms=read(CLUST/r['best_geometry'])
+    n=next(t['n_acceptor'] for t in r['trials'] if t['name']+'.refined.xyz'==r['best_geometry'])
+    tag=f'{args.pair}_{args.xc}_{args.basis}'
+    ab=energy(atoms,range(len(atoms)),tag+'_AB',args)
+    a_cp=energy(atoms,range(n),tag+'_Acp',args)
+    b_cp=energy(atoms,range(n,len(atoms)),tag+'_Bcp',args)
+    a=energy(atoms[:n],range(n),tag+'_A',args)
+    b=energy(atoms[n:],range(len(atoms)-n),tag+'_B',args)
+    ecp=ab['total_Ha']-a_cp['total_Ha']-b_cp['total_Ha']
+    eraw=ab['total_Ha']-a['total_Ha']-b['total_Ha']
+    record=dict(pair=args.pair,method=args.xc+'-D3(BJ)',basis=args.basis,geometry=r['best_geometry'],geometry_method='GFN2-xTB refined; not DFT optimized',interaction_counterpoise_kJ_mol=ecp*HARTREE_KJMOL,interaction_raw_kJ_mol=eraw*HARTREE_KJMOL,BSSE_correction_kJ_mol=(ecp-eraw)*HARTREE_KJMOL,scope='Vacuum frozen-fragment electronic interaction energies. No liquid entropy/solvation, no cleaning efficacy.',all_converged=all(x['converged'] for x in [ab,a_cp,b_cp,a,b]),peak_rss_MB=rss(),energies=dict(AB=ab,Acp=a_cp,Bcp=b_cp,A=a,B=b))
+    (OUT/f'{tag}_interaction.json').write_text(json.dumps(record,indent=2)+'\n')
+    print(json.dumps(record),flush=True)
+
+if __name__=='__main__':main()
+#INFO: ******************** input file end ********************
+
+
+System: uname_result(system='Darwin', node='Mattias-MacBook-Pro.local', release='24.6.0', version='Darwin Kernel Version 24.6.0: Sun Aug 23 20:37:03 PDT 2026; root:xnu-11417.140.69.712.69~1/RELEASE_ARM64_T6000', machine='arm64')  Threads 1
+Python 3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]
+numpy 2.5.3  scipy 1.18.1  h5py 3.16.0
+Date: Tue Oct  6 03:04:17 2026
+PySCF version 2.14.0
+PySCF path  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/pyscf
+
+[CONFIG] conf_file None
+[INPUT] verbose = 4
+[INPUT] num. atoms = 19
+[INPUT] num. electrons = 32
+[INPUT] charge = 0
+[INPUT] spin (= nelec alpha-beta = 2S) = 0
+[INPUT] symmetry False subgroup None
+[INPUT] Mole.unit = Angstrom
+[INPUT] Symbol           X                Y                Z      unit          X                Y                Z       unit  Magmom
+[INPUT]  1 GHOST-C  -1.040910000000   1.146268090000  -0.248156580000 AA   -1.967034820321   2.166132755428  -0.468947972209 Bohr   0.0
+[INPUT]  2 GHOST-C  -0.815484220000  -0.273820130000   0.159070080000 AA   -1.541041834705  -0.517445053093   0.300598885813 Bohr   0.0
+[INPUT]  3 GHOST-O   0.166162110000  -0.681222180000   0.743371410000 AA    0.314000880180  -1.287323350179   1.404768373732 Bohr   0.0
+[INPUT]  4 GHOST-O  -1.818187890000  -1.068372370000  -0.200014180000 AA   -3.435877155101  -2.018931178352  -0.377972021229 Bohr   0.0
+[INPUT]  5 GHOST-C  -1.685148710000  -2.449692390000   0.109721660000 AA   -3.184469541064  -4.629247706531   0.207343887333 Bohr   0.0
+[INPUT]  6 GHOST-H  -2.006157190000   1.255206440000  -0.729987700000 AA   -3.791087651927   2.371996401390  -1.379476827301 Bohr   0.0
+[INPUT]  7 GHOST-H  -0.975239670000   1.792256330000   0.624415230000 AA   -1.842935882111   3.386873608718   1.179973772707 Bohr   0.0
+[INPUT]  8 GHOST-H  -0.238213720000   1.428397180000  -0.931721300000 AA   -0.450158689914   2.699279467301  -1.760698081424 Bohr   0.0
+[INPUT]  9 GHOST-H  -1.580971610000  -2.589080060000   1.187483270000 AA   -2.987603353613  -4.892652227972   2.244018157803 Bohr   0.0
+[INPUT] 10 GHOST-H  -0.804641340000  -2.864389330000  -0.384477150000 AA   -1.520551761103  -5.412911347826  -0.726556514653 Bohr   0.0
+[INPUT] 11 GHOST-H  -2.589504300000  -2.929987730000  -0.253681190000 AA   -4.893453925384  -5.536874358036  -0.479387972054 Bohr   0.0
+[INPUT] 12 C      4.203363520000   1.495660590000  -0.838779870000 AA    7.943205854788   2.826388890405  -1.585064233098 Bohr   0.0
+[INPUT] 13 C      2.795493430000   1.017047210000  -0.594727860000 AA    5.282716965721   1.921940682653  -1.123872774049 Bohr   0.0
+[INPUT] 14 O      1.872526590000   1.219342220000  -1.347205740000 AA    3.538562416066   2.304222847919  -2.545849882042 Bohr   0.0
+[INPUT] 15 O      2.685665420000   0.339363220000   0.533579170000 AA    5.075172106015   0.641303542551   1.008318497073 Bohr   0.0
+[INPUT] 16 H      4.699418160000   1.686535660000   0.107531070000 AA    8.880613267207   3.187090496713   0.203204272181 Bohr   0.0
+[INPUT] 17 H      4.191196500000   2.386643690000  -1.459094560000 AA    7.920213519236   4.510102931021  -2.757289108243 Bohr   0.0
+[INPUT] 18 H      4.745198870000   0.711425330000  -1.364142450000 AA    8.967126270896   1.344399031778  -2.577855625393 Bohr   0.0
+[INPUT] 19 H      1.769447510000  -0.015527720000   0.670616710000 AA    3.343771185694  -0.029343138139   1.267281916457 Bohr   0.0
+
+nuclear repulsion = 121.644869752624
+number of shells = 84
+number of NR pGTOs = 286
+number of NR cGTOs = 176
+basis = def2-svp
+ecp = {}
+CPU time:        19.76
+
+
+******** <class 'pyscf.df.df_jk.DFRKS'> ********
+method = DFRKS
+initial guess = minao
+damping factor = 0
+level_shift factor = 0
+DIIS = <class 'pyscf.scf.diis.CDIIS'>
+diis_start_cycle = 1
+diis_space = 8
+diis_damp = 0
+SCF conv_tol = 1e-09
+SCF conv_tol_grad = None
+SCF max_cycles = 120
+direct_scf = False
+max_memory 1800 MB (current use 0 MB)
+XC library pyscf.dft.libxc version 7.0.0
+    S. Lehtola, C. Steigemann, M. J.T. Oliveira, and M. A.L. Marques.,  SoftwareX 7, 1–5 (2018)
+XC functionals = pbe0
+    C. Adamo and V. Barone.,  J. Chem. Phys. 110, 6158 (1999)
+    M. Ernzerhof and G. E. Scuseria.,  J. Chem. Phys. 110, 5029 (1999)
+radial grids: 
+    Treutler-Ahlrichs [JCP 102, 346 (1995); DOI:10.1063/1.469408] (M4) radial grids
+    
+becke partition: Becke, JCP 88, 2547 (1988); DOI:10.1063/1.454033
+pruning grids: <function nwchem_prune at 0x112bca980>
+grids dens level: 3
+symmetrized grids: False
+atomic radii adjust function: <function treutler_atomic_radii_adjust at 0x112bcae80>
+small_rho_cutoff = 0
+Set gradient conv threshold to 3.16228e-05
+Initial guess from minao.
+tot grids = 225000
+******** <class 'pyscf.df.df.DF'> ********
+auxbasis = None
+max_memory = 1800
+init E= -229.114396797668
+  HOMO = -0.38044072669512  LUMO = -0.0554731817604726  gap/eV = 8.84282
+cycle= 1 E= -228.511475414053  delta_E= 0.603  |g|= 0.89  |ddm|= 2.84
+  HOMO = -0.135456276727282  LUMO = 0.0403961229838075  gap/eV = 4.78519
+cycle= 2 E= -228.191569760997  delta_E= 0.32  |g|= 1.57  |ddm|= 2.13
+  HOMO = -0.293254080675528  LUMO = 0.0241019478980658  gap/eV = 8.63570
+cycle= 3 E= -228.650570706339  delta_E= -0.459  |g|= 0.285  |ddm|= 1.54
+  HOMO = -0.285263263102244  LUMO = 0.0187966555319466  gap/eV = 8.27389
+cycle= 4 E= -228.665911958141  delta_E= -0.0153  |g|= 0.0631  |ddm|= 0.254
+  HOMO = -0.290425654015564  LUMO = 0.0165538321301468  gap/eV = 8.35334
+cycle= 5 E= -228.666561353253  delta_E= -0.000649  |g|= 0.0191  |ddm|= 0.0528
+  HOMO = -0.288472691975727  LUMO = 0.019304018103443  gap/eV = 8.37503
+cycle= 6 E= -228.666647006432  delta_E= -8.57e-05  |g|= 0.00314  |ddm|= 0.0178
+  HOMO = -0.288827596287693  LUMO = 0.0193244310787715  gap/eV = 8.38524
+cycle= 7 E= -228.666649016304  delta_E= -2.01e-06  |g|= 0.000759  |ddm|= 0.0031
+  HOMO = -0.28898239158984  LUMO = 0.0192221903453025  gap/eV = 8.38667
+cycle= 8 E= -228.666649136228  delta_E= -1.2e-07  |g|= 0.000238  |ddm|= 0.00106
+  HOMO = -0.288968117477125  LUMO = 0.0192539763522392  gap/eV = 8.38715
+cycle= 9 E= -228.666649149448  delta_E= -1.32e-08  |g|= 2.62e-05  |ddm|= 0.000265
+  HOMO = -0.288973425718243  LUMO = 0.0192493279429257  gap/eV = 8.38717
+cycle= 10 E= -228.666649149633  delta_E= -1.85e-10  |g|= 5.16e-06  |ddm|= 4.42e-05
+  HOMO = -0.288973234109481  LUMO = 0.019250276348981  gap/eV = 8.38719
+Extra cycle  E= -228.666649149631  delta_E= 1.71e-12  |g|= 6.22e-06  |ddm|= 1.02e-05
+converged SCF energy = -228.666649149631

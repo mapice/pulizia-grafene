@@ -1,0 +1,9 @@
+{
+  "reason": "grompp rejected a fixed reference atom for elongated PMMA at next window; published previous-COM tracking option selected",
+  "independent_start_COM_error_nm": 7.872986783175051e-06,
+  "source_window": "z1.150",
+  "physical_coordinate_and_stiffness_unchanged": true,
+  "previous_completed_windows_preserved": true,
+  "apply_only_to_remaining_windows": true,
+  "requested_threads": 1
+}

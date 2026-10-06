@@ -1,0 +1,69 @@
+{
+  "model": "GAFF2/AM1-BCC neutral HFIP; original1-4LJ.5/Coulomb.833333333",
+  "scope": "Frozen gas OH rotor; not solution conformer population, dielectric or cleaning prediction",
+  "atom_order_same_as_DFT": true,
+  "rounded_input_rigid_geometry_max_error_A": 0.0009726138196013423,
+  "rows": [
+    {
+      "angle_degree": -180,
+      "energy_kJ_mol": 96.56990726432781,
+      "relative_energy_kJ_mol": 0.0
+    },
+    {
+      "angle_degree": -150,
+      "energy_kJ_mol": 98.74353656126296,
+      "relative_energy_kJ_mol": 2.1736292969351467
+    },
+    {
+      "angle_degree": -120,
+      "energy_kJ_mol": 102.4800862176777,
+      "relative_energy_kJ_mol": 5.9101789533498845
+    },
+    {
+      "angle_degree": -90,
+      "energy_kJ_mol": 104.37842849623564,
+      "relative_energy_kJ_mol": 7.808521231907832
+    },
+    {
+      "angle_degree": -60,
+      "energy_kJ_mol": 106.99342205765632,
+      "relative_energy_kJ_mol": 10.423514793328508
+    },
+    {
+      "angle_degree": -30,
+      "energy_kJ_mol": 111.74137206843932,
+      "relative_energy_kJ_mol": 15.171464804111508
+    },
+    {
+      "angle_degree": 0,
+      "energy_kJ_mol": 114.36280119922537,
+      "relative_energy_kJ_mol": 17.792893934897563
+    },
+    {
+      "angle_degree": 30,
+      "energy_kJ_mol": 111.74136404856247,
+      "relative_energy_kJ_mol": 15.171456784234664
+    },
+    {
+      "angle_degree": 60,
+      "energy_kJ_mol": 106.99340773375296,
+      "relative_energy_kJ_mol": 10.42350046942515
+    },
+    {
+      "angle_degree": 90,
+      "energy_kJ_mol": 104.37841272744201,
+      "relative_energy_kJ_mol": 7.8085054631142015
+    },
+    {
+      "angle_degree": 120,
+      "energy_kJ_mol": 102.4800775695607,
+      "relative_energy_kJ_mol": 5.910170305232896
+    },
+    {
+      "angle_degree": 150,
+      "energy_kJ_mol": 98.74353504927281,
+      "relative_energy_kJ_mol": 2.1736277849449976
+    }
+  ],
+  "barrier_kJ_mol": 17.792893934897563
+}

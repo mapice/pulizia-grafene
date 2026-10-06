@@ -1,0 +1,21 @@
+{
+  "repeat_units": 4,
+  "atoms": 65,
+  "smiles": "C[C@](C)(C(=O)OC)C[C@](C)(C(=O)OC)C[C@@](C)(C(=O)OC)C[C@@](C)(C(=O)OC)C",
+  "seed": 20261006,
+  "tacticity": "seeded mixed stereocenters, representative atactic oligomer only",
+  "charge_total_e": 0.0,
+  "end_cap_atoms_zero_based": [
+    0,
+    28
+  ],
+  "end_correction_e_each": -0.00255,
+  "end_correction_validated": false,
+  "source_doi": "10.3390/polym13050830",
+  "source_SI_table": "S2",
+  "bond_count": 64,
+  "angle_count": 118,
+  "nonzero_torsion_count": 178,
+  "nonbonded_exclusion": "1-2,1-3 excluded; 1-4 fully unscaled assumption pending sensitivity audit",
+  "scope": "Oligomer model built. Not equilibrated; not PMMA950K, no cleaning prediction."
+}

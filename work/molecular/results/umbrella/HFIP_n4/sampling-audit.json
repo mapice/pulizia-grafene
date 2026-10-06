@@ -1,0 +1,93 @@
+{
+  "windows": [
+    {
+      "directory": "results/umbrella/HFIP_n4/z0.600_k2000",
+      "center_nm": 0.6,
+      "duration_ps": 125,
+      "discarded_ps": 25,
+      "z_mean_nm": 0.5889429700299701,
+      "z_sd_nm": 0.01248514552163508,
+      "block_z_means_nm": [
+        0.5891504103585657,
+        0.592075736,
+        0.5865447200000001,
+        0.588000184
+      ],
+      "block_force_means_kJ_mol_nm": [
+        21.699210137848606,
+        15.8485592932,
+        26.910630677416002,
+        23.999733473319996
+      ],
+      "coordinate_statistical_inefficiency": 4.385862579268803,
+      "nominal_effective_coordinate_samples": 228.23332512321522,
+      "equilibration_not_implied_by_inefficiency": true
+    },
+    {
+      "directory": "results/umbrella/HFIP_n4/z0.900_k2000",
+      "center_nm": 0.9,
+      "duration_ps": 125,
+      "discarded_ps": 25,
+      "z_mean_nm": 0.8416835944055945,
+      "z_sd_nm": 0.027255807566997522,
+      "block_z_means_nm": [
+        0.8423337011952192,
+        0.8456382799999999,
+        0.825943152,
+        0.852816644
+      ],
+      "block_force_means_kJ_mol_nm": [
+        115.33251541832668,
+        108.72342567199999,
+        148.1136728,
+        94.36653542
+      ],
+      "coordinate_statistical_inefficiency": 36.01644951399418,
+      "nominal_effective_coordinate_samples": 27.79285613955539,
+      "equilibration_not_implied_by_inefficiency": true
+    },
+    {
+      "directory": "results/umbrella/HFIP_n4/z1.350_k2000",
+      "center_nm": 1.35,
+      "duration_ps": 125,
+      "discarded_ps": 25,
+      "z_mean_nm": 1.3166865434565436,
+      "z_sd_nm": 0.05261927186182921,
+      "block_z_means_nm": [
+        1.2828811155378486,
+        1.2739316800000002,
+        1.32502892,
+        1.3850396799999998
+      ],
+      "block_force_means_kJ_mol_nm": [
+        134.23786027888445,
+        152.13555599999998,
+        49.942779432,
+        -70.079506356
+      ],
+      "coordinate_statistical_inefficiency": 230.43450552282826,
+      "nominal_effective_coordinate_samples": 4.343967487546411,
+      "equilibration_not_implied_by_inefficiency": true
+    }
+  ],
+  "adjacent_distance_overlaps": [
+    {
+      "left": 0.6,
+      "right": 0.9,
+      "empirical_overlap_mass": 0.0,
+      "Bhattacharyya": 0.0
+    },
+    {
+      "left": 0.9,
+      "right": 1.35,
+      "empirical_overlap_mass": 0.0,
+      "Bhattacharyya": 0.0
+    }
+  ],
+  "global_free_energy_profile_accepted": false,
+  "cleaning_ranking_accepted": false,
+  "reasons": [
+    "Distance overlap does not establish stationarity of ester/backbone contacts or hidden torsions.",
+    "Both directions, independent starting conformations, complete coordinate range and model qualification required."
+  ]
+}

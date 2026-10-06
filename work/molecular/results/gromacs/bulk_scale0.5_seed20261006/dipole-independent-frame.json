@@ -1,0 +1,16 @@
+{
+  "dipole_Debye_independent": [
+    -5.287439326532136,
+    10.522464018632407,
+    -7.477300214050241
+  ],
+  "dipole_Debye_GROMACS": [
+    -5.28793389,
+    10.5220542,
+    -7.47777152
+  ],
+  "max_difference_Debye": 0.0004945634678632516,
+  "tolerance_Debye": 0.002,
+  "tolerance_reason": "GROMACS mixed precision; double precision independent charges and whole coordinates. Difference far below the bulk response discrepancy.",
+  "coordinate_source": "G96 full precision; .001nm GRO insufficient for this check"
+}

@@ -1,0 +1,28 @@
+[
+  {
+    "nlc_grid_level": 0,
+    "energies_Ha": {
+      "A": -437.5950415401387,
+      "B": -437.5950415401386,
+      "AB": -875.1900857307617,
+      "Acp": -437.59504153983596,
+      "Bcp": -437.5950415398353
+    },
+    "frozen_counterpoise_interaction_kJ_mol": -0.006960436954549986,
+    "uncorrected_interaction_kJ_mol": -0.0069588457323408945,
+    "ghost_fragment_symmetry_difference_kJ_mol": -1.7909085077008057e-09
+  },
+  {
+    "nlc_grid_level": 1,
+    "energies_Ha": {
+      "A": -437.5949910194671,
+      "B": -437.5949910194672,
+      "AB": -875.1899846776594,
+      "Acp": -437.5949910177277,
+      "Bcp": -437.59499101772747
+    },
+    "frozen_counterpoise_interaction_kJ_mol": -0.006937106192450666,
+    "uncorrected_interaction_kJ_mol": -0.006927971663607138,
+    "ghost_fragment_symmetry_difference_kJ_mol": -5.969695025669352e-10
+  }
+]

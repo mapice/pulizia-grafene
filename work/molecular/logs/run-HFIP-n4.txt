@@ -1,0 +1,8 @@
+HFIP_n4_seed20261006 Starting nvt-prep
+{'stage': 'nvt-prep', 'exitcode': 0, 'seconds': 2.0550016248598695}
+HFIP_n4_seed20261006 Starting nvt
+{'stage': 'nvt', 'exitcode': 0, 'seconds': 88.60401145904325}
+HFIP_n4_seed20261006 Starting production-prep
+{'stage': 'production-prep', 'exitcode': 0, 'seconds': 2.079261084087193}
+HFIP_n4_seed20261006 Starting production
+{'stage': 'production', 'exitcode': 0, 'seconds': 175.09244837495498}

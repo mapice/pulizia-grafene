@@ -1,0 +1,26 @@
+[
+  {
+    "name": "tree.json",
+    "url": "https://api.github.com/repos/ByteDance-Seed/byteff2/git/trees/v1.0.0?recursive=1",
+    "bytes": 71304,
+    "sha256": "bf6b8b434a9bf5514a93ee6e3eaae38521a5a146c0c8ef162c817183fe1d5e37"
+  },
+  {
+    "name": "huggingface-model.json",
+    "url": "https://huggingface.co/api/models/ByteDance-Seed/byteff2",
+    "bytes": 819,
+    "sha256": "04fd5981fd441fb4751953ad7f3d064b49f6336598baa415a8a6a56cbafa2944"
+  },
+  {
+    "name": "README.md",
+    "url": "https://raw.githubusercontent.com/ByteDance-Seed/byteff2/v1.0.0/README.md",
+    "bytes": 6309,
+    "sha256": "ab7bb8fbf2325601da12fb085d104e1e7dfe820b0138d7596a1d508b6ac2f12f"
+  },
+  {
+    "name": "requirements.txt",
+    "url": "https://raw.githubusercontent.com/ByteDance-Seed/byteff2/v1.0.0/requirements.txt",
+    "bytes": 253,
+    "sha256": "6505de5b3b934fc3e33e4a888aec5eacd803ed32fa914b5943a7cd86a0b45aa7"
+  }
+]

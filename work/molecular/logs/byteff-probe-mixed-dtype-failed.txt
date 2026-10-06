@@ -1,0 +1,49 @@
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+HFIP 12 q -2.7755575615628914e-17 sum atomic alpha nm3 0.00977229856118616
+DMF 12 q 3.8163916471489756e-17 sum atomic alpha nm3 0.009625236285628325
+THF 13 q 1.3877787807814457e-17 sum atomic alpha nm3 0.010373648126370913
+Anisole 16 q -1.3877787807814457e-17 sum atomic alpha nm3 0.016817431743676028
+AceticAcid 8 q -2.7755575615628914e-17 sum atomic alpha nm3 0.006458472275265707
+MethylPivalate 20 q -5.551115123125783e-17 sum atomic alpha nm3 0.01596595109571714
+DimethylCarbonate 12 q -1.3877787807814457e-17 sum atomic alpha nm3 0.009016996326272812
+Traceback (most recent call last):
+  File "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/byteff_probe.py", line 137, in <module>
+    main()
+  File "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/byteff_probe.py", line 101, in main
+    e, fields, forces, numbers = pair_evaluation(names, a.positions)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/byteff_probe.py", line 85, in pair_evaluation
+    result = model(data, cluster=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/vendor/byteff-pol/byteff2/model/hybrid_ff.py", line 131, in forward
+    energy, forces = self.ff_block(data, node_h, edge_h, ff_parameters, cluster=False, skip_ff=skip_ff)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/vendor/byteff-pol/byteff2/model/hybrid_ff.py", line 90, in forward
+    energy, forces = layer(data, x_h, e_h, ff_parameters, cluster)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/vendor/byteff-pol/byteff2/model/ff_layers/mm_bonded.py", line 350, in forward
+    e_term, f_term = getattr(self, f"calc_{term}")(data, ff_parameters, cluster=cluster)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/vendor/byteff-pol/byteff2/model/ff_layers/mm_bonded.py", line 425, in calc_bond
+    forces.scatter_add_(0, atom1_idxs, pair_forces)
+RuntimeError: scatter(): Expected self.dtype to be equal to src.dtype
+{"guard": {"command": ["work/molecular/.venv/bin/python", "-u", "work/molecular/byteff_probe.py"], "pid": 59515, "exitcode": 1, "peak_RSS_MB": 497.609375, "elapsed_seconds": 8.049723375122994, "termination_reason": null}}

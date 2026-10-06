@@ -1,0 +1,35 @@
+{
+  "model_sha256": "fab8b8713c832f31a2a853aaa22fd638be8a369cbf5095e6b3e982a18d10e93a",
+  "atoms": 192,
+  "source_sha256": "0f328560e2d10b6799faa3b13b14b8ca3e67242dc0acba5819b33557e28c7527",
+  "rows": [
+    {
+      "translation_molecule0_x_A": 0.0,
+      "official_energy_eV": -17.316850662231445,
+      "scalar_energy_eV": -17.316848754882812,
+      "difference_eV": 1.9073486328125e-06,
+      "official_seconds": 3.8258331660181284,
+      "scalar_seconds": 0.8808462501037866
+    },
+    {
+      "translation_molecule0_x_A": 0.01,
+      "official_energy_eV": -17.32012176513672,
+      "scalar_energy_eV": -17.32012939453125,
+      "difference_eV": -7.62939453125e-06,
+      "official_seconds": 2.202919750008732,
+      "scalar_seconds": 0.7671089579816908
+    },
+    {
+      "translation_molecule0_x_A": -0.01,
+      "official_energy_eV": -17.313369750976562,
+      "scalar_energy_eV": -17.313369750976562,
+      "difference_eV": 0.0,
+      "official_seconds": 2.237714875023812,
+      "scalar_seconds": 0.7512588328681886
+    }
+  ],
+  "maximum_energy_difference_eV": 7.62939453125e-06,
+  "median_scalar_seconds": 0.7671089579816908,
+  "median_official_seconds": 2.237714875023812,
+  "scope": "Same Hamiltonian energy-path numerical control only; no equilibrium/ranking established"
+}

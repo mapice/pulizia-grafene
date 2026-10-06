@@ -1,0 +1,29 @@
+{
+  "coordinate_value_checks": [
+    {
+      "direction": "forward",
+      "max_errors_time_z_rgz": [
+        0.0,
+        3.3094571527669814e-10,
+        1.8640822219140318e-10
+      ],
+      "frames": 501
+    },
+    {
+      "direction": "reverse",
+      "max_errors_time_z_rgz": [
+        0.0,
+        3.746414289906852e-10,
+        1.3904366547023983e-10
+      ],
+      "frames": 501
+    }
+  ],
+  "derivative_file": "bias-force-derivatives.dat",
+  "finite_difference_max_error_kJ_mol_nm": 0.00036699999999978417,
+  "independent_analytical_force_error_kJ_mol_nm": 4.938544410984513e-07,
+  "analytical_forces_net_sum_zero": true,
+  "coordinate_and_first_derivative_validation_passed": true,
+  "scope": "Coordinate and force implementation checks, not desorption equilibrium or cleaning",
+  "qualified_for_cleaning": false
+}

@@ -1,0 +1,12 @@
+HFIP_n0_seed20261008_N64 Starting min-prep
+{'stage': 'min-prep', 'exitcode': 0, 'seconds': 2.062471916899085}
+HFIP_n0_seed20261008_N64 Starting min
+{'stage': 'min', 'exitcode': 0, 'seconds': 2.0994248331990093}
+HFIP_n0_seed20261008_N64 Starting nvt-prep
+{'stage': 'nvt-prep', 'exitcode': 0, 'seconds': 2.0844328328967094}
+HFIP_n0_seed20261008_N64 Starting nvt
+{'stage': 'nvt', 'exitcode': 0, 'seconds': 28.23220420908183}
+HFIP_n0_seed20261008_N64 Starting production-prep
+{'stage': 'production-prep', 'exitcode': 0, 'seconds': 2.1150177498348057}
+HFIP_n0_seed20261008_N64 Starting production
+{'stage': 'production', 'exitcode': 0, 'seconds': 352.3608335000463}

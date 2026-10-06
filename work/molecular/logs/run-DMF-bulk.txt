@@ -1,0 +1,12 @@
+DMF_n0_seed20261006 Starting min-prep
+{'stage': 'min-prep', 'exitcode': 0, 'seconds': 2.070199874928221}
+DMF_n0_seed20261006 Starting min
+{'stage': 'min', 'exitcode': 0, 'seconds': 2.106532375095412}
+DMF_n0_seed20261006 Starting nvt-prep
+{'stage': 'nvt-prep', 'exitcode': 0, 'seconds': 2.098553834017366}
+DMF_n0_seed20261006 Starting nvt
+{'stage': 'nvt', 'exitcode': 0, 'seconds': 48.35621887492016}
+DMF_n0_seed20261006 Starting production-prep
+{'stage': 'production-prep', 'exitcode': 0, 'seconds': 2.086710040923208}
+DMF_n0_seed20261006 Starting production
+{'stage': 'production', 'exitcode': 0, 'seconds': 535.3014134580735}

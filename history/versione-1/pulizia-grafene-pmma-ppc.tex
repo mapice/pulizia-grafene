@@ -1,0 +1,482 @@
+\documentclass[11pt,reqno]{amsart}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage[italian]{babel}
+\usepackage{microtype}
+\usepackage{tikz}
+\usepackage{placeins}
+\usetikzlibrary{arrows.meta,positioning,calc,decorations.pathreplacing}
+\usepackage[letterpaper,textwidth=6.25in,textheight=8.85in,centering]{geometry}
+\usepackage[hidelinks,unicode]{hyperref}
+\usepackage{booktabs,array}
+\hypersetup{pdftitle={Pulizia chimica del grafene trasferito con PMMA e PPC},pdfauthor={Codex, su richiesta di Mattia Apicella},pdfsubject={Analisi della letteratura e proposta sperimentale; nessun nuovo risultato di laboratorio}}
+\numberwithin{equation}{section}
+\renewcommand{\abstractname}{Sommario}
+\renewcommand{\refname}{Riferimenti}
+\renewcommand{\keywordsname}{Parole chiave}
+\renewcommand{\datename}{\textit{Data}:}
+\newcommand{\SiO}{\ensuremath{\mathrm{SiO}_2}}
+\newcommand{\HCl}{\ensuremath{\mathrm{HCl}}}
+\newcommand{\degC}{\ensuremath{^{\circ}\mathrm{C}}}
+\newcommand{\um}{\ensuremath{\mu\mathrm{m}}}
+\newcommand{\nm}{\ensuremath{\mathrm{nm}}}
+\title[Pulizia chimica del grafene PMMA/PPC]{Pulizia chimica del grafene trasferito con PMMA e PPC su silicio ossidato:\\ una proposta verificabile per AR-P 672.045}
+\author{Nota tecnica per Mattia Apicella e Armando Serio}
+\date{6 ottobre 2026}
+\thanks{Analisi e testo redatti da Codex su richiesta di Mattia Apicella. Documento di proposta, non articolo sperimentale: non sono stati trattati campioni n\'e prodotti dati nuovi. Nessuna affiliazione, revisione indipendente o priorit\`a scientifica rivendicata.}
+\keywords{Grafene CVD, PMMA AR-P 672.045, PPC, residui di trasferimento, pulizia chimica}
+\begin{document}
+\begin{abstract}
+Si considera la pulizia di grafene cresciuto su rame e trasferito su
+\SiO/Si con PMMA AR-P 672.045 e un ulteriore strato di PPC, dopo
+un trattamento a 90\,\degC\ per due minuti e una separazione
+elettrochimica dal rame. Il quesito riguarda campioni gi\`a trasferiti
+e ammette solventi organici o acidi, escludendo basi e trattamenti fisici
+come soluzione. La proposta principale \`e verificare un trattamento
+acquoso con HCl, per il quale esiste un precedente su grafene con
+residui di PMMA, mediante un confronto controllato sul materiale
+effettivamente usato. Una seconda prova distingue il contributo
+dell'acido da quello di una successiva estrazione in anisolo.
+Si esplicitano le differenze dal precedente, il possibile ruolo del PPC,
+le misure necessarie e i criteri di fallimento. Il risultato di questo
+documento \`e una proposta chimica motivata e falsificabile; l'efficacia
+sul campione in questione resta da dimostrare.
+\end{abstract}
+\maketitle
+
+\section{La risposta al quesito}
+
+\textbf{La prima prova che sceglierei \`e un trattamento post-trasferimento
+con HCl acquoso, accompagnato da un controllo in sola acqua e da una
+verifica chimica dei residui.} Non assumerei che ogni particella sia PMMA,
+n\'e proporrei semplicemente di prolungare il bagno nel solvente che ha
+gi\`a fallito. Il precedente pertinente \`e Xiao, Wan e Durkan
+\cite{Xiao2019}; il suo trasferimento al sistema PMMA/PPC qui descritto
+\`e una nostra ipotesi sperimentale.
+
+Occorre distinguere due affermazioni. La letteratura documenta trattamenti
+chimici capaci di migliorare la pulizia in condizioni definite. Non
+documenta, per quanto verificato qui, una procedura universale che
+garantisca la rimozione completa dal particolare campione di Armando.
+Una buona proposta pu\`o contraddire l'aspettativa che si sappiano suggerire
+soltanto solventi generici; per contraddire l'affermazione che sul suo
+campione non funzioni nulla servono misure sul suo campione.
+
+\subsection{Dati ricevuti e dati ancora mancanti}
+Le informazioni comunicate sono: grafene CVD su lamina di Cu;
+substrato finale \SiO/Si; PMMA Allresist indicato come AR672.045;
+90\,\degC\ per 2 minuti; separazione dal rame in una cella con acqua
+ed elettrodi; ulteriore strato di PPC in anisolo, non direttamente a
+contatto con il grafene. L'identificazione delle particelle come PMMA
+\`e stata formulata come probabile.
+
+Non sono noti composizione dell'elettrolita, polarit\`a, tensione,
+corrente, spessori effettivi dei due polimeri, risciacqui, eventuali altre
+cotture, sequenza completa dei solventi gi\`a provati e stato di
+metallizzazione. Queste assenze delimitano la proposta: non costituiscono
+un'autorizzazione a ricostruire arbitrariamente il processo.
+
+\section{Materiali e corrispondenza con il lavoro citato}
+
+La scheda Allresist identifica AR-P 672.045 come PMMA della serie 950K,
+al 4,5\% in anisolo \cite{Allresist}. Questo identifica il prodotto
+di partenza, non la composizione delle particelle dopo tutti i passaggi.
+La formulazione commerciale non deve essere confusa con il PPC,
+poli(propilene carbonato), che \`e un secondo polimero.
+
+Il lavoro che corrisponde meglio agli autori e alla procedura indicati
+\`e \emph{Ultra-clean high-mobility graphene on technologically relevant
+substrates}, di Tyagi e collaboratori, fra cui Vaidotas Mi\v{s}eikis
+e Camilla Coletti \cite{Tyagi2022}. Il supplemento descrive un trasferimento
+con PMMA/PPC, passaggi a 90\,\degC\ per 2 minuti e delaminazione
+elettrochimica. Riporta PMMA di circa 100\,\nm\ e PPC di 1,5\,\um:
+gli spessori non si possono attribuire al campione attuale. Analogamente,
+l'elettrolita alcalino riportato dagli autori non \`e un dato confermato
+per la cella usata da Armando.
+
+Quel lavoro studia acetone seguito da AR 600-71. Il supplemento comprende
+anche un diverso trasferimento mediante attacco del rame, con
+AR-P 679.02. Non si devono scambiare i due procedimenti o i due prodotti.
+Poich\'e il quesito esclude una risposta basata sul solito solvente
+commerciale, quel risultato \`e qui un riferimento di confronto,
+non la proposta risolutiva.
+
+\subsection{Perch\'e il PPC cambia la diagnosi}
+Essere sopra il PMMA durante il trasferimento non dimostra che il PPC
+sia assente dal grafene dopo lo scioglimento dei supporti. Accesso dai
+bordi, difetti della copertura e rideposizione durante il lavaggio sono
+possibilit\`a da verificare. Non sono osservazioni sul campione.
+Un residuo misto pu\`o richiedere una sequenza diversa da quella adeguata
+al PMMA da solo. Il PPC non va inoltre confuso con il policarbonato
+aromatico al bisfenolo A usato in altri metodi di trasferimento.
+
+\section{Tre errori chimici da evitare}
+
+\subsection{Solubilit\`a del prodotto e rimozione dell'interfaccia}
+Il fatto che il resist sia venduto in anisolo dimostra che il materiale
+di partenza pu\`o essere formulato in quel solvente. Non dimostra che
+una frazione aderente, modificata o confinata all'interfaccia si rimuova
+allo stesso modo. In un bagno reale contano anche accesso del liquido,
+tempo di distacco, concentrazione del materiale estratto e
+rideposizione durante lo scambio dei liquidi.
+
+Come semplice modello diagnostico, si pu\`o scrivere
+\begin{equation}\label{eq:plateau}
+ m(t)=m_{\mathrm{persistente}}+
+       m_{\mathrm{accessibile}}e^{-kt},\qquad k>0.
+\end{equation}
+Qui $m$ indica una quantit\`a di residuo, non una misura gi\`a acquisita;
+``persistente'' significa tale nella finestra sperimentale. Il modello
+illustra perch\'e pi\`u tempo nello stesso bagno possa produrre guadagni
+sempre minori. Non identifica il meccanismo: una coda lenta, una
+miscela di popolazioni o un equilibrio di riadsorbimento possono imitare
+lo stesso andamento. Senza dati non si stimano $k$ o le due masse.
+
+\subsection{Un trattamento blando non prova la carbonizzazione}
+I 90\,\degC\ per 2 minuti comunicati non bastano per diagnosticare
+carbonizzazione o reticolazione del PMMA. Uno studio su PMMA 950K
+al 4,5\% mostra che la storia termica influisce sui residui
+\cite{Jia2016}; non autorizza a trasferire al caso presente conclusioni
+ottenute con cotture pi\`u severe. Servono storia completa e analisi
+del residuo, non una diagnosi ricavata dalla sola insolubilit\`a apparente.
+
+\subsection{Idrolisi dell'estere e rottura della catena sono cose diverse}
+Nel PMMA gli esteri sono gruppi laterali rispetto alla catena carboniosa.
+La trasformazione schematica
+\begin{equation}\label{eq:hydrolysis}
+ \mathrm{R{-}COOCH_3+H_2O}
+ \ \rightleftharpoons\ 
+ \mathrm{R{-}COOH+CH_3OH}
+ \quad(\text{catalisi acida})
+\end{equation}
+non spezza, da sola, la catena principale. Non \`e quindi corretto
+descrivere un bagno di HCl come una depolimerizzazione dimostrata del
+PMMA. La formula non prova neppure che la reazione proceda in misura
+utile nelle condizioni proposte. Un eventuale miglioramento potrebbe
+dipendere da distacco, modifiche di bagnabilit\`a, eliminazione di
+contaminanti associati o altri processi. Per il PPC la struttura della
+catena \`e diversa: anche per questo occorrono riferimenti separati.
+
+\section{Che cosa sostengono effettivamente i precedenti}
+
+\subsection{Il precedente scelto per il campione gi\`a trasferito}
+Xiao e collaboratori \cite{Xiao2019} studiano grafene su \SiO/Si
+con PMMA 495K A4, diverso dall'AR-P 672.045. Dopo la rimozione
+principale del supporto, impiegano HCl acquoso 1\,mol/L per 48 ore e
+risciacquo in acqua deionizzata. La rugosit\`a media riportata scende
+da circa 2,4 a 0,4\,\nm. Il risultato non \`e universale: su residui
+invecchiati tre mesi e riscaldati a 200\,\degC\ per tre ore, la
+copertura passa dal 75\% al 34\%. Il trattamento migliora quel caso
+senza pulirlo completamente. Il manoscritto consultato non specifica
+la temperatura del bagno. Non trasferiamo qui i risultati elettrici,
+ottenuti in un diverso passaggio di fabbricazione, allo stesso campione
+del confronto morfologico.
+
+\subsection{Perch\'e non basta dire ``acido acetico''}
+Liu e collaboratori \cite{Liu2023} riportano meno residui visibili
+con acido acetico che con acetone, ma confermano residui dopo entrambi.
+Inoltre, la tabella XPS del monostrato non sostiene una diminuzione
+uniforme di tutte le componenti ossigenate: C--O passa da 7,3\% a
+14,24\%, mentre O--C=O passa da 5,7\% a 6,35\%.
+Il testo interpretativo e questi numeri richiedono cautela; non sono una
+dimostrazione di pulizia completa. Non uso quindi quel lavoro per
+promettere che un altro bagno acido risolva il campione attuale.
+
+\subsection{Prevenzione e recupero non sono intercambiabili}
+Il lavoro di Liu e collaboratori del 2025 \cite{Liu2025} esamina
+contaminanti sulla faccia inferiore del film PMMA/grafene, prima della
+deposizione sul substrato. I trattamenti chiamati sinteticamente
+``HCl'', ``HNO$_3$'' e ``H$_2$SO$_4$'' sono miscele con perossido
+di idrogeno e acqua, non i soli acidi. I risultati indicano un ruolo
+dei contaminanti carboniosi gi\`a presenti durante il trasferimento.
+Non provano che HCl da solo recuperi una superficie gi\`a trasferita.
+La sequenza completa non viene qui adottata come procedura senza basi.
+
+\section{Proposta per AR-P 672.045 con supporto di PPC}
+
+\subsection{Campo di applicazione}
+La prova riguarda campioni di grafene gi\`a trasferiti, con il grosso
+dei supporti rimosso mediante la procedura abituale del laboratorio.
+Si usano campioni gemelli, prima della metallizzazione o con la
+compatibilit\`a dei metalli verificata separatamente. Non si assume
+che un acido compatibile con il sistema grafene/ossido sia compatibile
+con ogni contatto metallico. HF, basi, plasma, UV e ricotture non
+appartengono alla proposta.
+
+\subsection{Prima scelta: prova acida controllata}
+Si confrontano un campione in HCl acquoso 1\,mol/L per 48 ore
+e un gemello in acqua deionizzata per uguale durata. Per la prima
+esecuzione si propone di mantenere entrambi a 20--25\,\degC,
+registrando la temperatura effettiva: questa \`e una scelta del presente
+progetto, non una condizione ricavata dall'articolo.
+Si impiegano reagenti puliti, recipienti compatibili e le normali
+procedure del laboratorio. Non si aggiungono ossidanti e non si
+esegue una neutralizzazione con basi sulla superficie.
+
+Al termine, si effettuano scambi successivi con acqua deionizzata
+fresca, documentando numero, volume e durata dei bagni. L'ultimo
+risciacquo si confronta con un bianco di acqua e recipiente mediante
+pH e conducibilit\`a. Questo controllo limita il trascinamento del
+bagno, ma non certifica l'assenza di cloro adsorbito. L'asciugatura
+e il tempo prima delle misure devono essere uguali per i due campioni.
+
+Un risultato favorevole in questa prova giustifica la ripetizione.
+Un risultato negativo documenta il fallimento nelle condizioni provate,
+non l'impossibilit\`a di ogni pulizia chimica. Se Armando ha gi\`a
+eseguito la stessa sequenza con controlli equivalenti, non sarebbe
+informativo ripeterla: si passa direttamente all'identificazione
+chimica del residuo e al controllo del PPC.
+
+\subsection{Estensione proposta: separare acido ed estrazione}
+Per verificare se il trattamento renda una frazione del residuo pi\`u
+estraibile, proponiamo il confronto a quattro condizioni della
+Tabella~\ref{tab:design}. Questa combinazione non \`e presentata come
+metodo gi\`a convalidato. L'anisolo serve come solvente definito dei
+materiali iniziali e come controllo dell'estrazione; non \`e un nuovo
+``solvente miracoloso''.
+
+\begin{table}[htbp]
+\caption{Confronto proposto sullo stesso processo di trasferimento.
+La prima colonna identifica i gruppi, non risultati osservati.}
+\label{tab:design}
+\centering
+\small
+\begin{tabular}{@{}p{0.09\textwidth}p{0.24\textwidth}p{0.56\textwidth}@{}}
+\toprule
+Gruppo & Fase acquosa & Fase successiva \\
+\midrule
+W & Acqua deionizzata & Risciacquo, scambio comune, due bagni in isopropanolo. \\[4pt]
+S & Acqua deionizzata & Risciacquo, scambio comune, due bagni in anisolo. \\[4pt]
+A & HCl & Risciacquo, scambio comune, due bagni in isopropanolo. \\[4pt]
+AS & HCl & Risciacquo, scambio comune, due bagni in anisolo. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+La fase acquosa ha uguale durata nei quattro gruppi. Dopo i risciacqui
+in acqua si propone uno scambio comune in due bagni freschi di
+isopropanolo, due minuti ciascuno. Segue la fase centrale: due bagni
+freschi di 15 minuti ciascuno, in anisolo per S e AS, in isopropanolo
+per W e A. Infine tutti ricevono due bagni freschi di isopropanolo,
+due minuti ciascuno, e asciugatura con azoto. Queste durate sono
+parametri iniziali proposti, non un'ottimizzazione gi\`a dimostrata.
+Volumi, temperatura e modalit\`a di trasferimento vanno fissati uguali.
+Si verifica su un bianco che il passaggio all'anisolo non lasci una
+fase acquosa separata. W non \`e dunque un campione lasciato soltanto
+in acqua: \`e il controllo dell'intera sequenza senza acido o anisolo.
+
+Il passaggio finale a un liquido in cui il polimero \`e meno solubile
+pu\`o causare rideposizione. Va quindi preceduto da ricambi sufficienti
+del solvente estrattivo e verificato raccogliendo l'ultimo eluato e
+controllando un campione bianco. Se il percorso di risciacquo sporca
+il bianco, la sequenza AS non \`e interpretabile e va corretta prima
+di usarla sul materiale di interesse.
+
+Il confronto S contro W misura l'effetto dell'anisolo al posto
+dell'isopropanolo nella fase centrale; A contro W quello acido;
+AS contro entrambi stabilisce se
+la sequenza combinata offra un vantaggio. Un vantaggio di AS non prova
+automaticamente idrolisi o sinergia molecolare: anche la diversa
+bagnabilit\`a o la rimozione di contaminanti misti sono spiegazioni
+possibili.
+
+\section{Misurare la pulizia senza confonderla con altri cambiamenti}
+
+\subsection{Identit\`a e posizione del residuo}
+Si preparano riferimenti con AR-P 672.045, PPC e i due materiali
+sovrapposti, usando gli stessi lotti e la stessa storia termica. Si
+includono \SiO/Si senza grafene e, se disponibile, grafene di
+riferimento preparato senza contatto con questi supporti.
+I riferimenti spessi servono a riconoscere le firme chimiche;
+non dimostrano da soli la rimovibilit\`a di uno strato interfaciale.
+Si analizzano anche riferimenti esposti agli stessi bagni: un polimero
+trasformato dall'acido pu\`o perdere la firma dell'estere e rimanere
+sulla superficie. La sola scomparsa di quella firma non vale come
+rimozione del materiale.
+
+La microscopia a forza atomica (AFM) localizza le particelle, ma non
+ne determina la composizione. La spettroscopia fotoelettronica XPS
+misura il carbonio e altre specie, ma un solo picco carbonilico non
+separa PMMA e PPC. Per una distinzione credibile si confrontano
+spettri completi dei riferimenti, oppure impronte di frammenti mediante
+spettrometria di massa superficiale (ToF-SIMS), tenendo conto dei
+frammenti comuni e degli effetti della matrice. Quando disponibile,
+una misura infrarossa locale pu\`o integrare il confronto estere/carbonato.
+Le analisi distruttive, come ToF-SIMS, si eseguono su provini gemelli
+dedicati: non si bombarda prima l'area che si vuole poi usare per
+valutare la sola pulizia chimica.
+
+Si cercano Cu e le specie effettivamente presenti nell'elettrolita;
+non si presume Fe soltanto perch\'e compare in procedimenti che
+sciolgono il rame. Si controlla anche il cloro dopo il trattamento.
+Il silicio osservato su \SiO\ non basta a diagnosticare contaminazione
+da silicone. Attribuire una particella alla faccia inferiore del grafene
+richiede una prova specifica: la sola topografia della faccia superiore
+non risolve questa localizzazione.
+
+\subsection{Quantit\`a di residuo e integrit\`a del grafene}
+Prima e dopo il trattamento si acquisiscono immagini nelle stesse
+aree, pi\`u aree casuali predefinite, includendo centro e bordi. Si usa
+AFM con interazione debole: la scansione stessa non deve diventare
+una pulizia meccanica. Un gemello misurato soltanto alla fine controlla
+questo possibile artefatto.
+
+Si riportano sia la frazione di superficie coperta da particelle sia
+il volume apparente delle particelle per unit\`a di area. La sola
+rugosit\`a pu\`o diminuire se il materiale si distende in un film
+uniforme. Viceversa, un film uniforme pu\`o sfuggire al conteggio
+delle particelle e richiede una misura chimica indipendente.
+Pieghe, fori e particelle vanno distinti con criteri fissati in anticipo.
+
+La mappa Raman controlla permanenza del grafene, segnale dei difetti
+e variazioni dei picchi G e 2D nelle medesime condizioni ottiche.
+L'assenza di un aumento misurabile del picco D \`e un controllo utile,
+non una dimostrazione di assenza di qualunque difetto.
+Si verificano inoltre delaminazioni, nuovi fori e, su substrati testimone,
+eventuali modifiche dell'ossido. Misure elettriche aggiuntive devono
+separare mobilit\`a, resistenza di contatto e spostamento del punto
+di neutralit\`a: una variazione del drogaggio non equivale a pulizia.
+
+\subsection{Criteri dichiarati prima della prova}
+Per questa proposta si adotta una soglia operativa iniziale:
+riduzione almeno del 90\% di copertura e volume apparente dei residui,
+con diminuzione coerente del materiale organico, inclusi eventuali
+prodotti di trasformazione, e conservazione di
+almeno il 99\% dell'area iniziale di grafene. Questi numeri sono
+\emph{obiettivi progettuali}, non prestazioni osservate o soglie
+universali della disciplina. Il laboratorio pu\`o sostituirli prima
+della prova con requisiti adeguati al dispositivo.
+
+La riduzione dei residui si calcola sulle sole regioni con grafene
+presente sia prima sia dopo, confrontando esattamente quelle regioni
+anche nella misura iniziale. Le zone asportate si riportano separatamente
+come perdita d'integrit\`a e non si contano come pulite. Altrimenti,
+perdere una piccola regione particolarmente sporca potrebbe simulare
+un grande miglioramento pur rispettando la soglia sull'area totale.
+
+Per i difetti Raman e l'ossido si fissano margini di accettazione
+in base a ripetibilit\`a strumentale e requisiti del dispositivo, prima
+di vedere i risultati. Un semplice ``nessun cambiamento significativo''
+in una misura poco sensibile non basta. Per dichiarare residui non
+rilevati occorre riportare il limite di rivelabilit\`a, ricavato dai
+bianchi e dai riferimenti, e la superficie realmente campionata.
+La frase ``pulito al limite delle misure'' non significa ``privo di
+qualsiasi atomo estraneo''.
+
+\section{Esperimento minimo e decisioni successive}
+
+Una prima esplorazione pu\`o usare quattro porzioni comparabili dello
+stesso trasferimento assegnate casualmente a W, S, A e AS, con misure
+iniziali e finali. Non \`e una prova di riproducibilit\`a. Se un gruppo
+supera i criteri, lo si conferma con almeno tre trasferimenti
+indipendenti, ciascuno suddiviso negli stessi gruppi. L'unit\`a
+indipendente \`e il trasferimento, non ogni immagine AFM o ogni pixel.
+Il numero definitivo di repliche va adattato alla variabilit\`a della
+prova preliminare. Si conservano tutti i campioni falliti e tutte
+le regioni acquisite.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+  box/.style={draw,rounded corners=1pt,align=center,font=\small,
+              text width=6.3cm,inner sep=6pt},
+  flow/.style={-{Stealth[length=2mm]},thick}]
+\node[box,text width=7.3cm] (q) at (0,0) {Stesso grafene e stesso processo PMMA/PPC\\
+Diagnosi iniziale e confronto W, S, A, AS};
+\node[box,text width=7.3cm] (m) at (0,-1.7) {Residui, firma chimica, grafene conservato\\
+e danno misurati insieme};
+\node[box,text width=6.6cm] (yes) at (-3.9,-3.5)
+  {Criteri superati\\Ripetere su trasferimenti indipendenti};
+\node[box,text width=6.6cm] (no) at (3.9,-3.5)
+  {Criteri falliti\\Identificare la frazione persistente};
+\draw[flow] (q)--(m);
+\draw[flow] (m.south)--(yes.north);
+\draw[flow] (m.south)--(no.north);
+\end{tikzpicture}
+\caption{Percorso decisionale proposto. Lo schema non contiene
+risultati sperimentali o percentuali di successo previste.}
+\end{figure}
+\FloatBarrier
+
+I confronti devono tener conto anche della quantit\`a iniziale di residuo.
+Se S migliora rispetto a W senza un vantaggio aggiuntivo dell'acido,
+non si attribuisce il merito a quest'ultimo. Se A migliora rispetto a W
+e AS rispetto a S, il bagno acido ha un contributo misurabile,
+ma il meccanismo resta da identificare. Se si riducono
+le particelle senza riduzione del segnale polimerico, si sospetta
+redistribuzione. Se scompare anche il grafene, il trattamento fallisce.
+Se rimane una frazione carboniosa non identificabile con i riferimenti,
+non si continua a chiamarla PMMA soltanto per abitudine.
+
+Qualora prevalga contaminazione intrappolata sotto il grafene,
+un trattamento dall'alto pu\`o avere accesso insufficiente. In quel
+caso si apre un esperimento diverso sul trasferimento: pulizia dei
+bagni, risciacqui prima della deposizione, supporto di PPC e storia
+termica. Va dichiarato come prevenzione per nuovi campioni, senza
+presentarlo come recupero del campione gi\`a preparato.
+
+\section{Conclusione e limiti della risposta}
+
+Per il sistema descritto esiste una via chimica concreta da mettere
+alla prova: trattamento acido controllato, verifica della frazione
+estraibile e identificazione distinta di PMMA, PPC e contaminanti
+del processo. La parte originale di questa nota \`e l'adattamento
+critico e il disegno di verifica; non viene rivendicata l'invenzione
+del trattamento con HCl o una nuova scoperta sperimentale.
+
+\textbf{Non \`e stato dimostrato che il campione di Armando sia pulibile
+con questa procedura.} \`E stato costruito un esperimento che pu\`o
+stabilirlo senza scambiare rimozione del grafene, redistribuzione
+dei residui o variazione del drogaggio per successo. Se la prova
+riesce e si ripete, la conclusione sar\`a limitata ai materiali e alle
+condizioni misurati. Se fallisce, il fallimento dovr\`a rimanere nel
+resoconto e orientare la diagnosi successiva.
+
+\begin{thebibliography}{9}
+
+\bibitem{Allresist}
+Allresist GmbH,
+\emph{AR-P 630--670: PMMA-Resists}, scheda tecnica, serie AR-P 672,
+prodotto AR-P 672.045.
+\href{https://www.allresist.de/wp-content/uploads/2020/03/AR-P630-670_Deutsch_Allresist_Produktinformation.pdf}{Scheda del produttore}.
+
+\bibitem{Tyagi2022}
+A. Tyagi, V. Mi\v{s}eikis, L. Martini, S. Forti, N. Mishra,
+Z. M. Gebeyehu, M. A. Giambra, J. Zribi, M. Fr\'egnaux,
+D. Aureau, M. Romagnoli, F. Beltram e C. Coletti,
+\emph{Ultra-clean high-mobility graphene on technologically relevant substrates},
+Nanoscale \textbf{14} (2022), 2167--2176.
+\href{https://doi.org/10.1039/D1NR05904A}{doi:10.1039/D1NR05904A}.
+\href{https://www.rsc.org/suppdata/d1/nr/d1nr05904a/d1nr05904a1.pdf}{Informazioni supplementari},
+in particolare pp.~1 e 5.
+
+\bibitem{Xiao2019}
+Z. Xiao, Q. Wan e C. Durkan,
+\emph{Cleaning Transferred Graphene for Optimization of Device Performance},
+Advanced Materials Interfaces \textbf{6} (2019), 1801794.
+\href{https://doi.org/10.1002/admi.201801794}{doi:10.1002/admi.201801794}.
+\href{https://www.repository.cam.ac.uk/handle/1810/291256}{Manoscritto degli autori, Universit\`a di Cambridge}.
+
+\bibitem{Jia2016}
+K. Jia, J. Luo, R. Hu, J. Zhan, H. Cao, Y. Su, H. Zhu, L. Xie,
+C. Zhao, D. Chen e T. Ye,
+\emph{Evaluation of PMMA Residues as a Function of Baking Temperature and
+a Graphene Heat-Free-Transfer Process to Reduce Them},
+ECS Journal of Solid State Science and Technology \textbf{5} (2016), P138--P141.
+\href{https://doi.org/10.1149/2.0011603jss}{doi:10.1149/2.0011603jss}.
+
+\bibitem{Liu2023}
+Z. Liu, Y. Liu, W. Zheng, Y. Ding, W. Liu, Y. Wen, H. Guo e J. Hou,
+\emph{Cleanliness of transferred graphene by acetone and acid},
+Frontiers in Materials \textbf{10} (2023), 1279939.
+\href{https://doi.org/10.3389/fmats.2023.1279939}{doi:10.3389/fmats.2023.1279939}.
+
+\bibitem{Liu2025}
+H. Liu, Y. Li, K. Yang, L. Guo, Z. Zeng e Y. Yao,
+\emph{Revealing key surface contaminants via stack-flipping strategy:
+investigating rinsing protocols for clean graphene transfer and
+enhanced electrical performance},
+Journal of Materials Chemistry C \textbf{13} (2025), 19606--19614.
+\href{https://doi.org/10.1039/D5TC02259B}{doi:10.1039/D5TC02259B}.
+
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,7 @@
+{
+  "accepted": false,
+  "target_model": "Six equivalent GAFF2 sites, DRISM/KH,298K, experimental dielectric input",
+  "termination": "Six-minute process guard; persistent residual far above1e-10",
+  "stock_water_control": "27iterations,8.3433e-11, converged",
+  "next_required": "Specific documented continuation in density/charges or validated united-atom model; no blind repeat"
+}

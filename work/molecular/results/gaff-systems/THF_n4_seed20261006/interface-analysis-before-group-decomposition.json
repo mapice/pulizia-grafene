@@ -1,0 +1,1053 @@
+{
+  "scope": "Short exploratory oligomer/rigid-sheet trajectory. Not950K, not cleaning, not oxide safety, not a converged desorption free energy.",
+  "solvent": "THF",
+  "polymer_n": 4,
+  "frames": 101,
+  "last_ps": 100.0,
+  "graphene_max_apparent_motion_nm": 3.0041000000196718e-05,
+  "saved_coordinate_resolution_nm": 0.0001,
+  "rigidity_check_is_not_material_damage_prediction": true,
+  "statistics_second_half": {
+    "CM_z_from_sheet_nm": {
+      "mean": 0.5716983460388749,
+      "std": 0.021296323927732102
+    },
+    "Rg_nm": {
+      "mean": 0.3782583919439933,
+      "std": 0.005201574499728384
+    },
+    "nearest_heavy_min_nm": {
+      "mean": 0.32663079816710794,
+      "std": 0.01376749520735988
+    },
+    "heavy_contacts_within045nm": {
+      "mean": 8.058823529411764,
+      "std": 1.2588785034725116
+    },
+    "ester_methyl_contacts_within045nm": {
+      "mean": 1.9019607843137254,
+      "std": 0.2973676644726098
+    },
+    "smooth_heavy_contacts": {
+      "mean": 9.399961099414277,
+      "std": 0.8256877564113304
+    },
+    "polymer_graphene_LJ_energy_kJ_mol": {
+      "mean": -71.37049663210779,
+      "std": 5.98201239348538
+    }
+  },
+  "rows": [
+    {
+      "time_ps": 0.0,
+      "CM_z_from_sheet_nm": 0.5926052027765203,
+      "Rg_nm": 0.37766073159984387,
+      "nearest_heavy_min_nm": 0.3334867515062901,
+      "heavy_contacts_within045nm": 6,
+      "ester_methyl_contacts_within045nm": 1,
+      "smooth_heavy_contacts": 8.073657664248566,
+      "polymer_graphene_LJ_energy_kJ_mol": -65.84003170981923
+    },
+    {
+      "time_ps": 1.0,
+      "CM_z_from_sheet_nm": 0.5840362818993654,
+      "Rg_nm": 0.3854627318180479,
+      "nearest_heavy_min_nm": 0.34010569562064535,
+      "heavy_contacts_within045nm": 6,
+      "ester_methyl_contacts_within045nm": 1,
+      "smooth_heavy_contacts": 8.081450514435112,
+      "polymer_graphene_LJ_energy_kJ_mol": -62.438731799756326
+    },
+    {
+      "time_ps": 2.0,
+      "CM_z_from_sheet_nm": 0.5747119357234172,
+      "Rg_nm": 0.3731359507940062,
+      "nearest_heavy_min_nm": 0.3028452652890602,
+      "heavy_contacts_within045nm": 9,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.379124171897306,
+      "polymer_graphene_LJ_energy_kJ_mol": -74.54617767702442
+    },
+    {
+      "time_ps": 3.0,
+      "CM_z_from_sheet_nm": 0.5908734990432314,
+      "Rg_nm": 0.3846092645289709,
+      "nearest_heavy_min_nm": 0.34163759710117253,
+      "heavy_contacts_within045nm": 6,
+      "ester_methyl_contacts_within045nm": 1,
+      "smooth_heavy_contacts": 8.367698995996928,
+      "polymer_graphene_LJ_energy_kJ_mol": -65.98927916235897
+    },
+    {
+      "time_ps": 4.0,
+      "CM_z_from_sheet_nm": 0.5801902516404418,
+      "Rg_nm": 0.3752078481438702,
+      "nearest_heavy_min_nm": 0.2973686523913475,
+      "heavy_contacts_within045nm": 8,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.36707285340917,
+      "polymer_graphene_LJ_energy_kJ_mol": -69.46113682029059
+    },
+    {
+      "time_ps": 5.0,
+      "CM_z_from_sheet_nm": 0.5789736659369744,
+      "Rg_nm": 0.3744867858897142,
+      "nearest_heavy_min_nm": 0.3190160685370043,
+      "heavy_contacts_within045nm": 6,
+      "ester_methyl_contacts_within045nm": 1,
+      "smooth_heavy_contacts": 8.988525789532492,
+      "polymer_graphene_LJ_energy_kJ_mol": -68.16520204550258
+    },
+    {
+      "time_ps": 6.0,
+      "CM_z_from_sheet_nm": 0.594221280815296,
+      "Rg_nm": 0.38033295892741353,
+      "nearest_heavy_min_nm": 0.3396275507255175,
+      "heavy_contacts_within045nm": 5,
+      "ester_methyl_contacts_within045nm": 1,
+      "smooth_heavy_contacts": 8.388481888780863,
+      "polymer_graphene_LJ_energy_kJ_mol": -57.87549922378265
+    },
+    {
+      "time_ps": 7.0,
+      "CM_z_from_sheet_nm": 0.5933095505580748,
+      "Rg_nm": 0.37576845159371347,
+      "nearest_heavy_min_nm": 0.3216161603585977,
+      "heavy_contacts_within045nm": 7,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 8.786076357930664,
+      "polymer_graphene_LJ_energy_kJ_mol": -69.53874891989766
+    },
+    {
+      "time_ps": 8.0,
+      "CM_z_from_sheet_nm": 0.594292027839086,
+      "Rg_nm": 0.3758890460604267,
+      "nearest_heavy_min_nm": 0.351583125198618,
+      "heavy_contacts_within045nm": 8,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.101911933785948,
+      "polymer_graphene_LJ_energy_kJ_mol": -71.08884904498089
+    },
+    {
+      "time_ps": 9.0,
+      "CM_z_from_sheet_nm": 0.5615006313889874,
+      "Rg_nm": 0.3834445398131095,
+      "nearest_heavy_min_nm": 0.31399273653896426,
+      "heavy_contacts_within045nm": 9,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 10.524123769909632,
+      "polymer_graphene_LJ_energy_kJ_mol": -74.92885526062648
+    },
+    {
+      "time_ps": 10.0,
+      "CM_z_from_sheet_nm": 0.5779115247125829,
+      "Rg_nm": 0.3759495363984463,
+      "nearest_heavy_min_nm": 0.3297940231411582,
+      "heavy_contacts_within045nm": 9,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.487943231535054,
+      "polymer_graphene_LJ_energy_kJ_mol": -70.69344386866302
+    },
+    {
+      "time_ps": 11.0,
+      "CM_z_from_sheet_nm": 0.591961829522818,
+      "Rg_nm": 0.3770209420774646,
+      "nearest_heavy_min_nm": 0.3294139350104034,
+      "heavy_contacts_within045nm": 8,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.237344571974148,
+      "polymer_graphene_LJ_energy_kJ_mol": -71.80560965510173
+    },
+    {
+      "time_ps": 12.0,
+      "CM_z_from_sheet_nm": 0.5803416091204284,
+      "Rg_nm": 0.3756032675094164,
+      "nearest_heavy_min_nm": 0.32124336630790506,
+      "heavy_contacts_within045nm": 8,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.381598391023989,
+      "polymer_graphene_LJ_energy_kJ_mol": -73.42688905927469
+    },
+    {
+      "time_ps": 13.0,
+      "CM_z_from_sheet_nm": 0.6045294948840239,
+      "Rg_nm": 0.37112920010538186,
+      "nearest_heavy_min_nm": 0.3426122038463256,
+      "heavy_contacts_within045nm": 7,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 8.434472266175659,
+      "polymer_graphene_LJ_energy_kJ_mol": -64.95461735910112
+    },
+    {
+      "time_ps": 14.0,
+      "CM_z_from_sheet_nm": 0.5988106867683188,
+      "Rg_nm": 0.3754888392406862,
+      "nearest_heavy_min_nm": 0.31362059016274724,
+      "heavy_contacts_within045nm": 8,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 8.99714616959754,
+      "polymer_graphene_LJ_energy_kJ_mol": -69.99658835367791
+    },
+    {
+      "time_ps": 15.0,
+      "CM_z_from_sheet_nm": 0.6045927294460776,
+      "Rg_nm": 0.37767335106618066,
+      "nearest_heavy_min_nm": 0.33383603343261126,
+      "heavy_contacts_within045nm": 8,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 8.687753627152773,
+      "polymer_graphene_LJ_energy_kJ_mol": -63.967220148167826
+    },
+    {
+      "time_ps": 16.0,
+      "CM_z_from_sheet_nm": 0.6395043204661519,
+      "Rg_nm": 0.37702398710962026,
+      "nearest_heavy_min_nm": 0.3333463881631433,
+      "heavy_contacts_within045nm": 7,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 7.415279061868743,
+      "polymer_graphene_LJ_energy_kJ_mol": -54.983108487527524
+    },
+    {
+      "time_ps": 17.0,
+      "CM_z_from_sheet_nm": 0.5671476989290798,
+      "Rg_nm": 0.3766118189607074,
+      "nearest_heavy_min_nm": 0.309659174242273,
+      "heavy_contacts_within045nm": 8,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 10.071206272283266,
+      "polymer_graphene_LJ_energy_kJ_mol": -73.74859390384665
+    },
+    {
+      "time_ps": 18.0,
+      "CM_z_from_sheet_nm": 0.601361145645673,
+      "Rg_nm": 0.37848222174202667,
+      "nearest_heavy_min_nm": 0.30482539780668844,
+      "heavy_contacts_within045nm": 8,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 8.967286134385025,
+      "polymer_graphene_LJ_energy_kJ_mol": -66.28581643815713
+    },
+    {
+      "time_ps": 19.0,
+      "CM_z_from_sheet_nm": 0.6006091956289777,
+      "Rg_nm": 0.3723524062840756,
+      "nearest_heavy_min_nm": 0.3112549856738538,
+      "heavy_contacts_within045nm": 8,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 8.731536618494712,
+      "polymer_graphene_LJ_energy_kJ_mol": -71.47960506188674
+    },
+    {
+      "time_ps": 20.0,
+      "CM_z_from_sheet_nm": 0.6212503454547414,
+      "Rg_nm": 0.3790692879287048,
+      "nearest_heavy_min_nm": 0.34887445841223214,
+      "heavy_contacts_within045nm": 8,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 7.969206285257324,
+      "polymer_graphene_LJ_energy_kJ_mol": -67.69658690438149
+    },
+    {
+      "time_ps": 21.0,
+      "CM_z_from_sheet_nm": 0.5871221312793645,
+      "Rg_nm": 0.39489378308976586,
+      "nearest_heavy_min_nm": 0.34021842941029184,
+      "heavy_contacts_within045nm": 8,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.035779555082929,
+      "polymer_graphene_LJ_energy_kJ_mol": -73.61862898921878
+    },
+    {
+      "time_ps": 22.0,
+      "CM_z_from_sheet_nm": 0.603420176752718,
+      "Rg_nm": 0.38434058893135836,
+      "nearest_heavy_min_nm": 0.32077100952798926,
+      "heavy_contacts_within045nm": 8,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 8.239104882421554,
+      "polymer_graphene_LJ_energy_kJ_mol": -67.11866350216204
+    },
+    {
+      "time_ps": 23.0,
+      "CM_z_from_sheet_nm": 0.5702999262230728,
+      "Rg_nm": 0.3825459063837154,
+      "nearest_heavy_min_nm": 0.29190104975249476,
+      "heavy_contacts_within045nm": 9,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 10.26444810832367,
+      "polymer_graphene_LJ_energy_kJ_mol": -71.33571019471567
+    },
+    {
+      "time_ps": 24.0,
+      "CM_z_from_sheet_nm": 0.584923149675168,
+      "Rg_nm": 0.38250585506590096,
+      "nearest_heavy_min_nm": 0.3280085536741489,
+      "heavy_contacts_within045nm": 8,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.305100427993382,
+      "polymer_graphene_LJ_energy_kJ_mol": -66.34379058170401
+    },
+    {
+      "time_ps": 25.0,
+      "CM_z_from_sheet_nm": 0.5737311327686401,
+      "Rg_nm": 0.3871339413638677,
+      "nearest_heavy_min_nm": 0.33129689161749426,
+      "heavy_contacts_within045nm": 8,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.636613145368635,
+      "polymer_graphene_LJ_energy_kJ_mol": -59.28212648726561
+    },
+    {
+      "time_ps": 26.0,
+      "CM_z_from_sheet_nm": 0.6156559955931389,
+      "Rg_nm": 0.38668732705433106,
+      "nearest_heavy_min_nm": 0.317649428028148,
+      "heavy_contacts_within045nm": 7,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 7.746232445512312,
+      "polymer_graphene_LJ_energy_kJ_mol": -57.60616688497204
+    },
+    {
+      "time_ps": 27.0,
+      "CM_z_from_sheet_nm": 0.5930320684676036,
+      "Rg_nm": 0.38085887939390217,
+      "nearest_heavy_min_nm": 0.33083321892741746,
+      "heavy_contacts_within045nm": 7,
+      "ester_methyl_contacts_within045nm": 1,
+      "smooth_heavy_contacts": 8.380082454832815,
+      "polymer_graphene_LJ_energy_kJ_mol": -67.39370633828511
+    },
+    {
+      "time_ps": 28.0,
+      "CM_z_from_sheet_nm": 0.586676388167449,
+      "Rg_nm": 0.38024079459630467,
+      "nearest_heavy_min_nm": 0.31508012099023014,
+      "heavy_contacts_within045nm": 8,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.136342489587095,
+      "polymer_graphene_LJ_energy_kJ_mol": -71.15285073480561
+    },
+    {
+      "time_ps": 29.0,
+      "CM_z_from_sheet_nm": 0.5755397703231724,
+      "Rg_nm": 0.38125970180442165,
+      "nearest_heavy_min_nm": 0.34037809875491637,
+      "heavy_contacts_within045nm": 9,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.794467343402973,
+      "polymer_graphene_LJ_energy_kJ_mol": -73.3317520136453
+    },
+    {
+      "time_ps": 30.0,
+      "CM_z_from_sheet_nm": 0.5702400118805757,
+      "Rg_nm": 0.3824103689951522,
+      "nearest_heavy_min_nm": 0.29623794693458266,
+      "heavy_contacts_within045nm": 8,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.45122722955253,
+      "polymer_graphene_LJ_energy_kJ_mol": -70.5827517055905
+    },
+    {
+      "time_ps": 31.0,
+      "CM_z_from_sheet_nm": 0.5781310923418839,
+      "Rg_nm": 0.3709665104014149,
+      "nearest_heavy_min_nm": 0.303505408396628,
+      "heavy_contacts_within045nm": 9,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.443217568397749,
+      "polymer_graphene_LJ_energy_kJ_mol": -68.26853961684577
+    },
+    {
+      "time_ps": 32.0,
+      "CM_z_from_sheet_nm": 0.5913658175356233,
+      "Rg_nm": 0.3828156884556152,
+      "nearest_heavy_min_nm": 0.3569049361642527,
+      "heavy_contacts_within045nm": 8,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 8.672186266639395,
+      "polymer_graphene_LJ_energy_kJ_mol": -69.72101168632126
+    },
+    {
+      "time_ps": 33.0,
+      "CM_z_from_sheet_nm": 0.58705067989492,
+      "Rg_nm": 0.3888836584838376,
+      "nearest_heavy_min_nm": 0.3121139615041447,
+      "heavy_contacts_within045nm": 9,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 8.803381272978248,
+      "polymer_graphene_LJ_energy_kJ_mol": -69.62404094323772
+    },
+    {
+      "time_ps": 34.0,
+      "CM_z_from_sheet_nm": 0.5711682228939589,
+      "Rg_nm": 0.3852153194766855,
+      "nearest_heavy_min_nm": 0.32518537153912463,
+      "heavy_contacts_within045nm": 8,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.461105471857183,
+      "polymer_graphene_LJ_energy_kJ_mol": -73.82224364012534
+    },
+    {
+      "time_ps": 35.0,
+      "CM_z_from_sheet_nm": 0.5641698657419112,
+      "Rg_nm": 0.3837470301474359,
+      "nearest_heavy_min_nm": 0.3184026529424677,
+      "heavy_contacts_within045nm": 9,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.986698689314771,
+      "polymer_graphene_LJ_energy_kJ_mol": -67.40601786265569
+    },
+    {
+      "time_ps": 36.0,
+      "CM_z_from_sheet_nm": 0.5721420199707361,
+      "Rg_nm": 0.3869034657021544,
+      "nearest_heavy_min_nm": 0.3324370775404941,
+      "heavy_contacts_within045nm": 9,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.609587143780999,
+      "polymer_graphene_LJ_energy_kJ_mol": -70.71789143411401
+    },
+    {
+      "time_ps": 37.0,
+      "CM_z_from_sheet_nm": 0.5542469410393619,
+      "Rg_nm": 0.38215388311995413,
+      "nearest_heavy_min_nm": 0.30135119661552007,
+      "heavy_contacts_within045nm": 9,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 10.438893547836448,
+      "polymer_graphene_LJ_energy_kJ_mol": -72.27145523849278
+    },
+    {
+      "time_ps": 38.0,
+      "CM_z_from_sheet_nm": 0.5601758874806908,
+      "Rg_nm": 0.38229054878346985,
+      "nearest_heavy_min_nm": 0.33060479954631167,
+      "heavy_contacts_within045nm": 9,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 10.00435029504315,
+      "polymer_graphene_LJ_energy_kJ_mol": -82.14599678145953
+    },
+    {
+      "time_ps": 39.0,
+      "CM_z_from_sheet_nm": 0.5978334211674783,
+      "Rg_nm": 0.38157613159758547,
+      "nearest_heavy_min_nm": 0.3439707750431783,
+      "heavy_contacts_within045nm": 7,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 7.936530283294417,
+      "polymer_graphene_LJ_energy_kJ_mol": -59.40414181170011
+    },
+    {
+      "time_ps": 40.0,
+      "CM_z_from_sheet_nm": 0.5485708527925284,
+      "Rg_nm": 0.3857171156879969,
+      "nearest_heavy_min_nm": 0.3202119100434078,
+      "heavy_contacts_within045nm": 10,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 10.140819877239906,
+      "polymer_graphene_LJ_energy_kJ_mol": -79.16659496863731
+    },
+    {
+      "time_ps": 41.0,
+      "CM_z_from_sheet_nm": 0.5704079269032225,
+      "Rg_nm": 0.37993670744773234,
+      "nearest_heavy_min_nm": 0.3388730192157598,
+      "heavy_contacts_within045nm": 7,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 8.989425539614782,
+      "polymer_graphene_LJ_energy_kJ_mol": -70.48127935539627
+    },
+    {
+      "time_ps": 42.0,
+      "CM_z_from_sheet_nm": 0.5566967996668359,
+      "Rg_nm": 0.37512191765752384,
+      "nearest_heavy_min_nm": 0.3263308419454236,
+      "heavy_contacts_within045nm": 8,
+      "ester_methyl_contacts_within045nm": 1,
+      "smooth_heavy_contacts": 9.874340551319195,
+      "polymer_graphene_LJ_energy_kJ_mol": -70.15901295718417
+    },
+    {
+      "time_ps": 43.0,
+      "CM_z_from_sheet_nm": 0.5620816425615667,
+      "Rg_nm": 0.3852043223262545,
+      "nearest_heavy_min_nm": 0.3295002643780486,
+      "heavy_contacts_within045nm": 9,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.409351115529686,
+      "polymer_graphene_LJ_energy_kJ_mol": -62.55449907260394
+    },
+    {
+      "time_ps": 44.0,
+      "CM_z_from_sheet_nm": 0.563236184589865,
+      "Rg_nm": 0.38028162424308826,
+      "nearest_heavy_min_nm": 0.33461814168188586,
+      "heavy_contacts_within045nm": 8,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.701450795063604,
+      "polymer_graphene_LJ_energy_kJ_mol": -73.16659217035608
+    },
+    {
+      "time_ps": 45.0,
+      "CM_z_from_sheet_nm": 0.5785366822358986,
+      "Rg_nm": 0.3823031789303304,
+      "nearest_heavy_min_nm": 0.34269948643734527,
+      "heavy_contacts_within045nm": 7,
+      "ester_methyl_contacts_within045nm": 1,
+      "smooth_heavy_contacts": 8.641281530048364,
+      "polymer_graphene_LJ_energy_kJ_mol": -66.27269454963646
+    },
+    {
+      "time_ps": 46.0,
+      "CM_z_from_sheet_nm": 0.5880916529019234,
+      "Rg_nm": 0.37352962699411046,
+      "nearest_heavy_min_nm": 0.34924113321291034,
+      "heavy_contacts_within045nm": 8,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 8.749398447004436,
+      "polymer_graphene_LJ_energy_kJ_mol": -67.40704368866491
+    },
+    {
+      "time_ps": 47.0,
+      "CM_z_from_sheet_nm": 0.5663544922361039,
+      "Rg_nm": 0.38199287239478585,
+      "nearest_heavy_min_nm": 0.31679175825012995,
+      "heavy_contacts_within045nm": 9,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.37153113764144,
+      "polymer_graphene_LJ_energy_kJ_mol": -65.26394867126544
+    },
+    {
+      "time_ps": 48.0,
+      "CM_z_from_sheet_nm": 0.5772642626507318,
+      "Rg_nm": 0.3766343828420538,
+      "nearest_heavy_min_nm": 0.3357014368643856,
+      "heavy_contacts_within045nm": 6,
+      "ester_methyl_contacts_within045nm": 1,
+      "smooth_heavy_contacts": 8.96817389112011,
+      "polymer_graphene_LJ_energy_kJ_mol": -70.82098900701047
+    },
+    {
+      "time_ps": 49.0,
+      "CM_z_from_sheet_nm": 0.550102280177764,
+      "Rg_nm": 0.38327031964535674,
+      "nearest_heavy_min_nm": 0.33295098489871416,
+      "heavy_contacts_within045nm": 10,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.948364242028255,
+      "polymer_graphene_LJ_energy_kJ_mol": -73.86213744376127
+    },
+    {
+      "time_ps": 50.0,
+      "CM_z_from_sheet_nm": 0.5538501575622568,
+      "Rg_nm": 0.3794108231675412,
+      "nearest_heavy_min_nm": 0.33412303863011406,
+      "heavy_contacts_within045nm": 10,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.634218479602321,
+      "polymer_graphene_LJ_energy_kJ_mol": -71.56611793822142
+    },
+    {
+      "time_ps": 51.0,
+      "CM_z_from_sheet_nm": 0.5270892729867581,
+      "Rg_nm": 0.38197631460897635,
+      "nearest_heavy_min_nm": 0.3288499178650108,
+      "heavy_contacts_within045nm": 10,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 10.864970435435394,
+      "polymer_graphene_LJ_energy_kJ_mol": -79.5916143240581
+    },
+    {
+      "time_ps": 52.0,
+      "CM_z_from_sheet_nm": 0.5278601532036524,
+      "Rg_nm": 0.37631260113833975,
+      "nearest_heavy_min_nm": 0.3104345941318576,
+      "heavy_contacts_within045nm": 10,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 11.029284796167293,
+      "polymer_graphene_LJ_energy_kJ_mol": -75.02243920410916
+    },
+    {
+      "time_ps": 53.0,
+      "CM_z_from_sheet_nm": 0.5283918329731909,
+      "Rg_nm": 0.3808119751958426,
+      "nearest_heavy_min_nm": 0.33573220559995925,
+      "heavy_contacts_within045nm": 9,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 10.943619153015371,
+      "polymer_graphene_LJ_energy_kJ_mol": -76.78067854523262
+    },
+    {
+      "time_ps": 54.0,
+      "CM_z_from_sheet_nm": 0.5433722253501538,
+      "Rg_nm": 0.37783467578282104,
+      "nearest_heavy_min_nm": 0.32437164977016747,
+      "heavy_contacts_within045nm": 8,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.892625729109994,
+      "polymer_graphene_LJ_energy_kJ_mol": -80.77695717111891
+    },
+    {
+      "time_ps": 55.0,
+      "CM_z_from_sheet_nm": 0.5476179138730143,
+      "Rg_nm": 0.3792557647721749,
+      "nearest_heavy_min_nm": 0.3453727949755218,
+      "heavy_contacts_within045nm": 8,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.7569004926433,
+      "polymer_graphene_LJ_energy_kJ_mol": -80.43003377538997
+    },
+    {
+      "time_ps": 56.0,
+      "CM_z_from_sheet_nm": 0.5927778570495765,
+      "Rg_nm": 0.3698924090914236,
+      "nearest_heavy_min_nm": 0.30556477416877487,
+      "heavy_contacts_within045nm": 7,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 8.185678188883214,
+      "polymer_graphene_LJ_energy_kJ_mol": -65.10190683174585
+    },
+    {
+      "time_ps": 57.0,
+      "CM_z_from_sheet_nm": 0.5542902708118723,
+      "Rg_nm": 0.38007693913560325,
+      "nearest_heavy_min_nm": 0.3204084750252617,
+      "heavy_contacts_within045nm": 10,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.93356902474013,
+      "polymer_graphene_LJ_energy_kJ_mol": -72.9149455225699
+    },
+    {
+      "time_ps": 58.0,
+      "CM_z_from_sheet_nm": 0.5563618646697347,
+      "Rg_nm": 0.37406924787815127,
+      "nearest_heavy_min_nm": 0.3170839254629662,
+      "heavy_contacts_within045nm": 10,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 10.014794139384406,
+      "polymer_graphene_LJ_energy_kJ_mol": -70.25220512888397
+    },
+    {
+      "time_ps": 59.0,
+      "CM_z_from_sheet_nm": 0.5656979834938984,
+      "Rg_nm": 0.382110026741061,
+      "nearest_heavy_min_nm": 0.3451604814283017,
+      "heavy_contacts_within045nm": 10,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.303371668876531,
+      "polymer_graphene_LJ_energy_kJ_mol": -76.23896871076164
+    },
+    {
+      "time_ps": 60.0,
+      "CM_z_from_sheet_nm": 0.5533821766119931,
+      "Rg_nm": 0.386558772061505,
+      "nearest_heavy_min_nm": 0.3395361176744259,
+      "heavy_contacts_within045nm": 9,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.545684210607982,
+      "polymer_graphene_LJ_energy_kJ_mol": -72.94144413594302
+    },
+    {
+      "time_ps": 61.0,
+      "CM_z_from_sheet_nm": 0.5263257137661297,
+      "Rg_nm": 0.3841339261958449,
+      "nearest_heavy_min_nm": 0.32208210613353394,
+      "heavy_contacts_within045nm": 10,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 11.056508379092172,
+      "polymer_graphene_LJ_energy_kJ_mol": -87.68133824412664
+    },
+    {
+      "time_ps": 62.0,
+      "CM_z_from_sheet_nm": 0.5458242786323843,
+      "Rg_nm": 0.38978207501434003,
+      "nearest_heavy_min_nm": 0.3253335533983682,
+      "heavy_contacts_within045nm": 8,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.864039666102034,
+      "polymer_graphene_LJ_energy_kJ_mol": -79.22621200042596
+    },
+    {
+      "time_ps": 63.0,
+      "CM_z_from_sheet_nm": 0.5687444119668501,
+      "Rg_nm": 0.374003472483494,
+      "nearest_heavy_min_nm": 0.339389404862358,
+      "heavy_contacts_within045nm": 7,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.358200227013858,
+      "polymer_graphene_LJ_energy_kJ_mol": -70.10745854678412
+    },
+    {
+      "time_ps": 64.0,
+      "CM_z_from_sheet_nm": 0.5526565581093377,
+      "Rg_nm": 0.3786187588484536,
+      "nearest_heavy_min_nm": 0.32461636302288627,
+      "heavy_contacts_within045nm": 9,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 10.52898450981736,
+      "polymer_graphene_LJ_energy_kJ_mol": -72.54411015175774
+    },
+    {
+      "time_ps": 65.0,
+      "CM_z_from_sheet_nm": 0.5712889868216323,
+      "Rg_nm": 0.38203054327483876,
+      "nearest_heavy_min_nm": 0.3237689699057588,
+      "heavy_contacts_within045nm": 9,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.55437336043527,
+      "polymer_graphene_LJ_energy_kJ_mol": -63.65084767876334
+    },
+    {
+      "time_ps": 66.0,
+      "CM_z_from_sheet_nm": 0.555505036945341,
+      "Rg_nm": 0.3755170962497311,
+      "nearest_heavy_min_nm": 0.2847113900525034,
+      "heavy_contacts_within045nm": 9,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 10.259459135402274,
+      "polymer_graphene_LJ_energy_kJ_mol": -67.10000349040729
+    },
+    {
+      "time_ps": 67.0,
+      "CM_z_from_sheet_nm": 0.5805496134997306,
+      "Rg_nm": 0.3815249396146781,
+      "nearest_heavy_min_nm": 0.289765095088775,
+      "heavy_contacts_within045nm": 8,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.286754747577781,
+      "polymer_graphene_LJ_energy_kJ_mol": -70.7130567571871
+    },
+    {
+      "time_ps": 68.0,
+      "CM_z_from_sheet_nm": 0.5892166970672665,
+      "Rg_nm": 0.37547967530125875,
+      "nearest_heavy_min_nm": 0.32846011494460653,
+      "heavy_contacts_within045nm": 8,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.210485173382441,
+      "polymer_graphene_LJ_energy_kJ_mol": -74.56667566385859
+    },
+    {
+      "time_ps": 69.0,
+      "CM_z_from_sheet_nm": 0.5664013136303212,
+      "Rg_nm": 0.3715391395378,
+      "nearest_heavy_min_nm": 0.3260807758780629,
+      "heavy_contacts_within045nm": 8,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.818494922468378,
+      "polymer_graphene_LJ_energy_kJ_mol": -71.63940268828374
+    },
+    {
+      "time_ps": 70.0,
+      "CM_z_from_sheet_nm": 0.571248137482207,
+      "Rg_nm": 0.380602516577474,
+      "nearest_heavy_min_nm": 0.29909391465631435,
+      "heavy_contacts_within045nm": 9,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.98105015938738,
+      "polymer_graphene_LJ_energy_kJ_mol": -68.39280276647601
+    },
+    {
+      "time_ps": 71.0,
+      "CM_z_from_sheet_nm": 0.5994874989229712,
+      "Rg_nm": 0.37882722415186965,
+      "nearest_heavy_min_nm": 0.32348491020054165,
+      "heavy_contacts_within045nm": 8,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.045314921853281,
+      "polymer_graphene_LJ_energy_kJ_mol": -69.93379607959366
+    },
+    {
+      "time_ps": 72.0,
+      "CM_z_from_sheet_nm": 0.5898763235138359,
+      "Rg_nm": 0.37808024227522624,
+      "nearest_heavy_min_nm": 0.32286705323991205,
+      "heavy_contacts_within045nm": 9,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.569425354037902,
+      "polymer_graphene_LJ_energy_kJ_mol": -68.99681754190377
+    },
+    {
+      "time_ps": 73.0,
+      "CM_z_from_sheet_nm": 0.5736709452557305,
+      "Rg_nm": 0.37059440228174223,
+      "nearest_heavy_min_nm": 0.32185078076155055,
+      "heavy_contacts_within045nm": 9,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.57473066395176,
+      "polymer_graphene_LJ_energy_kJ_mol": -72.2972838346219
+    },
+    {
+      "time_ps": 74.0,
+      "CM_z_from_sheet_nm": 0.581917108892778,
+      "Rg_nm": 0.37237293593231574,
+      "nearest_heavy_min_nm": 0.331944254027419,
+      "heavy_contacts_within045nm": 7,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.489859024502815,
+      "polymer_graphene_LJ_energy_kJ_mol": -75.85227519745357
+    },
+    {
+      "time_ps": 75.0,
+      "CM_z_from_sheet_nm": 0.5819908664678537,
+      "Rg_nm": 0.37345392033891606,
+      "nearest_heavy_min_nm": 0.3362557487330415,
+      "heavy_contacts_within045nm": 8,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.203635316027224,
+      "polymer_graphene_LJ_energy_kJ_mol": -71.2083214774431
+    },
+    {
+      "time_ps": 76.0,
+      "CM_z_from_sheet_nm": 0.5490696629223025,
+      "Rg_nm": 0.38160344253751743,
+      "nearest_heavy_min_nm": 0.3256579353668805,
+      "heavy_contacts_within045nm": 8,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 10.505828325137674,
+      "polymer_graphene_LJ_energy_kJ_mol": -81.20611076360885
+    },
+    {
+      "time_ps": 77.0,
+      "CM_z_from_sheet_nm": 0.5896928155736137,
+      "Rg_nm": 0.37911566299811134,
+      "nearest_heavy_min_nm": 0.3266890538708219,
+      "heavy_contacts_within045nm": 7,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 8.744662152253603,
+      "polymer_graphene_LJ_energy_kJ_mol": -69.83192225001255
+    },
+    {
+      "time_ps": 78.0,
+      "CM_z_from_sheet_nm": 0.5567699497082792,
+      "Rg_nm": 0.37721213036814527,
+      "nearest_heavy_min_nm": 0.34406397440099445,
+      "heavy_contacts_within045nm": 7,
+      "ester_methyl_contacts_within045nm": 1,
+      "smooth_heavy_contacts": 9.268311831823723,
+      "polymer_graphene_LJ_energy_kJ_mol": -73.31091699028201
+    },
+    {
+      "time_ps": 79.0,
+      "CM_z_from_sheet_nm": 0.5903209332016335,
+      "Rg_nm": 0.37349572082701904,
+      "nearest_heavy_min_nm": 0.3367137094684951,
+      "heavy_contacts_within045nm": 4,
+      "ester_methyl_contacts_within045nm": 1,
+      "smooth_heavy_contacts": 8.00084663056789,
+      "polymer_graphene_LJ_energy_kJ_mol": -61.73234793377928
+    },
+    {
+      "time_ps": 80.0,
+      "CM_z_from_sheet_nm": 0.5865208760322353,
+      "Rg_nm": 0.37497215486458874,
+      "nearest_heavy_min_nm": 0.33500359931680773,
+      "heavy_contacts_within045nm": 6,
+      "ester_methyl_contacts_within045nm": 1,
+      "smooth_heavy_contacts": 8.081000150105377,
+      "polymer_graphene_LJ_energy_kJ_mol": -65.2178818352209
+    },
+    {
+      "time_ps": 81.0,
+      "CM_z_from_sheet_nm": 0.6044398533135382,
+      "Rg_nm": 0.38163127089761284,
+      "nearest_heavy_min_nm": 0.35021560414751696,
+      "heavy_contacts_within045nm": 6,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 7.392003203916196,
+      "polymer_graphene_LJ_energy_kJ_mol": -58.70220633293471
+    },
+    {
+      "time_ps": 82.0,
+      "CM_z_from_sheet_nm": 0.5582466224798565,
+      "Rg_nm": 0.3795194912172043,
+      "nearest_heavy_min_nm": 0.3239614900657254,
+      "heavy_contacts_within045nm": 8,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.962430492495786,
+      "polymer_graphene_LJ_energy_kJ_mol": -71.19604530954048
+    },
+    {
+      "time_ps": 83.0,
+      "CM_z_from_sheet_nm": 0.5803110872461965,
+      "Rg_nm": 0.3669978013351572,
+      "nearest_heavy_min_nm": 0.3179924997992973,
+      "heavy_contacts_within045nm": 8,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.715866652715263,
+      "polymer_graphene_LJ_energy_kJ_mol": -77.64132771075191
+    },
+    {
+      "time_ps": 84.0,
+      "CM_z_from_sheet_nm": 0.6047239821399634,
+      "Rg_nm": 0.3743363699260533,
+      "nearest_heavy_min_nm": 0.3085215927976722,
+      "heavy_contacts_within045nm": 6,
+      "ester_methyl_contacts_within045nm": 1,
+      "smooth_heavy_contacts": 7.838713197038199,
+      "polymer_graphene_LJ_energy_kJ_mol": -60.54554624480964
+    },
+    {
+      "time_ps": 85.0,
+      "CM_z_from_sheet_nm": 0.5725779909375381,
+      "Rg_nm": 0.3743707311032008,
+      "nearest_heavy_min_nm": 0.30462329477964806,
+      "heavy_contacts_within045nm": 9,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.856761769324919,
+      "polymer_graphene_LJ_energy_kJ_mol": -73.4019497894896
+    },
+    {
+      "time_ps": 86.0,
+      "CM_z_from_sheet_nm": 0.5902007857156715,
+      "Rg_nm": 0.3750986056041371,
+      "nearest_heavy_min_nm": 0.33367227466454624,
+      "heavy_contacts_within045nm": 8,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.149378335137587,
+      "polymer_graphene_LJ_energy_kJ_mol": -71.13046331847616
+    },
+    {
+      "time_ps": 87.0,
+      "CM_z_from_sheet_nm": 0.6218283291363389,
+      "Rg_nm": 0.3808241883752698,
+      "nearest_heavy_min_nm": 0.3415276058168926,
+      "heavy_contacts_within045nm": 7,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 7.364158317341183,
+      "polymer_graphene_LJ_energy_kJ_mol": -56.30030563637696
+    },
+    {
+      "time_ps": 88.0,
+      "CM_z_from_sheet_nm": 0.5807054840202598,
+      "Rg_nm": 0.37352543272643945,
+      "nearest_heavy_min_nm": 0.32874603990923235,
+      "heavy_contacts_within045nm": 7,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.198283776999027,
+      "polymer_graphene_LJ_energy_kJ_mol": -70.31959699472789
+    },
+    {
+      "time_ps": 89.0,
+      "CM_z_from_sheet_nm": 0.5847167600879847,
+      "Rg_nm": 0.379896777120827,
+      "nearest_heavy_min_nm": 0.3250170867948926,
+      "heavy_contacts_within045nm": 7,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 8.722559076050626,
+      "polymer_graphene_LJ_energy_kJ_mol": -71.41936109658393
+    },
+    {
+      "time_ps": 90.0,
+      "CM_z_from_sheet_nm": 0.5653343604651337,
+      "Rg_nm": 0.3758360076257744,
+      "nearest_heavy_min_nm": 0.32729907086306337,
+      "heavy_contacts_within045nm": 9,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.699179126696617,
+      "polymer_graphene_LJ_energy_kJ_mol": -73.3922530801839
+    },
+    {
+      "time_ps": 91.0,
+      "CM_z_from_sheet_nm": 0.572020805814339,
+      "Rg_nm": 0.38275850241656767,
+      "nearest_heavy_min_nm": 0.3417835088587559,
+      "heavy_contacts_within045nm": 9,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.401924641753032,
+      "polymer_graphene_LJ_energy_kJ_mol": -73.53275062037562
+    },
+    {
+      "time_ps": 92.0,
+      "CM_z_from_sheet_nm": 0.5759572888731266,
+      "Rg_nm": 0.3785706235125076,
+      "nearest_heavy_min_nm": 0.3468697516316961,
+      "heavy_contacts_within045nm": 8,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.263620682657448,
+      "polymer_graphene_LJ_energy_kJ_mol": -73.66276874635506
+    },
+    {
+      "time_ps": 93.0,
+      "CM_z_from_sheet_nm": 0.5906082094772,
+      "Rg_nm": 0.3806491136253358,
+      "nearest_heavy_min_nm": 0.3361668834198648,
+      "heavy_contacts_within045nm": 8,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 8.630423400542824,
+      "polymer_graphene_LJ_energy_kJ_mol": -70.61405479978711
+    },
+    {
+      "time_ps": 94.0,
+      "CM_z_from_sheet_nm": 0.5715110414532152,
+      "Rg_nm": 0.38286532251710786,
+      "nearest_heavy_min_nm": 0.3341458221540506,
+      "heavy_contacts_within045nm": 8,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.304860235568567,
+      "polymer_graphene_LJ_energy_kJ_mol": -72.18687350906293
+    },
+    {
+      "time_ps": 95.0,
+      "CM_z_from_sheet_nm": 0.570943323388025,
+      "Rg_nm": 0.38794229014936915,
+      "nearest_heavy_min_nm": 0.3205047016032835,
+      "heavy_contacts_within045nm": 6,
+      "ester_methyl_contacts_within045nm": 1,
+      "smooth_heavy_contacts": 9.283051742961092,
+      "polymer_graphene_LJ_energy_kJ_mol": -61.936741791485815
+    },
+    {
+      "time_ps": 96.0,
+      "CM_z_from_sheet_nm": 0.5749794845248113,
+      "Rg_nm": 0.3893422125620269,
+      "nearest_heavy_min_nm": 0.33344194340065286,
+      "heavy_contacts_within045nm": 8,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.435011330573579,
+      "polymer_graphene_LJ_energy_kJ_mol": -73.67705084671695
+    },
+    {
+      "time_ps": 97.0,
+      "CM_z_from_sheet_nm": 0.6014224780857065,
+      "Rg_nm": 0.3886414322462565,
+      "nearest_heavy_min_nm": 0.3442149413863589,
+      "heavy_contacts_within045nm": 8,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 8.441519659828309,
+      "polymer_graphene_LJ_energy_kJ_mol": -69.83509692815097
+    },
+    {
+      "time_ps": 98.0,
+      "CM_z_from_sheet_nm": 0.5776287412302366,
+      "Rg_nm": 0.37784175322538444,
+      "nearest_heavy_min_nm": 0.32954444763463525,
+      "heavy_contacts_within045nm": 7,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.26964779503501,
+      "polymer_graphene_LJ_energy_kJ_mol": -73.47470027947293
+    },
+    {
+      "time_ps": 99.0,
+      "CM_z_from_sheet_nm": 0.5888808339915146,
+      "Rg_nm": 0.3701043143102779,
+      "nearest_heavy_min_nm": 0.31423051736969915,
+      "heavy_contacts_within045nm": 7,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 8.874871873644564,
+      "polymer_graphene_LJ_energy_kJ_mol": -69.46551813000038
+    },
+    {
+      "time_ps": 100.0,
+      "CM_z_from_sheet_nm": 0.5918087486034267,
+      "Rg_nm": 0.3691562194003408,
+      "nearest_heavy_min_nm": 0.3212209473630319,
+      "heavy_contacts_within045nm": 8,
+      "ester_methyl_contacts_within045nm": 2,
+      "smooth_heavy_contacts": 9.087069790442149,
+      "polymer_graphene_LJ_energy_kJ_mol": -60.633823892189376
+    }
+  ],
+  "independent_replicas": 1
+}

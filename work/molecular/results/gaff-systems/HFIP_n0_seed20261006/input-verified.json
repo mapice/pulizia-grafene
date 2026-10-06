@@ -1,0 +1,8 @@
+{
+  "coordinates_max_decoding_error_nm": 1.1900000052023074e-07,
+  "solvent_rigid_shape_max_difference_nm": 1.2539845184456055e-07,
+  "index_group_sizes": {
+    "System": 1500
+  },
+  "scope": "Input serialization and molecular geometry verified, no physical-model qualification"
+}

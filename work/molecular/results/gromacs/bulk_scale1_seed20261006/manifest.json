@@ -1,0 +1,12 @@
+{
+  "source_doi": "10.1002/cphc.202100620",
+  "source_tables": "SI I-V",
+  "molecules": 125,
+  "temperature_K": 298.15,
+  "initial_density_g_cm3": 0.8,
+  "molar_mass_g_mol": 168.0388,
+  "scale14": 1.0,
+  "scale14_verified_from_source": false,
+  "scope": "Bulk solvent qualification, no PMMA/graphene",
+  "compressibility_note": "4.5e-5/bar is a chosen barostat tuning parameter, not a measured HFIP material property"
+}

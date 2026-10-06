@@ -1,0 +1,27 @@
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/e3nn/o3/_wigner.py:10: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  _Jd, _W3j_flat, _W3j_indices = torch.load(os.path.join(os.path.dirname(__file__), 'constants.pt'))
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+cuequivariance or cuequivariance_torch is not available. Cuequivariance acceleration will be disabled.
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/mace_liquid_bench.py", line 18, in <module>
+    from mace.calculators import MACECalculator
+  File "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/mace/calculators/__init__.py", line 1, in <module>
+    from .foundations_models import mace_anicc, mace_mp, mace_off, mace_omol, mace_polar
+  File "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/mace/calculators/foundations_models.py", line 13, in <module>
+    from .mace import MACECalculator
+  File "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/mace/calculators/mace.py", line 24, in <module>
+    from mace.modules.utils import extract_invariant
+  File "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/mace/modules/__init__.py", line 27, in <module>
+    from .extensions import PolarMACE
+  File "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/mace/modules/extensions.py", line 306, in <module>
+    @compile_mode("script")
+     ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/e3nn/util/jit.py", line 28, in decorator
+    raise TypeError("@e3nn.util.jit.compile_mode can only decorate classes derived from torch.nn.Module")
+TypeError: @e3nn.util.jit.compile_mode can only decorate classes derived from torch.nn.Module
+{"guard": {"command": ["work/molecular/.venv/bin/python", "-u", "work/molecular/mace_liquid_bench.py", "--device", "mps", "--dtype", "float32", "--tag", "conditional"], "pid": 11150, "exitcode": 1, "peak_RSS_MB": 413.453125, "elapsed_seconds": 6.048603040864691, "termination_reason": null}}

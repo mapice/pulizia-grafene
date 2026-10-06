@@ -1,0 +1,1434 @@
+\documentclass[11pt,reqno]{amsart}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage[italian]{babel}
+\usepackage{microtype}
+\usepackage{tikz}
+\usepackage{placeins}
+\usetikzlibrary{arrows.meta,positioning,calc,decorations.pathreplacing}
+\usepackage[letterpaper,textwidth=6.25in,textheight=8.85in,centering]{geometry}
+\usepackage[hidelinks,unicode]{hyperref}
+\usepackage{booktabs,array,longtable}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\hypersetup{pdftitle={Pulizia chimica del grafene trasferito con PMMA e PPC},pdfauthor={Codex, su richiesta di Mattia Apicella},pdfsubject={Revisione 5: orientazione interfaciale e modello molecolare periodico sul Mac}}
+\numberwithin{equation}{section}
+\renewcommand{\abstractname}{Sommario}
+\renewcommand{\refname}{Riferimenti}
+\renewcommand{\keywordsname}{Parole chiave}
+\renewcommand{\datename}{\textit{Data}:}
+\newcommand{\SiO}{\ensuremath{\mathrm{SiO}_2}}
+\newcommand{\HCl}{\ensuremath{\mathrm{HCl}}}
+\newcommand{\degC}{\ensuremath{^{\circ}\mathrm{C}}}
+\newcommand{\um}{\ensuremath{\mu\mathrm{m}}}
+\newcommand{\nm}{\ensuremath{\mathrm{nm}}}
+
+\title[Grafene: teoria e calcoli molecolari della pulizia]{Pulizia chimica del grafene gi\`a trasferito con PMMA/PPC:\\ teoria, calcoli molecolari e verifica dei modelli}
+\author{Codex}
+\date{6 ottobre 2026 --- revisione 5}
+\thanks{Studio redatto su richiesta di Mattia Apicella per il confronto con Armando Serio. Include calcoli eseguiti e verificati, ma nessun nuovo esperimento sui materiali. Le costanti cinetiche delle simulazioni sono scenari dichiarati, non stime del campione. Questa revisione sostituisce la raccomandazione iniziale di HCl alla luce dei tentativi gi\`a effettuati.}
+\keywords{Grafene CVD, PMMA AR-P 672.045, PPC, desorbimento, sequenza dei solventi, bilanci di massa}
+\begin{document}
+\begin{abstract}
+Il problema considerato \`e rimuovere chimicamente residui da grafene
+su \SiO/Si, trasferito dal rame con PMMA AR-P 672.045 e PPC.
+L'insuccesso riferito di numerosi solventi, acidi e prodotti commerciali
+esclude di ripresentarli come nuove soluzioni. L'unico trattamento con
+un modesto effetto combina DMF, isopropanolo e THF. Proponiamo di
+verificare se il risultato dipenda dalla preparazione di uno stato
+polimerico estraibile, dalla sua successiva perdita durante i
+risciacqui, oppure da una frazione persistente di diversa natura.
+Deriviamo un modello conservativo a tre stati che mostra quando
+l'ordine dei liquidi conta e quando l'alternanza aiuta o peggiora.
+Un secondo modello separa distacco, trasporto e riadsorbimento;
+un bilancio indipendente limita la massa depositabile durante
+l'asciugatura. Le simulazioni includono controesempi e controlli
+analitici. Ne segue una proposta concreta: confrontare la sequenza
+esistente con varianti prive dei passaggi IPA e, se emerge una
+mobilizzazione utile, con alternanze a esposizioni complessive uguali.
+L'obiettivo \`e amplificare un meccanismo misurabile conservando il
+grafene. Aggiungiamo calcoli quantistici, due modelli polarizzabili appresi e traiettorie di un oligomero su grafene in cinque liquidi. Il confronto con un acido gi\`a fallito mostra che una forte interazione locale con l'estere non basta a scegliere il pulente. Il controllo del liquido impedisce di promuovere un modello dalla sola densit\`a. L'efficacia sul campione reale rimane da verificare.
+\end{abstract}
+\maketitle
+
+\section{La proposta che sceglierei ora}
+
+\textbf{La mia ipotesi di lavoro \`e che la frazione ancora rimovibile
+sia limitata dal passaggio tra stati interfaciali del polimero e dalla
+successiva estrazione, pi\`u che dalla scelta di un altro solvente
+generico.} La prova pi\`u immediata conserva DMF e THF, ma separa
+l'effetto dell'IPA intermedio da quello finale. La prova successiva
+confronta quattro brevi alternanze con gli stessi liquidi raggruppati
+in blocchi, mantenendo uguali esposizioni e ricambi.
+
+Non assumo in partenza che l'IPA sia dannoso. Pu\`o favorire la
+precipitazione o il riattacco di materiale gi\`a mobilizzato, oppure
+modificare la conformazione di una frazione aderente e renderla
+estraibile nel bagno seguente. Queste ipotesi danno previsioni
+opposte. Il modello delle Sezioni~\ref{sec:states}--\ref{sec:sim}
+le rende quantitative senza attribuire al campione costanti che
+nessuno ha misurato.
+
+La modifica da provare per prima, se occorre scegliere un solo
+nuovo percorso, \`e \emph{DMF con ricambi freschi, seguito direttamente
+da THF, mantenendo inizialmente invariato il risciacquo finale}.
+In questo modo si verifica se l'IPA intermedio annulli una
+mobilizzazione ottenuta nel DMF. La Tabella~\ref{tab:factorial}
+specifica tempi e controlli. Se invece quel passaggio risulta utile,
+si passa alla prova di alternanza della Tabella~\ref{tab:cycles}.
+
+La scelta \`e motivata dall'unico percorso che ha gi\`a prodotto un
+segnale favorevole. Non \`e deducibile una probabilit\`a di successo
+dal suo semplice esistere: il miglioramento riferito non \`e ancora
+quantificato e i confronti precedenti non sono descritti abbastanza
+da isolare l'effetto della sequenza.
+
+
+\paragraph{Aggiornamento molecolare.}
+HFIP rimane una candidata da verificare, discussa nella Sezione~\ref{sec:molecular}. I nuovi controlli non la promuovono sopra DMF.
+Esiste evidenza di dissoluzione del PMMA in HFIP a temperatura ambiente,
+ma la sua efficacia sui residui aderenti del caso non \`e dimostrata.
+I calcoli eseguiti hanno anzi scartato il criterio semplicistico
+``interazione pi\`u forte con il carbonile, quindi pulizia migliore''.
+La sequenza DMF--THF rimane il controllo operativo; una classifica
+quantitativa fra DMF, THF e HFIP richiede ancora un modello interfaciale
+qualificato, oltre alla verifica sul materiale.
+
+\section{Il caso reale e i risultati negativi da conservare}
+
+Il materiale iniziale indicato \`e PMMA AR-P 672.045, che il produttore
+identifica come 950K al 4,5\% in anisolo \cite{Allresist}. Il campione
+comprende anche PPC sopra il PMMA, senza contatto intenzionale del
+PPC con il grafene. Sono riferiti un passaggio a 90\,\degC\ per
+2 minuti, distacco elettrochimico dal Cu e trasferimento su \SiO/Si.
+Elettrolita, spessori, eventuali altre cotture e identificazione
+chimica delle particelle non sono ancora noti.
+Le particelle sono riferite subito dopo il trasferimento, prima della
+litografia. La membrana PC e il supporto PDMS sono impiegati in un
+successivo prelievo a secco: questo uso futuro non identifica l'origine
+dei depositi gi\`a presenti. La stima ``90\% PMMA'' comunicata dall'esperto
+\`e una valutazione di probabilit\`a, non una misura della composizione.
+
+Il lavoro di Tyagi, Mi\v{s}eikis, Coletti e collaboratori
+\cite{Tyagi2022} corrisponde bene a questo schema PMMA/PPC e ai
+passaggi termici indicati. Non attribuiamo automaticamente al caso
+attuale tutti i parametri del loro supplemento. Quel lavoro \`e
+utile come riferimento di processo; il suo solvente commerciale
+non \`e una nuova risposta all'elenco di tentativi di Armando.
+
+Sono gi\`a stati provati, secondo quanto comunicato:
+\begin{itemize}
+\item HCl per 48 ore e acido acetico glaciale;
+\item acetato di etile, cloroformio, DMF, THF, MPK, acetone;
+\item IPA/acqua 75/25 e prodotti indicati come AR600.7 e AR300-76,
+quest'ultimo sia a temperatura ambiente sia a 80\,\degC.
+\end{itemize}
+Manteniamo ``MPK'' e ``AR600.7'' come sigle riferite, senza
+correggerle arbitrariamente in altri prodotti. Il precedente con
+HCl \cite{Xiao2019} resta un risultato pubblicato, ma \textbf{HCl
+48 ore viene ritirato come nuova raccomandazione per questo caso}.
+La concentrazione mancante limita un confronto quantitativo, senza
+cancellare il risultato negativo ricevuto.
+
+L'unica pulizia descritta come debolmente efficace \`e
+\begin{equation}\label{eq:real}
+\begin{split}
+ &\mathrm{DMF}\ (30\,\mathrm{min})
+ \longrightarrow \mathrm{IPA}\ (5+3\,\mathrm{min})\\[-2pt]
+ &\longrightarrow \mathrm{THF}\ (30\,\mathrm{min})
+ \longrightarrow \mathrm{IPA}\ (5+3\,\mathrm{min})
+ \longrightarrow \mathrm{N_2}.
+\end{split}
+\end{equation}
+La somma dei bagni \`e 76 minuti. L'agitazione riferita \`e 500 rpm:
+non descriviamo quindi il trattamento come un bagno quiescente.
+Questa velocit\`a non determina per\`o il moto locale al campione
+senza geometria, posizione, volume e tipo di agitatore.
+
+\section{Che cosa aggiunge la letteratura estesa}
+
+\subsection{La sequenza pu\`o cambiare il comportamento del polimero}
+Manjkow e collaboratori \cite{Manjkow1987} osservano mediante
+ellissometria un passaggio stretto fra dissoluzione e rigonfiamento
+del PMMA in miscele solvente/non solvente. Le miscele studiate non
+sono quelle di Armando: il lavoro giustifica studiare la traiettoria
+di composizione, non applicare qui le sue soglie. Rooks e
+collaboratori \cite{Rooks2002} mostrano inoltre perch\'e IPA e
+IPA/acqua non si possano classificare con una sola etichetta
+indipendente da massa molecolare e stato del resist.
+
+La solubilit\`a del polimero libero non determina il distacco
+dall'interfaccia. Simulazioni di desorbimento di catene adsorbite
+\cite{Huston2020} trovano regimi cinetici molto diversi al variare
+dell'adsorbimento. Si tratta di modelli generici, non di una
+parametrizzazione di AR-P 672.045 su grafene. Non \`e corretto
+ricavare una barriera moltiplicando l'energia di un monomero per
+tutta la catena: distacco progressivo, conformazione e contatti
+effettivi contano.
+
+\subsection{Perch\'e il semplice ricambio non \`e gi\`a la soluzione}
+Ayodele e collaboratori \cite{Ayodele2022} impiegano PMMA 950K,
+distacco elettrochimico dal rame e un estrattore Soxhlet con acetone
+distillato. Osservano miglioramenti morfologici, ma il confronto
+varia anche temperatura, durata e risciacquo; manca una misura XPS
+che certifichi l'assenza del residuo. La storia termica \`e diversa
+da quella comunicata per questo caso.
+
+Il risultato del 2025 di Tang e collaboratori \cite{Tang2025}
+\`e particolarmente istruttivo: un processo ciclico migliora
+l'aspetto macroscopico, ma i rapporti XPS
+C=C:C--O:O--C=O sono circa 100:28:8 nel controllo e 100:30:7
+nel processo ciclico. I residui rimangono. Questo impedisce di
+promettere che solvente rinnovato o assenza di IPA finale bastino
+da soli. Il lavoro non testa l'alternanza DMF/IPA/THF qui proposta.
+
+\subsection{Miscela IPA/acqua, etanolo e prestazioni elettriche}
+Duan e collaboratori \cite{Duan2022} riportano un miglioramento
+con IPA/acqua 75/25, ma dopo acetone e ricottura in vuoto a
+200\,\degC. La loro frazione di componenti C--O e C=O resta
+misurabile; inoltre il controllo in sola acqua subisce danni.
+Il metodo \`e gi\`a nell'elenco di Armando e non viene riproposto.
+
+Merino e collaboratori \cite{Merino2024} studiano residui da
+fabbricazione anche con etanolo e THF: documentano miglioramenti
+elettrici e chimici parziali, ma anche problemi di distacco con
+THF. Non \`e una prova sul nostro PMMA/PPC. Suk e collaboratori
+\cite{Suk2013} forniscono un controesempio ancora pi\`u netto:
+formammide assorbita nei residui migliora le propriet\`a elettriche
+senza corrispondente scomparsa della morfologia residua.
+Una migliore curva del transistor, da sola, non decide la pulizia.
+
+\subsection{Acido, identit\`a chimica e diagnosi del residuo}
+Nel PMMA l'idrolisi dell'estere laterale non rompe automaticamente
+la catena carboniosa. Nei polimetacrilati di Sch\"onemann e
+collaboratori \cite{Schoenemann2018}, diversi dal PMMA, la stabilit\`a
+all'acido mostra quanto sia rischioso inferire la cinetica dal solo
+gruppo funzionale. Anche il PPC ha una risposta all'idrolisi
+dipendente dalle condizioni \cite{Jung2006}. Questi studi non
+forniscono una nuova miscela di pulizia validata per il campione.
+
+Wang e collaboratori \cite{Wang2017} usano marcatura isotopica del
+PMMA per seguirne i residui. Schwartz e collaboratori
+\cite{Schwartz2019} identificano localmente polimeri intrappolati
+in eterostrutture mediante spettroscopia infrarossa associata
+all'AFM. Non studiano il nostro PPC: il loro PC \`e un materiale
+diverso. Il punto trasferibile \`e il metodo di identificazione.
+Una particella vista in AFM non acquista identit\`a chimica dalla
+sola somiglianza con un residuo di PMMA.
+
+\section{Una teoria della sequenza: preparare, estrarre, ribloccare}
+\label{sec:states}
+
+\subsection{Una previsione che non richiede conoscere i tassi}
+Supponiamo che ogni liquido $j$ rimuova una stessa popolazione di
+residuo $m$ con un tasso costante $k_j$, senza memoria:
+\begin{equation}\label{eq:scalar}
+ \dot m=-k_jm.
+\end{equation}
+Dopo tempi totali $T_j$ nei vari liquidi,
+\begin{equation}\label{eq:orderindependent}
+ m_{\mathrm{finale}}=m_0\exp\!\left(-\sum_j k_jT_j\right).
+\end{equation}
+L'ordine e il numero di alternanze non compaiono. Dunque una
+differenza riproducibile fra ordine a blocchi e alternato, a pari
+esposizioni, ricambi e condizioni, \emph{falsifica questo modello}.
+Non identifica da sola il meccanismo alternativo: concentrazione
+del bagno, trasformazioni, stati conformazionali e danno meccanico
+possono introdurre memoria. L'osservazione finora riferita non \`e
+ancora un confronto controllato di questo tipo.
+
+\subsection{Il modello minimo che permette un effetto dell'ordine}
+Dividiamo la massa in tre stati:
+$L$, residuo ancora aderente e non prontamente estraibile;
+$M$, residuo mobilizzato ma ancora sul campione;
+$R$, materiale gi\`a esportato fuori dalla zona di riadesione.
+Nel liquido $j$ poniamo
+\begin{equation}\label{eq:generator}
+ \frac{d}{dt}
+ \begin{pmatrix}L\\M\\R\end{pmatrix}
+ =K_j\begin{pmatrix}L\\M\\R\end{pmatrix},\qquad
+ K_j=\begin{pmatrix}
+ -a_j&b_j&0\\a_j&-(b_j+e_j)&0\\0&e_j&0
+ \end{pmatrix}.
+\end{equation}
+Il tasso $a_j$ mobilizza, $b_j$ riblocca, $e_j$ esporta.
+Sono non negativi e hanno dimensione tempo$^{-1}$.
+La somma $L+M+R$ si conserva e masse inizialmente non negative
+rimangono tali. L'assorbimento nello stato $R$ presuppone un
+allontanamento efficace: se il polimero resta nel bagno e torna
+sulla superficie, occorre aggiungere il comparto della
+Sezione~\ref{sec:transport}.
+
+Per due trattamenti D e T, con tempi $t_D,t_T$, l'ordine D poi T
+d\`a
+\begin{equation}\label{eq:ordered}
+ v_{DT}=e^{K_Tt_T}e^{K_Dt_D}v_0,
+ \qquad v=(L,M,R)^{\mathsf T}.
+\end{equation}
+I due esponenziali generalmente non commutano. Per tempi piccoli,
+la differenza di ordine parte da
+\begin{equation}\label{eq:commutator}
+ v_{DT}-v_{TD}=(K_TK_D-K_DK_T)v_0\,t_Dt_T+
+ O\bigl((t_D+t_T)^3\bigr).
+\end{equation}
+Questa \`e una ragione quantitativa per cui due solventi
+mediocri separatamente potrebbero essere complementari. Non
+assegniamo automaticamente a DMF il ruolo $a$ e a THF il ruolo
+$e$: sono proprio i ruoli da mettere alla prova.
+
+\subsection{Lo stesso IPA pu\`o aiutare o ostacolare}
+Consideriamo un caso esatto: nel passaggio P non vi \`e esportazione,
+ma $L\rightleftarrows M$ con tassi $a,b$; nel successivo G vi sono
+$M\to R$ a tasso $k$ e $M\to L$ a tasso $c$. Per tempi $t,u$,
+la massa esportata in pi\`u da P poi G rispetto a G poi P \`e
+\begin{equation}\label{eq:sign}
+ \Delta R=
+ \frac{k}{k+c}\bigl(1-e^{-(k+c)u}\bigr)
+ \bigl(1-e^{-(a+b)t}\bigr)
+ \frac{aL_0-bM_0}{a+b}.
+\end{equation}
+La formula vale per $a+b>0$ e $k+c>0$, con i casi nulli ottenuti
+per continuit\`a. Quando i prefattori sono positivi, il segno
+\`e quello di $aL_0-bM_0$.
+
+Se la superficie \`e soprattutto bloccata e P la mobilizza,
+il passaggio intermedio aiuta. Se il DMF ha gi\`a prodotto molta
+frazione $M$ e l'IPA la riblocca, lo stesso passaggio ostacola
+l'estrazione. Questa previsione \`e pi\`u precisa di ``l'IPA fa
+precipitare'' o ``l'IPA pulisce''. L'ordine inverso termina in
+un liquido diverso: la verifica deve misurare materiale esportato
+prima dell'asciugatura o imporre un passaggio finale comune.
+
+\subsection{Perch\'e la contrazione non \`e automaticamente un vantaggio}
+Un solvente meno favorevole pu\`o ridurre il volume occupato dalla
+catena, ma anche aumentare aggregazione e adesione alla superficie.
+Per rendere utile un ciclo occorrono due condizioni: una quota
+misurabile passi a uno stato pi\`u estraibile, e il liquido seguente
+la allontani prima che torni aderente. Una diminuzione dell'impronta
+AFM con aumento dell'altezza e volume conservato suggerisce
+riorganizzazione, non ancora rimozione. Il bagno seguente deve
+ridurre la massa o il volume con un riscontro chimico.
+
+\section{Calcoli eseguiti e loro conseguenze}
+\label{sec:sim}
+
+Abbiamo calcolato gli esponenziali dei generatori con una somma
+di matrici stocastiche, detta uniformizzazione, evitando tassi
+negativi o perdite artificiali di massa. Il programma allegato
+contiene parametri, formule, risultati e verifiche. Nessun
+parametro \`e stato adattato a immagini o misure di Armando.
+
+\subsection{Alternanze a tempi totali fissi}
+Dividendo in $N$ parti le stesse esposizioni complessive si ottiene
+\begin{equation}\label{eq:cycles}
+ v_N=\left(e^{K_TT_T/N}e^{K_DT_D/N}\right)^Nv_0.
+\end{equation}
+Non si confrontano quindi quattro cicli lunghi con un solo ciclo
+breve. Per $N\to\infty$,
+\begin{equation}\label{eq:trotter}
+ v_N\longrightarrow e^{K_TT_T+K_DT_D}v_0.
+\end{equation}
+Il modello mantiene memoria dello stato mobile fra le fasi.
+Un modello che lo azzeri a ogni cambio, anche infinitamente rapido,
+avrebbe un limite diverso e non sarebbe equivalente.
+
+La Figura~\ref{fig:cycles} confronta tre scenari adimensionali,
+con $T_D=T_T=1$, $v_0=(1,0,0)^{\mathsf T}$ e i tassi della
+Tabella~\ref{tab:rates}. Il tempo unitario \`e convenzionale:
+non significa un minuto o trenta minuti reali.
+
+\begin{table}[htbp]
+\caption{Tassi illustrativi $(a,b,e)$ usati nelle simulazioni.
+Non sono propriet\`a misurate di DMF o THF.}
+\label{tab:rates}\centering\small
+\begin{tabular}{@{}lcc@{}}\toprule
+Scenario & Trattamento D & Trattamento T\\\midrule
+Complementare &(2; 4; 0{,}02)&(0{,}02; 0{,}1; 4)\\
+Preparazione poi estrazione &(2; 0; 0)&(0; 0; 2)\\
+Tassi uguali &(0{,}4; 0{,}5; 0{,}3)&(0{,}4; 0{,}5; 0{,}3)\\\bottomrule
+\end{tabular}
+\end{table}
+
+Nel primo scenario il residuo scende da 0,6680 con una sequenza
+a 0,4478 con otto alternanze; a venti risale leggermente a 0,4519.
+Nel secondo scenario frammentare la preparazione peggiora la
+rimozione. Nel terzo non cambia nulla, come deve accadere con
+generatori identici. Questi numeri dimostrano possibilit\`a e limiti
+del modello, \emph{non} riduzioni previste per il campione.
+
+Un controesempio \`e anche analitico. Se D mobilizza senza ritorno,
+T estrae senza ritorno, e $aT_D=kT_T=w$, la frazione rimossa \`e
+\begin{equation}\label{eq:counterexample}
+ R_N=1-e^{-w}\left[1+N\bigl(1-e^{-w/N}\bigr)\right].
+\end{equation}
+Essa diminuisce all'aumentare di $N$: preparare tutta la frazione
+prima di estrarla \`e qui pi\`u efficace. Cercare un beneficio dei
+cicli senza includere questo caso negativo produrrebbe una teoria
+costruita per dare ragione alla proposta.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=0.94\textwidth,height=6.0cm,xlabel={Numero di alternanze $N$},ylabel={Frazione residua $L+M$},xmin=1,xmax=20,ymin=0,ymax=1,grid=major,legend columns=3,legend style={font=\footnotesize,at={(0.5,1.04)},anchor=south,draw=none},tick label style={font=\small},label style={font=\small}]
+\addplot[thick,black,mark=*] coordinates {(1,0.6680496) (2,0.5248837) (3,0.4766819) (4,0.4592498) (5,0.452253) (6,0.4493265) (7,0.4481709) (8,0.4478442) (9,0.4479215) (10,0.4481971) (11,0.4485664) (12,0.4489743) (13,0.4493913) (14,0.4498015) (15,0.4501966) (16,0.4505728) (17,0.4509283) (18,0.451263) (19,0.4515773) (20,0.4518724)};
+\addlegendentry{Complementari}
+\addplot[thick,blue!75!black,mark=*] coordinates {(1,0.2523549) (2,0.3064317) (3,0.3328908) (4,0.3483364) (5,0.3584219) (6,0.3655152) (7,0.3707725) (8,0.3748238) (9,0.3780406) (10,0.3806565) (11,0.3828253) (12,0.3846526) (13,0.3862129) (14,0.3875609) (15,0.3887371) (16,0.3897723) (17,0.3906905) (18,0.3915104) (19,0.392247) (20,0.3929124)};
+\addlegendentry{Preparazione poi estrazione}
+\addplot[thick,red!75!black,mark=*] coordinates {(1,0.8798123) (2,0.8798123) (3,0.8798123) (4,0.8798123) (5,0.8798123) (6,0.8798123) (7,0.8798123) (8,0.8798123) (9,0.8798123) (10,0.8798123) (11,0.8798123) (12,0.8798123) (13,0.8798123) (14,0.8798123) (15,0.8798123) (16,0.8798123) (17,0.8798123) (18,0.8798123) (19,0.8798123) (20,0.8798123)};
+\addlegendentry{Identici}
+\end{axis}
+\end{tikzpicture}
+\caption{Modello a stati conformazionali. Ogni curva mantiene invariati il tempo totale nel liquido D e quello nel liquido T. Alternare pi\`u spesso pu\`o aiutare o peggiorare: dipende dai tassi, qui illustrativi. D e T sono stati di trattamento ipotetici, non misure di DMF e THF.}
+\label{fig:cycles}
+\end{figure}
+
+\section{Il solvente deve anche portare via il materiale}
+\label{sec:transport}
+
+\subsection{Bilancio fra superficie, strato vicino e bagno}
+Sia $\Gamma$ la massa accessibile per area, $I$ una frazione
+schermata, $c$ la concentrazione nel bagno, $c_s$ quella prossima
+alla superficie. Con $A$ area, $V$ volume, $Q$ portata di ricambio,
+poniamo
+\begin{align}
+ J&=k_d\Gamma-k_a c_s=k_m(c_s-c),\label{eq:flux}\\
+ J&=\lambda\Gamma-bc,\qquad
+ \lambda=\frac{k_d}{1+k_a/k_m},\quad
+ b=\frac{k_a}{1+k_a/k_m},\label{eq:effective}\\
+ \dot I&=-k_iI,\quad
+ \dot\Gamma=k_iI-J,\quad
+ V\dot c=AJ-Qc.\label{eq:balance}
+\end{align}
+Qui $k_d,k_i$ hanno unit\`a s$^{-1}$; $k_a,k_m$ m/s;
+$\Gamma,I$ kg/m$^2$; $c$ kg/m$^3$. Il fluido in entrata \`e
+assunto privo del polimero considerato. Si verifica
+\begin{equation}
+ \frac{d}{dt}\{A(\Gamma+I)+Vc\}=-Qc.
+\end{equation}
+Il modello assume regime diluito, risposta lineare e parametri
+costanti in ciascuna fase. Non rappresenta in dettaglio la forma
+delle particelle n\'e una rete reticolata.
+
+Con $h=V/A$, $\tau=\lambda t$, $x=\Gamma/\Gamma_0$,
+$y=hc/\Gamma_0$, $z=I/\Gamma_0$,
+\begin{equation}\label{eq:dimensionless}
+ x'=-x+\beta y+\varepsilon z,\quad
+ y'=x-(\beta+r)y,\quad z'=-\varepsilon z,
+\end{equation}
+dove $\beta=b/(h\lambda)$, $r=Q/(V\lambda)$ e
+$\varepsilon=k_i/\lambda$. $\beta$ misura la tendenza a
+ripartirsi tra superficie e bagno: \textbf{non \`e la saturazione
+del solvente rispetto alla solubilit\`a del PMMA massivo}.
+
+\subsection{Un limite che impedisce di promettere troppo al ricambio}
+Da $c,I\ge0$ segue
+\begin{equation}\label{eq:bound}
+ \Gamma(t)\ge\Gamma_0e^{-\lambda t},\qquad \lambda\le k_d.
+\end{equation}
+Anche un bagno perfettamente pulito non supera il distacco
+intrinseco nel modello. Un trasporto migliore aiuta quando limita
+il riadsorbimento; pu\`o essere quasi inutile se domina una
+barriera di distacco o una frazione inaccessibile.
+
+Per un bagno senza ricambio, inizialmente pulito e senza $I$,
+\begin{equation}\label{eq:static}
+ x(\tau)=\frac{\beta+e^{-(1+\beta)\tau}}{1+\beta}.
+\end{equation}
+Compare un plateau pur essendo tutto reversibile: osservare un
+plateau non prova una rete insolubile. La
+Figura~\ref{fig:transport} mostra come cambia l'andamento con $r$.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=0.94\textwidth,height=6.0cm,xlabel={Tempo adimensionale $\tau=\lambda t$},ylabel={Frazione ancora aderente $x$},xmin=0,xmax=8,ymin=0,ymax=1,grid=major,legend style={font=\footnotesize,at={(0.98,0.98)},anchor=north east},tick label style={font=\small},label style={font=\small}]
+\addplot[thick,black] coordinates {(0,1) (0.1,0.9093654) (0.2,0.83516) (0.3,0.7744058) (0.4,0.7246645) (0.5,0.6839397) (0.6,0.6505971) (0.7,0.6232985) (0.8,0.6009483) (0.9,0.5826494) (1,0.5676676) (1.1,0.5554016) (1.2,0.545359) (1.3,0.5371368) (1.4,0.530405) (1.5,0.5248935) (1.6,0.5203811) (1.7,0.5166866) (1.8,0.5136619) (1.9,0.5111854) (2,0.5091578) (2.1,0.5074978) (2.2,0.5061387) (2.3,0.5050259) (2.4,0.5041149) (2.5,0.503369) (2.6,0.5027583) (2.7,0.5022583) (2.8,0.5018489) (2.9,0.5015138) (3,0.5012394) (3.1,0.5010147) (3.2,0.5008308) (3.3,0.5006802) (3.4,0.5005569) (3.5,0.5004559) (3.6,0.5003733) (3.7,0.5003056) (3.8,0.5002502) (3.9,0.5002049) (4,0.5001677) (4.1,0.5001373) (4.2,0.5001124) (4.3,0.5000921) (4.4,0.5000754) (4.5,0.5000617) (4.6,0.5000505) (4.7,0.5000414) (4.8,0.5000339) (4.9,0.5000277) (5,0.5000227) (5.1,0.5000186) (5.2,0.5000152) (5.3,0.5000125) (5.4,0.5000102) (5.5,0.5000084) (5.6,0.5000068) (5.7,0.5000056) (5.8,0.5000046) (5.9,0.5000038) (6,0.5000031) (6.1,0.5000025) (6.2,0.5000021) (6.3,0.5000017) (6.4,0.5000014) (6.5,0.5000011) (6.6,0.5000009) (6.7,0.5000008) (6.8,0.5000006) (6.9,0.5000005) (7,0.5000004) (7.1,0.5000003) (7.2,0.5000003) (7.3,0.5000002) (7.4,0.5000002) (7.5,0.5000002) (7.6,0.5000001) (7.7,0.5000001) (7.8,0.5000001) (7.9,0.5000001) (8,0.5000001)};
+\addlegendentry{$r=0$}
+\addplot[thick,blue!75!black] coordinates {(0,1) (0.1,0.9093353) (0.2,0.834943) (0.3,0.773743) (0.4,0.7232401) (0.5,0.6814123) (0.6,0.6466215) (0.7,0.6175407) (0.8,0.5930942) (0.9,0.5724109) (1,0.5547847) (1.1,0.5396435) (1.2,0.5265238) (1.3,0.5150498) (1.4,0.5049173) (1.5,0.4958794) (1.6,0.4877362) (1.7,0.4803257) (1.8,0.4735164) (1.9,0.4672019) (2,0.4612957) (2.1,0.4557279) (2.2,0.4504416) (2.3,0.4453907) (2.4,0.4405378) (2.5,0.4358525) (2.6,0.4313101) (2.7,0.4268906) (2.8,0.4225776) (2.9,0.4183577) (3,0.4142203) (3.1,0.4101564) (3.2,0.4061589) (3.3,0.4022217) (3.4,0.3983401) (3.5,0.39451) (3.6,0.3907281) (3.7,0.3869917) (3.8,0.3832986) (3.9,0.3796468) (4,0.3760346) (4.1,0.3724608) (4.2,0.3689243) (4.3,0.3654239) (4.4,0.3619588) (4.5,0.3585283) (4.6,0.3551317) (4.7,0.3517685) (4.8,0.348438) (4.9,0.3451397) (5,0.3418733) (5.1,0.3386383) (5.2,0.3354343) (5.3,0.3322609) (5.4,0.3291178) (5.5,0.3260046) (5.6,0.3229211) (5.7,0.3198668) (5.8,0.3168416) (5.9,0.3138451) (6,0.3108769) (6.1,0.3079369) (6.2,0.3050248) (6.3,0.3021402) (6.4,0.299283) (6.5,0.2964528) (6.6,0.2936493) (6.7,0.2908724) (6.8,0.2881218) (6.9,0.2853972) (7,0.2826984) (7.1,0.2800251) (7.2,0.2773771) (7.3,0.2747541) (7.4,0.272156) (7.5,0.2695824) (7.6,0.2670331) (7.7,0.264508) (7.8,0.2620067) (7.9,0.2595291) (8,0.2570749)};
+\addlegendentry{$r=0.2$}
+\addplot[thick,red!75!black] coordinates {(0,1) (0.1,0.909078) (0.2,0.8331708) (0.3,0.7685775) (0.4,0.7126311) (0.5,0.6634017) (0.6,0.6194848) (0.7,0.5798518) (0.8,0.5437427) (0.9,0.5105898) (1,0.4799642) (1.1,0.4515367) (1.2,0.4250503) (1.3,0.4003011) (1.4,0.3771236) (1.5,0.3553811) (1.6,0.3349583) (1.7,0.3157562) (1.8,0.2976884) (1.9,0.2806782) (2,0.2646569) (2.1,0.2495622) (2.2,0.2353369) (2.3,0.2219286) (2.4,0.2092886) (2.5,0.1973715) (2.6,0.1861352) (2.7,0.1755401) (2.8,0.1655492) (2.9,0.1561277) (3,0.147243) (3.1,0.1388643) (3.2,0.1309626) (3.3,0.1235107) (3.4,0.116483) (3.5,0.1098553) (3.6,0.1036048) (3.7,0.09770993) (3.8,0.09215052) (3.9,0.08690745) (4,0.08196271) (4.1,0.07729933) (4.2,0.07290128) (4.3,0.06875348) (4.4,0.06484167) (4.5,0.06115243) (4.6,0.0576731) (4.7,0.05439173) (4.8,0.05129706) (4.9,0.04837846) (5,0.04562592) (5.1,0.04302999) (5.2,0.04058176) (5.3,0.03827282) (5.4,0.03609525) (5.5,0.03404158) (5.6,0.03210475) (5.7,0.03027812) (5.8,0.02855542) (5.9,0.02693073) (6,0.02539848) (6.1,0.02395341) (6.2,0.02259056) (6.3,0.02130525) (6.4,0.02009307) (6.5,0.01894985) (6.6,0.01787168) (6.7,0.01685486) (6.8,0.01589589) (6.9,0.01499147) (7,0.01413852) (7.1,0.0133341) (7.2,0.01257544) (7.3,0.01185995) (7.4,0.01118517) (7.5,0.01054878) (7.6,0.009948593) (7.7,0.009382559) (7.8,0.008848729) (7.9,0.008345273) (8,0.007870461)};
+\addlegendentry{$r=2$}
+\addplot[thick,green!45!black] coordinates {(0,1) (0.1,0.9074075) (0.2,0.8249234) (0.3,0.7501247) (0.4,0.6821311) (0.5,0.6203034) (0.6,0.5640801) (0.7,0.5129527) (0.8,0.4664595) (0.9,0.4241804) (1,0.3857334) (1.1,0.3507711) (1.2,0.3189778) (1.3,0.2900662) (1.4,0.2637751) (1.5,0.2398669) (1.6,0.2181258) (1.7,0.1983552) (1.8,0.1803766) (1.9,0.1640276) (2,0.1491604) (2.1,0.1356407) (2.2,0.1233465) (2.3,0.1121665) (2.4,0.1019999) (2.5,0.09275484) (2.6,0.08434769) (2.7,0.07670255) (2.8,0.06975036) (2.9,0.0634283) (3,0.05767926) (3.1,0.05245131) (3.2,0.0476972) (3.3,0.04337401) (3.4,0.03944266) (3.5,0.03586764) (3.6,0.03261665) (3.7,0.02966033) (3.8,0.02697197) (3.9,0.02452727) (4,0.02230416) (4.1,0.02028255) (4.2,0.01844417) (4.3,0.01677242) (4.4,0.0152522) (4.5,0.01386976) (4.6,0.01261263) (4.7,0.01146944) (4.8,0.01042987) (4.9,0.009484523) (5,0.008624861) (5.1,0.007843118) (5.2,0.007132231) (5.3,0.006485777) (5.4,0.005897916) (5.5,0.005363339) (5.6,0.004877215) (5.7,0.004435152) (5.8,0.004033157) (5.9,0.003667598) (6,0.003335173) (6.1,0.003032878) (6.2,0.002757983) (6.3,0.002508004) (6.4,0.002280683) (6.5,0.002073965) (6.6,0.001885984) (6.7,0.001715042) (6.8,0.001559593) (6.9,0.001418234) (7,0.001289688) (7.1,0.001172793) (7.2,0.001066493) (7.3,0.0009698274) (7.4,0.0008819238) (7.5,0.0008019877) (7.6,0.0007292968) (7.7,0.0006631945) (7.8,0.0006030837) (7.9,0.0005484211) (8,0.0004987131)};
+\addlegendentry{$r=20$}
+\addplot[black,dashed,domain=0:8,samples=80]{exp(-x)};
+\addlegendentry{Estrazione ideale}
+\end{axis}
+\end{tikzpicture}
+\caption{Modello di trasporto: $\beta=1$, con diversi ricambi $r$. Parametri scelti, non stimati sul campione. Il ricambio riduce il riadsorbimento ma non supera la velocit\`a intrinseca di distacco.}
+\label{fig:transport}
+\end{figure}
+
+\subsection{Ricambi a volume e tempo totali invariati}
+Nel caso senza frazione schermata, $I_0=0$, se si dividono
+$V_{\rm tot}$ e $t_{\rm tot}$ in $N$ bagni freschi
+uguali, mantenendo $\lambda$ invariato per ipotesi e ponendo
+$B=Ak_a/(V_{\rm tot}k_d)$, il residuo \`e
+\begin{equation}\label{eq:resource}
+ x_N=\left[\frac{NB+e^{-(1+NB)\tau_{\rm tot}/N}}{1+NB}\right]^N,
+ \quad \tau_{\rm tot}=\lambda t_{\rm tot}.
+\end{equation}
+Per $B>0$,
+\begin{equation}\label{eq:resource-limit}
+ \lim_{N\to\infty}x_N=
+ \exp\!\left[-\frac{1-e^{-B\tau_{\rm tot}}}{B}\right].
+\end{equation}
+Per $B=0$ il risultato \`e $e^{-\tau_{\rm tot}}$ per ogni $N$.
+Ad esempio, con $B=1$ e $\tau_{\rm tot}=5$, passare da uno a
+quattro bagni porta il residuo da 0,5000 a 0,4104; il limite
+di infiniti ricambi \`e 0,3704. Sono valori del modello.
+La formula non giustifica bagni arbitrariamente piccoli in
+laboratorio: cambiare geometria pu\`o cambiare $k_m$ e $\lambda$.
+
+\subsection{Un parametro fisico verificato, con un uso delimitato}
+Arai e collaboratori \cite{Arai1996} misurano
+$D=2{,}93\times10^{-11}\,\mathrm{m^2/s}$ per PMMA atattico
+di $M_w=9{,}52\times10^5$ in acetone a 25\,\degC.
+\`E la diffusione di catene gi\`a sciolte. Per distanze
+ipotetiche $\delta$ di 10, 100 e 1000\,\um,
+$\delta^2/D$ vale circa 3,4 secondi, 5,7 minuti e 9,5 ore.
+Questi ordini di grandezza mostrano il peso della geometria.
+Non determinano la diffusione in DMF/THF, il tempo di ingresso
+nel residuo, $k_d$, o uno spessore $\delta$ dai soli 500 rpm.
+
+\section{Una spiegazione dell'asciugatura che si pu\`o smentire}
+
+Se il liquido trattenuto sul campione all'uscita ha concentrazione
+massica $c_f$ e volume $V_f$, la massa che pu\`o depositare \`e
+limitata da
+\begin{equation}\label{eq:mass-bound}
+ M_{\rm dep}\le c_fV_f,\qquad
+ \Gamma_{\rm dep}\le c_fh_f,\quad h_f=V_f/A.
+\end{equation}
+Per uno spessore equivalente e densit\`a $\rho$,
+\begin{equation}\label{eq:units}
+ t_{\rm eq}[\mathrm{nm}]\le
+ \frac{0{,}001\;c_f[\mathrm{mg/L}]\;h_f[\mu\mathrm m]}
+ {\rho[\mathrm{g/cm^3}]}.
+\end{equation}
+L'esempio $c_f=1$ mg/L, $h_f=10$\,\um\ e densit\`a
+assunta 1,18 g/cm$^3$ d\`a al massimo 0,0085 nm medi.
+Per spiegare 0,5 nm medi, con quello stesso film, servirebbero
+almeno 59 mg/L. Non sono misure di questo campione.
+
+Per usare il limite occorre delimitare la concentrazione
+\emph{locale} del liquido trascinato: la media di un bagno grande
+pu\`o sottostimarla. Il confronto va fatto su massa e area
+complessive; l'evaporazione pu\`o concentrare il materiale in
+isole alte. Il limite esclude soltanto il deposito proveniente
+dall'ultimo film liquido, non il riadsorbimento avvenuto durante
+tutto il bagno.
+
+Questa misura decide se valga la pena ottimizzare l'asciugatura.
+Se perfino il massimo materiale trascinabile \`e insufficiente,
+``\`e tutto un deposito finale'' non spiega il residuo.
+Se \`e sufficiente, il meccanismo rimane possibile ma non provato.
+
+\section{Il programma sperimentale proposto}
+\label{sec:experiment}
+
+\subsection{Prima prova: separare i due passaggi IPA}
+Si usano campioni gemelli dello stesso trasferimento e la stessa
+temperatura del procedimento di Armando, da registrare. Ogni
+numero della Tabella~\ref{tab:factorial} \`e un bagno distinto;
+i bagni sostitutivi sono freschi. Volume, geometria, agitazione,
+intervallo di trasferimento e getto di azoto devono essere
+uguali. Non si lasciano asciugare i campioni fra due bagni.
+R riproduce la sequenza riferita con freschezza dei bagni
+standardizzata; non sappiamo se questo dettaglio coincida con
+le prove gi\`a eseguite da Armando.
+
+\begin{table}[htbp]
+\caption{Quattro percorsi da 76 minuti. ``5+3'' significa due
+bagni freschi distinti. Nessun risultato \`e ancora acquisito.}
+\label{tab:factorial}\centering\small
+\begin{tabular}{@{}lcccc@{}}\toprule
+Gruppo & Primo & Intermedio & Secondo & Finale\\\midrule
+R, riferimento &DMF 30&IPA 5+3&THF 30&IPA 5+3\\
+I, cambia intermedio &DMF 30&DMF 5+3&THF 30&IPA 5+3\\
+F, cambia finale &DMF 30&IPA 5+3&THF 30&THF 5+3\\
+IF, cambia entrambi &DMF 30&DMF 5+3&THF 30&THF 5+3\\\bottomrule
+\end{tabular}
+\end{table}
+
+Le varianti I e IF costituiscono il primo tentativo concreto di
+evitare un eventuale riblocco prima dell'estrazione in THF.
+Il confronto I contro R e IF contro F misura la sostituzione
+intermedia nei due contesti. F contro R e IF contro I studia
+il passaggio finale, che cambia anche evaporazione e forze
+capillari. Nessuna di queste differenze va chiamata automaticamente
+``precipitazione''.
+
+Si raccoglie separatamente il liquido dopo DMF, dopo ciascun IPA
+e dopo THF. Su aliquote dell'eluato reale, fuori dal campione,
+si verifica l'eventuale comparsa di particelle durante l'aggiunta
+di IPA, usando bianchi e PMMA/PPC dello stesso lotto. Si cerca
+anche se il materiale torna solubile reintroducendo il liquido
+di partenza. L'esito pu\`o motivare un percorso di scambio
+graduale, ma non fissa un rapporto ottimale senza misure.
+
+Un esito negativo della prova di torbidit\`a non esclude
+aggregati molto piccoli o nucleazione selettiva sulla superficie.
+Un bianco di solo \SiO\ non riproduce tutte le propriet\`a
+del grafene: serve anche, se disponibile, un testimone grafenico
+pulito sottoposto al medesimo eluato.
+
+\subsection{Seconda prova: sfruttare un'eventuale mobilizzazione reversibile}
+Se l'IPA intermedio \`e utile, oppure se si osserva riorganizzazione
+seguita da esportazione nel THF, si prova la
+Tabella~\ref{tab:cycles}. L'ipotesi \`e estrarre presto la
+frazione mobile prima che ritorni aderente.
+
+\begin{table}[htbp]
+\caption{Confronto fra blocchi e alternanze, entrambi da 76 minuti:
+30 minuti DMF, 16 IPA, 30 THF. Stesso numero di bagni freschi,
+stesso liquido finale. Il riferimento R va misurato separatamente.}
+\label{tab:cycles}\centering\small
+\begin{tabular}{@{}p{0.14\textwidth}p{0.77\textwidth}@{}}\toprule
+Percorso & Sequenza\\\midrule
+Blocchi & DMF 30; quattro bagni IPA da 4 minuti;
+quattro bagni THF da 7,5 minuti; azoto.\\[4pt]
+Alternato & DMF 30; quattro ripetizioni di IPA 4 minuti
+seguito da THF 7,5 minuti; azoto.\\\bottomrule
+\end{tabular}
+\end{table}
+
+Non \`e un invito a moltiplicare indiscriminatamente i bagni.
+Le due varianti hanno nove bagni ciascuna, incluso il DMF
+iniziale, e terminano entrambe nel THF. Il confronto tiene
+fissi il tempo complessivo in ogni liquido e il numero di
+manipolazioni; l'ordine resta la variabile. Per ciascuna coppia
+si usano volumi, recipienti e modalit\`a di ricambio identici.
+
+Il materiale esportato nei singoli bagni \`e il primo esito
+da confrontare, insieme alla superficie conservata. Se
+l'alternanza migliora solo l'immagine finale ma non le altre
+misure, non \`e ancora l'amplificazione del meccanismo proposto.
+La ricerca di una durata ottimale dei cicli ha senso soltanto
+dopo un segnale replicato a tempi totali uguali.
+
+\subsection{Una previsione geometrica aggiuntiva}
+Se domina una rimozione dal bordo di isole isolate e di altezza
+costante, con velocit\`a $v$, allora
+\begin{equation}\label{eq:edge}
+ r(t)=\max(r_0-vt,0),\qquad
+ \frac{M(t)}{M_0}=\left[\max\left(1-\frac{vt}{r_0},0\right)\right]^2.
+\end{equation}
+Il tempo di sparizione cresce come $r_0$. Una rimozione
+volumetrica di primo ordine prevede invece lo stesso tempo
+di riduzione frazionale per tutte le dimensioni. Si seguono
+quindi anche raggio, altezza e volume delle stesse isole.
+Una dipendenza dal raggio non dimostra da sola il meccanismo
+di bordo: diffusione, eterogeneit\`a e coalescenza vanno distinti.
+
+\section{Le misure che decidono la riuscita}
+
+\subsection{Identit\`a: un controllo breve prima di inseguire altri liquidi}
+Si confrontano residuo persistente, eluati e riferimenti PMMA,
+PPC e loro sovrapposizione, trattati con la stessa storia.
+Se il riferimento libero si dissolve ma il residuo sul grafene
+resta, diventa plausibile una barriera interfaciale. Se persiste
+anche il riferimento privo di grafene, occorre verificare
+alterazione, reticolazione o materiale diverso. I 90\,\degC\
+per due minuti, da soli, non provano carbonizzazione.
+
+Un singolo picco carbonilico XPS non separa PMMA e PPC.
+Si usano firme complete e, se la quantit\`a lo consente,
+spettroscopia infrarossa locale o frammenti ToF-SIMS confrontati
+con riferimenti. Le analisi distruttive richiedono gemelli
+dedicati. I materiali ausiliari, come PDMS o adesivi, entrano
+nei controlli soltanto se sono effettivamente usati. Il segnale
+globale di silicio su \SiO\ non identifica un residuo siliconico.
+
+Per studiare un'eventuale modifica chimica si analizzano anche
+riferimenti esposti ai bagni. La perdita della firma dell'estere
+pu\`o indicare trasformazione senza asportazione. La cromatografia
+dimensionale del materiale estratto, se misurabile, riguarda la
+frazione solubile e non esclude una rete insolubile rimasta sul
+campione. Nessun singolo strumento chiude da solo il bilancio.
+
+\subsection{Morfologia, integrit\`a e limite di rivelabilit\`a}
+Si misurano copertura, volume apparente per area e firma chimica,
+non soltanto rugosit\`a. Una pellicola uniforme pu\`o essere
+liscia e ancora presente. Le stesse aree vengono registrate
+prima e dopo, insieme ad aree casuali e campioni non
+prescansionati. La punta AFM non deve diventare l'agente di
+pulizia; in liquido si confrontano campioni nello stesso mezzo.
+
+La rimozione va calcolata sull'intersezione delle regioni dove
+il grafene \`e presente prima e dopo. Le regioni asportate
+sono danno, non superficie pulita. Mappa Raman, fori,
+delaminazioni e substrati testimone controllano l'integrit\`a.
+Mobilit\`a, resistenza di contatto e drogaggio restano esiti
+separati dalla quantit\`a di polimero.
+
+Come primo obiettivo progettuale si pu\`o fissare una riduzione
+del 90\% di copertura e volume residuo, con diminuzione
+chimica coerente e almeno 99\% dell'area di grafene conservata.
+Non sono risultati ottenuti n\'e standard universali. Per la
+scommessa occorre concordare prima se basta tale miglioramento
+oppure se si richiede residuo non rilevato a un limite dichiarato.
+Quest'ultimo richiede calibrazione della sensibilit\`a e non
+equivale ad assenza assoluta di ogni molecola.
+
+Una prima esplorazione pu\`o usare un trasferimento suddiviso
+fra condizioni; la conferma deve coinvolgere trasferimenti
+indipendenti, inizialmente almeno tre e poi un numero adeguato
+alla variabilit\`a osservata. I pixel e le immagini dello
+stesso campione non sono repliche indipendenti. Si riportano
+tutte le condizioni, incluse quelle che non migliorano.
+
+
+\section{Calcoli molecolari eseguiti e ipotesi scartate}\label{sec:molecular}
+
+\subsection{Il bersaglio locale non determina il distacco}
+
+Il PMMA presenta gruppi estere; PPC presenta gruppi carbonato. Abbiamo
+calcolato interazioni di HFIP con acetato di metile, pivalato di metile
+e carbonato di dimetile come analoghi locali, oltre a coppie di solventi.
+Queste molecole non rappresentano la catena 950K, le sue molteplici
+ancore o la storia del deposito. Sono controlli di un'ipotesi locale.
+
+Sono state ottimizzate 12 molecole e 13 coppie, con tre geometrie iniziali
+per coppia, usando GFN2-xTB. Tutte le 39 geometrie delle coppie sono state
+raffinate fino a convergenza con forza massima sotto
+0,008\,eV/\AA. Non rivendichiamo un minimo globale.
+Le energie di interazione a geometria fissata sono
+\begin{equation}
+ E_{\rm int}=E_{AB}(\mathbf R_A,\mathbf R_B)
+             -E_A(\mathbf R_A)-E_B(\mathbf R_B),
+\end{equation}
+separate dall'energia di legame che comprende la deformazione dei frammenti.
+
+Abbiamo poi eseguito 50 calcoli autoconsistenti PBE0-D3(BJ), tutti
+convergenti, per sette coppie con base def2-SVP e tre controlli con
+def2-TZVP. La Tabella~\ref{tab:quantum} corregge l'errore dovuto
+all'uso della base del partner tramite il metodo \emph{counterpoise}.
+I frammenti rimangono nella geometria del complesso ottenuta con GFN2.
+Sono energie elettroniche nel vuoto, non energie libere nel liquido.
+
+\begin{table}[htbp]\centering
+\caption{Interazione con acetato di metile a geometria fissata,
+PBE0-D3(BJ); kJ/mol. La correzione di base \`e positiva e riduce
+l'apparente attrazione. Le cifre esprimono il calcolo numerico,
+non un'accuratezza fisica al centesimo.}\label{tab:quantum}
+\small
+\begin{tabular}{lcrr}\toprule
+Partner & Base & $E_{\rm int}$ corretto & Correzione di base\\\midrule
+HFIP & SVP & -45.28 & 20.17 \\
+HFIP & TZVP & -44.34 & 2.86 \\
+Acido acetico & SVP & -48.69 & 15.00 \\
+Acido acetico & TZVP & -47.53 & 2.00 \\
+IPA & SVP & -28.92 & 14.17 \\
+IPA & TZVP & -28.01 & 2.52 \\
+\bottomrule\end{tabular}
+\end{table}
+
+\textbf{Il confronto produce una confutazione utile: anche l'acido
+acetico interagisce almeno altrettanto fortemente con questo analogo,
+pur essendo gi\`a fallito sul materiale riferito.} Per queste geometrie
+la differenza fra SVP e TZVP dopo correzione \`e circa 1\,kJ/mol;
+non dimostra per\`o convergenza rispetto a geometrie, funzionale,
+entropia, liquido o superficie. Il solo legame con l'estere non
+discrimina un trattamento efficace.
+
+La letteratura documenta PMMA di massa 99.200\,g/mol disciolto in HFIP
+a temperatura ambiente \cite{WangHFIP2020}. Dimostra la solvatazione
+di quel materiale libero. La selezione di HFIP perch\'e dissolva anche
+metilcellulosa non implica che gli altri solventi non dissolvano PMMA.
+Non dimostra rimozione del PMMA 950K aderente al grafene o del PPC.
+
+Un eventuale primo confronto operativo usa HFIP puro in due bagni
+freschi di 10 minuti a temperatura ambiente, con il secondo destinato
+a esportare il materiale estratto, inizialmente evitando la mescolanza
+con IPA. \textbf{Quei tempi sono una proposta pilota, non condizioni
+validate o derivate dai calcoli.} Occorrono un controllo del materiale
+libero dello stesso lotto, del substrato e della contaminazione
+fluorurata dopo il trattamento, insieme alle misure della Sezione~9.
+La sequenza abituale conserva la funzione di controllo operativo.
+
+\subsection{Perch\'e serve il liquido e una selettivit\`a interfaciale}
+
+Siano $P$ il polimero, $G$ il grafene, $O$ l'ossido e $L$ il liquido.
+Nel limite reversibile e non reattivo i lavori di separazione sono
+\begin{align}
+ W_{PG}^{L}&=\gamma_{PL}+\gamma_{GL}-\gamma_{PG},\\
+ W_{GO}^{L}&=\gamma_{GL}+\gamma_{OL}-\gamma_{GO}.
+\end{align}
+La differenza cancella $\gamma_{GL}$: una maggiore affinit\`a del
+solvente per il grafene non garantisce selettivit\`a fra rimozione
+del polimero e distacco del foglio dall'ossido. Questi lavori non
+sono, da soli, barriere cinetiche o energie di frattura del processo
+di prelievo, che dipende anche da geometria, temperatura e velocit\`a.
+
+Il medesimo problema appare a scala molecolare. Se il carbonile \`e
+solvatato nello stesso modo sia nel polimero aderente sia nel polimero
+liberato, quel contributo si cancella nel costo del distacco.
+Bisogna calcolare la differenza fra i due stati, includendo liquido,
+contatti, infiltrazione, conformazioni e riaggancio. Moltiplicare
+un'energia di coppia per circa 9.500 unit\`a non fornisce una barriera
+corretta: la catena pu\`o staccarsi progressivamente.
+
+\subsection{Un controllo del liquido che limita le conclusioni}
+
+Abbiamo trascritto i parametri HFIP pubblicati nelle Tabelle I--V
+del supplemento di Marchelli et al. \cite{Marchelli2022}, convertendo
+esplicitamente unit\`a e prefattori armonici. Il fattore 1--4, non
+specificato nel testo consultato, \`e assunto pari a 0,5 e deve essere
+oggetto di sensibilit\`a. Sono state simulate 125 molecole:
+50\,ps a volume fissato e 1\,ns a pressione fissata a 298,15\,K.
+L'analisi usa 200--1000\,ps; una sola realizzazione e questo intervallo
+non bastano a certificare convergenza della risposta dielettrica.
+
+\begin{table}[htbp]\centering
+\caption{Controllo preliminare del modello HFIP. I riferimenti
+sperimentali sono riportati da Casoria et al. \cite{Casoria2024}.
+La deviazione della densit\`a \`e uno scarto temporale, non un
+intervallo di confidenza di repliche indipendenti.}
+\begin{tabular}{lcc}\toprule
+Quantit\`a & Simulazione pilota & Riferimento sperimentale\\\midrule
+Densit\`a, g/cm$^3$ & 1,572 ($s=0,022$) & 1,607\\
+Permittivit\`a relativa & 1,635 & 16,7\\\bottomrule
+\end{tabular}
+\end{table}
+
+L'espressione delle fluttuazioni del dipolo \`e stata verificata
+indipendentemente in unit\`a SI:
+\begin{equation}
+ \epsilon_r=1+\frac{\langle\mathbf M^2\rangle
+                         -\langle\mathbf M\rangle^2}
+                       {3\epsilon_0 k_B T\langle V\rangle},
+\end{equation}
+con condizioni elettrostatiche conduttrici al contorno e cariche fisse.
+Il dipolo dell'ultimo fotogramma, ricostruito separatamente dalle
+coordinate e dai parametri pubblicati, concorda entro
+0,0005\,Debye con il programma. Il contributo elettronico non \`e
+incluso da un modello a cariche fisse; non basta a giustificare
+automaticamente il divario osservato.
+
+\textbf{La vicinanza della densit\`a non qualifica il modello per
+una classifica quantitativa del distacco.} Vanno controllate durata,
+repliche, convenzioni 1--4, conformazione del solvente e polarizzazione.
+Una conversione errata del volume nelle prime esecuzioni \`e stata
+rilevata mediante controllo fra motori e derivazione indipendente
+in SI: quei tentativi sono archiviati come invalidi ed esclusi.
+
+\subsection{Potenziali appresi e catene realistiche: stato della ricerca}
+
+MACE-OFF23-small \cite{MACE2025} \`e stato effettivamente eseguito
+sulle 13 coppie e confrontato con i calcoli precedenti. Usa un diverso
+livello quantistico di addestramento, quindi le discrepanze non sono
+una misura universale dell'errore rispetto a PBE0. Il modello non
+comprende silicio: non descrive l'intero supporto Si/\SiO.
+La sua esecuzione Metal a precisione singola \`e stata confrontata
+con CPU a precisione doppia; la differenza quadratica media delle
+forze sul complesso di controllo \`e circa
+$1,9\times10^{-6}$\,eV/\AA. Una modifica locale, registrata,
+riguarda soltanto il tipo numerico delle energie atomiche diagnostiche
+su Metal, senza modificare l'espressione di energia totale e forze.
+
+Sono inoltre state costruite topologie di PMMA a 4 e 8 unit\`a con
+ogni termine di legame, angolo e torsione vincolato alla Tabella S2
+di Behbahani e Harmandaris \cite{Behbahani2021}. Mancanze avrebbero
+prodotto un errore esplicito. La neutralizzazione di 0,0051 elettroni
+in eccesso ai due estremi \`e una scelta di chiusura documentata,
+ancora da verificare. Quelle catene non sono ancora una simulazione
+del distacco e non sostituiscono la massa 950K.
+
+\textbf{Stato: traiettorie interfaciali eseguite su un oligomero;
+nessuna energia libera di distacco o pulizia reale ancora qualificata.}
+\`E stato eseguito anche MACE-POLAR-1-small \cite{MACEPolar2026},
+con interazioni elettrostatiche e 83 elementi. Per gli stessi complessi
+con acetato di metile otteniamo $-46{,}19$\,kJ/mol con HFIP,
+$-44{,}83$ con acido acetico e $-28{,}27$ con IPA. Il livello di
+addestramento \`e diverso da PBE0: la variazione dell'ordine fra
+HFIP e acido, di pochi kJ/mol, non produce una previsione di pulizia.
+La versione della libreria elettrostatica \`e stata fissata a 0.4.0
+per corrispondere all'interfaccia del modello rilasciato.
+
+Un controllo ulteriore applica un campo statico alla stessa molecola
+HFIP, a nuclei fissi. PBE0/def2-TZVP produce una polarizzabilit\`a
+lungo $z$ di circa $0{,}4242\,e\,\text{\AA}^2/\mathrm V$, coerente fra
+ampiezze 0,002 e 0,01\,V/\AA. Nel percorso di esecuzione del
+modello appreso otteniamo invece circa $-0{,}0335\,e\,\text{\AA}^2/\mathrm V$
+a 0,01\,V/\AA. La stima usa
+\begin{equation}
+ \alpha_{zz}\simeq -\frac{E(F)+E(-F)-2E(0)}{F^2}.
+\end{equation}
+Per uno stato fondamentale elettronico stabile, l'energia ottenuta
+minimizzando un funzionale con accoppiamento lineare al campo \`e
+concava in $F$. Il segno negativo ottenuto dal modello appreso
+richiede chiarire convenzioni, implementazione e dominio di validit\`a;
+la risposta al campo di questa configurazione non viene promossa a
+previsione fisica del liquido. Una buona energia di coppia non
+sostituisce questo controllo.
+
+
+\subsection{Controllo della dimensione del modello e della rotazione di HFIP}
+
+L'anomalia della versione piccola non viene generalizzata all'intera
+famiglia. Ripetendo il controllo con MACE-POLAR-1-M, a nuclei fissi,
+otteniamo diagonali positive per HFIP, DMF e THF. Per HFIP
+$\alpha_{zz}=0{,}4947\,e\,\text{\AA}^2/\mathrm V$, da confrontare
+con $0{,}4242$ di PBE0. La traslazione della molecola neutra non cambia
+l'energia oltre $10^{-12}$\,eV. Abbiamo verificato nel codice la
+convenzione: la molteplicit\`a del singoletto \`e 1, mentre il numero
+di elettroni spaiati \`e zero. Anche con le geometrie centrate la
+versione S d\`a diagonali negative per tutte e tre le molecole.
+Il problema \`e quindi specifico a quella parametrizzazione o architettura,
+non una conclusione contro tutti i potenziali appresi.
+
+Abbiamo ruotato soltanto l'idrogeno OH in dodici posizioni, mantenendo
+fissi tutti gli altri nuclei e confrontando le energie relative.
+La barriera campionata \`e 15,075\,kJ/mol con
+PBE0-D3(BJ)/def2-TZVP, 14,145 con MACE-POLAR-1-M e 15,320 con S.
+GAFF2 d\`a 17,793\,kJ/mol, ma cambia anche la forma del profilo:
+il massimo \`e a $0^\circ$, mentre nei riferimenti quantistici
+\`e vicino a $\pm90^\circ$. Il controllo riguarda la molecola isolata;
+non fornisce la popolazione dei conformeri nel liquido o la sua
+permittivit\`a. Il modello M supera questi controlli molecolari,
+senza che ne segua una qualificazione di grafene o \SiO.
+
+Il controllo \`e stato esteso a GAFF2/AM1-BCC per HFIP e DMF:
+125 molecole, 500\,ps a pressione fissata dopo 50\,ps iniziali.
+Nella parte analizzata la densit\`a \`e circa 1,623 e 0,965\,g/cm$^3$,
+mentre le stime della permittivit\`a sono 5,96 e 19,84.
+Il riferimento sperimentale DMF a 298,15\,K e 0,1\,MPa \`e
+$37,2\pm0,1$ \cite{Hunger2010}. Anche questi controlli hanno
+una sola realizzazione breve: non promuovono una previsione
+quantitativa del distacco dal buon accordo della sola densit\`a.
+
+\subsection{Traiettorie effettive del polimero sulla superficie}
+
+Sono state eseguite cinque traiettorie a 298,15\,K con quattro unit\`a
+PMMA, 65 atomi, e un foglio periodico rigido di 448 atomi di carbonio.
+I parametri PMMA e grafene vengono dal supplemento di
+Behbahani e Harmandaris \cite{Behbahani2021}; i solventi
+da GAFF2/AM1-BCC, con neutralit\`a verificata. La cella misura
+$3{,}4032\times3{,}4385\times3{,}8$\,nm. Seguiamo 50\,ps iniziali
+a volume fisso e 100\,ps di osservazione per liquido.
+
+\textbf{Il sistema contiene liquido su entrambe le facce del foglio:
+non simula ancora grafene appoggiato sull'ossido.} L'assenza
+di \SiO\ limita sia la selettivit\`a sia l'affinit\`a quantitativa:
+il substrato reale pu\`o modificare il campo e le interazioni attraverso
+il monostrato. Il grafene viene tenuto fisso; la sua immobilit\`a
+verifica il vincolo numerico, non l'assenza di danni del trattamento.
+La catena corta non rappresenta PMMA 950K, un deposito multistrato,
+una frazione covalente o un residuo sepolto.
+
+Nessuna di queste traiettorie produce distacco completo spontaneo.
+La Tabella~\ref{tab:interface} scompone l'interazione diretta
+polimero--grafene, mediata sulla seconda met\`a dei 100\,ps.
+\textbf{Questa energia non \`e l'energia libera di adsorbimento.}
+Non include l'intero bilancio polimero--liquido e grafene--liquido,
+n\'e l'entropia o una dimostrazione di equilibrio.
+
+\begin{table}[htbp]\centering\small
+\caption{Energie dirette polimero--grafene nel modello con quattro
+unit\`a PMMA, in kJ/mol di oligomero. Una sola realizzazione per
+liquido; medie temporali, non una classifica di pulizia.}
+\label{tab:interface}
+\begin{tabular}{lrrrr}\toprule
+Liquido & Metile estere & Nucleo estere & Scheletro/metili & Totale\\\midrule
+HFIP & -14,87 & -17,76 & -35,38 & -68,01 \\
+DMF & -9,45 & -16,52 & -36,18 & -62,15 \\
+THF & -14,04 & -21,47 & -35,86 & -71,37 \\
+Acido acetico & -5,94 & -13,00 & -45,48 & -64,42 \\
+Anisolo & -1,95 & -7,24 & -38,10 & -47,29 \\
+\bottomrule\end{tabular}
+\end{table}
+
+In anisolo i gruppi estere perdono molti contatti, mentre lo scheletro
+rimane aderente. In HFIP il residuo aderente forma gi\`a circa
+2,9 legami idrogeno con i carbonili, contro circa 3,5 nello stato
+distaccato ottenuto con un vincolo di separazione. Questa osservazione
+del modello \`e coerente con una solvatazione gi\`a presente nello
+stato aderente: contare legami idrogeno non basta a stabilire il vantaggio
+del distacco. Le distribuzioni conformazionali e la loro convergenza
+rimangono da controllare. L'anisolo \`e inoltre il solvente del
+PMMA 950K commerciale; ci\`o motiva il controllo, ma la solubilit\`a
+del materiale libero non dimostra il recupero del campione.
+
+\subsection{Separazione controllata e motivo del mancato profilo di energia libera}
+
+Per HFIP, DMF e anisolo abbiamo eseguito tre finestre di 125\,ps,
+con centri a 0,60, 0,90 e 1,35\,nm dal foglio e molla
+$K=2000$\,kJ\,mol$^{-1}$\,nm$^{-2}$. A 1,35\,nm la seconda
+met\`a di ciascun campione non ha contatti stretti con il foglio,
+e l'interazione diretta residua \`e trascurabile. \`E un distacco
+forzato di un oligomero, non una pulizia ottenuta da un bagno.
+La forza restituita dal programma coincide con quella ricostruita
+da $K(z_0-\langle z\rangle)$.
+
+Le tre distribuzioni di distanza non hanno sovrapposizione osservata
+fra finestre adiacenti. Non si possono collegare i loro livelli
+di energia libera senza ulteriori campioni. Inoltre, nella finestra
+HFIP a 1,35\,nm la forza media passa da circa $+134$ a $-70$
+kJ\,mol$^{-1}$\,nm$^{-1}$ fra blocchi iniziale e finale di 25\,ps:
+\`e una deriva, non una differenza di equilibrio rispetto a DMF.
+\textbf{Non viene quindi calcolato un costo di distacco dai tre punti.}
+
+La campagna pi\`u fitta usa undici finestre di 500\,ps,
+con $K=750$ e centri da 0,45 a 1,45\,nm. Le undici finestre
+HFIP sono completate: rimane una disconnessione osservata fra
+i centri 0,75 e 0,85\,nm. La campagna DMF e il percorso inverso
+HFIP proseguono. Un controllo delle conformazioni rivela inoltre
+il limite del solo centro di massa, descritto qui sotto.
+Il codice che ricostruisce le distribuzioni \`e stato verificato
+su campioni indipendenti di un potenziale armonico noto:
+errore quadratico medio del profilo 0,068\,kJ/mol.
+Questo qualifica il controllo numerico, non le traiettorie del materiale.
+Nessun tempo di pulizia sperimentale viene letto dai percorsi accelerati.
+
+\subsection{Una variabile nascosta osservata: l'orientazione della catena}
+
+Abbiamo confrontato due campioni HFIP di 500\,ps con lo stesso
+vincolo $z_0=1{,}05$\,nm e $K=750$, avviati dalla catena aderente
+e dalla catena libera. Negli ultimi 250\,ps la distribuzione della
+distanza ha sovrapposizione empirica circa 0,355; la distribuzione
+congiunta di distanza ed estensione normale non ha sovrapposizione
+nelle celle usate, di 0,01 e 0,005\,nm. La catena conserva
+orientazioni diverse. Questo \`e un risultato del modello e
+delle traiettorie effettive, non una barriera del residuo reale.
+
+Definiamo l'estensione normale con le masse $m_i$:
+\begin{equation}
+ q=R_{g,z}=\left[\frac{\sum_i m_i(z_i-z_{\rm CM})^2}
+ {\sum_i m_i}\right]^{1/2}.
+\end{equation}
+Per isolare l'effetto a distanze effettivamente uguali consideriamo
+le configurazioni con $1{,}00\le z<1{,}04$\,nm.
+Le rispettive altezze medie coincidono entro $8\times10^{-5}$\,nm,
+mentre cambiano estensione e prossimit\`a al foglio
+(Tabella~\ref{tab:orientation}). I punti sono correlati;
+le medie non sono stime su repliche indipendenti.
+
+\begin{table}[ht]
+\centering\small
+\caption{Confronto a pari intervallo di altezza, nel modello
+PMMA4/grafene rigido/HFIP. L'energia \`e l'interazione diretta
+Lennard--Jones, non un'energia libera di adsorbimento.}
+\label{tab:orientation}
+\begin{tabular}{lrr}
+\toprule
+ & Dallo stato aderente & Dallo stato libero\\
+\midrule
+Configurazioni salvate &52&63\\
+$\langle z\rangle$ (nm)&1,02075&1,02067\\
+$\langle R_{g,z}\rangle$ (nm)&0,27694&0,15384\\
+Distanza minima atomi pesanti--G (nm)&0,51385&0,73865\\
+Interazione diretta P--G (kJ/mol)&$-5,97$&$-0,85$\\
+Legami H HFIP--carbonile&3,25&3,54\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+La catena proveniente dallo stato aderente resta quasi verticale;
+un'estremit\`a \`e pi\`u vicina al foglio. La seconda resta
+quasi parallela. La solvatazione del carbonile non separa da sola
+i due stati. Il risultato fornisce una variabile concreta per il
+campionamento, anzich\'e attribuire il mancato distacco a una
+generica scarsa solubilit\`a.
+
+Se $F(z,q)$ comprende la misura statistica delle due coordinate,
+il profilo lungo $z$ soddisfa, a meno di una costante,
+\begin{equation}
+ F(z)=-RT\log\!\int e^{-F(z,q)/(RT)}\,\mathrm dq+C.
+\end{equation}
+Una traiettoria che mantiene una sola popolazione in $q$ non
+esegue questa integrazione, anche se le distribuzioni di $z$
+sembrano collegabili. Abbiamo implementato $R_{g,z}$ nel motore
+di simulazione e verificato i valori su 1.002 configurazioni:
+errore massimo inferiore a $4\times10^{-10}$\,nm rispetto al
+calcolo indipendente. Le forze del vincolo concordano con la
+formula analitica entro $5\times10^{-7}$ e con le derivate
+numeriche entro $3{,}7\times10^{-4}$\,kJ\,mol$^{-1}$\,nm$^{-1}$.
+Due nuovi campioni di 100\,ps con vincoli simultanei su $z$ e
+$R_{g,z}$ rimangono distinti. Il controllo numerico \`e riuscito;
+il campionamento resta insufficiente e il profilo non viene accettato.
+
+\subsection{Un generatore polarizzabile di parametri e il limite della verifica nel vuoto}
+
+Abbiamo eseguito ByteFF-Pol \cite{ByteFFPol2026}, che predice
+parametri molecolari con una rete e poi usa un potenziale esplicito
+con polarizzazione. Sono stati generati sette insiemi di parametri
+e verificati tredici complessi sulle stesse geometrie degli altri
+confronti. Le energie sono state scomposte e ricomposte;
+la forza netta sul frammento coincide con la derivata numerica
+dell'energia entro $2,3\times10^{-6}$\,kJ\,mol$^{-1}$\,\AA$^{-1}$
+nel controllo HFIP--acetato di metile. A grande distanza
+l'interazione tende a zero.
+
+L'interazione calcolata \`e $-34,57$\,kJ/mol per HFIP--acetato,
+$-28,81$ per acido acetico--acetato e $-20,86$ per IPA--acetato.
+Sono valori diversi dai riferimenti PBE0 della Tabella~\ref{tab:quantum}
+e da MACE-POLAR-1-M, che d\`a rispettivamente $-46,54$, $-45,10$
+e $-27,15$. Il corretto controllo delle forze non risolve
+questa incertezza fisica. Abbiamo quindi eseguito dieci calcoli
+autoconsistenti con $\omega$B97M-V/def2-TZVPD, lo stesso livello
+usato per le interazioni di addestramento, includendo VV10 senza D3.
+Per HFIP--acetato il valore corretto \`e $-46,165$\,kJ/mol;
+il passaggio fra due griglie non locali cambia il risultato
+di 0,071\,kJ/mol. Su questa geometria MACE-POLAR-1-M differisce
+di 0,37\,kJ/mol, mentre ByteFF-Pol sottostima l'attrazione
+di circa 11,6\,kJ/mol. Il controllo seleziona M per proseguire
+lo studio di questa interazione locale e sospende l'uso predittivo
+di ByteFF per HFIP prima di correggerlo o verificarlo su altre
+geometrie. Non \`e una validazione universale di M, n\'e
+un risultato sull'efficacia di HFIP come pulente.
+
+Il modello non include silicio. La sua esecuzione nel vuoto
+non dimostra densit\`a, permittivit\`a o desorbimento corretti.
+L'esportazione verso OpenMM richiede inoltre le scale elettrostatiche
+intramolecolari specifiche della pubblicazione; la versione installata
+non \`e stata modificata globalmente e non viene usata come
+se fosse gi\`a quel motore. Questa \`e una via da qualificare,
+non una soluzione dedotta dal nome del programma.
+
+\subsection{Esecuzione del modello polarizzabile nel liquido sul Mac}
+
+Abbiamo reso eseguibile MACE-POLAR-1-M su una cella periodica
+di 64 molecole HFIP, 768 atomi, sulla GPU del Mac disponibile.
+I pesi del modello sono preservati. Il calcolo delle reti radiali,
+dei prodotti e delle somme sui vicini procede a blocchi;
+le derivate vengono ricalcolate dai rispettivi ingressi.
+Le operazioni sono equivalenti per le prime derivate, con
+parametri congelati. Non viene usato questo percorso per Hessiane
+o addestramento.
+
+Una contrazione onerosa pu\`o inoltre essere riordinata senza
+costruire tutte le coppie di canali:
+\begin{equation}
+ \sum_{v,d}w_{uv}x_{bud}y_{bvd}
+ =\sum_d x_{bud}\left(\sum_v w_{uv}y_{bvd}\right).
+\end{equation}
+La sottrazione dei riferimenti atomici additivi \`e una scelta
+dello zero di energia che preserva forze e differenze a composizione
+fissa. Una cella periodica diluita di 96 atomi controlla il percorso
+contro il calcolo originale in doppia precisione: le modifiche
+al riordino delle operazioni preservano le forze entro
+$2\times10^{-15}$\,eV/\AA. Il confronto con la GPU in precisione singola
+ha scarto relativo quadratico medio $1{,}5\times10^{-5}$.
+Sulla cella completa il confronto processore--GPU, entrambi in
+precisione singola, d\`a $1{,}1\times10^{-6}$; lo scarto energetico
+\`e $1{,}3\times10^{-4}$\,eV. Il controllo completo in doppia
+precisione sul processore supera il limite di memoria imposto
+e non viene considerato concluso.
+
+La GPU \`e limitata al 25\% della memoria assegnabile al processo;
+il calcolo effettivo delle forze richiede circa 9,9 secondi
+per configurazione. Le derivate numeriche di energia rispetto
+a spostamento atomico, traslazione di una molecola e deformazione
+della cella concordano con le derivate calcolate entro lo 0,34\%,
+1,24\% e 0,84\% ai passi documentati. Due traiettorie a energia
+totale costante, con identica partenza e durata di 8\,fs, hanno
+escursioni energetiche massime di 0,03929 e 0,00979\,eV per
+passi di 0,5 e 0,25\,fs. La riduzione \`e coerente con l'errore
+quadratico del metodo di integrazione.
+
+Queste verifiche rendono concretamente disponibile un modello
+pi\`u avanzato per ulteriori controlli. La configurazione iniziale
+proviene dal modello classico; otto femtosecondi non misurano
+densit\`a o permittivit\`a di equilibrio. La qualificazione del
+liquido e dell'interfaccia rimane un passaggio distinto.
+
+\subsection{Vie indipendenti e lettura critica delle nuove proposte}
+
+Abbiamo tentato anche la teoria statistica del liquido DRISM/KH,
+imponendo la permittivit\`a sperimentale. I modelli organici
+non raggiungono il criterio di convergenza, neppure nei tentativi
+documentati di variazione del solutore e prosecuzione in densit\`a
+e carica. L'acqua di controllo distribuita con il programma
+converge in 27 iterazioni. Non usiamo suscettivit\`a o energie
+di solvatazione organiche non convergenti.
+
+Il trattamento con nitrito del 2025 \cite{LeeNitrite2025} avviene
+prima del deposito, lascia particelle e riduce il rapporto XPS
+C--O--C da 20\% a 17\%; non prova il salvataggio richiesto.
+Un trattamento elettrico senza bolle \cite{Park2018} \`e invece
+applicato dopo il trasferimento. Richiede per\`o contatto elettrico
+al grafene e un elettrolita: resta fuori dalla pulizia con soli bagni
+e non viene presentato come immediatamente compatibile con
+cristalli isolati da prelevare. Un miglioramento elettrico deve
+comunque essere distinto dalla scomparsa del polimero.
+
+\textbf{La ricerca computazionale \`e attiva. Restano aperti il
+campionamento interfaciale, la qualificazione dei solventi,
+PPC e lunghezze maggiori, il substrato reale e la verifica sul campione.}
+I risultati disponibili non autorizzano una classifica dei pulenti
+o una dichiarazione di soluzione.
+
+\section{Decisione scientifica e prossimo risultato da cercare}
+
+La nuova proposta consiste nel \emph{modificare l'ordine e la
+tempistica di una sequenza gi\`a parzialmente attiva}, controllando
+quando il residuo diventa estraibile e quando torna aderente.
+Il risultato teorico \`e che questo effetto \`e possibile, ha
+condizioni di segno e pu\`o essere distinto da una semplice
+somma di tempi in solventi. Le simulazioni escludono una
+promessa generale di efficacia dei cicli.
+
+Se I migliora rispetto a R senza danno, il primo progresso
+operativo \`e una sequenza DMF--THF senza IPA intermedio.
+Se l'IPA \`e utile e il confronto alternato supera quello
+a blocchi, il progresso \`e un'estrazione a cicli da ottimizzare
+con un bilancio di massa. Se la massa trascinabile non pu\`o
+spiegare il residuo, l'asciugatura perde priorit\`a. Se il
+residuo ha un'identit\`a diversa, il bersaglio chimico va
+corretto prima di scegliere altri reagenti.
+
+Nessuna di queste conclusioni \`e stata ancora osservata sul
+campione di Armando. Il contributo qui ottenuto \`e una teoria
+con previsioni controllabili, calcoli riproducibili e due
+interventi nuovi rispetto ai tentativi riferiti. Non viene
+rivendicata priorit\`a scientifica della strategia o risoluzione
+sperimentale del problema.
+
+Il nuovo risultato da cercare \`e una differenza di energia libera
+e di barriera che resista ai controlli di modello e campionamento,
+insieme a una finestra di selettivit\`a sul substrato reale. La scelta
+dei bagni deve poi superare le prove di massa, topografia, chimica
+e resa del prelievo gi\`a specificate. La campagna molecolare non
+ha ancora raggiunto questo risultato.
+
+\appendix
+\section{Verifica dei calcoli e riproduzione}
+
+Il programma \texttt{model\_cleaning.py} richiede Python e NumPy.
+Il comando
+\begin{center}
+\texttt{python model\_cleaning.py --out-dir risultati}
+\end{center}
+genera \texttt{risultati.json} e le coordinate dei grafici
+in \texttt{figure-incorporate.tex}. I grafici di questo
+documento contengono direttamente tali coordinate e non
+dipendono da immagini esterne.
+
+Sono stati controllati 540 casi del modello di trasporto
+(6 valori di $\beta$, 6 di $r$, 3 di $\varepsilon$ e 5 tempi).
+L'errore massimo di conservazione della matrice di transizione
+\`e $7{,}8\times10^{-14}$; lo scarto dalla soluzione analitica
+del bagno senza ricambio \`e $2{,}0\times10^{-14}$.
+Il minimo elemento delle matrici \`e zero. Sono inoltre
+verificati il limite di estrazione ideale, la catena
+irreversibile $L\to M\to R$, l'invarianza quando i due
+generatori coincidono e il limite dei ricambi a risorse fisse.
+Un'integrazione indipendente a passi piccoli conferma
+l'evoluzione anche con popolazione inizialmente schermata,
+con scarto inferiore a $10^{-12}$ nei casi confrontati.
+
+Questi controlli attestano la soluzione delle equazioni
+implementate. Non attestano che le equazioni descrivano
+correttamente il residuo reale. Le costanti $a,b,e$, $k_d$,
+$k_a$, $k_m$ e la frazione inaccessibile restano da identificare
+con esperimenti. Non \`e stata eseguita una simulazione
+atomistica del sistema PMMA950K/PPC/grafene/\SiO\ nei
+solventi effettivi.
+
+\section{Derivazioni brevi dei limiti usati}
+
+Per la formula~\eqref{eq:sign}, durante P la massa mobile
+varia di
+\[
+ M(t)-M_0=\frac{aL_0-bM_0}{a+b}
+                 (1-e^{-(a+b)t}).
+\]
+Durante G viene esportata la frazione
+$k(1-e^{-(k+c)u})/(k+c)$ della massa mobile iniziale.
+Il prodotto d\`a la differenza fra i due ordini.
+
+Per~\eqref{eq:resource}, in ogni bagno la quantit\`a
+$\beta$ diventa $NB$ e il tempo $\tau_{\rm tot}/N$.
+Si applica~\eqref{eq:static} e si moltiplicano i fattori
+perch\'e ogni nuovo bagno riparte pulito. Il logaritmo del
+fattore \`e asintotico a
+$-(1-e^{-B\tau_{\rm tot}})/(NB)$, da cui
+\eqref{eq:resource-limit}. Lasciare un bagno carico non
+equivale a questo azzeramento della concentrazione.
+
+Per~\eqref{eq:counterexample}, in ciascuna fase D la massa
+$L$ si moltiplica per $e^{-w/N}$; nella fase T accade
+lo stesso a $M$. Sommando le quote mobilizzate nei vari
+stadi si ottiene la formula. La funzione
+$N(1-e^{-w/N})$ cresce strettamente: ponendo $x=w/N>0$,
+la sua derivata \`e $1-(1+x)e^{-x}>0$.
+Quindi in questo caso la rimozione peggiora con pi\`u cicli.
+
+
+\begin{thebibliography}{99}
+\bibitem{Allresist}
+Allresist GmbH, \emph{AR-P 630--670: PMMA-Resists}, scheda tecnica,
+serie AR-P 672, prodotto 672.045.
+\href{https://www.allresist.de/wp-content/uploads/2020/03/AR-P630-670_Deutsch_Allresist_Produktinformation.pdf}{Scheda del produttore}.
+
+\bibitem{Tyagi2022}
+A. Tyagi, V. Mi\v{s}eikis, L. Martini et al.,
+\emph{Ultra-clean high-mobility graphene on technologically relevant substrates},
+Nanoscale \textbf{14} (2022), 2167--2176.
+\href{https://doi.org/10.1039/D1NR05904A}{doi:10.1039/D1NR05904A}.
+\href{https://www.rsc.org/suppdata/d1/nr/d1nr05904a/d1nr05904a1.pdf}{Supplemento consultato}.
+
+\bibitem{Xiao2019}
+Z. Xiao, Q. Wan e C. Durkan,
+\emph{Cleaning Transferred Graphene for Optimization of Device Performance},
+Advanced Materials Interfaces \textbf{6} (2019), 1801794.
+\href{https://doi.org/10.1002/admi.201801794}{doi:10.1002/admi.201801794}.
+\href{https://www.repository.cam.ac.uk/handle/1810/291256}{Manoscritto degli autori consultato}.
+
+\bibitem{Manjkow1987}
+J. Manjkow, J. S. Papanu, D. S. Soong, D. W. Hess e A. T. Bell,
+\emph{An in situ study of dissolution and swelling behavior of
+poly-(methyl methacrylate) thin films in solvent/nonsolvent binary mixtures},
+Journal of Applied Physics \textbf{62} (1987), 682--688.
+\href{https://doi.org/10.1063/1.339742}{doi:10.1063/1.339742}.
+Consultato il riassunto primario, non il testo integrale.
+
+\bibitem{Rooks2002}
+M. J. Rooks et al., \emph{Low stress development of poly(methylmethacrylate)
+for high aspect ratio structures}, Journal of Vacuum Science \& Technology B
+\textbf{20} (2002), 2937--2941.
+\href{https://doi.org/10.1116/1.1524971}{doi:10.1116/1.1524971}.
+\href{https://nano.yale.edu/sites/default/files/files/pmma_develop_ipa_water.pdf}{Testo consultato}.
+
+\bibitem{Huston2020}
+K. J. Huston, C. E. Rice e R. G. Larson,
+\emph{Forward Flux Sampling of Polymer Desorption Paths from a Solid Surface
+into Dilute Solution}, Polymers \textbf{12} (2020), 2275.
+\href{https://doi.org/10.3390/polym12102275}{doi:10.3390/polym12102275}.
+
+\bibitem{Ayodele2022}
+O. O. Ayodele, S. Pourianejad, A. Trofe, A. Prokofjevs e T. Ignatova,
+\emph{Application of Soxhlet Extractor for Ultra-clean Graphene Transfer},
+ACS Omega \textbf{7} (2022), 7297--7303.
+\href{https://doi.org/10.1021/acsomega.1c07113}{doi:10.1021/acsomega.1c07113}.
+
+\bibitem{Tang2025}
+Z. Tang et al., \emph{A Closed-Loop Solvent Recycling Device for Polymer
+Removal in Graphene Transfer Process}, Separations \textbf{12} (2025), 295.
+\href{https://doi.org/10.3390/separations12110295}{doi:10.3390/separations12110295}.
+
+\bibitem{Duan2022}
+T. Duan, H. Li, R. Papadakis e K. Leifer,
+\emph{Towards ballistic transport CVD graphene by controlled removal of
+polymer residues}, Nanotechnology \textbf{33} (2022), 495704.
+\href{https://doi.org/10.1088/1361-6528/ac8d9b}{doi:10.1088/1361-6528/ac8d9b}.
+
+\bibitem{Merino2024}
+J. P. Merino, S. Brosel-Oliu, G. Rius et al.,
+\emph{Ethanol Solvation of Polymer Residues in Graphene Solution-Gated
+Field Effect Transistors}, ACS Sustainable Chemistry \& Engineering
+\textbf{12} (2024), 9133--9143.
+\href{https://doi.org/10.1021/acssuschemeng.4c01538}{doi:10.1021/acssuschemeng.4c01538}.
+
+\bibitem{Suk2013}
+J. W. Suk et al., \emph{Enhancement of the Electrical Properties of Graphene
+Grown by Chemical Vapor Deposition via Controlling the Effects of Polymer Residue},
+Nano Letters \textbf{13} (2013), 1462--1467.
+\href{https://doi.org/10.1021/nl304420b}{doi:10.1021/nl304420b}.
+
+\bibitem{Schoenemann2018}
+E. Sch\"onemann, A. Laschewsky e A. Rosenhahn,
+\emph{Exploring the Long-Term Hydrolytic Behavior of Zwitterionic
+Polymethacrylates and Polymethacrylamides}, Polymers \textbf{10} (2018), 639.
+\href{https://doi.org/10.3390/polym10060639}{doi:10.3390/polym10060639}.
+
+\bibitem{Jung2006}
+J. H. Jung, M. Ree e H. Kim,
+\emph{Acid- and base-catalyzed hydrolyses of aliphatic polycarbonates and
+polyesters}, Catalysis Today \textbf{115} (2006), 283--287.
+\href{https://doi.org/10.1016/j.cattod.2006.02.060}{doi:10.1016/j.cattod.2006.02.060}.
+Consultati riassunto e passaggio metodologico accessibile.
+
+\bibitem{Wang2017}
+X. Wang et al., \emph{Direct Observation of Poly(Methyl Methacrylate)
+Removal from a Graphene Surface}, Chemistry of Materials
+\textbf{29} (2017), 2033--2039.
+\href{https://doi.org/10.1021/acs.chemmater.6b03875}{doi:10.1021/acs.chemmater.6b03875}.
+
+\bibitem{Schwartz2019}
+J. J. Schwartz et al., \emph{Chemical Identification of Interlayer
+Contaminants within van der Waals Heterostructures},
+ACS Applied Materials \& Interfaces \textbf{11} (2019), 25578--25585.
+\href{https://doi.org/10.1021/acsami.9b06594}{doi:10.1021/acsami.9b06594}.
+
+\bibitem{Arai1996}
+T. Arai, N. Sawatari, T. Yoshizaki, Y. Einaga e H. Yamakawa,
+\emph{Excluded-Volume Effects on the Hydrodynamic Radius of Atactic and
+Isotactic Oligo- and Poly(methyl methacrylate)s in Dilute Solution},
+Macromolecules \textbf{29} (1996), 2309--2314.
+\href{https://doi.org/10.1021/ma951274n}{doi:10.1021/ma951274n}.
+Parametro impiegato dalla Tabella 3.
+
+\bibitem{WangHFIP2020}
+Y. Wang, T. Duo, X. Xu et al., \emph{Eco-Friendly High-Performance
+Poly(methyl methacrylate) Film Reinforced with Methylcellulose},
+ACS Omega \textbf{5} (2020), 24256--24261.
+\href{https://doi.org/10.1021/acsomega.0c02249}{doi:10.1021/acsomega.0c02249}.
+
+\bibitem{Marchelli2022}
+G. Marchelli, J. Ingenmey, O. Holl\'oczki, A. Chaumont e B. Kirchner,
+\emph{Hydrogen Bonding and Vaporization Thermodynamics in
+Hexafluoroisopropanol-Acetone and -Methanol Mixtures.
+A Joined Cluster Analysis and Molecular Dynamic Study},
+ChemPhysChem \textbf{23} (2022), e202100620.
+\href{https://doi.org/10.1002/cphc.202100620}{doi:10.1002/cphc.202100620}.
+Parametri dal supplemento consultato integralmente.
+
+\bibitem{Casoria2024}
+M. Casoria, M. Macchiagodena, P. Rovero et al.,
+\emph{Upgrading of the general AMBER force field 2 for fluorinated
+alcohol biosolvents: A validation for water solutions and melittin solvation},
+Journal of Peptide Science \textbf{30} (2024), e3543.
+\href{https://doi.org/10.1002/psc.3543}{doi:10.1002/psc.3543}.
+
+\bibitem{Behbahani2021}
+A. Foroozani Behbahani e V. Harmandaris,
+\emph{Gradient of Segmental Dynamics in Stereoregular Poly(methyl
+methacrylate) Melts Confined between Pristine or Oxidized Graphene Sheets},
+Polymers \textbf{13} (2021), 830.
+\href{https://doi.org/10.3390/polym13050830}{doi:10.3390/polym13050830}.
+Consultati Tabelle S1--S2 e correzione
+\href{https://doi.org/10.3390/polym14010106}{doi:10.3390/polym14010106}.
+
+\bibitem{MACE2025}
+D. P. Kov\'acs, J. H. Moore, N. J. Browning et al.,
+\emph{MACE-OFF: Transferable Short Range Machine Learning Force Fields
+for Organic Molecules}, arXiv:2312.15211, versione 5 (2025).
+\href{https://arxiv.org/abs/2312.15211v5}{Manoscritto};
+\href{https://github.com/ACEsuit/mace-off}{Modello ufficiale}.
+
+\bibitem{MACEPolar2026}
+I. Batatia, W. J. Baldwin, D. Kuryla et al.,
+\emph{MACE-POLAR-1: A Polarisable Electrostatic Foundation Model
+for Molecular Chemistry}, arXiv:2602.19411 (2026).
+\href{https://arxiv.org/abs/2602.19411}{Manoscritto};
+\href{https://github.com/ACEsuit/mace-foundations/releases/tag/mace_polar_1}{Modelli ufficiali}.
+
+\bibitem{ByteFFPol2026}
+T. Zheng, X. Xu, Z. Wang et al.,
+\emph{Bridging quantum mechanics to liquid properties via a universal
+organic force field}, Nature Communications \textbf{17} (2026), 8276.
+\href{https://doi.org/10.1038/s41467-026-73566-3}{DOI: 10.1038/s41467-026-73566-3}.
+
+\bibitem{LeeNitrite2025}
+K. Lee, J. Kil, J. Park, S. Yang e B. Park,
+\emph{Rapid and Efficient Polymer/Contaminant Removal from Single-Layer
+Graphene via Aqueous Sodium Nitrite Rinsing for Enhanced Electronic Applications},
+Polymers \textbf{17} (2025), 689.
+\href{https://doi.org/10.3390/polym17050689}{DOI: 10.3390/polym17050689}.
+
+\bibitem{Park2018}
+B. Park, J. N. Huh, W. S. Lee e I.-G. Bae,
+\emph{Simple and rapid cleaning of graphenes with a `bubble-free'
+electrochemical treatment}, Journal of Materials Chemistry C
+\textbf{6} (2018), 2234--2244.
+\href{https://doi.org/10.1039/C7TC05695H}{DOI: 10.1039/C7TC05695H}.
+
+\bibitem{Hunger2010}
+J. Hunger, R. Buchner, M. E. Kandil, E. F. May, K. N. Marsh e G. Hefter,
+\emph{Relative Permittivity of Dimethylsulfoxide and N,N-Dimethylformamide
+at Temperatures from (278 to 328) K and Pressures from (0.1 to 5) MPa},
+Journal of Chemical \& Engineering Data \textbf{55} (2010), 2055--2065.
+\href{https://doi.org/10.1021/je9010773}{DOI: 10.1021/je9010773}.
+
+\end{thebibliography}
+\end{document}

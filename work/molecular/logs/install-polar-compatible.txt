@@ -1,0 +1,22 @@
+Processing ./work/molecular/sources/graph-electrostatics-v0.4.0.tar.gz
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: graph_longrange
+  Building wheel for graph_longrange (pyproject.toml): started
+  Building wheel for graph_longrange (pyproject.toml): finished with status 'done'
+  Created wheel for graph_longrange: filename=graph_longrange-0.4.0-py3-none-any.whl size=24598 sha256=0074d07d6080d20c14a6aab84128f70be4d6a02dfcff49659c15c7bbcf98ee8b
+  Stored in directory: /Users/mattiaapicella/Library/Caches/pip/wheels/d4/d2/68/c5adfe8b4952aa8cc646838f12faa44e0b86be3b90175fce9c
+Successfully built graph_longrange
+Installing collected packages: graph_longrange
+  Attempting uninstall: graph_longrange
+    Found existing installation: graph_longrange 0.4.4
+    Uninstalling graph_longrange-0.4.4:
+      Successfully uninstalled graph_longrange-0.4.4
+Successfully installed graph_longrange-0.4.0
+
+[notice] A new release of pip is available: 25.0.1 -> 26.2.1
+[notice] To update, run: /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/bin/python -m pip install --upgrade pip

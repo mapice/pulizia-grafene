@@ -1,0 +1,9 @@
+{
+  "stage": "NVT",
+  "duration_fs": 100,
+  "steps": 400,
+  "elapsed_seconds": 890.2247368330136,
+  "initial_density_is_input": true,
+  "equilibrium_not_established": true,
+  "independent_replicas": 1
+}

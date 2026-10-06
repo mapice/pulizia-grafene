@@ -1,0 +1,9 @@
+{
+  "reference": "Same model/geometry, CPU32 vs Metal32, not quantum or liquid-property qualification",
+  "energy_error_eV": -0.00012969970703125,
+  "force_rms_eV_A": 9.792613144969222e-07,
+  "force_relative_rms": 1.0678958419228496e-06,
+  "force_max_error_eV_A": 4.470348358154297e-06,
+  "molecule_net_force_max_error_eV_A": 2.0191073417663574e-06,
+  "stress_max_error_eV_A3": 3.3527612686157227e-08
+}

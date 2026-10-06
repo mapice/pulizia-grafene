@@ -1,0 +1,14 @@
+{
+  "start_SHA256": "0f328560e2d10b6799faa3b13b14b8ca3e67242dc0acba5819b33557e28c7527",
+  "model_SHA256": "fab8b8713c832f31a2a853aaa22fd638be8a369cbf5095e6b3e982a18d10e93a",
+  "same_positions_and_momenta_as_previous_NPT": true,
+  "cell_derivatives_corrected": true,
+  "dt_fs": 0.25,
+  "duration_fs": 100,
+  "T_K": 298.15,
+  "P_bar": 1,
+  "tdamp_fs": 25,
+  "pdamp_fs": 250,
+  "liquid_equilibrium_not_established": true,
+  "MPS_memory_fraction_limit": 0.25
+}

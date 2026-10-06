@@ -1,0 +1,7 @@
+{
+  "target_parameters_unchanged": true,
+  "method": "DRISM/KH GAFF2 six sites",
+  "change": "Only documented MDIIS step0.1 and history purge threshold1000; no physical parameters fitted",
+  "reference": "Amber26 manual8.3.4.2 and8.4.1",
+  "step_cap": 1000
+}

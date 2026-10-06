@@ -1,0 +1,15 @@
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/pyscf/lib/misc.py:203: UserWarning: OpenMP is not available. Setting omp_threads to 2 has no effects.
+  warnings.warn('OpenMP is not available. '
+Overwritten attributes  get_hcore  of <class 'pyscf.df.df_jk.DFRKS'>
+output file: /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/field-dft/field+0.000.scf.log
+{'field_V_A': 0.0, 'total_energy_eV': -21480.455423855303, 'dipole_Debye': [-0.2664122270261587, 0.5464100495312717, -0.3769792627855708], 'SCF_converged': True, 'SCF_energy_Ha': -789.3921768510543, 'nuclear_field_Ha': -0.0}
+output file: /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/field-dft/field-0.002.scf.log
+{'field_V_A': -0.002, 'total_energy_eV': -21480.45558167295, 'dipole_Debye': [-0.26640885659053676, 0.5464332214708755, -0.3810553941984095], 'SCF_converged': True, 'SCF_energy_Ha': -789.3931500840365, 'nuclear_field_Ha': 0.0009674332906523236}
+output file: /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/field-dft/field+0.002.scf.log
+{'field_V_A': 0.002, 'total_energy_eV': -21480.455267734582, 'dipole_Debye': [-0.2664156362578507, 0.5463875358134541, -0.37290194400298593], 'SCF_converged': True, 'SCF_energy_Ha': -789.3912036804329, 'nuclear_field_Ha': -0.0009674332906523236}
+output file: /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/field-dft/field-0.010.scf.log
+{'field_V_A': -0.01, 'total_energy_eV': -21480.45622991049, 'dipole_Debye': [-0.26639591714287336, 0.5465254672546208, -0.39735005622955827], 'SCF_converged': True, 'SCF_energy_Ha': -789.3970436394893, 'nuclear_field_Ha': 0.004837166453261618}
+output file: /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/field-dft/field+0.010.scf.log
+{'field_V_A': 0.01, 'total_energy_eV': -21480.45466022047, 'dipole_Debye': [-0.2664309530225889, 0.5463005553840177, -0.35660270628949975], 'SCF_converged': True, 'SCF_energy_Ha': -789.3873116215384, 'nuclear_field_Ha': -0.004837166453261618}
+[{'field_magnitude_V_A': 0.002, 'polarizability_from_energy_eA2_V': 0.42423198465257883, 'energy_linear_derivative_eA': 0.07848459244996775, 'dipole_zero_eA': -0.07848494937419766}, {'field_magnitude_V_A': 0.01, 'polarizability_from_energy_eA2_V': 0.4242035356583074, 'energy_linear_derivative_eA': 0.07848450113669969, 'dipole_zero_eA': -0.07848494937419766}]
+{"guard": {"command": ["work/molecular/.venv/bin/python", "work/molecular/field_dft.py"], "pid": 26083, "exitcode": 0, "peak_RSS_MB": 1471.578125, "elapsed_seconds": 46.24657483398914, "termination_reason": null}}

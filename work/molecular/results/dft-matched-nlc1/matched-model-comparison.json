@@ -1,0 +1,13 @@
+{
+  "pair": "HFIP__MethylAcetate",
+  "functional": "omegaB97M-V",
+  "basis": "def2-tzvpd",
+  "scope": "Frozen gas interaction, CP, no cleaning inference",
+  "nlc_grid0_kJ_mol": -46.09432866732002,
+  "nlc_grid1_kJ_mol": -46.16493161760094,
+  "grid0_to1_difference_kJ_mol": -0.07060295028092156,
+  "all_three_CP_SCF_converged": true,
+  "MACE_M_kJ_mol": -46.53940111404472,
+  "ByteFF_kJ_mol": -34.569393851431514,
+  "grid_check_is_not_experimental_validation": true
+}

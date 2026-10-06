@@ -1,0 +1,214 @@
+CALCOLI MOLECOLARI PER LA PULIZIA DEL GRAFENE — REVISIONE 7
+6 ottobre 2026. Ricerca attiva; pulizia reale non dimostrata.
+
+Il pacchetto conserva codice, parametri, geometrie, risultati e registri
+verificabili. Le energie molecolari nel vuoto non sono una classifica
+di pulenti. Il distacco ottenuto applicando una forza non è una pulizia
+prodotta da un bagno.
+
+NUOVI CONTROLLI DEL LIQUIDO
+- Due partenze HFIP con differenti densità e impacchettamenti; nessuna
+  densità di equilibrio accettata. La prima prosecuzione raggiunge il
+  limite di durata: checkpoint 2860 conservato e marcato interrupted.json.
+  La seconda serie iniziale termina regolarmente a 1000 mosse.
+- Scomposizione di cinque configurazioni congelate nel medesimo modello:
+  energia interna sopra il monomero rilassato ed energia intermolecolare
+  calcolate separatamente. Le due partenze hanno ancora condizioni
+  interne diverse. Questo non è un termometro o un'energia libera.
+- Miscela di proposte hamiltoniane reversibili più lunghe, 12–32 passi
+  da 0,25 fs, a temperatura e Hamiltoniano invariati. Controllo indipendente
+  sui modi armonici superato. La mancata precisione del confronto con
+  il kernel corto rimane nei dati; non è stata nascosta o adattata.
+- Controlli molecolari in corso esclusi dall'archivio finché attivi.
+  I dati di catene arrestate dal limite di risorse sono inclusi solo
+  dopo conferma di arresto, con la relativa etichetta. I registri
+  costituiscono istantanee datate, non dimostrazioni dell'equilibrio.
+- Due molecole CF4, prive di legami H, costituiscono un controllo
+  delle interazioni lontane del modello, non un candidato di pulizia.
+  A 8,5 Angstrom: riferimento quantistico -0,06026 kJ/mol, M -0,02657.
+  A 12 Angstrom: riferimento -0,006937, M +0,001119 kJ/mol.
+  Sono 20 calcoli quantistici convergenti, con due griglie e correzione
+  di base, senza D3 aggiuntivo. Scarti piccoli rispetto a kBT;
+  non spiegano da soli le densità transitorie di HFIP.
+
+RISULTATI ESEGUITI
+- GFN2-xTB: 12 molecole, 13 coppie e tre partenze per coppia, raffinate.
+- PBE0-D3(BJ): 50 calcoli sulle coppie, cinque controlli al campo e
+  dodici angoli della rotazione OH di HFIP.
+- MACE-OFF23: confronti molecolari effettivi su CPU e Metal.
+- MACE-POLAR-1-S e M: tredici coppie, rotazione HFIP e risposta al campo
+  di tre molecole. M dà diagonali positive; S negative. Non generalizzare
+  l'anomalia S all'intera famiglia.
+- Cinque traiettorie PMMA4/grafene/liquido: HFIP, DMF, THF, acido acetico
+  e anisolo, con 50 ps iniziali e 100 ps osservati. Nessun distacco
+  completo spontaneo. PMMA: 65 atomi; grafene rigido: 448 atomi.
+- Nove finestre forzate, 125 ps ciascuna: tre liquidi e tre centri.
+  Stato localmente distaccato raggiunto sotto vincolo. Nessun profilo
+  di energia libera accettato: nel primo pilota le distribuzioni
+  adiacenti non si sovrappongono.
+- Liquidi liberi GAFF2: densità HFIP/DMF circa 1,623/0,965 g/cm3,
+  stime brevi di permittività 5,96/19,84 contro 16,7/37,2. La densità
+  non basta a qualificare il modello.
+- ByteFF-Pol: sette parametrizzazioni e tredici coppie con scomposizione
+  energetica. La forza sul frammento coincide con la derivata numerica
+  entro 2,3e-6 kJ/(mol Angstrom) nel controllo HFIP/acetato. A grande
+  distanza l'interazione tende a zero. È una verifica numerica,
+  senza qualificazione del liquido o dell'interfaccia.
+- Riferimento omegaB97M-V/def2-TZVPD con VV10 e senza D3: HFIP/acetato,
+  geometrie congelate e correzione della base. La prima griglia NLC0
+  dà -46,094 kJ/mol; MACE-M -46,539; ByteFF -34,569. Il riferimento NLC1 dà -46,165, con variazione di griglia 0,071 kJ/mol.
+  M è vicino su questa geometria; ByteFF sottostima di circa 11,6 kJ/mol.
+  Nessuna qualificazione di liquido, superficie o pulizia ne segue.
+- Ricostruzione statistica verificata su un potenziale armonico noto:
+  errore quadratico medio 0,068 kJ/mol. Non è una prova sul materiale.
+- DRISM/KH: nessuna convergenza organica accettata. L'acqua di controllo
+  converge in 27 iterazioni. Nessuna energia organica non convergente
+  è stata usata.
+
+CAMPIONAMENTO E LIMITI
+La campagna HFIP/DMF usa undici centri da 0,45 a 1,45 nm, 500 ps per
+finestra e molla K=750 kJ/(mol nm2). Il pacchetto include solo finestre
+con complete.json; i file in scrittura sono esclusi. Per un profilo
+servono intervallo completo, sovrapposizione, stazionarietà, percorso
+inverso e altre conformazioni. Il codice non collega intervalli non
+visitati fingendo una barriera.
+
+Il liquido è presente sulle due facce del foglio: non è ancora il
+substrato SiO2/Si. PMMA4 non è PMMA950K. PPC, catene lunghe, depositi
+multistrato, frazioni inorganiche o covalenti e substrato reale restano
+da affrontare. Il grafene congelato non può deformarsi: il vincolo
+verifica il calcolo, senza predire compatibilità del trattamento.
+
+SCOPERTE CHE CAMBIANO LA SCELTA
+La forte interazione HFIP/carbonile non basta: anche l'acido acetico,
+già fallito, è forte nei riferimenti quantistici. Il polimero aderente
+è già solvatato in HFIP. In anisolo gli esteri perdono molti contatti,
+mentre lo scheletro rimane aderente. Minore energia diretta non
+significa minore energia libera. Nessun vantaggio sperimentale di
+HFIP o anisolo è dimostrato.
+
+RIPRODUZIONE
+Usare un ambiente locale separato con le versioni registrate in
+requirements-lock.txt. I motori sono descritti anche in
+gromacs-explicit-lock.txt e amber-explicit-lock.txt. Pesi, eseguibili
+e ambienti non sono inclusi. Reperire i pesi soltanto dalle fonti
+ufficiali registrate e verificarne il SHA prima del caricamento.
+
+ByteFF usa sorgenti ufficiali fissati a una revisione e carica lo
+stato dei parametri con weights_only=True. Il codice del fornitore
+è incluso con la licenza. Il suo install.sh modifica /usr/local e
+~/.bashrc: NON è stato eseguito e non serve per i confronti nel vuoto.
+L'OpenMM presente non è un motore fedele per i liquidi ByteFF finché
+le specifiche scale intramolecolari non vengono verificate.
+Un'eventuale compilazione deve usare un nuovo prefisso locale e
+superare confronti indipendenti di energie e forze.
+
+Comandi principali, dopo aver preparato ambienti e pesi:
+python polar_size_audit.py --size M
+python polar_medium_pairs.py
+python byteff_probe.py
+python analyze_interface.py CARTELLA_TRAIETTORIA
+python audit_sampling.py --self-check
+python dft_matched_reference.py --pair HFIP__MethylAcetate --nlc-grid 0
+python dft_matched_reference.py --pair HFIP__MethylAcetate --nlc-grid 1 --initial-grid 0
+
+I programmi conservano i tentativi e rifiutano la sovrascrittura di
+traiettorie preparate. Ispezionare il checkpoint prima di proseguire
+esplicitamente un calcolo interrotto.
+
+RISORSE ED ERRORI CONSERVATI
+I calcoli usano processi a priorità ridotta con guardie di memoria e
+durata. Non sono stati eseguiti trattamenti chimici, installazioni
+globali, spese esterne o invii ad altre persone.
+Le prime prove con volume errato di un fattore 1000 sono invalide,
+documentate ed escluse. Le coordinate ByteFF devono essere float64
+già alla costruzione del dato: convertirle dopo l'arrotondamento non
+recupera le cifre perse e altera il controllo della derivata.
+
+Le conclusioni rimangono condizionali; identità del residuo e resa
+del processo richiedono verifica sul campione nel laboratorio.
+
+NUOVI RISULTATI DELLA REVISIONE5
+- HFIP: completate le undici finestre da500ps. Rimane una lacuna fra
+  .75/.85nm e la convergenza delle variabili nascoste non è raggiunta.
+- Stesso vincolo, due storie: a zmedio1.0207nm la catena conserva
+  estensione normale .277/.154nm e distanze minime dal grafene
+  .514/.739nm. Il numero di legamiH carbonile/HFIP è simile.
+  Sovrapposizione empirica: distanza .355; distanza+orientazione0.
+  I501fotogrammi per storia sono correlati, non repliche indipendenti.
+- La nuova variabile massica Rgz è controllata inPLUMED contro il
+  calcolo indipendente. Forze verificate con formula e differenze
+  finite. Due100ps con vincoli z/Rgz rimangono distinti: noPMF.
+- MACE-POLAR-M sul Mac: cella periodica reale768atomi valutata entro
+  il limiteGPU .25. Pesi invariati, reti radiali/prodotti/somme a
+  blocchi, contrazione riordinata. Primi derivati soltanto; noHessiane.
+  CPU64periodica96atomi: cambioalgoritmo preserva forze entro1.78e-15
+  eV/Angstrom. CPU32/Metal32 sulla cella768: errore relativoRMS1.07e-6.
+  Confronto CPU64/Metal32 sui96atomi: RMSrelativo1.50e-5. Sono controlli
+  numerici, non qualificazione fisica del liquido o dell'interfaccia.
+- Due traiettorie M di8fs a identica partenza e cella fissa: energia
+  massima cambia .03929eV(dt.5fs) e .00979eV(dt.25fs), rapporto4.01.
+  Nessuna densità/permittività di equilibrio ricavata da8femtosecondi.
+- Le strategie di memoria fallite e i rifiuti delle guardie sono
+  preservati. La cella768CPU64 ha superato2800MB ed è stata fermata:
+  nessun riferimento completo in doppia precisione viene dichiarato.
+- DMF riprende le tre finestre finali dopo un errore di preparazione
+  sul riferimento periodico di una catena allungata. Usata l'opzione
+  nativa di COM precedente; COM iniziale verificato indipendentemente
+  entro7.9e-6nm. Tentativo rifiutato e finestre precedenti preservati.
+
+RIPRODUZIONE DELLE MODIFICHE LOCALI
+Ambienti e pesi non sono nell'archivio: usare i blocchi di versioni
+salvati, le fonti e le impronte. patch_polar_mps.py e
+patch_sparse_contraction.py operano soltanto sull'ambiente isolato.
+Le trasformazioni delle reti si applicano inRAM tramite i moduli
+fused_radial_interaction.py e chunk_node_products.py.
+I pesi del modello non vengono modificati. L'azzeramento dei riferimenti
+atomici è solo un cambio di zero energetico a composizione fissa.
+Le etichette liquid8 nei controlli indicano una cella DILUITA di96atomi,
+non una misura di liquido; liquid64 indica la configurazione768atomi
+proveniente dal precedente modelloGAFF2, non equilibrio diM.
+
+REVISIONE6 — CORREZIONE FISICA E NUOVI CONTROLLI CHIMICI
+Nel percorso localeMACE/graph_longrange il campo elettrostatico non
+seguiva la deformazione virtuale della cella. CPU64 dimostra scarto
+circa183.56bar stabile al dimezzamento del passo. Il primo NPT è
+rifiutato, preservato conrejected-pressure-audit.json. L'archivio
+include questi dati per riprodurre il confronto, NON comeproprietà
+di equilibrio del liquido. NVT a volume fisso non è invalidato.
+patch_polar_strain_geometry.py e patch_gto_cell_derivatives.py
+completano la derivata mantenendo E e forze a zero deformazione: E
+invariata,erroreForze1.43e-15eVA CPU64. Residuo.0106bar congradiente
+centrale piccolo. CalcoloMetal controllato; piccoli erroriFloat32.
+StessoNPTstart correttonei primi50fs: derivaenergia .001056 contro
+.04393eV precedente,fattore41.6. I100fs rimangono TRANSITORI;rho1.236
+finale NON è densitàdi equilibrio o corrispondenza conesperimento.
+
+Nuovo campionatoremetropolis/HMC con energia dello stesso modello
+~.77sec invece~2.24conforze. Traslazioni,rotazioni,OHrotor eHMC con
+tuttecoordinateflessibili. Volumi: centri scalati, logVsimmetrico,
+fattore(Nmolecole+1). Controllo analiticoJacobiano eGamma17 ideale
+riuscito. PrimoN16campionamento1000mosse completato senza colpire
+bordi delvolume,ma rho continua a scendere ~1.268: nonqualificato.
+Continuazione conserva RNG,coordinate,cella,momenta; un'altra
+partenza indipendenteinizia a rho1.0 per verificarehysteresis.
+Le mosse accelerate NON forniscono tempi fisici di pulizia.
+
+Quantumself-dimeromegaB97M-V/TZVPDcounterpoise: HFIP griglie0/1
+-29.744/-29.932kJ;variazione.187,M=-29.984(diff.052). Acidoacetico
+-88.060/-88.074;variazione.014,M=-88.924. Sonoenergieelettroniche
+conframmenticongelati. Dimeroacido haDUElegamiH; mai equipararlo
+adunlegamesolo. Totale20SCF nuovi tutti convergenti. PrimoHFIP
+dimerotimeout10minpreservato; ripresa conmonomerifirst echeckpoints
+20minSCF. Nessun dato nonconvergente viene assunto comeriferimento.
+
+ReactionM conriferimenti monomericomuniGFNraffinati:
+S2+acetato->S/acetato+S: HFIP-8.57,acido+32.75kJmol. Esplora
+competizione conautoassociazione, senza stimarepotenziali chimici
+del liquido oenergia libera deldistacco. Ilcarbonile ègiàsolvatato
+anche aderente; nonèancorauna soluzione delcampione.
+
+Tutte11HFIPforward,11DMFforward,5HFIPreverse500ps sono complete.
+Rimangono lacune evariabililente: noPMFaccettato, no classifica
+validata. RestanoPPC,catene lunghe,SiO2selettività evalidazione
+sulmateriale. Le traiettorie ancora in scrittura sonoescluse.

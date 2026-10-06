@@ -1,0 +1,6 @@
+{
+  "analytical_xx_eV_A3": -0.013094192370772362,
+  "numerical_xx_eV_A3": -0.012980256052983722,
+  "relative_error_with_floor": 0.008701286384256691,
+  "strain_step": 0.0003
+}

@@ -1,0 +1,19 @@
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/e3nn/o3/_wigner.py:10: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  _Jd, _W3j_flat, _W3j_indices = torch.load(os.path.join(os.path.dirname(__file__), 'constants.pt'))
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+cuequivariance or cuequivariance_torch is not available. Cuequivariance acceleration will be disabled.
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+{'translation_molecule0_x_A': 0.0, 'official_energy_eV': -17.316850662231445, 'scalar_energy_eV': -17.316848754882812, 'difference_eV': 1.9073486328125e-06, 'official_seconds': 3.8258331660181284, 'scalar_seconds': 0.8808462501037866}
+{'translation_molecule0_x_A': 0.01, 'official_energy_eV': -17.32012176513672, 'scalar_energy_eV': -17.32012939453125, 'difference_eV': -7.62939453125e-06, 'official_seconds': 2.202919750008732, 'scalar_seconds': 0.7671089579816908}
+{'translation_molecule0_x_A': -0.01, 'official_energy_eV': -17.313369750976562, 'scalar_energy_eV': -17.313369750976562, 'difference_eV': 0.0, 'official_seconds': 2.237714875023812, 'scalar_seconds': 0.7512588328681886}
+{"guard": {"command": ["work/molecular/.venv/bin/python", "-u", "work/molecular/energy_only_benchmark.py"], "pid": 5155, "exitcode": 0, "peak_RSS_MB": 611.40625, "elapsed_seconds": 18.076057166792452, "termination_reason": null}}

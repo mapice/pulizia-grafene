@@ -1,0 +1,9 @@
+{
+  "status": "invalid_volume_pilot_excluded",
+  "molecules": 64,
+  "requested_ps": 50,
+  "completed_trajectory_available": false,
+  "reason": "Independent engine/unit audit found volume conversion error (box 10x, volume 1000x too large). Slow PME was caused by this invalid box; engine performance at correct size not yet assessed.",
+  "max_observed_RSS_MB_approx": 830,
+  "chemical_failure_inferred": false
+}

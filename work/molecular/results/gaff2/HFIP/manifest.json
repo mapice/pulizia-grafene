@@ -1,0 +1,108 @@
+{
+  "name": "HFIP",
+  "smiles": "OC(C(F)(F)F)C(F)(F)F",
+  "residue": "HFI",
+  "atoms": 12,
+  "method": "GAFF2/AM1-BCC via AmberTools26",
+  "charges_e": [
+    -0.5398835,
+    0.0690165,
+    0.6028165,
+    -0.2197165,
+    -0.2197165,
+    -0.2197165,
+    0.6028165,
+    -0.2197165,
+    -0.2197165,
+    -0.2197165,
+    0.4359165,
+    0.1476165
+  ],
+  "charge_total_e": -6.938893903907228e-17,
+  "generated_unadjusted_charge_total_e": 0.0010020000000000584,
+  "neutrality_correction_per_atom_e": -8.350000000000486e-05,
+  "neutrality_method": "Minimum L2 charge correction under sum(q)=0; bounded .005e total; original charges kept",
+  "logs": [
+    {
+      "stage": "antechamber",
+      "command": [
+        "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/antechamber",
+        "-i",
+        "input.sdf",
+        "-fi",
+        "sdf",
+        "-o",
+        "molecule.mol2",
+        "-fo",
+        "mol2",
+        "-c",
+        "bcc",
+        "-nc",
+        "0",
+        "-at",
+        "gaff2",
+        "-rn",
+        "HFI",
+        "-s",
+        "2",
+        "-pf",
+        "y"
+      ],
+      "seconds": 2.0646483751479536
+    },
+    {
+      "stage": "parmchk",
+      "command": [
+        "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/parmchk2",
+        "-i",
+        "molecule.mol2",
+        "-f",
+        "mol2",
+        "-s",
+        "gaff2",
+        "-o",
+        "molecule.frcmod"
+      ],
+      "seconds": 2.0938788750208914
+    },
+    {
+      "stage": "tleap",
+      "command": [
+        "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/tleap",
+        "-f",
+        "leap.in"
+      ],
+      "seconds": 2.1268218338955194
+    },
+    {
+      "stage": "convert",
+      "command": [
+        "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/python",
+        "-c",
+        "import parmed as p; s=p.load_file(\"molecule.prmtop\",xyz=\"molecule.inpcrd\"); s.save(\"molecule.top\",overwrite=False); s.save(\"molecule.gro\",overwrite=False); print(\"atoms\",len(s.atoms),\"charge\",sum(a.charge for a in s.atoms)); print(\"charges\",[(a.name,a.type,a.charge) for a in s.atoms])"
+      ],
+      "seconds": 2.1249207919463515
+    }
+  ],
+  "file_sha256": {
+    "molecule.inpcrd": "7f39825cfc54a25efa180ce7e03150c07c4b5036a3531e43b98943796ffa635a",
+    "antechamber.log": "cd4901c01b78e85ba313ac151669497484676bae5813bca8472a55a8876e4261",
+    "sqm.out": "7464e5d575404ef440b95a102b08e1220d0b50f1261a41381da1b0639a7bccc0",
+    "leap.log": "132cddbda929e44f4cbc30837b68d292e8b11a5b4943c0764f2f564e924ce1b7",
+    "convert.log": "d34cc03ce81e1e3f88092af092156b91026c928d17b6aa1419f7af3c534b47f7",
+    "molecule.gro": "7547328c62f4721f45fc875760ae4cc0cc9046060face83c668332289fc4dcef",
+    "leap.in": "a97015f455418202a6dd870b8285adca2ce5b68136221486ce22ea9d29f6414e",
+    "parmchk.log": "563757cf6f4a4265c18c777b444d65ec5bae7723c4c0e6f1dec9c0d9323dd596",
+    "input.sdf": "54b7cd3c6ed308f075ecea435210dc7dd976978b448ffc788c64ff9687c7ac40",
+    "molecule.top": "03bbb3365cd4b4d650ffcc15040e514d19f856b29976c8c058b891164467c02b",
+    "sqm.in": "a8a56f19eaa4c86e42bb5d40fc702c3ab367a5ef1a8be7410d352dfb435fa2d7",
+    "molecule.prmtop": "0a3e276b76ee8c9b9a46830412138662153e1d196638aa2badc8dc7096fe1749",
+    "molecule.mol2": "538e016fcd0e39650e07e4127e1b960bf31e3dc97fef2364a6e017dbf6fda432",
+    "molecule-unadjusted.mol2": "d1666ff1439a71adf6116ab9a27b5ad4cb4c3db0bcf8a1b9b2edfc8b12c93651",
+    "sqm.pdb": "2c85d8e5f2d4543e1ec2f54e8abdc13eaed81df487edd0333f5adb1923bd0643",
+    "tleap.log": "a08582b026bc2b20b81274e9924d462ab4e5274e6f82c8b88285da5b37ac6601",
+    "molecule.frcmod": "bf922808a85c35c2c11e49229322f906ba4bfc17fa247ee240d7221744a82dd5"
+  },
+  "scope": "Comparator force field generated, not qualified for bulk/interfacial desorption.",
+  "source": "https://ambermd.org/AmberTools.php"
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "stage": "min-prep",
+    "exitcode": 0,
+    "seconds": 2.055453540990129
+  },
+  {
+    "stage": "min",
+    "exitcode": 0,
+    "seconds": 4.105851375032216
+  },
+  {
+    "stage": "nvt-prep",
+    "exitcode": 1,
+    "seconds": 2.0884042500983924
+  },
+  {
+    "stage": "nvt-prep",
+    "exitcode": 0,
+    "seconds": 2.0550016248598695
+  },
+  {
+    "stage": "nvt",
+    "exitcode": 0,
+    "seconds": 88.60401145904325
+  },
+  {
+    "stage": "production-prep",
+    "exitcode": 0,
+    "seconds": 2.079261084087193
+  },
+  {
+    "stage": "production",
+    "exitcode": 0,
+    "seconds": 175.09244837495498
+  }
+]

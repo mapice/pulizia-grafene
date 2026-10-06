@@ -1,0 +1,6 @@
+{
+  "reference": "Original CPU64 before memory transformations and contraction patch, identical 96-atom dilute periodic geometry",
+  "max_force_error_eV_A": 1.7763568394002505e-15,
+  "energy_error_eV": 1.7763568394002505e-15,
+  "stress_max_error_eV_A3": 2.168404344971009e-18
+}

@@ -1,0 +1,215 @@
+#INFO: **** input file is /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/dft_matched_reference.py ****
+"""Matched omegaB97M-V/def2-TZVPD gas reference for learned potentials.
+
+VV10 nonlocal correlation is included by PySCF's functional; do NOT add D3.
+Frozen-fragment counterpoise. No solvation entropy or cleaning prediction.
+"""
+import os
+for v in ['OMP_NUM_THREADS', 'OPENBLAS_NUM_THREADS', 'VECLIB_MAXIMUM_THREADS']:
+    os.environ[v] = '1'
+os.nice(8)
+from pathlib import Path
+import argparse, hashlib, json, time
+import numpy as np
+from ase.io import read
+from pyscf import dft, gto, lib
+lib.num_threads(1)
+HERE=Path(__file__).resolve().parent
+
+
+def main():
+    p=argparse.ArgumentParser();p.add_argument('--pair',default='HFIP__MethylAcetate')
+    p.add_argument('--nlc-grid',type=int,choices=[0,1,2,3],default=0)
+    p.add_argument('--initial-grid',type=int,choices=[0,1,2,3],default=None)
+    p.add_argument('--monomers-first',action='store_true')
+    p.add_argument('--scf-wall-minutes',type=float,default=10.)
+    p.add_argument('--resume-progress',action='store_true')
+    args=p.parse_args()
+    assert 5<=args.scf_wall_minutes<=30
+    rec=json.loads((HERE/'results/clusters/binding-refined.json').read_text())['pairs'][args.pair]
+    atoms=read(HERE/'results/clusters'/rec['best_geometry'])
+    n=next(t['n_acceptor'] for t in rec['trials'] if t['name']+'.refined.xyz'==rec['best_geometry'])
+    root=HERE/'results'/f'dft-matched-nlc{args.nlc_grid}';root.mkdir(exist_ok=True)
+    energies={}
+    sequence=[('AB',range(len(atoms))),('Acp',range(n)),('Bcp',range(n,len(atoms))),
+              ('A',range(n)),('B',range(n,len(atoms)))]
+    if args.monomers_first:
+        sequence=[sequence[3],sequence[4],sequence[0],sequence[1],sequence[2]]
+    for tag,real in sequence:
+        current=atoms[:n] if tag=='A' else atoms[n:] if tag=='B' else atoms
+        real=set(range(len(current))) if tag in ['A','B'] else set(real)
+        fingerprint=hashlib.sha256(current.positions.tobytes()+bytes(current.numbers)).hexdigest()
+        label=args.pair+'_'+tag;path=root/(label+'.json')
+        if path.exists():
+            old=json.loads(path.read_text())
+            assert old['geometry_sha256']==fingerprint and old['basis']=='def2-tzvpd'
+            if old['SCF_converged']:
+                energies[tag]=old;continue
+            raise RuntimeError('Unconverged point preserved; explicit repair required')
+        geometry=[(symbol if i in real else 'ghost-'+symbol,tuple(x))
+                  for i,(symbol,x) in enumerate(zip(current.get_chemical_symbols(),current.positions))]
+        mol=gto.M(atom=geometry,basis='def2-tzvpd',unit='Angstrom',charge=0,spin=0,
+                  verbose=4,max_memory=1800,output=str(root/(label+'.scf.log')))
+        mf=dft.RKS(mol).density_fit();mf.xc='wb97m-v'
+        mf.grids.level=3;mf.nlcgrids.level=args.nlc_grid;mf.conv_tol=1e-9;mf.max_cycle=100;mf.chkfile=None
+        assert mf.do_nlc() and dft.libxc.is_nlc(mf.xc)
+        started=time.monotonic()
+        def callback(env):
+            # An unconverged iterate is restart data, never an accepted energy.
+            np.savez(root/(label+'-progress.npz'),density=env['dm'])
+            (root/(label+'-progress.json')).write_text(json.dumps(dict(
+                SCF_converged=False,geometry_sha256=fingerprint,basis='def2-tzvpd',
+                cycle=int(env['cycle']),energy_Ha=float(env['e_tot']),
+                elapsed_seconds=time.monotonic()-started),indent=2)+'\n')
+            if time.monotonic()-started>args.scf_wall_minutes*60:raise TimeoutError('Bounded SCF wall time')
+        mf.callback=callback
+        initial=None
+        if args.initial_grid is not None:
+            cache=HERE/'results'/f'dft-matched-nlc{args.initial_grid}'/(label+'-state.npz')
+            previous=json.loads(cache.with_name(label+'.json').read_text())
+            assert previous['SCF_converged'] and previous['geometry_sha256']==fingerprint
+            initial=np.load(cache)['density']
+            assert initial.shape==(mol.nao,mol.nao)
+        initial_kind='atomic default' if initial is None else 'previous converged grid'
+        if initial is None and args.resume_progress and (root/(label+'-progress.npz')).exists():
+            previous=json.loads((root/(label+'-progress.json')).read_text())
+            assert previous['geometry_sha256']==fingerprint and previous['basis']=='def2-tzvpd'
+            initial=np.load(root/(label+'-progress.npz'))['density'];initial_kind='explicit saved unconverged iterate'
+            assert initial.shape==(mol.nao,mol.nao)
+        if initial is None and args.monomers_first and tag in ['AB','Acp','Bcp']:
+            da=np.load(root/(args.pair+'_A-state.npz'))['density']
+            db=np.load(root/(args.pair+'_B-state.npz'))['density']
+            assert mol.nao==len(da)+len(db)
+            initial=np.zeros((mol.nao,mol.nao))
+            if tag in ['AB','Acp']:initial[:len(da),:len(da)]=da
+            if tag in ['AB','Bcp']:initial[len(da):,len(da):]=db
+            initial_kind='converged isolated-fragment block density'
+        e=float(mf.kernel(dm0=initial))
+        result=dict(functional='omegaB97M-V with VV10 nonlocal correlation',basis='def2-tzvpd',
+                    energy_Ha=e,SCF_converged=bool(mf.converged),no_additional_D3=True,
+                    geometry_sha256=fingerprint,basis_functions=mol.nao,real_atoms=len(real),
+                    ghost_atoms=len(current)-len(real),grid_level=3,nlc_grid_level=args.nlc_grid,
+                    starting_density_grid=args.initial_grid,
+                    initial_density_kind=initial_kind,SCF_wall_cap_minutes=args.scf_wall_minutes,
+                    elapsed_seconds=time.monotonic()-started)
+        path.write_text(json.dumps(result,indent=2)+'\n');print(label,result,flush=True)
+        assert mf.converged
+        np.savez(root/(label+'-state.npz'),density=mf.make_rdm1(),mo_coeff=mf.mo_coeff,mo_occ=mf.mo_occ)
+        energies[tag]=result
+    value=lambda k:energies[k]['energy_Ha']
+    result=dict(pair=args.pair,geometry=rec['best_geometry'],functional='omegaB97M-V',basis='def2-tzvpd',
+                interaction_counterpoise_kJ_mol=(value('AB')-value('Acp')-value('Bcp'))*2625.499638,
+                interaction_uncorrected_kJ_mol=(value('AB')-value('A')-value('B'))*2625.499638,
+                all_five_SCF_converged=True,energies=energies,nlc_grid_level=args.nlc_grid,
+                nonlocal_grid_convergence_not_yet_established=True,
+                scope='Matched frozen gas reference, not liquid free energy or polymer removal')
+    (root/(args.pair+'_interaction.json')).write_text(json.dumps(result,indent=2)+'\n')
+    print('Completed',args.pair,result['interaction_counterpoise_kJ_mol'],flush=True)
+
+
+if __name__=='__main__':
+    main()
+#INFO: ******************** input file end ********************
+
+
+System: uname_result(system='Darwin', node='MacBookPro.lan', release='24.6.0', version='Darwin Kernel Version 24.6.0: Sun Aug 23 20:37:03 PDT 2026; root:xnu-11417.140.69.712.69~1/RELEASE_ARM64_T6000', machine='arm64')  Threads 1
+Python 3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]
+numpy 2.5.3  scipy 1.18.1  h5py 3.16.0
+Date: Tue Oct  6 11:28:18 2026
+PySCF version 2.14.0
+PySCF path  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/pyscf
+
+[CONFIG] conf_file None
+[INPUT] verbose = 4
+[INPUT] num. atoms = 16
+[INPUT] num. electrons = 32
+[INPUT] charge = 0
+[INPUT] spin (= nelec alpha-beta = 2S) = 0
+[INPUT] symmetry False subgroup None
+[INPUT] Mole.unit = Angstrom
+[INPUT] Symbol           X                Y                Z      unit          X                Y                Z       unit  Magmom
+[INPUT]  1 C     -2.174634820000   0.840246930000  -0.011667650000 AA   -4.109464230743   1.587836574707  -0.022048663017 Bohr   0.0
+[INPUT]  2 C     -0.766389350000   0.330944140000  -0.142559130000 AA   -1.448265976283   0.625393787130  -0.269397712256 Bohr   0.0
+[INPUT]  3 O      0.209500090000   1.004885710000   0.131761480000 AA    0.395897793172   1.898958778389   0.248993110967 Bohr   0.0
+[INPUT]  4 O     -0.700273060000  -0.904892840000  -0.565883320000 AA   -1.323324295811  -1.709999639680  -1.069364493260 Bohr   0.0
+[INPUT]  5 H     -2.784438400000   0.451433110000  -0.821767660000 AA   -5.261825986722   0.853084941461  -1.552915815425 Bohr   0.0
+[INPUT]  6 H     -2.179244500000   1.925902110000  -0.006233190000 AA   -4.118175263465   3.639427530622  -0.011779021982 Bohr   0.0
+[INPUT]  7 H     -2.584198320000   0.478848500000   0.930077310000 AA   -4.883427076361   0.904892520159   1.757591390572 Bohr   0.0
+[INPUT]  8 H      0.245113130000  -1.242554140000  -0.630520420000 AA    0.463196685235  -2.348087019544  -1.191510909746 Bohr   0.0
+[INPUT]  9 GHOST-C   4.239502760000  -1.470972890000  -0.521055390000 AA    8.011499120738  -2.779735898760  -0.984651982828 Bohr   0.0
+[INPUT] 10 GHOST-C   2.831423410000  -0.956698670000  -0.410483400000 AA    5.350614787582  -1.807898470036  -0.775701204680 Bohr   0.0
+[INPUT] 11 GHOST-O   1.855149930000  -1.633396500000  -0.675946660000 AA    3.505725287706  -3.086672037823  -1.277354062214 Bohr   0.0
+[INPUT] 12 GHOST-O   2.766465400000   0.284249920000  -0.001425100000 AA    5.227861939085   0.537154499730  -0.002693048700 Bohr   0.0
+[INPUT] 13 GHOST-H   4.804888980000  -0.825383500000  -1.188537680000 AA    9.079924231141  -1.559748762735  -2.246010703926 Bohr   0.0
+[INPUT] 14 GHOST-H   4.236566010000  -2.489567210000  -0.895626090000 AA    8.005949467541  -4.704600195598  -1.692488020115 Bohr   0.0
+[INPUT] 15 GHOST-H   4.709541020000  -1.434776780000   0.458936040000 AA    8.899742700205  -2.711335164085   0.867263424292 Bohr   0.0
+[INPUT] 16 GHOST-H   1.820679630000   0.618540670000   0.070879830000 AA    3.440585861274   1.168872463205   0.133943466456 Bohr   0.0
+
+nuclear repulsion = 121.688046344352
+number of shells = 148
+number of NR pGTOs = 516
+number of NR cGTOs = 380
+basis = def2-tzvpd
+ecp = {}
+CPU time:        99.54
+
+
+******** <class 'pyscf.df.df_jk.DFRKS'> ********
+method = DFRKS
+initial guess = minao
+damping factor = 0
+level_shift factor = 0
+DIIS = <class 'pyscf.scf.diis.CDIIS'>
+diis_start_cycle = 1
+diis_space = 8
+diis_damp = 0
+SCF conv_tol = 1e-09
+SCF conv_tol_grad = None
+SCF max_cycles = 100
+direct_scf = False
+max_memory 1800 MB (current use 120 MB)
+XC library pyscf.dft.libxc version 7.0.0
+    S. Lehtola, C. Steigemann, M. J.T. Oliveira, and M. A.L. Marques.,  SoftwareX 7, 1–5 (2018)
+XC functionals = wb97m-v
+    N. Mardirossian and M. Head-Gordon.,  J. Chem. Phys. 144, 214110 (2016)
+radial grids: 
+    Treutler-Ahlrichs [JCP 102, 346 (1995); DOI:10.1063/1.469408] (M4) radial grids
+    
+becke partition: Becke, JCP 88, 2547 (1988); DOI:10.1063/1.454033
+pruning grids: <function nwchem_prune at 0x1086576a0>
+grids dens level: 3
+symmetrized grids: False
+atomic radii adjust function: <function treutler_atomic_radii_adjust at 0x108657ba0>
+** Following is NLC and NLC Grids **
+NLC functional = wb97m-v
+radial grids: 
+    Treutler-Ahlrichs [JCP 102, 346 (1995); DOI:10.1063/1.469408] (M4) radial grids
+    
+becke partition: Becke, JCP 88, 2547 (1988); DOI:10.1063/1.454033
+pruning grids: <function nwchem_prune at 0x1086576a0>
+grids dens level: 1
+symmetrized grids: False
+atomic radii adjust function: <function treutler_atomic_radii_adjust at 0x108657ba0>
+small_rho_cutoff = 0
+Set gradient conv threshold to 3.16228e-05
+tot grids = 191264
+tot grids = 61216
+******** <class 'pyscf.df.df.DF'> ********
+auxbasis = None
+max_memory = 1800
+Create RSH-DF object <pyscf.df.df.DF object at 0x10878d7f0> for omega=0.3
+******** <class 'pyscf.df.df.DF'> ********
+auxbasis = auxmol.basis = {'O': 'def2-tzvp-jkfit', 'GHOST-C': 'def2-tzvp-jkfit', 'GHOST-O': 'def2-tzvp-jkfit', 'C': 'def2-tzvp-jkfit', 'GHOST-H': 'def2-tzvp-jkfit', 'H': 'def2-tzvp-jkfit'}
+max_memory = 1800
+init E= -229.102763628139
+  HOMO = -0.382933294103534  LUMO = 0.0168386024353389  gap/eV = 10.87835
+cycle= 1 E= -229.102763638325  delta_E= -1.02e-08  |g|= 0.000125  |ddm|= 0.00531
+  HOMO = -0.38294040650252  LUMO = 0.0168354665798987  gap/eV = 10.87846
+cycle= 2 E= -229.102763637866  delta_E= 4.59e-10  |g|= 0.000139  |ddm|= 0.000642
+  HOMO = -0.382929991084335  LUMO = 0.0168355982094646  gap/eV = 10.87818
+cycle= 3 E= -229.102763641179  delta_E= -3.31e-09  |g|= 1.68e-05  |ddm|= 0.000113
+  HOMO = -0.382933600455896  LUMO = 0.016835534129342  gap/eV = 10.87827
+cycle= 4 E= -229.102763641224  delta_E= -4.48e-11  |g|= 4.63e-06  |ddm|= 4.19e-05
+  HOMO = -0.382932821740699  LUMO = 0.016835396248343  gap/eV = 10.87825
+Extra cycle  E= -229.102763641223  delta_E= 8.53e-13  |g|= 5.77e-06  |ddm|= 2.79e-05
+converged SCF energy = -229.102763641223

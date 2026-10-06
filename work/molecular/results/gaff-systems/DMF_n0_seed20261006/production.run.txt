@@ -1,0 +1,29 @@
+                :-) GROMACS - gmx mdrun, 2026.3-conda_forge (-:
+
+Executable:   /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin.ARM_NEON_ASIMD/gmx
+Data prefix:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env
+Working dir:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/gaff-systems/DMF_n0_seed20261006
+Command line:
+  gmx mdrun -deffnm production -ntmpi 1 -ntomp 2 -pin off -nice 8
+
+Reading file production.tpr, VERSION 2026.3-conda_forge (single precision)
+Changing nstlist from 20 to 80, rlist from 1.005 to 1.114
+
+Update groups can not be used for this system because atoms that are (in)directly constrained together are interdispersed with other atoms
+
+Using 1 MPI thread
+Using 2 OpenMP threads 
+
+starting mdrun 'DMF comparator n0'
+500000 steps,    500.0 ps.
+
+Writing final coordinates.
+
+               Core t (s)   Wall t (s)        (%)
+       Time:     1067.002      533.501      200.0
+                 (ns/day)    (hour/ns)    (ms/step)  (Matom*steps/s) 
+Performance:       80.975        0.296        1.067            1.406 
+
+GROMACS reminds you: "Give someone a program, you frustrate them for a day; teach them how to program, you frustrate them for a lifetime." (David Leinweber)
+
+{"guard": {"command": ["/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin/gmx", "mdrun", "-deffnm", "production", "-ntmpi", "1", "-ntomp", "2", "-pin", "off", "-nice", "8"], "pid": 63201, "exitcode": 0, "peak_RSS_MB": 17.40625, "elapsed_seconds": 535.1966767078266, "termination_reason": null}}

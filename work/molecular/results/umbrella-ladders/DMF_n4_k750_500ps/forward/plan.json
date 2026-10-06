@@ -1,0 +1,26 @@
+{
+  "solvent": "DMF",
+  "polymer_n": 4,
+  "direction": "forward",
+  "centers_nm": [
+    0.45,
+    0.55,
+    0.65,
+    0.75,
+    0.85,
+    0.95,
+    1.05,
+    1.15,
+    1.25,
+    1.35,
+    1.45
+  ],
+  "force_constant_kJ_mol_nm2": 750.0,
+  "ps_per_window": 500,
+  "initial_state": "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/gaff-systems/DMF_n4_seed20261006",
+  "max_wall_minutes": 300.0,
+  "threads": 2,
+  "scope": "Conditional rigid-graphene oligomer model; not a cleaning prediction.",
+  "qualified_for_PMF": false,
+  "qualified_for_solvent_ranking": false
+}

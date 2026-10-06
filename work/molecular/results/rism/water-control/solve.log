@@ -1,0 +1,88 @@
+reading input data file: cSPCE.inp
+tabulating potentials and intramolecular functions ...
+relaxing RISM:
+step=  83     Res=  8.3985951581902634E-11     MDIIS= 20
+saving Cvv to file: cSPCE.sav ...
+done.
+relaxing RISM DT:
+step=   1     Res=  8.6746987433532396E-01     MDIIS=  1
+step=   2     Res=  4.7478393039053979E-01     MDIIS=  2
+step=   3     Res=  1.8807717426878376E-01     MDIIS=  3
+step=   4     Res=  1.1674896359339185E-01     MDIIS=  4
+step=   5     Res=  5.6723248234537151E-02     MDIIS=  5
+step=   6     Res=  3.8407049986505563E-02     MDIIS=  6
+step=   7     Res=  3.5224345237488242E-02     MDIIS=  7
+step=   8     Res=  3.0374731904339251E-02     MDIIS=  8
+step=   9     Res=  2.3934664900350663E-02     MDIIS=  9
+step=  10     Res=  1.6672136857956012E-02     MDIIS= 10
+step=  11     Res=  1.4738687808844598E-02     MDIIS= 11
+step=  12     Res=  1.4939536254261953E-02     MDIIS= 12
+step=  13     Res=  1.3257358010065699E-02     MDIIS= 13
+step=  14     Res=  7.7114214540702540E-03     MDIIS= 14
+step=  15     Res=  1.6404848454537430E-03     MDIIS= 15
+step=  16     Res=  3.7158065688623892E-04     MDIIS= 16
+step=  17     Res=  6.8265713699377495E-05     MDIIS= 17
+step=  18     Res=  1.2844293293037937E-05     MDIIS= 18
+step=  19     Res=  1.0801066237886211E-05     MDIIS= 19
+step=  20     Res=  1.7544184444686624E-06     MDIIS= 20
+step=  21     Res=  2.1210316936741172E-07     MDIIS= 20
+step=  22     Res=  3.5631374750740783E-08     MDIIS= 20
+step=  23     Res=  5.8903377233540370E-09     MDIIS= 20
+step=  24     Res=  1.5832507248938100E-09     MDIIS= 20
+step=  25     Res=  8.3224928611768212E-10     MDIIS= 20
+step=  26     Res=  5.4080700483193863E-10     MDIIS= 20
+step=  27     Res=  8.3433195582372134E-11     MDIIS= 20
+outputting Uvv(R) to file: cSPCE.uvv
+outputting Xvv(K) to file: cSPCE.xvv
+outputting Gvv(R) to file: cSPCE.gvv
+outputting Gvv_dT(R) to file: cSPCE.gvv_dT
+outputting Bvv(R) to file: cSPCE.bvv
+outputting thermodynamics to file: cSPCE.therm
+outputting running coordination number to file: cSPCE.exnvv
+outputting Nvv(R = infty) to file: cSPCE.n00
+outputting Nvv(R = infty) to file: cSPCE.q00
+outputting running coordination number to file: cSPCE.nvv
+outputting Svv(R) to file: cSPCE.svv
+
+CPU Timer summary for Total                 
+    Input                                            0.000   (  0.03%)
+    Output                                           0.311   ( 99.96%)
+  I/O                                              0.312   ( 18.78%)
+    Thermodynamics                                   0.022   (  1.62%)
+      Potential                                        0.013   (  1.19%)
+          FFT                                              0.312   ( 28.74%)
+            Overlap                                          0.019   ( 30.22%)
+            Restart                                          0.000   (  0.07%)
+            Lapack                                           0.001   (  0.90%)
+            Project                                          0.043   ( 67.96%)
+          MDIIS Advance                                    0.064   (  5.87%)
+          Other                                            0.711   ( 65.38%)
+        R1RISM                                           1.087   ( 99.86%)
+        Other                                            0.002   (  0.14%)
+      RXRISM                                           1.089   ( 98.81%)
+    Solve 1D-RISM                                    1.102   ( 81.83%)
+          FFT dT                                           0.103   ( 46.83%)
+            Overlap                                          0.005   ( 29.70%)
+            Restart                                          0.000   (  0.09%)
+            Lapack                                           0.000   (  0.96%)
+            Project                                          0.012   ( 68.37%)
+          MDIIS Advance                                    0.017   (  7.81%)
+          Other                                            0.099   ( 45.36%)
+        R1RISM dT                                        0.219   ( 98.41%)
+        Other                                            0.004   (  1.59%)
+      RXRISM dT                                        0.223   (100.00%)
+    Solve 1D-RISM dT                                 0.223   ( 16.54%)
+    Self-test                                        0.000   (  0.02%)
+  1D-RISM Total                                    1.347   ( 81.15%)
+  Other                                            0.001   (  0.07%)
+Total                                            1.659   (100.00%)
+
+1D-RISM memory allocation summary
+Type         Current         Maximum
+Integer             8 B      0.00000 GB
+Real              112 B      0.03589 GB
+Logical             0 B      0.00000 GB
+Character           8 B      0.00000 GB
+---------------------------------------
+Total             128 B      0.03589 GB
+{"guard": {"command": ["/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/rism1d", "cSPCE"], "pid": 12889, "exitcode": 0, "peak_RSS_MB": 0.390625, "elapsed_seconds": 2.013730874983594, "termination_reason": null}}

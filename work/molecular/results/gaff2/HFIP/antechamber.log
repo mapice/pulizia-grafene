@@ -1,0 +1,18 @@
+Info: acdoctor mode is on: check and diagnose problems in the input file.
+Info: The atom type is set to gaff2; the options available to the -at flag are
+      gaff, gaff2, amber, bcc, abcg2, and sybyl.
+
+-- Check Format for sdf File --
+   Status: pass
+Info: Determining atomic numbers from atomic symbols which are case sensitive.
+Running: /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac -an no
+
+Running: /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/atomtype -i ANTECHAMBER_AC.AC0 -o ANTECHAMBER_AC.AC -p gaff2 -an no
+
+Running: /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/sqm -O -i sqm.in -o sqm.out
+
+Running: /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/am1bcc -i ANTECHAMBER_AM1BCC_PRE.AC -o ANTECHAMBER_AM1BCC.AC -f ac -t bcc -p /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/dat/antechamber/BCCPARM.DAT -s 2 -j 1
+
+Running: /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/atomtype -f ac -p bcc -o ANTECHAMBER_AM1BCC.AC -i ANTECHAMBER_AM1BCC_PRE.AC
+
+{"guard": {"command": ["/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/antechamber", "-i", "input.sdf", "-fi", "sdf", "-o", "molecule.mol2", "-fo", "mol2", "-c", "bcc", "-nc", "0", "-at", "gaff2", "-rn", "HFI", "-s", "2", "-pf", "y"], "pid": 48984, "exitcode": 0, "peak_RSS_MB": 1.578125, "elapsed_seconds": 2.0134921250864863, "termination_reason": null}}

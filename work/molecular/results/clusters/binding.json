@@ -1,0 +1,636 @@
+{
+  "method": "GFN2-xTB",
+  "scope": "Vacuum electronic energies of molecular proxies. Not liquid free energies; not cleaning/solvent ranking.",
+  "pairs": {
+    "HFIP__HFIP": {
+      "finished": true,
+      "donor": "HFIP",
+      "acceptor": "HFIP",
+      "best_geometry": "HFIP__HFIP_2.xyz",
+      "binding_electronic_kJ_mol": -22.574627513556585,
+      "interaction_frozen_fragments_kJ_mol": -23.125208983500354,
+      "deformation_kJ_mol": 0.5505814699437682,
+      "OH_A": 0.9751008017170527,
+      "H_acceptor_A": 1.9461225992194777,
+      "trials": [
+        {
+          "name": "HFIP__HFIP_0",
+          "energy_eV": -2171.9836907524063,
+          "converged": false,
+          "max_force_eV_A": 0.04614471915412019,
+          "acceptor_O": 0,
+          "donor_O": 12,
+          "donor_H": 22,
+          "n_acceptor": 12
+        },
+        {
+          "name": "HFIP__HFIP_1",
+          "energy_eV": -2172.0034870961686,
+          "converged": false,
+          "max_force_eV_A": 0.03566419346471399,
+          "acceptor_O": 0,
+          "donor_O": 12,
+          "donor_H": 22,
+          "n_acceptor": 12
+        },
+        {
+          "name": "HFIP__HFIP_2",
+          "energy_eV": -2171.958095445696,
+          "converged": true,
+          "max_force_eV_A": 0.023933005211237153,
+          "acceptor_O": 0,
+          "donor_O": 12,
+          "donor_H": 22,
+          "n_acceptor": 12
+        }
+      ],
+      "peak_rss_mb": 127.71875,
+      "elapsed_seconds": 6.306398791959509
+    },
+    "HFIP__MeOH": {
+      "finished": true,
+      "donor": "HFIP",
+      "acceptor": "MeOH",
+      "best_geometry": "HFIP__MeOH_0.xyz",
+      "binding_electronic_kJ_mol": -41.23533202576918,
+      "interaction_frozen_fragments_kJ_mol": -42.89210791855406,
+      "deformation_kJ_mol": 1.6567758927848781,
+      "OH_A": 0.9873997463082032,
+      "H_acceptor_A": 1.732578873307118,
+      "trials": [
+        {
+          "name": "HFIP__MeOH_0",
+          "energy_eV": -1310.133479165349,
+          "converged": true,
+          "max_force_eV_A": 0.021307447484055747,
+          "acceptor_O": 1,
+          "donor_O": 6,
+          "donor_H": 16,
+          "n_acceptor": 6
+        },
+        {
+          "name": "HFIP__MeOH_1",
+          "energy_eV": -1310.1088021771632,
+          "converged": true,
+          "max_force_eV_A": 0.024184108658643434,
+          "acceptor_O": 1,
+          "donor_O": 6,
+          "donor_H": 16,
+          "n_acceptor": 6
+        },
+        {
+          "name": "HFIP__MeOH_2",
+          "energy_eV": -1310.1059534225808,
+          "converged": true,
+          "max_force_eV_A": 0.019975481448057632,
+          "acceptor_O": 1,
+          "donor_O": 6,
+          "donor_H": 16,
+          "n_acceptor": 6
+        }
+      ],
+      "peak_rss_mb": 128.390625,
+      "elapsed_seconds": 8.440569499973208
+    },
+    "HFIP__Acetone": {
+      "finished": true,
+      "donor": "HFIP",
+      "acceptor": "Acetone",
+      "best_geometry": "HFIP__Acetone_2.xyz",
+      "binding_electronic_kJ_mol": -42.119749896369335,
+      "interaction_frozen_fragments_kJ_mol": -43.88829714197464,
+      "deformation_kJ_mol": 1.7685472456053009,
+      "OH_A": 0.9826017808872956,
+      "H_acceptor_A": 1.7616078927568377,
+      "trials": [
+        {
+          "name": "HFIP__Acetone_0",
+          "energy_eV": -1454.5789114531333,
+          "converged": true,
+          "max_force_eV_A": 0.022592509299358594,
+          "acceptor_O": 2,
+          "donor_O": 10,
+          "donor_H": 20,
+          "n_acceptor": 10
+        },
+        {
+          "name": "HFIP__Acetone_1",
+          "energy_eV": -1454.5747786278694,
+          "converged": true,
+          "max_force_eV_A": 0.02205502688456656,
+          "acceptor_O": 2,
+          "donor_O": 10,
+          "donor_H": 20,
+          "n_acceptor": 10
+        },
+        {
+          "name": "HFIP__Acetone_2",
+          "energy_eV": -1454.5812415823964,
+          "converged": true,
+          "max_force_eV_A": 0.022351564562355198,
+          "acceptor_O": 2,
+          "donor_O": 10,
+          "donor_H": 20,
+          "n_acceptor": 10
+        }
+      ],
+      "peak_rss_mb": 129.3125,
+      "elapsed_seconds": 8.968072124989703
+    },
+    "HFIP__DMF": {
+      "finished": true,
+      "donor": "HFIP",
+      "acceptor": "DMF",
+      "best_geometry": "HFIP__DMF_2.xyz",
+      "binding_electronic_kJ_mol": -52.03328851276643,
+      "interaction_frozen_fragments_kJ_mol": -58.04210775936317,
+      "deformation_kJ_mol": 6.008819246596738,
+      "OH_A": 0.9893416798158442,
+      "H_acceptor_A": 1.6772487406821615,
+      "trials": [
+        {
+          "name": "HFIP__DMF_0",
+          "energy_eV": -1548.4919451219282,
+          "converged": true,
+          "max_force_eV_A": 0.017452644978437636,
+          "acceptor_O": 4,
+          "donor_O": 12,
+          "donor_H": 22,
+          "n_acceptor": 12
+        },
+        {
+          "name": "HFIP__DMF_1",
+          "energy_eV": -1548.507282605678,
+          "converged": true,
+          "max_force_eV_A": 0.02361333583118059,
+          "acceptor_O": 4,
+          "donor_O": 12,
+          "donor_H": 22,
+          "n_acceptor": 12
+        },
+        {
+          "name": "HFIP__DMF_2",
+          "energy_eV": -1548.5449843911235,
+          "converged": true,
+          "max_force_eV_A": 0.02012463465935422,
+          "acceptor_O": 4,
+          "donor_O": 12,
+          "donor_H": 22,
+          "n_acceptor": 12
+        }
+      ],
+      "peak_rss_mb": 129.515625,
+      "elapsed_seconds": 11.031431167153642
+    },
+    "HFIP__THF": {
+      "finished": true,
+      "donor": "HFIP",
+      "acceptor": "THF",
+      "best_geometry": "HFIP__THF_1.xyz",
+      "binding_electronic_kJ_mol": -43.859975762693296,
+      "interaction_frozen_fragments_kJ_mol": -46.23116072080591,
+      "deformation_kJ_mol": 2.371184958112618,
+      "OH_A": 0.9898399052621754,
+      "H_acceptor_A": 1.713992354301713,
+      "trials": [
+        {
+          "name": "HFIP__THF_0",
+          "energy_eV": -1540.9318209917726,
+          "converged": true,
+          "max_force_eV_A": 0.024007516401095587,
+          "acceptor_O": 3,
+          "donor_O": 13,
+          "donor_H": 23,
+          "n_acceptor": 13
+        },
+        {
+          "name": "HFIP__THF_1",
+          "energy_eV": -1540.9340673579807,
+          "converged": true,
+          "max_force_eV_A": 0.022887912223663657,
+          "acceptor_O": 3,
+          "donor_O": 13,
+          "donor_H": 23,
+          "n_acceptor": 13
+        },
+        {
+          "name": "HFIP__THF_2",
+          "energy_eV": -1540.921907045947,
+          "converged": true,
+          "max_force_eV_A": 0.022805866693812415,
+          "acceptor_O": 3,
+          "donor_O": 13,
+          "donor_H": 23,
+          "n_acceptor": 13
+        }
+      ],
+      "peak_rss_mb": 129.671875,
+      "elapsed_seconds": 13.099208917003125
+    },
+    "HFIP__MethylAcetate": {
+      "finished": true,
+      "donor": "HFIP",
+      "acceptor": "MethylAcetate",
+      "best_geometry": "HFIP__MethylAcetate_1.xyz",
+      "binding_electronic_kJ_mol": -45.12727898841592,
+      "interaction_frozen_fragments_kJ_mol": -48.093395765222446,
+      "deformation_kJ_mol": 2.9661167768065235,
+      "OH_A": 0.9828460575156983,
+      "H_acceptor_A": 1.7468348790525579,
+      "trials": [
+        {
+          "name": "HFIP__MethylAcetate_0",
+          "energy_eV": -1565.8265543816337,
+          "converged": false,
+          "max_force_eV_A": 0.06698724876526763,
+          "acceptor_O": 2,
+          "donor_O": 11,
+          "donor_H": 21,
+          "n_acceptor": 11
+        },
+        {
+          "name": "HFIP__MethylAcetate_1",
+          "energy_eV": -1565.7875391466869,
+          "converged": true,
+          "max_force_eV_A": 0.02307220222239397,
+          "acceptor_O": 2,
+          "donor_O": 11,
+          "donor_H": 21,
+          "n_acceptor": 11
+        },
+        {
+          "name": "HFIP__MethylAcetate_2",
+          "energy_eV": -1565.7772045224192,
+          "converged": true,
+          "max_force_eV_A": 0.02344393693135556,
+          "acceptor_O": 2,
+          "donor_O": 11,
+          "donor_H": 21,
+          "n_acceptor": 11
+        }
+      ],
+      "peak_rss_mb": 130.359375,
+      "elapsed_seconds": 15.526373417116702
+    },
+    "HFIP__MethylPivalate": {
+      "finished": true,
+      "donor": "HFIP",
+      "acceptor": "MethylPivalate",
+      "best_geometry": "HFIP__MethylPivalate_0.xyz",
+      "binding_electronic_kJ_mol": -52.028434999184455,
+      "interaction_frozen_fragments_kJ_mol": -56.518536271548946,
+      "deformation_kJ_mol": 4.490101272364487,
+      "OH_A": 0.9858866418542305,
+      "H_acceptor_A": 1.7116747827345509,
+      "trials": [
+        {
+          "name": "HFIP__MethylPivalate_0",
+          "energy_eV": -1824.2956425523562,
+          "converged": true,
+          "max_force_eV_A": 0.02433063421105684,
+          "acceptor_O": 5,
+          "donor_O": 20,
+          "donor_H": 30,
+          "n_acceptor": 20
+        },
+        {
+          "name": "HFIP__MethylPivalate_1",
+          "energy_eV": -1824.2506822706332,
+          "converged": true,
+          "max_force_eV_A": 0.02471900983437207,
+          "acceptor_O": 5,
+          "donor_O": 20,
+          "donor_H": 30,
+          "n_acceptor": 20
+        },
+        {
+          "name": "HFIP__MethylPivalate_2",
+          "energy_eV": -1824.3158860093276,
+          "converged": false,
+          "max_force_eV_A": 0.08206863135205059,
+          "acceptor_O": 5,
+          "donor_O": 20,
+          "donor_H": 30,
+          "n_acceptor": 20
+        }
+      ],
+      "peak_rss_mb": 133.4375,
+      "elapsed_seconds": 20.605982500128448
+    },
+    "HFIP__DimethylCarbonate": {
+      "finished": true,
+      "donor": "HFIP",
+      "acceptor": "DimethylCarbonate",
+      "best_geometry": "HFIP__DimethylCarbonate_2.xyz",
+      "binding_electronic_kJ_mol": -48.19352485267156,
+      "interaction_frozen_fragments_kJ_mol": -51.87973042605795,
+      "deformation_kJ_mol": 3.6862055733863914,
+      "OH_A": 0.9826530837310926,
+      "H_acceptor_A": 1.7351439790526464,
+      "trials": [
+        {
+          "name": "HFIP__DimethylCarbonate_0",
+          "energy_eV": -1676.8661014636675,
+          "converged": false,
+          "max_force_eV_A": 0.07114763886202975,
+          "acceptor_O": 3,
+          "donor_O": 12,
+          "donor_H": 22,
+          "n_acceptor": 12
+        },
+        {
+          "name": "HFIP__DimethylCarbonate_1",
+          "energy_eV": -1676.8428640495695,
+          "converged": true,
+          "max_force_eV_A": 0.01756529698735236,
+          "acceptor_O": 3,
+          "donor_O": 12,
+          "donor_H": 22,
+          "n_acceptor": 12
+        },
+        {
+          "name": "HFIP__DimethylCarbonate_2",
+          "energy_eV": -1676.8613261765747,
+          "converged": true,
+          "max_force_eV_A": 0.02015056789636413,
+          "acceptor_O": 3,
+          "donor_O": 12,
+          "donor_H": 22,
+          "n_acceptor": 12
+        }
+      ],
+      "peak_rss_mb": 134.046875,
+      "elapsed_seconds": 24.354631958063692
+    },
+    "IPA__MethylAcetate": {
+      "finished": true,
+      "donor": "IPA",
+      "acceptor": "MethylAcetate",
+      "best_geometry": "IPA__MethylAcetate_2.xyz",
+      "binding_electronic_kJ_mol": -21.32102988687417,
+      "interaction_frozen_fragments_kJ_mol": -21.680199912065362,
+      "deformation_kJ_mol": 0.35917002519119123,
+      "OH_A": 0.9675002875718659,
+      "H_acceptor_A": 2.004050745237816,
+      "trials": [
+        {
+          "name": "IPA__MethylAcetate_0",
+          "energy_eV": -875.9034658731051,
+          "converged": true,
+          "max_force_eV_A": 0.022028355951883873,
+          "acceptor_O": 2,
+          "donor_O": 13,
+          "donor_H": 19,
+          "n_acceptor": 11
+        },
+        {
+          "name": "IPA__MethylAcetate_1",
+          "energy_eV": -875.9169039197504,
+          "converged": true,
+          "max_force_eV_A": 0.01765163573767816,
+          "acceptor_O": 2,
+          "donor_O": 13,
+          "donor_H": 19,
+          "n_acceptor": 11
+        },
+        {
+          "name": "IPA__MethylAcetate_2",
+          "energy_eV": -875.9213998529596,
+          "converged": true,
+          "max_force_eV_A": 0.02257985389665048,
+          "acceptor_O": 2,
+          "donor_O": 13,
+          "donor_H": 19,
+          "n_acceptor": 11
+        }
+      ],
+      "peak_rss_mb": 134.71875,
+      "elapsed_seconds": 25.661222958005965
+    },
+    "AceticAcid__MethylAcetate": {
+      "finished": true,
+      "donor": "AceticAcid",
+      "acceptor": "MethylAcetate",
+      "best_geometry": "AceticAcid__MethylAcetate_0.xyz",
+      "binding_electronic_kJ_mol": -40.89578480687538,
+      "interaction_frozen_fragments_kJ_mol": -43.058551214209345,
+      "deformation_kJ_mol": 2.162766407333957,
+      "OH_A": 0.9841474031076706,
+      "H_acceptor_A": 1.7898353204553075,
+      "trials": [
+        {
+          "name": "AceticAcid__MethylAcetate_0",
+          "energy_eV": -873.3566469491415,
+          "converged": true,
+          "max_force_eV_A": 0.024477443056500018,
+          "acceptor_O": 2,
+          "donor_O": 14,
+          "donor_H": 18,
+          "n_acceptor": 11
+        },
+        {
+          "name": "AceticAcid__MethylAcetate_1",
+          "energy_eV": -873.3699430085343,
+          "converged": false,
+          "max_force_eV_A": 0.043027524941058395,
+          "acceptor_O": 2,
+          "donor_O": 14,
+          "donor_H": 18,
+          "n_acceptor": 11
+        },
+        {
+          "name": "AceticAcid__MethylAcetate_2",
+          "energy_eV": -873.3519968925445,
+          "converged": true,
+          "max_force_eV_A": 0.023124565593234656,
+          "acceptor_O": 2,
+          "donor_O": 14,
+          "donor_H": 18,
+          "n_acceptor": 11
+        }
+      ],
+      "peak_rss_mb": 134.84375,
+      "elapsed_seconds": 28.150179458083585
+    },
+    "TFE__MethylAcetate": {
+      "finished": true,
+      "donor": "TFE",
+      "acceptor": "MethylAcetate",
+      "best_geometry": "TFE__MethylAcetate_2.xyz",
+      "binding_electronic_kJ_mol": -38.04311011796124,
+      "interaction_frozen_fragments_kJ_mol": -42.00897029486418,
+      "deformation_kJ_mol": 3.9658601769029382,
+      "OH_A": 0.9773130883752909,
+      "H_acceptor_A": 1.809294195076239,
+      "trials": [
+        {
+          "name": "TFE__MethylAcetate_0",
+          "energy_eV": -1134.8530549018105,
+          "converged": true,
+          "max_force_eV_A": 0.024828287993892202,
+          "acceptor_O": 2,
+          "donor_O": 11,
+          "donor_H": 17,
+          "n_acceptor": 11
+        },
+        {
+          "name": "TFE__MethylAcetate_1",
+          "energy_eV": -1134.852467893395,
+          "converged": true,
+          "max_force_eV_A": 0.024337522896887304,
+          "acceptor_O": 2,
+          "donor_O": 11,
+          "donor_H": 17,
+          "n_acceptor": 11
+        },
+        {
+          "name": "TFE__MethylAcetate_2",
+          "energy_eV": -1134.892470307477,
+          "converged": true,
+          "max_force_eV_A": 0.02354281629889702,
+          "acceptor_O": 2,
+          "donor_O": 11,
+          "donor_H": 17,
+          "n_acceptor": 11
+        }
+      ],
+      "peak_rss_mb": 134.84375,
+      "elapsed_seconds": 30.830142833059654
+    },
+    "MeOH__MethylAcetate": {
+      "finished": true,
+      "donor": "MeOH",
+      "acceptor": "MethylAcetate",
+      "best_geometry": "MeOH__MethylAcetate_0.xyz",
+      "binding_electronic_kJ_mol": -20.342643209153472,
+      "interaction_frozen_fragments_kJ_mol": -20.63307033709176,
+      "deformation_kJ_mol": 0.2904271279382853,
+      "OH_A": 0.967537851447264,
+      "H_acceptor_A": 1.9636287454487091,
+      "trials": [
+        {
+          "name": "MeOH__MethylAcetate_0",
+          "energy_eV": -703.5126436442509,
+          "converged": true,
+          "max_force_eV_A": 0.024215325862975735,
+          "acceptor_O": 2,
+          "donor_O": 12,
+          "donor_H": 16,
+          "n_acceptor": 11
+        },
+        {
+          "name": "MeOH__MethylAcetate_1",
+          "energy_eV": -703.508150296468,
+          "converged": true,
+          "max_force_eV_A": 0.02482969603679854,
+          "acceptor_O": 2,
+          "donor_O": 12,
+          "donor_H": 16,
+          "n_acceptor": 11
+        },
+        {
+          "name": "MeOH__MethylAcetate_2",
+          "energy_eV": -703.5039068207308,
+          "converged": true,
+          "max_force_eV_A": 0.019401622249003356,
+          "acceptor_O": 2,
+          "donor_O": 12,
+          "donor_H": 16,
+          "n_acceptor": 11
+        }
+      ],
+      "peak_rss_mb": 134.84375,
+      "elapsed_seconds": 31.422895208001137
+    },
+    "Water__MethylAcetate": {
+      "finished": true,
+      "donor": "Water",
+      "acceptor": "MethylAcetate",
+      "best_geometry": "Water__MethylAcetate_1.xyz",
+      "binding_electronic_kJ_mol": -20.07912033425154,
+      "interaction_frozen_fragments_kJ_mol": -20.405206893694373,
+      "deformation_kJ_mol": 0.3260865594428335,
+      "OH_A": 0.9640269373961479,
+      "H_acceptor_A": 1.9666997992848696,
+      "trials": [
+        {
+          "name": "Water__MethylAcetate_0",
+          "energy_eV": -617.6240345684806,
+          "converged": true,
+          "max_force_eV_A": 0.022368669479524435,
+          "acceptor_O": 2,
+          "donor_O": 11,
+          "donor_H": 12,
+          "n_acceptor": 11
+        },
+        {
+          "name": "Water__MethylAcetate_1",
+          "energy_eV": -617.6424125773782,
+          "converged": true,
+          "max_force_eV_A": 0.024796553781843964,
+          "acceptor_O": 2,
+          "donor_O": 11,
+          "donor_H": 12,
+          "n_acceptor": 11
+        },
+        {
+          "name": "Water__MethylAcetate_2",
+          "energy_eV": -617.6973455463794,
+          "converged": false,
+          "max_force_eV_A": 0.13555339611872483,
+          "acceptor_O": 2,
+          "donor_O": 11,
+          "donor_H": 12,
+          "n_acceptor": 11
+        }
+      ],
+      "peak_rss_mb": 134.84375,
+      "elapsed_seconds": 32.417312375037
+    },
+    "AceticAcid__AceticAcid": {
+      "finished": true,
+      "donor": "AceticAcid",
+      "acceptor": "AceticAcid",
+      "best_geometry": "AceticAcid__AceticAcid_1.xyz",
+      "binding_electronic_kJ_mol": -41.317123028702476,
+      "interaction_frozen_fragments_kJ_mol": -43.89671204672181,
+      "deformation_kJ_mol": 2.5795890180193357,
+      "OH_A": 0.988758398457642,
+      "H_acceptor_A": 1.7659424494134006,
+      "trials": [
+        {
+          "name": "AceticAcid__AceticAcid_0",
+          "energy_eV": -787.6721598898744,
+          "converged": false,
+          "max_force_eV_A": 0.0705644704770784,
+          "acceptor_O": 2,
+          "donor_O": 11,
+          "donor_H": 15,
+          "n_acceptor": 8
+        },
+        {
+          "name": "AceticAcid__AceticAcid_1",
+          "energy_eV": -787.3782760216482,
+          "converged": true,
+          "max_force_eV_A": 0.02137658793177149,
+          "acceptor_O": 2,
+          "donor_O": 11,
+          "donor_H": 15,
+          "n_acceptor": 8
+        },
+        {
+          "name": "AceticAcid__AceticAcid_2",
+          "energy_eV": -787.2342021612326,
+          "converged": true,
+          "max_force_eV_A": 0.021689943585831442,
+          "acceptor_O": 2,
+          "donor_O": 11,
+          "donor_H": 15,
+          "n_acceptor": 8
+        }
+      ],
+      "peak_rss_mb": 118.859375,
+      "elapsed_seconds": 2.2269543341826648
+    }
+  }
+}

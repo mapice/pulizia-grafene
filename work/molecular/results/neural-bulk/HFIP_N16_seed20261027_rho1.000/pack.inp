@@ -1,0 +1,9 @@
+tolerance 2.0
+filetype xyz
+output packed.xyz
+seed 20261027
+nloop 2000
+pbc 16.4661685149 16.4661685149 16.4661685149
+structure monomer.xyz
+  number 16
+end structure

@@ -1,0 +1,29 @@
+                :-) GROMACS - gmx mdrun, 2026.3-conda_forge (-:
+
+Executable:   /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin.ARM_NEON_ASIMD/gmx
+Data prefix:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env
+Working dir:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/gaff-systems/Anisole_n4_seed20261006
+Command line:
+  gmx mdrun -deffnm production -ntmpi 1 -ntomp 1 -pin off -nice 8
+
+Reading file production.tpr, VERSION 2026.3-conda_forge (single precision)
+Changing nstlist from 20 to 80, rlist from 1.009 to 1.123
+
+Update groups can not be used for this system because atoms that are (in)directly constrained together are interdispersed with other atoms
+
+Using 1 MPI thread
+Using 1 OpenMP thread 
+
+starting mdrun 'Anisole comparator n4'
+100000 steps,    100.0 ps.
+
+Writing final coordinates.
+
+               Core t (s)   Wall t (s)        (%)
+       Time:      385.694      385.694      100.0
+                 (ns/day)    (hour/ns)    (ms/step)  (Matom*steps/s) 
+Performance:       22.401        1.071        3.857            1.029 
+
+GROMACS reminds you: "I like single-molecule experiments because I hate to simulate 10^23 molecules at the same time." (Helmut Grubmüller)
+
+{"guard": {"command": ["/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin/gmx", "mdrun", "-deffnm", "production", "-ntmpi", "1", "-ntomp", "1", "-pin", "off", "-nice", "8"], "pid": 33628, "exitcode": 0, "peak_RSS_MB": 20.59375, "elapsed_seconds": 386.3686912499834, "termination_reason": null}}

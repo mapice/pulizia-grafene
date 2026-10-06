@@ -1,0 +1,8 @@
+{
+  "SCF_converged": false,
+  "geometry_sha256": "eb8a37e9ee3c3bd92aba9c231c90e913acc034bab2da0e8017aa43bb2885d4b2",
+  "basis": "def2-tzvpd",
+  "cycle": 9,
+  "energy_Ha": -789.9852914505333,
+  "elapsed_seconds": 38.383970166090876
+}

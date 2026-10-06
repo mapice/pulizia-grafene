@@ -1,0 +1,24 @@
+{
+  "solvent": "HFIP",
+  "solvent_model": "GAFF2/AM1-BCC from AmberTools26",
+  "polymer_n": 0,
+  "polymer_atoms": 0,
+  "graphene_atoms": 0,
+  "solvent_molecules": 64,
+  "total_atoms": 768,
+  "box_nm": [
+    2.815717551686929,
+    2.815717551686929,
+    2.815717551686929
+  ],
+  "seed": 20261008,
+  "packing_tolerance_A": 2.0,
+  "periodic_packing": true,
+  "liquid_number_chosen_using_density_g_cm3": 1.607,
+  "target_density_reference": "HFIP1.607 primaryCasoria; DMF/THF nominal25C initialization estimates, not fitted acceptance values",
+  "solvent_molar_mass_g_mol": 168.046,
+  "polymer_model": null,
+  "graphene_model": null,
+  "scope": "Neat-solvent liquid model; bulk validation only, no graphene interface.",
+  "forcefield_desorption_qualified": false
+}

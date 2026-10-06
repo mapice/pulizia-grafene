@@ -1,0 +1,5 @@
+{
+  "accepted": false,
+  "exitcode": 1,
+  "reason": "Maxstep1000 reached. Residual oscillates~.01-.08, target1e-10 not met. No accepted organic susceptibility."
+}

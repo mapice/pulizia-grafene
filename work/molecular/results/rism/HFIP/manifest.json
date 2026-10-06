@@ -1,0 +1,24 @@
+{
+  "solvent": "HFIP",
+  "method": "DRISM/KH",
+  "sites": 6,
+  "physical_atoms": 12,
+  "equivalent_site_multiplicities": [
+    1,
+    1,
+    2,
+    6,
+    1,
+    1
+  ],
+  "rigid_conformer": true,
+  "geometry_source": "neutral GAFF2 input geometry",
+  "density_g_cm3": 1.607,
+  "molarity_mol_L": 9.562857788938743,
+  "dielectric_imposed_from_experiment": 16.7,
+  "reference_doi": "10.1002/psc.3543",
+  "dielectric_is_not_predicted": true,
+  "mdl_LJ_radius": "rmin/2 Angstrom, not sigma",
+  "mdl_charge_factor": 18.2223,
+  "scope": "Prepare bulk susceptibility for independent solvation-theory check; no cleaning result"
+}

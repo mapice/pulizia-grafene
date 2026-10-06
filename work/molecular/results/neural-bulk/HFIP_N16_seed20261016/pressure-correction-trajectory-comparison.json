@@ -1,0 +1,9 @@
+{
+  "common_duration_fs": 50.0,
+  "previous_rejected_max_extended_energy_change_eV": 0.043926362395456664,
+  "corrected_max_extended_energy_change_eV": 0.0010559142506831876,
+  "reduction_factor": 41.600312115340664,
+  "old_NPT_rejected_for_pressure_inconsistency": true,
+  "new_100fs_only_transient_liquid_qualification": false,
+  "scope": "Same-start derivative/integration control, not equilibrium density or cleaning"
+}

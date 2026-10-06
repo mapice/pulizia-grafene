@@ -1,0 +1,7 @@
+{
+  "energy_difference_eV": 0.0,
+  "maximum_force_difference_eV_A": 1.429412144204889e-15,
+  "pressure_error_before_bar": 183.563452140268,
+  "residual_after_small_step_bar": 0.010581296563116195,
+  "scope": "Exact zero-strain Hamiltonian invariance and independent cell derivative audit, not liquid equilibrium validation"
+}

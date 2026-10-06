@@ -1,0 +1,10 @@
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/byteff_probe.py", line 136, in <module>
+    main()
+  File "/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/byteff_probe.py", line 68, in main
+    atom_numbers=obj.atomic_numbers.tolist(), atoms=obj.natoms,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'tolist'
+{"guard": {"command": ["work/molecular/.venv/bin/python", "-u", "work/molecular/byteff_probe.py"], "pid": 58511, "exitcode": 1, "peak_RSS_MB": 770.0, "elapsed_seconds": 18.089127416955307, "termination_reason": null}}

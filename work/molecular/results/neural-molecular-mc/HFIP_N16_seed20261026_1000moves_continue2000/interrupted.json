@@ -1,0 +1,24 @@
+{
+  "authoritatively_terminal": true,
+  "guard": {
+    "command": [
+      "work/molecular/.venv/bin/python",
+      "-u",
+      "work/molecular/neural_molecular_mc.py",
+      "--moves",
+      "2000",
+      "--resume-root",
+      "work/molecular/results/neural-molecular-mc/HFIP_N16_seed20261026_1000moves"
+    ],
+    "pid": 50634,
+    "exitcode": -15,
+    "peak_RSS_MB": 837.28125,
+    "elapsed_seconds": 3001.156579707982,
+    "termination_reason": "Wall-time cap"
+  },
+  "log_sha256": "135b3d60eb0e78c62602f8134d7d02c4b7771ae3267f544384edb8cb7269fd7f",
+  "last_saved_attempt": 2860,
+  "data_preserved": true,
+  "liquid_equilibrium_qualified": false,
+  "cleaning_solution_established": false
+}

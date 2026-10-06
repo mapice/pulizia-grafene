@@ -1,0 +1,59 @@
+Found points in the range from 0 to 359 (max 360)
+ < angle >  = -40.6362
+                :-) GROMACS - gmx angle, 2026.3-conda_forge (-:
+
+Executable:   /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin.ARM_NEON_ASIMD/gmx
+Data prefix:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env
+Working dir:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/gromacs/bulk_scale1_seed20261006
+Command line:
+  gmx angle -f npt.xtc -n rotor.ndx -type dihedral -all -b 200 -dt 5 -od rotor-hist.xvg -ov rotor-all.xvg
+
+Group     0 (  HFIP_OH_rotor) has   500 elements
+There is one group in the index
+
+Reading frame       0 time    0.000   
+Reading frame       0 time  200.000   
+Skipping frame      1 time  201.000   
+Skipping frame      2 time  202.000   
+Skipping frame      3 time  203.000   
+Skipping frame      4 time  204.000   
+Reading frame       5 time  205.000   
+Skipping frame      6 time  206.000   
+Skipping frame      7 time  207.000   
+Skipping frame      8 time  208.000   
+Skipping frame      9 time  209.000   
+Reading frame      10 time  210.000   
+Skipping frame     11 time  211.000   
+Skipping frame     12 time  212.000   
+Skipping frame     13 time  213.000   
+Skipping frame     14 time  214.000   
+Reading frame      15 time  215.000   
+Skipping frame     16 time  216.000   
+Skipping frame     17 time  217.000   
+Skipping frame     18 time  218.000   
+Skipping frame     19 time  219.000   
+Reading frame      20 time  220.000   
+Reading frame      30 time  230.000   
+Reading frame      40 time  240.000   
+Reading frame      50 time  250.000   
+Reading frame      60 time  260.000   
+Reading frame      70 time  270.000   
+Reading frame      80 time  280.000   
+Reading frame      90 time  290.000   
+Reading frame     100 time  300.000   
+Reading frame     110 time  310.000   
+Reading frame     120 time  320.000   
+Reading frame     130 time  330.000   
+Reading frame     140 time  340.000   
+Reading frame     150 time  350.000   
+Reading frame     160 time  360.000   
+Reading frame     170 time  370.000   
+Reading frame     180 time  380.000   
+Reading frame     190 time  390.000   
+Reading frame     200 time  400.000   
+Reading frame     300 time  500.000   
+Last frame        300 time  500.000   
+Order parameter S^2 = 0.00149454
+
+GROMACS reminds you: "Sort Of" (Urban Dance Squad)
+

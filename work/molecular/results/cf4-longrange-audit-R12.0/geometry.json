@@ -1,0 +1,11 @@
+{
+  "GFN2_geometry_converged": true,
+  "fmax_eV_A": 0.002859074507551921,
+  "starting_bond_length_A": 1.33,
+  "relaxed_CF_bond_lengths_A": [
+    1.3141496347428063,
+    1.314149634742806,
+    1.3141496347428059,
+    1.314149634742806
+  ]
+}

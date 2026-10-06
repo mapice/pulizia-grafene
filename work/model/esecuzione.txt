@@ -1,0 +1,127 @@
+{
+  "tests": {
+    "mass_error": 7.793765632868599e-14,
+    "closed_form_error": 1.9984014443252818e-14,
+    "minimum_transition_entry": 0.0,
+    "erlang_chain_error": 0.0,
+    "finite_stage_limit_error_N_1e6": 1.8378097077498268e-07
+  },
+  "cycling": [
+    {
+      "name": "complementary",
+      "label": "Tassi complementari",
+      "D": [
+        2,
+        4,
+        0.02
+      ],
+      "T": [
+        0.02,
+        0.1,
+        4
+      ],
+      "DT_residual": 0.6680495890612996,
+      "TD_residual": 0.9798217136591756,
+      "commutator_norm": 25.41016002153469
+    },
+    {
+      "name": "one_way",
+      "label": "Una preparazione seguita da estrazione",
+      "D": [
+        2,
+        0,
+        0
+      ],
+      "T": [
+        0,
+        0,
+        2
+      ],
+      "DT_residual": 0.25235492758449124,
+      "TD_residual": 1.0,
+      "commutator_norm": 5.656854249492381
+    },
+    {
+      "name": "same",
+      "label": "Tassi uguali nei due liquidi",
+      "D": [
+        0.4,
+        0.5,
+        0.3
+      ],
+      "T": [
+        0.4,
+        0.5,
+        0.3
+      ],
+      "DT_residual": 0.8798122609040081,
+      "TD_residual": 0.8798122609040081,
+      "commutator_norm": 0.0
+    }
+  ],
+  "fixed_resources": [
+    {
+      "B": 0.1,
+      "tau": 5,
+      "residual_by_N": {
+        "1": 0.09462433767133098,
+        "2": 0.043328874669313844,
+        "4": 0.028213121879681495,
+        "8": 0.023225586096938512,
+        "16": 0.021245238304055843,
+        "100": 0.019805045253465582
+      },
+      "limit": 0.019551692901480077
+    },
+    {
+      "B": 1,
+      "tau": 5,
+      "residual_by_N": {
+        "1": 0.5000226999648812,
+        "2": 0.44469029370921237,
+        "4": 0.41039128661231816,
+        "8": 0.39115220062553313,
+        "16": 0.38095839054916925,
+        "100": 0.37208834838070826
+      },
+      "limit": 0.3703665629860029
+    },
+    {
+      "B": 10,
+      "tau": 5,
+      "residual_by_N": {
+        "1": 0.9090909090909091,
+        "2": 0.9070294784580499,
+        "4": 0.9059506447997548,
+        "8": 0.9053984463275283,
+        "16": 0.9051190508709513,
+        "100": 0.9048826308977761
+      },
+      "limit": 0.9048374180359595
+    }
+  ],
+  "IPA": [
+    {
+      "hypothesis": "mobilizing",
+      "rates": [
+        4,
+        0.02,
+        0
+      ],
+      "with_IPA_residual": 0.25812473379216005,
+      "without_IPA_residual": 0.6680495890612996,
+      "warning": "Confronto di meccanismi ipotetici; durata totale diversa. Per una prova causale servono controlli temporali abbinati."
+    },
+    {
+      "hypothesis": "relocking",
+      "rates": [
+        0,
+        4,
+        0
+      ],
+      "with_IPA_residual": 0.8725343805793171,
+      "without_IPA_residual": 0.6680495890612996,
+      "warning": "Confronto di meccanismi ipotetici; durata totale diversa. Per una prova causale servono controlli temporali abbinati."
+    }
+  ]
+}

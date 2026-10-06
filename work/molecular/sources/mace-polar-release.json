@@ -1,0 +1,24 @@
+{
+  "tag": "mace_polar_1",
+  "published_at": "2026-02-23T04:04:23Z",
+  "assets": [
+    {
+      "name": "MACE-POLAR-1-L.model",
+      "bytes": 129808715,
+      "url": "https://github.com/ACEsuit/mace-foundations/releases/download/mace_polar_1/MACE-POLAR-1-L.model",
+      "digest": "sha256:9f65f8dc6ddaff1d631e299cb531376a7da5e68d1bef04f34a2d5073d5ef114b"
+    },
+    {
+      "name": "MACE-POLAR-1-M.model",
+      "bytes": 68133235,
+      "url": "https://github.com/ACEsuit/mace-foundations/releases/download/mace_polar_1/MACE-POLAR-1-M.model",
+      "digest": "sha256:fab8b8713c832f31a2a853aaa22fd638be8a369cbf5095e6b3e982a18d10e93a"
+    },
+    {
+      "name": "MACE-POLAR-1-S.model",
+      "bytes": 33375439,
+      "url": "https://github.com/ACEsuit/mace-foundations/releases/download/mace_polar_1/MACE-POLAR-1-S.model",
+      "digest": "sha256:e4495612037b3b3312633182882a38a694ecac9ea0be2b9889ac0b2a84a99510"
+    }
+  ]
+}

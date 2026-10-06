@@ -1,0 +1,88 @@
+Using 5 as mu_max and -1 as the dipole moment.
+WARNING: EpsilonRF = 0.0, this really means EpsilonRF = infinity
+Selected 0: 'System'
+There are 125 molecules in the selection
+Average volume over run is 21.4979
+
+Dipole moment (Debye)
+---------------------
+Average  =   2.3356  Std. Dev. =   1.0893  Error =   0.0049
+
+The following averages for the complete trajectory have been calculated:
+
+ Total < M_x > = 0.437046 Debye
+ Total < M_y > = 3.89262 Debye
+ Total < M_z > = -2.00362 Debye
+
+ Total < M_x^2 > = 372.741 Debye^2
+ Total < M_y^2 > = 371.357 Debye^2
+ Total < M_z^2 > = 322.479 Debye^2
+
+ Total < |M|^2 > = 1066.58 Debye^2
+ Total |< M >|^2 = 19.358 Debye^2
+
+ < |M|^2 > - |< M >|^2 = 1047.22 Debye^2
+
+Finite system Kirkwood g factor G_k = 1.53582
+Infinite system Kirkwood g factor g_k = 1.10982
+
+Epsilon = 5.95693
+               :-) GROMACS - gmx dipoles, 2026.3-conda_forge (-:
+
+Executable:   /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin.ARM_NEON_ASIMD/gmx
+Data prefix:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env
+Working dir:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/gaff-systems/HFIP_n0_seed20261006
+Command line:
+  gmx dipoles -s production.tpr -f production.xtc -b 100 -o dipoles.xvg -eps epsilon.xvg -temp 298.15 -nopairs
+
+Reading file production.tpr, VERSION 2026.3-conda_forge (single precision)
+Group     0 (         System) has  1500 elements
+Group     1 (          Other) has  1500 elements
+Group     2 (            HFI) has  1500 elements
+Select a group: 
+Reading frame       0 time    0.000   
+Reading frame       0 time  100.000   
+Reading frame       1 time  101.000   
+Reading frame       2 time  102.000   
+Reading frame       3 time  103.000   
+Reading frame       4 time  104.000   
+Reading frame       5 time  105.000   
+Reading frame       6 time  106.000   
+Reading frame       7 time  107.000   
+Reading frame       8 time  108.000   
+Reading frame       9 time  109.000   
+Reading frame      10 time  110.000   
+Reading frame      11 time  111.000   
+Reading frame      12 time  112.000   
+Reading frame      13 time  113.000   
+Reading frame      14 time  114.000   
+Reading frame      15 time  115.000   
+Reading frame      16 time  116.000   
+Reading frame      17 time  117.000   
+Reading frame      18 time  118.000   
+Reading frame      19 time  119.000   
+Reading frame      20 time  120.000   
+Reading frame      30 time  130.000   
+Reading frame      40 time  140.000   
+Reading frame      50 time  150.000   
+Reading frame      60 time  160.000   
+Reading frame      70 time  170.000   
+Reading frame      80 time  180.000   
+Reading frame      90 time  190.000   
+Reading frame     100 time  200.000   
+Reading frame     110 time  210.000   
+Reading frame     120 time  220.000   
+Reading frame     130 time  230.000   
+Reading frame     140 time  240.000   
+Reading frame     150 time  250.000   
+Reading frame     160 time  260.000   
+Reading frame     170 time  270.000   
+Reading frame     180 time  280.000   
+Reading frame     190 time  290.000   
+Reading frame     200 time  300.000   
+Reading frame     300 time  400.000   
+Reading frame     400 time  500.000   
+Last frame        400 time  500.000   
+
+GROMACS reminds you: "It takes money to make money, they say" (Lou Reed)
+

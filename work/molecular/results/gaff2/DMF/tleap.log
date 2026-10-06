@@ -1,0 +1,50 @@
+-I: Adding /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/dat/leap/prep to search path.
+-I: Adding /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/dat/leap/lib to search path.
+-I: Adding /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/dat/leap/parm to search path.
+-I: Adding /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/dat/leap/cmd to search path.
+-f: Source leap.in.
+
+Welcome to LEaP!
+(no leaprc in search path)
+Sourcing: ./leap.in
+----- Source: /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/dat/leap/cmd/leaprc.gaff2
+----- Source of /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/dat/leap/cmd/leaprc.gaff2 done
+Log file: ./leap.log
+Loading parameters: /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/dat/leap/parm/gaff2.dat
+Reading title:
+AMBER General Force Field for organic molecules (Version 2.2.30, Oct 2025)
+Loading parameters: ./molecule.frcmod
+Reading force field modification type file (frcmod)
+Reading title:
+Remark line goes here
+Loading Mol2 file: ./molecule.mol2
+Reading MOLECULE named DMF
+Checking 'M'....
+Checking parameters for unit 'M'.
+Checking for bond parameters.
+Checking for angle parameters.
+Unit is OK.
+Checking Unit.
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+ total 2 improper torsions applied
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
+
+	res	total affected
+
+	DMF	1
+  )
+ (no restraints)
+	Quit
+
+Exiting LEaP: Errors = 0; Warnings = 0; Notes = 0.
+{"guard": {"command": ["/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/amber-env/bin/tleap", "-f", "leap.in"], "pid": 49239, "exitcode": 0, "peak_RSS_MB": 1.265625, "elapsed_seconds": 2.0127487080171704, "termination_reason": null}}

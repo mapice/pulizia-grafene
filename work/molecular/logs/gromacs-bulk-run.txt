@@ -1,0 +1,7 @@
+Starting min-prep
+{'stage': 'min-prep', 'exitcode': 0, 'elapsed_seconds': 2.063941084081307}
+Starting min
+{'stage': 'min', 'exitcode': 0, 'elapsed_seconds': 6.145202416926622}
+Starting nvt-prep
+{'stage': 'nvt-prep', 'exitcode': 0, 'elapsed_seconds': 2.073651042068377}
+Starting nvt

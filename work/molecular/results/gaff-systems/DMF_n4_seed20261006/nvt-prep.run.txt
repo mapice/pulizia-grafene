@@ -1,0 +1,60 @@
+                :-) GROMACS - gmx grompp, 2026.3-conda_forge (-:
+
+Executable:   /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin.ARM_NEON_ASIMD/gmx
+Data prefix:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env
+Working dir:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/gaff-systems/DMF_n4_seed20261006
+Command line:
+  gmx grompp -f nvt.mdp -c min.gro -p system.top -n index.ndx -o nvt.tpr
+
+Generating 1-4 interactions: fudge = 0.5
+
+NOTE 1 [file system.top, line 1015]:
+  In moleculetype 'GRAPHENE' 448 atoms are not bound by a potential or
+  constraint to any other atom in the same moleculetype. Although
+  technically this might not cause issues in a simulation, this often means
+  that the user forgot to add a bond/potential/constraint or put multiple
+  molecules in the same moleculetype definition by mistake. Run with -v to
+  get information for each atom.
+
+Number of degrees of freedom in T-Coupling group System is 9004.00
+
+There was 1 NOTE
+
+GROMACS reminds you: "How Do You Like Your Vacation So Far ?" (Speed 2 - Cruise Control)
+
+Setting the LD random seed to -13776923
+
+Generated 119 of the 120 non-bonded parameter combinations
+
+Generated 120 of the 120 1-4 parameter combinations
+
+Excluding 0 bonded neighbours molecule type 'GRAPHENE'
+
+turning H bonds into constraints...
+
+Excluding 2 bonded neighbours molecule type 'PMMA'
+
+turning H bonds into constraints...
+
+Excluding 3 bonded neighbours molecule type 'DMF'
+
+turning H bonds into constraints...
+
+Velocities were taken from a Maxwell distribution at 298.15 K
+
+The largest distance between excluded atoms is 0.365 nm between atom 1860 and 1862
+
+Determining Verlet buffer for a tolerance of 0.005 kJ/mol/ps at 298.15 K
+
+Calculated rlist for 1x1 atom pair-list as 1.035 nm, buffer size 0.035 nm
+
+Set rlist, assuming 4x4 atom pair-list, to 1.009 nm, buffer size 0.009 nm
+
+Note that mdrun will redetermine rlist based on the actual pair-list setup
+Calculating fourier grid dimensions for X Y Z
+Using a fourier grid of 32x32x32, spacing 0.106 0.107 0.119
+
+Estimate for the relative computational load of the PME mesh part: 0.19
+
+This run will generate roughly 2 Mb of data
+{"guard": {"command": ["/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin/gmx", "grompp", "-f", "nvt.mdp", "-c", "min.gro", "-p", "system.top", "-n", "index.ndx", "-o", "nvt.tpr"], "pid": 70374, "exitcode": 0, "peak_RSS_MB": 1.625, "elapsed_seconds": 2.013741625007242, "termination_reason": null}}

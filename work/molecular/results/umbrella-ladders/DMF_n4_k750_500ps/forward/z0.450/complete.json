@@ -1,0 +1,14 @@
+{
+  "solvent": "DMF",
+  "direction": "forward",
+  "center_nm": 0.45,
+  "k_kJ_mol_nm2": 750.0,
+  "run_ps": 500,
+  "pilot_discard_ps": 250.0,
+  "coordinate_mean_nm": 0.6098393314674131,
+  "coordinate_sd_nm": 0.02869238225564904,
+  "spring_force_mean_kJ_mol_nm": -119.87951459416232,
+  "independent_spring_force_kJ_mol_nm": -119.87949860055981,
+  "elapsed_seconds": 1267.8323994169477,
+  "equilibrium_and_hidden_coordinate_convergence_not_assumed": true
+}

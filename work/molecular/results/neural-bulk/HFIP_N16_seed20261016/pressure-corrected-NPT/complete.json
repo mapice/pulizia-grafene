@@ -1,0 +1,9 @@
+{
+  "duration_fs": 100,
+  "steps": 400,
+  "elapsed_seconds": 863.6654069172218,
+  "maximum_extended_energy_change_eV": 0.0017854313204139771,
+  "initial_density_is_input_not_prediction": true,
+  "liquid_equilibrium_not_established": true,
+  "cleaning_solution_established": false
+}

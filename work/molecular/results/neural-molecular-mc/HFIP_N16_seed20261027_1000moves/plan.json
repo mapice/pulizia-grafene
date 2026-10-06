@@ -1,0 +1,31 @@
+{
+  "model_sha256": "fab8b8713c832f31a2a853aaa22fd638be8a369cbf5095e6b3e982a18d10e93a",
+  "source_sha256": "4c47277019f37ec62125601606cbb33f5da5a5b27c7410ccf2d41252f4766f30",
+  "T_K": 298.15,
+  "P_bar": 1,
+  "molecules": 16,
+  "atoms": 192,
+  "moves": 1000,
+  "seed": 20261027,
+  "volume_proposal": "symmetric logV, centers only; Jacobian plus proposal factor exponent17",
+  "move_probabilities": {
+    "translation": 0.35,
+    "rotation": 0.3,
+    "OH_torsion": 0.25,
+    "volume": 0.075,
+    "HMC": 0.025
+  },
+  "HMC_timestep_fs": 0.25,
+  "HMC_leapfrog_steps": 4,
+  "volume_box_bounds_A": [
+    12.2,
+    22.0
+  ],
+  "periodic_translation_energy_error_eV": 6.67572021484375e-06,
+  "MPS_memory_fraction": 0.25,
+  "chemical_lifting_domain": "Each assigned HFIP group is whole within half a box",
+  "qualified_for_equilibrium_properties": false,
+  "qualified_for_cleaning": false,
+  "completed_parent_chain": null,
+  "preserved_parent_RNG_positions_cell_momenta": false
+}

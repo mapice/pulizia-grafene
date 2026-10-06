@@ -1,0 +1,20 @@
+{
+  "solvent": "HFIP",
+  "model": "GAFF2/AM1-BCC neutralized to known formal charge",
+  "last_ps": 500.0,
+  "analysis_start_ps": 100,
+  "density_g_cm3": 1.6228110817431418,
+  "density_temporal_sd_g_cm3": 0.021474839682194,
+  "temperature_K": 297.9894259052369,
+  "epsilon_GROMACS": 5.95693,
+  "epsilon_independent_SI": 5.956920767412592,
+  "blocks_density_g_cm3": [
+    1.6157697149801984,
+    1.6214761658100003,
+    1.6256942761300002,
+    1.6283745837199999
+  ],
+  "scope": "Single short bulk qualification pilot; no desorption, no experimental efficacy.",
+  "independent_seeds": 1,
+  "desorption_model_qualified": false
+}

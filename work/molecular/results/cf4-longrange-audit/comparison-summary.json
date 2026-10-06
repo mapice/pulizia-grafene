@@ -1,0 +1,24 @@
+{
+  "rows": [
+    {
+      "distance_A": 8.5,
+      "DFT_kJ_mol": -0.06026081899428212,
+      "M_kJ_mol": -0.026567310564251972,
+      "error_kJ_mol": 0.03369350843003015,
+      "grid_shift_kJ_mol": 0.00016911937068395805,
+      "complete_file_sha256": "41ec83381b2ab721f721d71fc5bb32498142d9d3cb63ccd487ce177cbff694ce"
+    },
+    {
+      "distance_A": 12.0,
+      "DFT_kJ_mol": -0.006937106192450666,
+      "M_kJ_mol": 0.001118767726768,
+      "error_kJ_mol": 0.008055873919218666,
+      "grid_shift_kJ_mol": 2.3330762099320508e-05,
+      "complete_file_sha256": "8f6dd92ff42d9c9dbee3833f28e7d15ced807c25a97a2503f74d0ac08f1dc954"
+    }
+  ],
+  "all_20_SCF_converged": true,
+  "no_added_D3": true,
+  "qualified_for_HFIP_liquid": false,
+  "cleaning_solution_established": false
+}

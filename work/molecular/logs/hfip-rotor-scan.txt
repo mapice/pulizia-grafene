@@ -1,0 +1,28 @@
+/Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/.venv/lib/python3.12/site-packages/pyscf/lib/misc.py:203: UserWarning: OpenMP is not available. Setting omp_threads to 2 has no effects.
+  warnings.warn('OpenMP is not available. '
+output file: /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/hfip-rotor/angle-180.scf.log
+-180 0.7152958597201691 12.231479874812067
+output file: /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/hfip-rotor/angle-150.scf.log
+-150 1.1077938023838276 10.878446167102084
+output file: /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/hfip-rotor/angle-120.scf.log
+-120 1.712902655879211 10.88784437510185
+output file: /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/hfip-rotor/angle-090.scf.log
+-90 2.2437398382771128 10.816738666966558
+output file: /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/hfip-rotor/angle-060.scf.log
+-60 2.719278854228662 11.006415334064513
+output file: /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/hfip-rotor/angle-030.scf.log
+-30 3.103880483687083 10.869169041980058
+output file: /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/hfip-rotor/angle+000.scf.log
+0 3.2528505921942603 10.961378250038251
+output file: /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/hfip-rotor/angle+030.scf.log
+30 3.1039360060960752 10.815424707951024
+output file: /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/hfip-rotor/angle+060.scf.log
+60 2.719295126682969 10.948004875099286
+output file: /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/hfip-rotor/angle+090.scf.log
+90 2.243725361232741 10.86479204101488
+output file: /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/hfip-rotor/angle+120.scf.log
+120 1.7128907093664414 10.976973166922107
+output file: /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/results/hfip-rotor/angle+150.scf.log
+150 1.107709245189784 10.879849124932662
+Finished 132.45999670797028 1497.109375 {'0.5': 8.526512829121202e-14, '1.0': 1.7053025658242404e-13}
+{"guard": {"command": ["work/molecular/.venv/bin/python", "work/molecular/hfip_rotor.py"], "pid": 38329, "exitcode": 0, "peak_RSS_MB": 1496.09375, "elapsed_seconds": 134.7460833338555, "termination_reason": null}}

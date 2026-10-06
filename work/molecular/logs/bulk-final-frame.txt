@@ -1,0 +1,28 @@
+               :-) GROMACS - gmx trjconv, 2026.3-conda_forge (-:
+
+Executable:   /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env/bin.ARM_NEON_ASIMD/gmx
+Data prefix:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24/work/molecular/gromacs-env
+Working dir:  /Users/mattiaapicella/Documents/Codex/2026-10-06/06-10-26-00-55-24
+Command line:
+  gmx trjconv -s work/molecular/results/gromacs/bulk_scale0.5_seed20261006/npt.tpr -f work/molecular/results/gromacs/bulk_scale0.5_seed20261006/npt.xtc -o work/molecular/results/gromacs/bulk_scale0.5_seed20261006/final-highprecision.gro -dump 1000 -ndec 6 -pbc whole
+
+Will write gro: Coordinate file in Gromos-87 format
+Reading file work/molecular/results/gromacs/bulk_scale0.5_seed20261006/npt.tpr, VERSION 2026.3-conda_forge (single precision)
+Reading file work/molecular/results/gromacs/bulk_scale0.5_seed20261006/npt.tpr, VERSION 2026.3-conda_forge (single precision)
+Group     0 (         System) has  1500 elements
+Group     1 (          Other) has  1500 elements
+Group     2 (           HFIP) has  1500 elements
+Select a group: Reading frame       0 time    0.000   
+Precision of work/molecular/results/gromacs/bulk_scale0.5_seed20261006/npt.xtc is 0.0001 (nm)
+Reading frame       1 time    1.000   Reading frame       2 time    2.000   Reading frame       3 time    3.000   Reading frame       4 time    4.000   Reading frame       5 time    5.000   Reading frame       6 time    6.000   Reading frame       7 time    7.000   Reading frame       8 time    8.000   Reading frame       9 time    9.000   Reading frame      10 time   10.000   Reading frame      11 time   11.000   Reading frame      12 time   12.000   Reading frame      13 time   13.000   Reading frame      14 time   14.000   Reading frame      15 time   15.000   Reading frame      16 time   16.000   Reading frame      17 time   17.000   Reading frame      18 time   18.000   Reading frame      19 time   19.000   Reading frame      20 time   20.000   Reading frame      30 time   30.000   Reading frame      40 time   40.000   Reading frame      50 time   50.000   Reading frame      60 time   60.000   Reading frame      70 time   70.000   Reading frame      80 time   80.000   Reading frame      90 time   90.000   Reading frame     100 time  100.000   Reading frame     110 time  110.000   Reading frame     120 time  120.000   Reading frame     130 time  130.000   Reading frame     140 time  140.000   Reading frame     150 time  150.000   Reading frame     160 time  160.000   Reading frame     170 time  170.000   Reading frame     180 time  180.000   Reading frame     190 time  190.000   Reading frame     200 time  200.000   Reading frame     300 time  300.000   Reading frame     400 time  400.000   Reading frame     500 time  500.000   Reading frame     600 time  600.000   Reading frame     700 time  700.000   Reading frame     800 time  800.000   Reading frame     900 time  900.000   Reading frame    1000 time 1000.000   Last frame       1000 time 1000.000   
+
+Dumping frame at t= 1000 ps
+ ->  frame      0 time 1000.000      
+Last written: frame      0 time 1000.000
+
+
+GROMACS reminds you: "Performance and power are great targets for tuning, but really you want to tune for money!" (Erik Lindahl)
+
+Note that major changes are planned in future for trjconv, to improve usability and utility.
+Select group for output
+Selected 0: 'System'
