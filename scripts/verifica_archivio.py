@@ -24,4 +24,13 @@ with zipfile.ZipFile(archive) as z:
         else:raise RuntimeError(label)
         assert digest(path)==row['sha256'],path
         assert hashlib.sha256(z.read(row['path'])).hexdigest()==row['sha256'],row['path']
-print(f"Verificati {len(manifest['files'])} file; revisione {manifest['revision']}.")
+extra=ROOT/'MANIFEST-DATI-SUCCESSIVI.json'
+extra_count=0
+if extra.exists():
+    subsequent=json.loads(extra.read_text())
+    assert digest(archive)==subsequent['parent_archive_sha256']
+    for row in subsequent['files']:
+        label=Path(row['path']);assert not label.is_absolute() and '..' not in label.parts
+        assert digest(ROOT/label)==row['sha256'],label
+        extra_count+=1
+print(f"Verificati {len(manifest['files'])} file della revisione {manifest['revision']} e {extra_count} file successivi.")

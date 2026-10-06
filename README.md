@@ -23,6 +23,10 @@ Le proprietà del liquido sono ancora da qualificare. Rimangono da completare i 
 
 Gli archivi ZIP sono gestiti con Git LFS. Dopo il recupero del repository, `git lfs pull` recupera gli oggetti disponibili sul server. I file estratti dell'archivio corrente sono già consultabili nel repository.
 
+L'ultima serie molecolare e il successivo controllo energetico sono terminati dopo la chiusura dell'archivio corrente. I file sono aggiunti separatamente e descritti in [MANIFEST-DATI-SUCCESSIVI.json](MANIFEST-DATI-SUCCESSIVI.json), con impronte verificabili. Le proposte più lunghe riducono la differenza di energia interna fra le due configurazioni confrontate, da circa 20 a 6 kJ/mol per molecola, mentre le densità restano circa 1,265 e 0,756 g/cm³. Sono confronti di configurazioni singole: nessuna proprietà del liquido all'equilibrio ne è stata dedotta.
+
+La [nota sul campionamento dell'associazione](outputs/campionamento-associazione.txt) deriva una proposta che sposta e orienta le molecole verso possibili partner, con il rapporto di Metropolis-Hastings completo. Quattro controlli su distribuzioni note sono stati eseguiti, compresi i controlli negativi. La proposta geometrica non è ancora stata applicata a HFIP o all'interfaccia del campione.
+
 Per controllare la corrispondenza fra archivio, impronte e file estratti:
 
 ```sh

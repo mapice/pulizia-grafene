@@ -1,0 +1,103 @@
+{
+  "meaning": "Completamenti molecolari, confronto energetico e controllo analitico delle proposte di associazione dopo l’archivio revisione 7",
+  "parent_archive_sha256": "be5ff25a49583e6a34685b4660ed3a86e1c6d6d865479ec661a4c99e211a86d5",
+  "liquid_equilibrium_qualified": false,
+  "cleaning_solution_established": false,
+  "files": [
+    {
+      "path": "work/molecular/results/neural-molecular-mc/HFIP_N16_seed20261026_1000moves_continue2000_continue200_hmc12-32_p0.050/checkpoint.npz",
+      "bytes": 10046,
+      "sha256": "089ded318b2e34392fee02004585c1e642cdbe621e94eb76731ccfff4255ccde"
+    },
+    {
+      "path": "work/molecular/results/neural-molecular-mc/HFIP_N16_seed20261026_1000moves_continue2000_continue200_hmc12-32_p0.050/checkpoint.json",
+      "bytes": 568,
+      "sha256": "519215a9e54622cc833c8d8c6fddb613ff97b48f0daecdba2ead206dfb4771fa"
+    },
+    {
+      "path": "work/molecular/results/neural-molecular-mc/HFIP_N16_seed20261026_1000moves_continue2000_continue200_hmc12-32_p0.050/plan.json",
+      "bytes": 1776,
+      "sha256": "c5a58c13b8cc0210236267a3e94d8896a1a1cdd8ef14fee903a03f1f90b1c07b"
+    },
+    {
+      "path": "work/molecular/results/neural-molecular-mc/HFIP_N16_seed20261026_1000moves_continue2000_continue200_hmc12-32_p0.050/frames.xyz",
+      "bytes": 224287,
+      "sha256": "ca41bef3d12527a8e82b2708545834045ce14332e87057795132bd03b04a0590"
+    },
+    {
+      "path": "work/molecular/results/neural-molecular-mc/HFIP_N16_seed20261026_1000moves_continue2000_continue200_hmc12-32_p0.050/complete.json",
+      "bytes": 555,
+      "sha256": "bea613a167d86939ce9da6036cfd19e4ee7f1a32a2487dc03e3cb88a7bf474a3"
+    },
+    {
+      "path": "work/molecular/results/neural-molecular-mc/HFIP_N16_seed20261026_1000moves_continue2000_continue200_hmc12-32_p0.050/observations.json",
+      "bytes": 5615,
+      "sha256": "bdcc1afedf8133290a904347ae7c8c333c310f060616041b9e169db0c0fb079b"
+    },
+    {
+      "path": "work/molecular/results/hmc-endpoint-energy-audit/complete.json",
+      "bytes": 2970,
+      "sha256": "bd7fe69f3cf61dae0739c0f698c958bfabba11b3c4cd5e7d67bf85dc44c1e91d"
+    },
+    {
+      "path": "work/molecular/results/hmc-endpoint-energy-audit/partial.json",
+      "bytes": 2453,
+      "sha256": "1d5d9bacdfa614dc43b23aada2323bf89943afa934923cd74e5e6d007c3a7132"
+    },
+    {
+      "path": "work/molecular/results/hmc-endpoint-energy-audit/dense.xyz",
+      "bytes": 20380,
+      "sha256": "787154ca34be51837a5714a401d2a204277689a6767c2ea35640daaed2b39694"
+    },
+    {
+      "path": "work/molecular/results/hmc-endpoint-energy-audit/dilute.xyz",
+      "bytes": 20380,
+      "sha256": "3de174a5d1a60d79b18697d3141054ef61f6e08259081486b292d84aefff6e63"
+    },
+    {
+      "path": "work/molecular/audit_hmc_endpoints.py",
+      "bytes": 4107,
+      "sha256": "2f7cc6675604f51ecb316cddee92d3f30ac7345f996916317f0244aebd232970"
+    },
+    {
+      "path": "work/molecular/logs/hmc-endpoint-energy-audit.txt",
+      "bytes": 2663,
+      "sha256": "fac0b8a3adf9d212c1468749f870d8251c86bddcd2be94d80ca746420bb8ad04"
+    },
+    {
+      "path": "work/molecular/association_proposal.py",
+      "bytes": 3607,
+      "sha256": "bc8e22341aaf4c5a405f571feb2306ab1798f6ac1b836fb95597b4c3e9f13760"
+    },
+    {
+      "path": "work/molecular/association_controls.py",
+      "bytes": 3298,
+      "sha256": "0e19f2e60d5b6ba249750568912e3ca1b86a0257f6490dc4a5a72803ce70dbcc"
+    },
+    {
+      "path": "outputs/campionamento-associazione.txt",
+      "bytes": 4620,
+      "sha256": "c421937c47bc995c7f36641d22081480db4f521be11cde1dda8ca7ea4ce28996"
+    },
+    {
+      "path": "work/molecular/results/association-controls/complete.json",
+      "bytes": 2417,
+      "sha256": "7a8964c7618f7948a957dbacbd5ccc173e68ca5d52376927fb23959f26f7d71d"
+    },
+    {
+      "path": "work/molecular/results/association-controls/partial.json",
+      "bytes": 2083,
+      "sha256": "a3c717d6c737ed56d091a3f0ca8e7815670cffb9936a69bd8927af10b9f0cc5a"
+    },
+    {
+      "path": "work/molecular/logs/association-controls.txt",
+      "bytes": 2153,
+      "sha256": "171b324bda5f692dc78c0b2c1bb36084f877ab17412ff59a8371993699f7bf88"
+    },
+    {
+      "path": "work/molecular/logs/association-controls-serialization-failed.txt",
+      "bytes": 2174,
+      "sha256": "47264864ac969744d9a1a0391e8b30ff84df60d6089f58db9c9282cbd88c609d"
+    }
+  ]
+}

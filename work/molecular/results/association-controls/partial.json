@@ -1,0 +1,54 @@
+[
+  {
+    "binding_kBT": 0.0,
+    "Hastings_factor_applied": true,
+    "seed": 20261030,
+    "saved_steps": 90000,
+    "geometric_association_probability": 0.0015265239550628104,
+    "correct_target_probability": 0.0015265239550628104,
+    "intentionally_wrong_target_if_factor_omitted": 0.5007632619775314,
+    "measured_association_probability": 0.0017,
+    "block_standard_error": 0.0002632031632002202,
+    "comparison_to_appropriate_analytic_distribution_passed": true,
+    "acceptance_fraction": 0.50195
+  },
+  {
+    "binding_kBT": 6.0,
+    "Hastings_factor_applied": true,
+    "seed": 20261031,
+    "saved_steps": 90000,
+    "geometric_association_probability": 0.0015265239550628104,
+    "correct_target_probability": 0.3814886689669558,
+    "intentionally_wrong_target_if_factor_omitted": 0.9975348957933062,
+    "measured_association_probability": 0.3823888888888889,
+    "block_standard_error": 0.0018079926891876302,
+    "comparison_to_appropriate_analytic_distribution_passed": true,
+    "acceptance_fraction": 0.88056
+  },
+  {
+    "binding_kBT": 0.0,
+    "Hastings_factor_applied": false,
+    "seed": 20261032,
+    "saved_steps": 90000,
+    "geometric_association_probability": 0.0015265239550628104,
+    "correct_target_probability": 0.0015265239550628104,
+    "intentionally_wrong_target_if_factor_omitted": 0.5007632619775314,
+    "measured_association_probability": 0.4983888888888889,
+    "block_standard_error": 0.0016400644337730922,
+    "comparison_to_appropriate_analytic_distribution_passed": true,
+    "acceptance_fraction": 1.0
+  },
+  {
+    "binding_kBT": 6.0,
+    "Hastings_factor_applied": false,
+    "seed": 20261033,
+    "saved_steps": 90000,
+    "geometric_association_probability": 0.0015265239550628104,
+    "correct_target_probability": 0.3814886689669558,
+    "intentionally_wrong_target_if_factor_omitted": 0.9975348957933062,
+    "measured_association_probability": 0.9979555555555556,
+    "block_standard_error": 0.0002629474302763135,
+    "comparison_to_appropriate_analytic_distribution_passed": true,
+    "acceptance_fraction": 0.50244
+  }
+]

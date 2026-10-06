@@ -1,0 +1,60 @@
+{
+  "time_UTC": "2026-10-06T11:29:13.741866+00:00",
+  "objects": [
+    {
+      "oid": "0709d96eff15859d1cca87357d1a3b45e715b575e78bb5359ce1e02842b4d0f8",
+      "bytes": 38976,
+      "download_offered": true,
+      "batch_error_code": null,
+      "range_response_status": 206,
+      "remote_length_bytes": 38976,
+      "object_exists_with_expected_size": true
+    },
+    {
+      "oid": "540e70fe20a65f7bcde3b7bdc997a8fa744a0694eb7f3ca156c80bc08c607ec5",
+      "bytes": 19107231,
+      "download_offered": true,
+      "batch_error_code": null,
+      "range_response_status": 206,
+      "remote_length_bytes": 19107231,
+      "object_exists_with_expected_size": true
+    },
+    {
+      "oid": "ef4573c328f5d77ab059ed1a1502881b50558ef9cae96071a6a3d7d80cbba14c",
+      "bytes": 231774676,
+      "download_offered": true,
+      "batch_error_code": null,
+      "range_response_status": 206,
+      "remote_length_bytes": 231774676,
+      "object_exists_with_expected_size": true
+    },
+    {
+      "oid": "5ccf9c0a0f655c59655a1419e6ec127ee247af3d44b70c6817e64924bb3250d3",
+      "bytes": 332061026,
+      "download_offered": true,
+      "batch_error_code": null,
+      "range_response_status": 206,
+      "remote_length_bytes": 332061026,
+      "object_exists_with_expected_size": true
+    },
+    {
+      "oid": "ef526775871a19b1fe892db3629513c4cf9cd617b024f7326bc6aef2aabc8884",
+      "bytes": 514287642,
+      "download_offered": true,
+      "batch_error_code": null,
+      "range_response_status": 206,
+      "remote_length_bytes": 514287642,
+      "object_exists_with_expected_size": true
+    },
+    {
+      "oid": "be5ff25a49583e6a34685b4660ed3a86e1c6d6d865479ec661a4c99e211a86d5",
+      "bytes": 545354182,
+      "download_offered": true,
+      "batch_error_code": null,
+      "range_response_status": 206,
+      "remote_length_bytes": 545354182,
+      "object_exists_with_expected_size": true
+    }
+  ],
+  "all_objects_readback_available": true
+}

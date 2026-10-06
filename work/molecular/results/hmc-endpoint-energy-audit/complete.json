@@ -1,0 +1,77 @@
+{
+  "model_sha256": "fab8b8713c832f31a2a853aaa22fd638be8a369cbf5095e6b3e982a18d10e93a",
+  "rows": [
+    {
+      "branch": "dense",
+      "provenance": {
+        "source": "results/neural-molecular-mc/HFIP_N16_seed20261026_1000moves_continue2000_continue200_hmc12-32_p0.050/frames.xyz",
+        "frame_index": 10,
+        "complete_frames_at_read": 11,
+        "source_snapshot_sha256": "ca41bef3d12527a8e82b2708545834045ce14332e87057795132bd03b04a0590",
+        "saved_frame_sha256": "787154ca34be51837a5714a401d2a204277689a6767c2ea35640daaed2b39694"
+      },
+      "density_g_cm3": 1.265388151324029,
+      "total_energy_eV": -17.810931796560286,
+      "isolated_fragment_energy_eV": [
+        -0.7884341021694926,
+        -0.981661448816455,
+        -0.7988171863377072,
+        -0.7843636461364717,
+        -0.7917493207882571,
+        -0.9477756465808551,
+        -0.8356453963465278,
+        -0.9898716632382341,
+        -0.8894262052693103,
+        -0.7891782081038375,
+        -0.740745480917388,
+        -0.9856181823252049,
+        -0.8361168151228748,
+        -0.9639242862771347,
+        -0.7494112815865763,
+        -0.9725583373683835
+      ],
+      "gas_reference_eV": -1.2758575732117015,
+      "internal_energy_above_gas_kJ_mol_per_molecule": 39.60978548083907,
+      "intermolecular_energy_kJ_mol_per_molecule": -23.914098151015732,
+      "elapsed_seconds": 7.980565167032182
+    },
+    {
+      "branch": "dilute",
+      "provenance": {
+        "source": "results/neural-molecular-mc/HFIP_N16_seed20261027_1000moves_continue200_hmc12-32_p0.050/frames.xyz",
+        "frame_index": 10,
+        "complete_frames_at_read": 11,
+        "source_snapshot_sha256": "99d919527005a15eef176b9051221228f9d1ff17e0f7afd5f7e24b415c258d84",
+        "saved_frame_sha256": "3de174a5d1a60d79b18697d3141054ef61f6e08259081486b292d84aefff6e63"
+      },
+      "density_g_cm3": 0.756282039258786,
+      "total_energy_eV": -17.1079381709592,
+      "isolated_fragment_energy_eV": [
+        -0.833293601347873,
+        -0.9376854208532646,
+        -0.9854998246690662,
+        -1.0352085311264363,
+        -0.9252977665657293,
+        -1.084498912601228,
+        -0.9610646041474059,
+        -0.9078147515816312,
+        -0.7863795894422233,
+        -1.0013348073230899,
+        -0.8214659129692086,
+        -0.9753504087290972,
+        -0.9023791196861901,
+        -0.8442044515121123,
+        -1.0346403004811864,
+        -0.8686700743758284
+      ],
+      "gas_reference_eV": -1.2758575732117015,
+      "internal_energy_above_gas_kJ_mol_per_molecule": 33.22070245107997,
+      "intermolecular_energy_kJ_mol_per_molecule": -13.285729280838915,
+      "elapsed_seconds": 14.61971995793283
+    }
+  ],
+  "internal_energy_branch_difference_kJ_mol_per_molecule": 6.3890830297590995,
+  "scope": "Two frozen endpoints after short randomized-HMC continuations; no equilibrium or free-energy inference",
+  "liquid_equilibrium_qualified": false,
+  "cleaning_solution_established": false
+}

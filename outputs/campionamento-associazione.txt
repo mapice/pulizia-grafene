@@ -1,0 +1,94 @@
+CAMPIONARE L'ASSOCIAZIONE SENZA MODIFICARE IL POTENZIALE
+6 ottobre 2026. Risultato matematico condizionato e controlli eseguiti.
+Non è ancora una simulazione di HFIP né una soluzione di pulizia.
+
+Motivo
+Le prosecuzioni molecolari più lunghe riducono la differenza interna
+fra due configurazioni HFIP, da circa 20,25 a 6,39 kJ/mol per molecola.
+Le densità rimangono diverse. La formazione e il riassetto delle reti
+di contatto possono essere più lenti delle vibrazioni interne.
+
+Metodo preesistente
+La famiglia delle mosse orientate all'aggregazione migliora il
+campionamento di fluidi fortemente associanti. Non rivendichiamo
+questa idea come nuova. Fonte primaria: B. Chen e J. I. Siepmann,
+J. Phys. Chem. B 104, 8725–8734 (2000), doi:10.1021/jp001952u.
+https://siepmann.chem.umn.edu/publications/49
+La documentazione NIST della variante AVB2 descrive una costruzione
+per particelle a sito singolo. Qui deriviamo direttamente una
+miscela di pose molecolari, comprendente una condizione angolare.
+https://pages.nist.gov/feasst/plugin/cluster/doc/TrialAVB2_arguments.html
+
+Derivazione della variante
+Si sceglie una molecola fra M. La sua geometria interna resta fissa
+durante questa mossa. Con probabilità 1-b si estrae una posizione
+uniforme nella cella e una rotazione uniforme. Con probabilità b
+si sceglie uno dei M-1 ossigeni delle altre molecole, si estrae il
+nuovo ossigeno in un guscio sferico attorno al bersaglio, e si orienta
+la direzione OH entro un cono verso di esso. La rotazione attorno
+alla direzione OH è uniforme e indipendente.
+
+Il volume del guscio è V_s = 4*pi*(r_max^3-r_min^3)/3.
+La frazione angolare del cono è f = (1-cos(theta_max))/2.
+Sia n(y) il numero di bersagli compatibili con la posa proposta y.
+La densità della proposta, omesso il comune fattore di Haar della
+rotazione, è
+
+ q(y) = (1-b)/V + b*n(y)/[(M-1)*V_s*f].
+
+Si sommano tutti i bersagli compatibili: regioni sovrapposte non
+possono essere trattate come un unico bersaglio. La normalizzazione
+segue sommando M-1 regioni, ciascuna di misura V_s*f. La posizione
+ancorata all'ossigeno e quella del centro di massa differiscono per
+una traslazione dipendente dalla rotazione con Jacobiano unitario.
+
+Le altre molecole e il volume restano fissi in questa mossa. La
+densità inversa usa la stessa costruzione valutata nella posa
+iniziale x. Il rapporto di Metropolis-Hastings è quindi
+
+ min(1, exp[-beta*(U(y)-U(x))] * q(x)/q(y)).
+
+Il fattore M della scelta della molecola e il fattore rotazionale
+comune si cancellano. Il termine PV non cambia. Non si aggiunge
+un premio energetico per l'associazione: U è il potenziale originale.
+Le dimensioni del guscio e del cono cambiano l'efficienza, non la
+distribuzione bersaglio quando il rapporto è applicato correttamente.
+La componente uniforme rende positiva la densità di proposta in
+tutte le pose. Le altre mosse sono necessarie per variare la geometria
+interna delle molecole e il volume.
+
+Controllo indipendente eseguito
+Due oggetti rigidi, uno fermo, cella cubica L=15; guscio 2,6–3,3;
+cono 30 gradi; miscela b=1/2. Questi numeri definiscono il controllo
+geometrico, non parametri di HFIP. La probabilità geometrica esatta
+è p0=V_s*f/V=0,001526523955.
+
+Con energia nulla, la popolazione associata deve essere p0.
+Con un'energia di controllo -epsilon nell'area associata, vale
+
+ p = p0*exp(beta*epsilon) / [1-p0+p0*exp(beta*epsilon)].
+
+Sono state eseguite quattro serie di 100.000 mosse, con 10.000
+iniziali escluse dal confronto e controllo tramite blocchi:
+
+                             Esatto          Misurato
+Energia nulla, corretto      0,0015265       0,0017000
+epsilon=6*kBT, corretto      0,3814887       0,3823889
+
+Controlli negativi espliciti, omettendo il rapporto della proposta:
+Energia nulla                0,5007633       0,4983889
+epsilon=6*kBT                0,9975349       0,9979556
+
+Gli ultimi due valori descrivono la distribuzione sbagliata prodotta
+dal controllo negativo, non risultati da accettare per un fluido.
+Il confronto dei quattro casi supera la precisione prestabilita.
+Il primo tentativo aveva un errore di serializzazione di un booleano
+NumPy; registro conservato, calcolo ripetuto con lo stesso seme
+dopo la correzione. Nessun dato non serializzato è assunto come
+verifica conclusa.
+
+Codice: work/molecular/association_proposal.py e association_controls.py.
+Dati: work/molecular/results/association-controls/complete.json.
+Prossimo controllo: sovrapposizioni fra più bersagli e poi utilizzo
+con il modello molecolare invariato. Non sono ancora verificate
+le proprietà di HFIP, l'interfaccia PMMA/grafene o la pulizia reale.
